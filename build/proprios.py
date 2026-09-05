@@ -4,6 +4,9 @@
 Diferente do resto do site: aqui nao ha tabela importada. Cada numero foi
 conferido no PubMed ou no ClinicalTrials.gov em 04/09/2026, e a consulta
 usada esta declarada na propria pagina.
+
+Excecao: proprios18 (mazdutida) foi apurado em 05/09/2026 e carrega data
+propria, importada de datas.py. Ver o cabecalho daquele modulo.
 """
 
 from datas import DATA_APURACAO as _DT
@@ -235,3 +238,6 @@ PROPRIOS.update(_HEP)
 
 from proprios17 import ALCOOL as _ALC
 PROPRIOS.update(_ALC)
+
+from proprios18 import MAZDUTIDA as _MAZD
+PROPRIOS.update(_MAZD)
