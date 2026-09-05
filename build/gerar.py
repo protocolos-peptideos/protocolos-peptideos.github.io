@@ -21,6 +21,42 @@ from anvisa import ANVISA
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONTE = "https://www.peptidedosingprotocols.com/"
 
+
+def _le_css(nome):
+    with open(os.path.join(RAIZ, "assets", nome), encoding="utf-8") as f:
+        return f.read()
+
+
+# Os dois blocos que vao inline no <head>. Lidos uma vez, no import.
+#
+# O @font-face precisa vir inline junto com o critico: sem ele o navegador
+# pinta em fonte de sistema e troca depois, e a troca desloca a linha. O
+# preload ja garantiu os bytes; falta a declaracao chegar cedo.
+#
+# ATENCAO ao caminho. Dentro de um <style> inline, url() resolve contra o
+# HTML, nao contra a folha. O fontes-gerado.css diz url(fontes/x.woff2)
+# porque mora em assets/; inline numa pagina de p/ isso viraria
+# /p/fontes/x.woff2 e daria 404. Por isso a reescrita abaixo, com o mesmo
+# prefixo que o resto do <head> usa.
+_FONTES_CSS = _le_css("fontes-gerado.css")
+_CRITICO_CSS = _le_css("critico-gerado.css")
+
+
+def _enxuga(css):
+    """Tira comentario e espaco redundante. O comentario e do arquivo fonte;
+    embarcado no <head> ele viajaria 79 vezes ate o leitor sem servir a
+    ninguem. Nao mexe em url() nem em string: nao existe nenhuma com /* aqui,
+    e a trava de critico quebraria se o CSS deixasse de casar."""
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r"\s*\n\s*", "\n", css)
+    css = re.sub(r"\n{2,}", "\n", css)
+    return css.strip()
+
+
+def css_inline(prefixo):
+    fontes = _FONTES_CSS.replace("url(fontes/", f"url({prefixo}assets/fontes/")
+    return _enxuga(fontes + "\n" + _CRITICO_CSS)
+
 # As duas datas do site vivem em build/datas.py, que os modulos de conteudo
 # tambem importam. Leia o cabecalho daquele arquivo antes de mexer nelas: sao
 # fatos historicos, e nao podem ser derivadas do relogio.
@@ -260,8 +296,9 @@ def cabecalho(titulo, descricao, prefixo="", atual="", indexavel=False,
 <meta property="og:type" content="website">{canon}{ld}
 <link rel="preload" href="{prefixo}assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{prefixo}assets/fontes/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{prefixo}assets/fontes-gerado.css">
-<link rel="stylesheet" href="{prefixo}assets/estilo.css">
+<style>{css_inline(prefixo)}</style>
+<link rel="stylesheet" href="{prefixo}assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="{prefixo}assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
 </head>
 <body class="{classe_proc}">

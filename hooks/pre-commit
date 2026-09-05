@@ -73,3 +73,21 @@ if [ -f "$TRAVA3" ]; then
         exit 1
     fi
 fi
+
+# Quarta trava: o CSS critico inline no <head> foi tirado do estilo.css atual.
+# Esta e a que mais precisa do hook. As outras protegem numero publicado, que
+# alguem eventualmente confere lendo a pagina. Esta protege a PRIMEIRA PINTURA:
+# se o critico envelhecer, a pagina pronta continua certa e so o primeiro
+# quadro sai errado. Ninguem descobre isso olhando o site.
+TRAVA4="$RAIZ/build/trava_critico.py"
+
+if [ -f "$TRAVA4" ]; then
+    if ! "$PY" "$TRAVA4"; then
+        echo "" >&2
+        echo "COMMIT BLOQUEADO pela trava de critico." >&2
+        echo "estilo.css mudou e o recorte inline nao foi refeito. Rode o" >&2
+        echo "extrator (build/extrai_critico.js) e regrave" >&2
+        echo "assets/critico-gerado.css, ou use --no-verify." >&2
+        exit 1
+    fi
+fi

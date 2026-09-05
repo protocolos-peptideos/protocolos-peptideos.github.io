@@ -1,98 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sobre, fonte e método — Protocolos</title>
-<meta name="description" content="De onde vieram os dados, como foram traduzidos e o que ficou de fora.">
-<meta name="robots" content="noindex, nofollow">
-<meta name="color-scheme" content="dark">
-<meta property="og:title" content="Sobre, fonte e método — Protocolos">
-<meta property="og:description" content="De onde vieram os dados, como foram traduzidos e o que ficou de fora.">
-<meta property="og:type" content="website">
-<link rel="canonical" href="https://protocolos-peptideos.github.io/sobre.html">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Sobre, fonte e método — Protocolos",
-  "description": "De onde vieram os dados, como foram traduzidos e o que ficou de fora.",
-  "url": "https://protocolos-peptideos.github.io/sobre.html",
-  "inLanguage": "pt-BR",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Protocolos",
-    "url": "https://protocolos-peptideos.github.io"
-  },
-  "dateModified": "2026-09-05"
-}
-</script>
-<link rel="preload" href="assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fontes/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
-<style>@font-face {
-font-family: 'Fraunces';
-font-style: normal;
-font-weight: 400 700;
-font-display: swap;
-src: url(assets/fontes/fraunces-latin-ext.woff2) format('woff2');
-unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-font-family: 'Fraunces';
-font-style: normal;
-font-weight: 400 700;
-font-display: swap;
-src: url(assets/fontes/fraunces-latin.woff2) format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400 700;
-font-display: swap;
-src: url(assets/fontes/inter-greek.woff2) format('woff2');
-unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-@font-face {
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400 700;
-font-display: swap;
-src: url(assets/fontes/inter-latin-ext.woff2) format('woff2');
-unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400 700;
-font-display: swap;
-src: url(assets/fontes/inter-latin.woff2) format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-font-family: 'JetBrains Mono';
-font-style: normal;
-font-weight: 400 500;
-font-display: swap;
-src: url(assets/fontes/jetbrains-mono-greek.woff2) format('woff2');
-unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-@font-face {
-font-family: 'JetBrains Mono';
-font-style: normal;
-font-weight: 400 500;
-font-display: swap;
-src: url(assets/fontes/jetbrains-mono-latin-ext.woff2) format('woff2');
-unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-font-family: 'JetBrains Mono';
-font-style: normal;
-font-weight: 400 500;
-font-display: swap;
-src: url(assets/fontes/jetbrains-mono-latin.woff2) format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+/* GERADO. Nao editar a mao.
+
+   Recorte de estilo.css: as regras que pegam acima da dobra. Vai inline no
+   <head> por build/gerar.py, para a primeira pintura nao esperar a folha
+   completa, que passa a carregar assincrona (media=print + onload).
+
+   Extraido no navegador, porque so o navegador sabe o que cai acima da dobra:
+   depende de layout resolvido, de @media que bateram e de fonte carregada.
+   Sao 7 paginas x 3 viewports (1440x900, 768x1024, 390x844). Para cada regra
+   de estilo.css, guarda se algum elemento que ela casa tem
+   getBoundingClientRect().top < altura da viewport. :root, *, html e body
+   entram sempre.
+
+   COMO REFAZER: o extrator esta em build/extrai_critico.js. Suba o site local,
+   cole o script no console e grave o resultado aqui, mantendo este cabecalho
+   e atualizando o hash abaixo.
+
+   build/trava_critico.py compara o hash com o estilo.css atual e recusa o
+   build se sairem de sincronia. Sem essa trava o erro seria silencioso: a
+   pagina pronta fica certa, so a primeira pintura fica errada.
+
+   estilo.css sha256[:16] = 14dc1b4178e8242a */
+
 :root { color-scheme: dark; --tinta: #08090B; --fundo: #0B0D11; --superficie: #111419; --superficie-2: #161A21; --superficie-3: #1D222B; --linha: #232833; --linha-forte: #2F3643; --texto: #E8EAED; --texto-suave: #A8B0BC; --texto-fraco: #7D8593; --cobre: #D08A4A; --cobre-claro: #E8A972; --cobre-fundo: rgba(208, 138, 74, 0.10); --cobre-borda: rgba(208, 138, 74, 0.28); --alerta: #E5674B; --alerta-fundo: rgba(229, 103, 75, 0.10); --alerta-borda: rgba(229, 103, 75, 0.30); --ok: #4FB08A; --ok-fundo: rgba(79, 176, 138, 0.10); --ok-borda: rgba(79, 176, 138, 0.28); --atencao: #D9B44A; --atencao-fundo: rgba(217, 180, 74, 0.10); --aferido: #B8C9DC; --aferido-rasa: rgba(184, 201, 220, 0.55); --display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif; --corpo: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; --largura: 1440px; --raio: 14px; --raio-sm: 9px; }
 * { box-sizing: border-box; }
 h1, h2, h3, .display { font-optical-sizing: auto; }
@@ -175,9 +103,9 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
 .proc-aferida thead th { border-bottom-color: var(--aferido-rasa); }
 .proc-aferida tbody td { padding: 15px 20px; }
 .tabela-rolagem { overflow-x: auto; background: linear-gradient(to right, var(--superficie) 30%, rgba(17, 20, 25, 0)) left center / 34px 100% no-repeat local,
-linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
-radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
-radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+    linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
@@ -211,88 +139,4 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 }
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
-<link rel="stylesheet" href="assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
-<noscript><link rel="stylesheet" href="assets/estilo.css"></noscript>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
-</head>
-<body class="">
-<a class="pular" href="#principal">Pular para o conteúdo</a>
-<header class="cabecalho">
-  <div class="cabecalho-in">
-    <a class="marca" href="index.html">
-      <span class="marca-icone" aria-hidden="true">P</span>
-      <span>Protocolos</span>
-    </a>
-    <nav class="nav" aria-label="Principal">
-      <a href="index.html">Compostos</a>
-      <a href="evidencia.html">Evidência</a>
-      <a href="seguranca.html">Segurança</a>
-      <a href="sobre.html" aria-current="page">Sobre</a>
-    </nav>
-  </div>
-</header>
-<div class="env">
-
-<main id="principal" class="env-largo" style="max-width:800px;padding-top:52px;padding-bottom:80px">
-<h1 style="font-family:var(--display);font-size:clamp(32px,4.6vw,44px);font-weight:600;letter-spacing:-.026em;margin:0 0 22px">Sobre, fonte e método</h1>
-<div class="conteudo" style="padding:0">
-
-<h2>O que é isto</h2>
-<p>Uma referência pessoal, em português, sobre protocolos de peptídeos e compostos correlatos. Foi montada porque o material sério sobre o assunto está quase todo em inglês e quase sempre misturado com página de venda.</p>
-
-<h2>Fonte</h2>
-<p>Os dados de protocolo — dose, titulação, reconstituição, estrutura de ciclo, status regulatório — foram compilados de <a href="https://www.peptidedosingprotocols.com/" rel="nofollow noopener" target="_blank">peptidedosingprotocols.com</a>, acesso em 3 de setembro de 2026. É uma fonte secundária de caráter comercial, não uma publicação revisada por pares. Isso está dito em cada página, e não é detalhe: significa que a confiabilidade de tudo aqui está limitada pela confiabilidade dela.</p>
-
-<h2>Como foi traduzido</h2>
-<ul>
-  <li><strong>Os números não foram retipados.</strong> Todo valor de dose, volume, concentração e duração foi transportado por script, célula a célula. O que mudou foi o separador decimal (ponto para vírgula) e a unidade escrita por extenso. Isso é deliberado: retipar dose à mão é como se erra dose.</li>
-  <li><strong>Os textos em português são autorais.</strong> Resumos, alertas e as seções de segurança foram escritos do zero a partir da leitura da fonte, e não traduzidos linha a linha. São mais curtos que o original.</li>
-  <li><strong>Tabela que não passou no portão de tradução foi descartada</strong>, não publicada pela metade. Das 392 tabelas extraídas, 392 foram publicadas e 0 foram descartadas por não atingirem o critério.</li>
-  <li><strong>Todo conteúdo comercial foi removido:</strong> links de fornecedor, cupons, seções de "onde comprar" e recomendações de loja.</li>
-</ul>
-
-<h2>O que ficou de fora, e por quê</h2>
-<ul>
-  <li><strong>Fontes primárias, nas páginas importadas.</strong> Nas páginas de protocolo que vêm da fonte secundária, nenhum artigo do PubMed, registro de ensaio ou bula foi aberto para conferir os números: a checagem foi contra a fonte, e só. Isso continua sendo a limitação principal desta referência.<br><strong>As páginas de <a href="evidencia.html">evidência verificada</a> são a exceção, e existem justamente para corrigir isso</strong> — nelas cada número foi levantado por mim no PubMed, no ClinicalTrials.gov, na bula da ANVISA ou na lista da WADA, com a consulta declarada na própria página. As duas coisas não têm o mesmo peso, e estão marcadas de forma diferente em todo o site.</li>
-  <li><strong>Seções de calculadora interativa.</strong> A fonte tem widgets de cálculo de dose; eles não foram reproduzidos, para não dar aparência de precisão a uma conta que depende de conferir o frasco na mão.</li>
-  <li><strong>Fornecedores e preços.</strong> Deliberadamente fora.</li>
-</ul>
-
-<h2>Direitos</h2>
-<p>Valores numéricos de protocolo são fatos e não são objeto de direito autoral. A organização, os textos em português e o projeto visual desta referência são autorais. A fonte está creditada com link em todas as páginas. Este é um site pessoal, sem publicidade, sem afiliação e sem finalidade comercial. Havendo pedido justificado do detentor dos direitos da fonte, o material sai do ar.</p>
-
-<h2>Estado desta compilação</h2>
-<p>Compilado em 3 de setembro de 2026, cobrindo 76 compostos e combinações. Protocolo de peptídeo muda rápido, e o status regulatório muda mais rápido ainda — várias datas de Categoria 2 da FDA citadas aqui têm revisão marcada para 2026. Confira antes de tratar qualquer status como atual.</p>
-
-</div>
-</main>
-</div>
-<footer class="rodape">
-  <div class="rodape-in">
-    <div>
-      <p class="rodape-titulo">Protocolos</p>
-      <p>Referência em português sobre peptídeos, nootrópicos, SARMs e correlatos: dose, ciclo, status regulatório e o limite da evidência de cada um. Material educacional e experimental — não substitui avaliação médica.</p>
-      <p style="margin-top:14px">Compilado em 3 de setembro de 2026.</p>
-    </div>
-    <nav aria-label="Navegar">
-      <p class="rodape-titulo">Navegar</p>
-      <ul>
-        <li><a href="index.html">Todos os compostos</a></li>
-        <li><a href="seguranca.html">Segurança e limites</a></li>
-        <li><a href="sobre.html">Sobre, fonte e método</a></li>
-      </ul>
-    </nav>
-    <div>
-      <p class="rodape-titulo">Aviso</p>
-      <ul>
-        <li>Não é aconselhamento médico</li>
-        <li>Sem registro na ANVISA</li>
-        <li>Uso experimental</li>
-        <li>Dose de comunidade ≠ dose validada</li>
-      </ul>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
