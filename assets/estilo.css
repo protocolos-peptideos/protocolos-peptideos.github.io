@@ -3,11 +3,19 @@
    Escuro, editorial, com acento de cobre (referência ao GHK-Cu).
    ========================================================================= */
 
-/* O @import daqui saiu em 05/09/2026. Ele serializa: o navegador precisava
-   baixar e parsear esta folha inteira antes de descobrir que havia fonte para
-   buscar. Medido no ar: estilo.css terminava em 271ms e o CSS das fontes só
-   começava em 272ms. O <link> agora vive no <head> gerado por build/gerar.py,
-   com preconnect, e sai em paralelo com esta folha. */
+/* As fontes não vêm mais do Google. Duas mudanças em 05/09/2026, nesta ordem:
+
+   1. O @import daqui saiu. Ele serializava: o navegador precisava baixar e
+      parsear esta folha inteira antes de descobrir que havia fonte para buscar.
+      Medido no ar: estilo.css terminava em 271ms e o CSS das fontes só começava
+      em 272ms.
+   2. As fontes passaram a morar no repositório, em assets/fontes/. Os blocos
+      @font-face estão em assets/fontes-gerado.css, escrito por
+      build/baixa_fontes.py, e o <head> de build/gerar.py faz preload dos dois
+      arquivos latin que aparecem acima da dobra.
+
+   Fraunces, Inter e JetBrains Mono são OFL 1.1. As três licenças estão em
+   assets/fontes/, verbatim, como a OFL exige de quem redistribui. */
 
 :root {
   color-scheme: dark;

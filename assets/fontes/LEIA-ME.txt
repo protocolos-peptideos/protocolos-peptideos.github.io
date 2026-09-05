@@ -1,0 +1,13 @@
+Fontes hospedadas neste repositorio.
+
+Baixadas do Google Fonts em 05/09/2026 por build/baixa_fontes.py, na forma
+variavel, nos subsets latin, latin-ext e greek.
+
+  Fraunces        OFL-Fraunces.txt
+  Inter           OFL-Inter.txt
+  JetBrains Mono  OFL-JetBrainsMono.txt
+
+As tres estao sob a SIL Open Font License 1.1. Cada arquivo de licenca esta
+aqui verbatim, como veio do repositorio google/fonts, sem edicao. Os textos
+diferem entre si em pontos cosmeticos (http contra https no link do FAQ,
+quebra de linha), por isso nao foram unificados em um arquivo so.
