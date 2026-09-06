@@ -28,7 +28,13 @@ def main():
     if not CRITICO.exists():
         sys.exit("trava de critico: assets/critico-gerado.css nao existe")
 
-    atual = hashlib.sha256(ESTILO.read_bytes()).hexdigest()[:16]
+    # Normaliza CRLF antes de somar. Este repositorio roda com
+    # core.autocrlf=true: o git faz checkout do estilo.css com CRLF, e um hash
+    # sobre os bytes crus mudaria a cada clone sem que uma linha de CSS
+    # mudasse. A trava acusaria um recorte velho que na verdade esta em dia --
+    # e o remedio (refazer o recorte) nao arrumaria nada. O .gitattributes ja
+    # traz a cicatriz do mesmo problema no shebang do hook.
+    atual = hashlib.sha256(ESTILO.read_bytes().replace(b"\r\n", b"\n")).hexdigest()[:16]
     texto = CRITICO.read_text(encoding="utf-8")
     m = re.search(r"estilo\.css sha256\[:16\] = ([0-9a-f]{16})", texto)
     if not m:
