@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -255,7 +256,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Eixo do hormônio do crescimento</div>
 <div class="artigo-cabeca">
   <h1>Ipamorelina</h1>
@@ -284,8 +285,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Protocolo e esquema de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Protocolo e esquema de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Horário</th><th>Dose diária</th><th>Frequência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Horário</th><th scope="col">Dose diária</th><th scope="col">Frequência</th></tr></thead>
     <tbody>
       <tr><td>Assessment</td><td>Semana 1</td><td class="num">100 mcg/dia</td><td>1× antes de dormir, em jejum</td></tr>
       <tr><td>titulação</td><td>Semanas 2–3</td><td class="num">200 mcg/dia</td><td>1x bedtime, ou dividida 100 mcg AM + 100 mcg PM</td></tr>
@@ -297,8 +298,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Dose por dia</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Dose por dia</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Quantidade por vez</th><th>Frequência</th><th>Calculated diário total</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Quantidade por vez</th><th scope="col">Frequência</th><th scope="col">Calculated diário total</th></tr></thead>
     <tbody>
       <tr><td>100 mcg</td><td>1×/dia</td><td class="num">100 mcg/dia</td></tr>
       <tr><td>100 mcg</td><td>2×/dia</td><td class="num">200 mcg/dia</td></tr>
@@ -309,8 +310,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Frascos de ipamorelina: 2 mg vs. 5 mg vs. 10 mg</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Frascos de ipamorelina: 2 mg vs. 5 mg vs. 10 mg</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Total amount in frasco</th><th>O que muda</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Total amount in frasco</th><th scope="col">O que muda</th></tr></thead>
     <tbody>
       <tr><td>2 mg</td><td class="num">2.000 mcg</td><td>Material total disponível</td></tr>
       <tr><td>5 mg</td><td class="num">5.000 mcg</td><td>Material total disponível</td></tr>
@@ -320,8 +321,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Dose em mL e em unidades da seringa U-100</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Dose em mL e em unidades da seringa U-100</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>100 mcg</th><th>200 mcg</th><th>300 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">100 mcg</th><th scope="col">200 mcg</th><th scope="col">300 mcg</th></tr></thead>
     <tbody>
       <tr><td>2 mg</td><td class="num">1,0 mL</td><td class="num">2.000 mcg/mL</td><td class="num">0,05 mL (5 unidades)</td><td class="num">0,10 mL (10 unidades)</td><td class="num">0,15 mL (15 unidades)</td></tr>
       <tr><td>5 mg</td><td class="num">2,0 mL</td><td class="num">2.500 mcg/mL</td><td class="num">0,04 mL (4 unidades)</td><td class="num">0,08 mL (8 unidades)</td><td class="num">0,12 mL (12 unidades)</td></tr>
@@ -331,8 +332,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Ipamorelin Tabela de doses</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Ipamorelin Tabela de doses</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Contexto de pesquisa</th><th>Quantidade por administração</th><th>diário total</th><th>Frequência</th><th>Horário</th><th>Nível de evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Contexto de pesquisa</th><th scope="col">Quantidade por administração</th><th scope="col">diário total</th><th scope="col">Frequência</th><th scope="col">Horário</th><th scope="col">Nível de evidência</th></tr></thead>
     <tbody>
       <tr><td>Esquema de avaliação</td><td class="num">100 mcg</td><td class="num">100 mcg/dia</td><td>1×/dia</td><td>Antes de dormir, em jejum</td><td>Relatado pela comunidade</td></tr>
       <tr><td>Esquema de titulação dividida</td><td class="num">100 mcg</td><td class="num">200 mcg/dia</td><td>2×/dia</td><td>AM fasted e bedtime</td><td>Relatado pela comunidade</td></tr>
@@ -343,8 +344,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">Ipamorelin Linha do tempo e o que monitorar</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Ipamorelin Linha do tempo e o que monitorar</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Janela</th><th>O que as pessoas relatam</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Janela</th><th scope="col">O que as pessoas relatam</th></tr></thead>
     <tbody>
       <tr><td>Aplicação única</td><td>30-40 min</td><td>O GH atinge o pico. Nenhuma sensação perceptível nas doses padrão. Alguns relatam leve sensação de pulso ou plenitude.</td></tr>
       <tr><td>Dias 1–7</td><td>Sinal precoce</td><td>Dor de cabeça leve ou formigamento são possíveis. Alguns relatam sono mais profundo com dose antes de dormir.</td></tr>
@@ -356,8 +357,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">Ipamorelina vs. GHRP-2 e GHRP-6</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Ipamorelina vs. GHRP-2 e GHRP-6</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>Ipamorelin</th><th>GHRP-2</th><th>GHRP-6</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">Item</th><th scope="col">Ipamorelin</th><th scope="col">GHRP-2</th><th scope="col">GHRP-6</th></tr></thead>
     <tbody>
       <tr><td>Receptor</td><td>GHS-R1a</td><td>GHS-R1a</td><td>GHS-R1a</td></tr>
       <tr><td>Meia-vida</td><td class="num">~2 h</td><td>~25-30 min</td><td>~20-30 min</td></tr>
@@ -372,8 +373,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">Tabela de ciclo: 8 vs. 12 vs. 16 semanas</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Tabela de ciclo: 8 vs. 12 vs. 16 semanas</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>ciclo length</th><th>Como costuma ser descrito</th><th>Evidência publicada de ipamorelina</th><th>Nível de evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">ciclo length</th><th scope="col">Como costuma ser descrito</th><th scope="col">Evidência publicada de ipamorelina</th><th scope="col">Nível de evidência</th></tr></thead>
     <tbody>
       <tr><td>8 semanas</td><td>Shorter community ciclo</td><td>No human trial established an de 8 semanas SC ciclo</td><td>Community convention</td></tr>
       <tr><td>12 semanas</td><td>Common community ciclo endpoint</td><td>No human trial established a de 12 semanas SC ciclo</td><td>Community convention</td></tr>
@@ -385,8 +386,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab8">Meia-vida vs. duração do ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Meia-vida vs. duração do ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Term</th><th>O que significa</th><th>O que a evidência diz</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab8">
+    <thead><tr><th scope="col">Term</th><th scope="col">O que significa</th><th scope="col">O que a evidência diz</th></tr></thead>
     <tbody>
       <tr><td>Meia-vida</td><td>Tempo ligado à eliminação do fármaco</td><td>Cerca de 2 h após a infusão intravenosa, no estudo humano de 1999</td></tr>
       <tr><td>Janela de resposta do GH</td><td>Resposta hormonal curta após a exposição</td><td>O GH teve pico por volta de 0,67 h no estudo intravenoso de 1999</td></tr>
@@ -397,8 +398,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab9">Evidência publicada vs. esquemas de ciclo da comunidade</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Evidência publicada vs. esquemas de ciclo da comunidade</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Claim</th><th>Situação da evidência</th><th>Como apresentar</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab9">
+    <thead><tr><th scope="col">Claim</th><th scope="col">Situação da evidência</th><th scope="col">Como apresentar</th></tr></thead>
     <tbody>
       <tr><td>A ipamorelina tem dados humanos de farmacocinética e farmacodinâmica</td><td>Supported</td><td>Pesquisa humana publicada por via intravenosa</td></tr>
       <tr><td>A ipamorelina foi estudada com doses repetidas após cirurgia intestinal</td><td>Supported</td><td>Pesquisa de fase II por via intravenosa</td></tr>

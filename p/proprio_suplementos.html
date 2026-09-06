@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -250,7 +251,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Suplementos e correlatos</div>
 <div class="artigo-cabeca">
   <h1>Suplementos de venda livre</h1>
@@ -279,8 +280,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   <li><strong>Ferro:</strong> só faz sentido com deficiência comprovada em exame. Suplementar ferro sem deficiência é acumular um metal pró-oxidante sem ganho nenhum, e pode mascarar a investigação de uma causa de anemia.</li>
 </ul>
 <h2 id="sec2">Vitaminas e minerais</h2>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Item</th><th>Faixa usual</th><th>Para quê</th><th>ECR/meta</th><th>Ressalva</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec2">
+  <thead><tr><th scope="col">Item</th><th scope="col">Faixa usual</th><th scope="col">Para quê</th><th scope="col">ECR/meta</th><th scope="col">Ressalva</th></tr></thead>
   <tbody>
     <tr><td>Vitamina D3</td><td>1.000–4.000 UI/dia</td><td>Deficiência, saúde óssea, imunidade</td><td><strong>3.625</strong></td><td>4.000 UI/dia é o limite superior tolerável do IOM. A apresentação de 5.000 UI passa dele — dosar 25-OH-vitamina D antes</td></tr>
     <tr><td>Vitamina D3 + K2</td><td>D3 conforme acima + K2 (MK-7) 90–200 mcg</td><td>Direcionamento do cálcio para o osso</td><td><strong>116</strong></td><td><strong>K2 interage com varfarina.</strong> Quem anticoagula com cumarínico não usa sem orientação</td></tr>
@@ -296,8 +297,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <tr><td>Boro</td><td>3–10 mg/dia</td><td>Testosterona livre, metabolismo ósseo</td><td><strong>13</strong></td><td>Estudos pequenos. Limite superior 20 mg/dia</td></tr>
   </tbody></table></div></div>
 <h2 id="sec3">Desempenho e músculo</h2>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Item</th><th>Faixa usual</th><th>Para quê</th><th>ECR/meta</th><th>Ressalva</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec3">
+  <thead><tr><th scope="col">Item</th><th scope="col">Faixa usual</th><th scope="col">Para quê</th><th scope="col">ECR/meta</th><th scope="col">Ressalva</th></tr></thead>
   <tbody>
     <tr><td>Creatina monoidratada</td><td>3–5 g/dia. Saturação opcional: 20 g/dia divididos, por 5–7 dias</td><td>Força, potência, massa magra, cognição</td><td><strong>878</strong></td><td><strong>É o suplemento esportivo mais bem estudado que existe.</strong> Eleva a creatinina sérica sem lesão renal: avise quem for ler seu exame. Não precisa de ciclo nem de pausa</td></tr>
     <tr><td>L-glutamina</td><td>5–10 g/dia</td><td>Recuperação, barreira intestinal</td><td><strong>207</strong></td><td>A evidência boa é em paciente crítico e queimado, não em quem treina</td></tr>
@@ -308,8 +309,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <tr><td>MSM (metilsulfonilmetano)</td><td>1,5–3 g/dia</td><td>Dor articular, inflamação</td><td><strong>23</strong></td><td>Base modesta. Bem tolerado, efeito pequeno quando aparece</td></tr>
   </tbody></table></div></div>
 <h2 id="sec4">Sono, humor e cognição</h2>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Item</th><th>Faixa usual</th><th>Para quê</th><th>ECR/meta</th><th>Ressalva</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec4">
+  <thead><tr><th scope="col">Item</th><th scope="col">Faixa usual</th><th scope="col">Para quê</th><th scope="col">ECR/meta</th><th scope="col">Ressalva</th></tr></thead>
   <tbody>
     <tr><td>Melatonina</td><td>0,5–3 mg, 30–60 min antes de dormir</td><td>Latência do sono, ajuste de fuso</td><td><strong>773</strong></td><td>Base ampla, melhor para fuso e atraso de fase. <strong>ANVISA limita a 0,21 mg/dia como suplemento.</strong> Dose menor costuma funcionar melhor que dose alta</td></tr>
     <tr><td>Glicina</td><td>3 g antes de dormir</td><td>Qualidade do sono, temperatura corporal</td><td><strong>5</strong></td><td>Só cinco. Os estudos são consistentes e de risco baixo, mas a base é fina — menor do que a fama sugere</td></tr>
@@ -321,8 +322,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <tr><td>Lecitina de soja</td><td>1–2 g/dia</td><td>Fonte de colina e fosfolipídio</td><td><strong>18</strong></td><td>Fonte barata de colina; efeito próprio pouco demonstrado</td></tr>
   </tbody></table></div></div>
 <h2 id="sec5">Longevidade e metabolismo</h2>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Item</th><th>Faixa usual</th><th>Para quê</th><th>ECR/meta</th><th>Ressalva</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec5">
+  <thead><tr><th scope="col">Item</th><th scope="col">Faixa usual</th><th scope="col">Para quê</th><th scope="col">ECR/meta</th><th scope="col">Ressalva</th></tr></thead>
   <tbody>
     <tr><td>Coenzima Q10</td><td>100–300 mg/dia, com refeição gordurosa</td><td>Mitocôndria, miopatia por estatina</td><td><strong>657</strong></td><td>Base ampla. Absorção depende de gordura junto. Pode reduzir efeito da varfarina</td></tr>
     <tr><td>Ubiquinol (CoQ10 reduzido)</td><td>100–200 mg/dia</td><td>Mesma finalidade, forma reduzida</td><td>incluído na contagem da CoQ10</td><td>Melhor absorção alegada, sobretudo acima dos 40 anos. Custa mais</td></tr>
@@ -336,8 +337,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <tr><td>Astaxantina</td><td>4–12 mg/dia</td><td>Antioxidante, pele, olho</td><td><strong>106</strong></td><td>Base melhor do que a fama de nicho sugere. Carotenoide lipossolúvel: tomar com gordura</td></tr>
   </tbody></table></div></div>
 <h2 id="sec6">Intestino e fígado</h2>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Item</th><th>Faixa usual</th><th>Para quê</th><th>ECR/meta</th><th>Ressalva</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec6">
+  <thead><tr><th scope="col">Item</th><th scope="col">Faixa usual</th><th scope="col">Para quê</th><th scope="col">ECR/meta</th><th scope="col">Ressalva</th></tr></thead>
   <tbody>
     <tr><td>Ômega-3 (EPA + DHA)</td><td>1–3 g/dia de EPA + DHA somados</td><td>Triglicerídeos, inflamação, cardiovascular</td><td><strong>2.597</strong></td><td>Base enorme, mais forte para triglicerídeos. Ler o rótulo pelo teor de EPA+DHA, não pelo peso da cápsula. Dose alta aumenta tempo de sangramento</td></tr>
     <tr><td>Probiótico multicepas</td><td>1–50 bilhões de UFC/dia</td><td>Microbiota, digestão</td><td><strong>5.248</strong></td><td>O maior número desta página — e o mais enganoso: <strong>o efeito é cepa-específica e não se transfere</strong>. <strong>Cautela em imunossuprimido</strong></td></tr>

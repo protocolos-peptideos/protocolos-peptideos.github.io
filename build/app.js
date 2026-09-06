@@ -16,6 +16,7 @@
   var campoCat = document.getElementById('par-cat');
   var campoAnv = document.getElementById('par-anv');
   var vazio = document.getElementById('vazio');
+  var contagem = document.getElementById('contagem-filtro');
   if (!busca || !filtros) return;
   var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-busca]'));
   var secoes = Array.prototype.slice.call(document.querySelectorAll('[data-secao]'));
@@ -49,6 +50,14 @@
       s.hidden = s.querySelectorAll('.card:not([hidden])').length === 0;
     });
     if (vazio) vazio.hidden = achou !== 0;
+    // A frase inteira, nao so o numero: "7" solto nao diz nada quando lido
+    // fora de contexto. E so escreve se mudou, para nao repetir o anuncio.
+    if (contagem) {
+      var frase = achou === 0 ? 'Nenhum composto corresponde à busca.'
+                : achou === cards.length ? 'Mostrando todos os ' + cards.length + ' compostos.'
+                : 'Mostrando ' + achou + ' de ' + cards.length + ' compostos.';
+      if (contagem.textContent !== frase) contagem.textContent = frase;
+    }
     if (campoCat) campoCat.value = cat;
     if (campoAnv) campoAnv.value = anv;
     return achou;

@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -254,7 +255,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Combinações</div>
 <div class="artigo-cabeca">
   <h1>Wolverine</h1>
@@ -282,8 +283,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Dose e frequência em resumo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Dose e frequência em resumo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Total diário Blend</th><th>Quantidade de BPC-157</th><th>Quantidade de TB-500</th><th>Frequência comum</th><th>Unidades a partir do frasco de 20 mg + 2 mL</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Total diário Blend</th><th scope="col">Quantidade de BPC-157</th><th scope="col">Quantidade de TB-500</th><th scope="col">Frequência comum</th><th scope="col">Unidades a partir do frasco de 20 mg + 2 mL</th></tr></thead>
     <tbody>
       <tr><td>0,5 mg no total</td><td class="num">250 mcg</td><td class="num">250 mcg</td><td>Comumente descrito como diário</td><td class="num">5 unidades</td></tr>
       <tr><td>1,0 mg total</td><td class="num">500 mcg</td><td class="num">500 mcg</td><td>Comumente descrito como diário</td><td class="num">10 unidades</td></tr>
@@ -294,8 +295,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Frasco pré-misturado vs. frascos separados: qual formato cabe no plano</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Frasco pré-misturado vs. frascos separados: qual formato cabe no plano</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Factor</th><th>Frasco pré-misturado 1:1</th><th>Frascos separados</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Factor</th><th scope="col">Frasco pré-misturado 1:1</th><th scope="col">Frascos separados</th></tr></thead>
     <tbody>
       <tr><td>diário injeção burden</td><td>1 injeção (combined)</td><td>1–2 injeções (conforme o dia)</td></tr>
       <tr><td>Dose control</td><td>Fixo em 1:1 de BPC-157 : TB-500</td><td>Independent BPC-157 e TB-500 doses</td></tr>
@@ -308,8 +309,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Reconstituição e unidades de seringa</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Reconstituição e unidades de seringa</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Blend frasco</th><th>Exemplo de água bacteriostática</th><th>Total Concentration</th><th>5 unidades Delivers</th><th>10 unidades Delivers</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Blend frasco</th><th scope="col">Exemplo de água bacteriostática</th><th scope="col">Total Concentration</th><th scope="col">5 unidades Delivers</th><th scope="col">10 unidades Delivers</th></tr></thead>
     <tbody>
       <tr><td>10 mg no total: 5 mg + 5 mg</td><td class="num">1 mL</td><td class="num">10 mg/mL no total</td><td class="num">0,5 mg no total</td><td class="num">1 mg total</td></tr>
       <tr><td>10 mg no total: 5 mg + 5 mg</td><td class="num">2 mL</td><td class="num">5 mg/mL no total</td><td class="num">0,25 mg total</td><td class="num">0,5 mg no total</td></tr>
@@ -320,8 +321,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Reconstituição por formato</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Reconstituição por formato</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Spec</th><th>Valor</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Spec</th><th scope="col">Valor</th></tr></thead>
     <tbody>
       <tr><td>Frasco</td><td class="num">20 mg no total (10 mg de BPC-157 + 10 mg de TB-500)</td></tr>
       <tr><td>Água bacteriostática</td><td class="num">2,0 mL</td></tr>
@@ -334,8 +335,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Reconstituição por formato</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Reconstituição por formato</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Spec</th><th>BPC-157 (frasco de 10 mg)</th><th>TB-500 (frasco de 10 mg)</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Spec</th><th scope="col">BPC-157 (frasco de 10 mg)</th><th scope="col">TB-500 (frasco de 10 mg)</th></tr></thead>
     <tbody>
       <tr><td>Água bacteriostática</td><td class="num">2,0 mL</td><td class="num">2,0 mL</td></tr>
       <tr><td>Concentração final</td><td class="num">5,0 mg/mL</td><td class="num">5,0 mg/mL</td></tr>
@@ -347,8 +348,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">Duração de ciclo: esquemas de comunidade de 6–12 semanas</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Duração de ciclo: esquemas de comunidade de 6–12 semanas</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>ataque</th><th>Manutenção</th><th>Total ciclo</th><th>Contexto comum</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">ataque</th><th scope="col">Manutenção</th><th scope="col">Total ciclo</th><th scope="col">Contexto comum</th></tr></thead>
     <tbody>
       <tr><td>Pre-blended diário</td><td>—</td><td>0,5–2,0 mg da blend total diário</td><td>6–12 semanas</td><td>Prioriza conveniência, exposição estável</td></tr>
       <tr><td>Frascos separados, padrão</td><td>Semanas 1–4</td><td>Semanas 5–8</td><td>8–12 semanas</td><td>ataque seguido de desmame, para planejamento de lesão</td></tr>
@@ -358,8 +359,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">Combinação Wolverine vs. compostos isolados vs. outras combinações de reparo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Combinação Wolverine vs. compostos isolados vs. outras combinações de reparo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Combinação / composto</th><th>Compounds</th><th>Foco principal da pesquisa</th><th>Nota sobre o formato</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">Combinação / composto</th><th scope="col">Compounds</th><th scope="col">Foco principal da pesquisa</th><th scope="col">Nota sobre o formato</th></tr></thead>
     <tbody>
       <tr><td>Combinação Wolverine</td><td>BPC-157 + TB-500</td><td>Reparo de tecido mole, tendão e sistêmico</td><td>1:1 pre-blend ou separate vials</td></tr>
       <tr><td>BPC-157 isolado</td><td>BPC-157</td><td>Local da lesão e trato digestivo</td><td>Frasco único de 5 mg é o típico</td></tr>
@@ -371,8 +372,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">Tabela de duração de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Tabela de duração de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>ciclo length</th><th>Como é geralmente descrito</th><th>Nota sobre a evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">ciclo length</th><th scope="col">Como é geralmente descrito</th><th scope="col">Nota sobre a evidência</th></tr></thead>
     <tbody>
       <tr><td>4–6 semanas</td><td>Short focused ciclo ou early ataque-only plan</td><td>Common in community discussions; not tested as a combined clinical protocol</td></tr>
       <tr><td>6–8 semanas</td><td>Most common full ciclo with ataque e manutenção phases</td><td>Community standard; no controlled human trial</td></tr>
@@ -383,8 +384,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab8">Ciclos com frasco pré-misturado vs. frascos separados</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Ciclos com frasco pré-misturado vs. frascos separados</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Formato</th><th>Padrão de esquema comum</th><th>Main limitation</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab8">
+    <thead><tr><th scope="col">Formato</th><th scope="col">Padrão de esquema comum</th><th scope="col">Main limitation</th></tr></thead>
     <tbody>
       <tr><td>Frasco pré-misturado 1:1</td><td>One combined draw on a regular schedule across the ciclo</td><td>The dose ratio stays fixed, so one compound cannot be changed without changing the other</td></tr>
       <tr><td>Separate BPC-157 e TB-500 vials</td><td>diário BPC-157 with less frequent TB-500, often followed by a lower-frequency phase</td><td>More complex math e more chances for schedule errors</td></tr>

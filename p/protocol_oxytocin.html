@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -249,7 +250,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Hormonal e sexual</div>
 <div class="artigo-cabeca">
   <h1>Ocitocina</h1>
@@ -278,8 +279,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Formatos de protocolo em pesquisa</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Formatos de protocolo em pesquisa</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Contexto do ensaio</th><th>Dose por sessão</th><th>Frequência no ensaio</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Contexto do ensaio</th><th scope="col">Dose por sessão</th><th scope="col">Frequência no ensaio</th></tr></thead>
     <tbody>
       <tr><td>Estudos de dose única em cognição social</td><td>24 IU</td><td>1x</td></tr>
       <tr><td>Dose-response brain imaging</td><td>9, 18, ou 36 IU</td><td>1x</td></tr>
@@ -290,8 +291,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Formatos de protocolo em pesquisa</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Formatos de protocolo em pesquisa</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Faixa</th><th>Quantidade por dose</th><th>Frequência vista nos protocolos</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Faixa</th><th scope="col">Quantidade por dose</th><th scope="col">Frequência vista nos protocolos</th></tr></thead>
     <tbody>
       <tr><td>Baixo</td><td class="num">100 mcg</td><td>1×/dia</td></tr>
       <tr><td>Moderado</td><td>200-300 mcg</td><td>1×/dia</td></tr>
@@ -301,8 +302,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Oxytocin Linha do tempo e o que monitorar</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Oxytocin Linha do tempo e o que monitorar</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Endpoint</th><th>Tipo de estudo</th><th>Horário</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Endpoint</th><th scope="col">Tipo de estudo</th><th scope="col">Horário</th></tr></thead>
     <tbody>
       <tr><td>Pico plasmático após IV</td><td>Estudo de farmacocinética</td><td>Em minutos</td></tr>
       <tr><td>Pico plasmático após intranasal</td><td>Estudo de farmacocinética</td><td>~15-30 min</td></tr>
@@ -314,8 +315,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Ocitocina vs. Pitocin vs. Syntocinon vs. kisspeptina</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Ocitocina vs. Pitocin vs. Syntocinon vs. kisspeptina</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Name</th><th>O que é</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Name</th><th scope="col">O que é</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Oxytocin</td><td>Hormônio peptídico endógeno; sintetizado para uso clínico</td><td>Fármaco obstétrico aprovado pela FDA (IV/IM); investigacional nas demais vias.</td></tr>
       <tr><td>Pitocin</td><td>Nome comercial nos EUA para a ocitocina sintética injetável</td><td>Mesma molécula da ocitocina USP.</td></tr>

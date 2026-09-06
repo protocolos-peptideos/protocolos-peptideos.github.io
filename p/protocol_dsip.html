@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -249,7 +250,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Neuro e cognição</div>
 <div class="artigo-cabeca">
   <h1>DSIP</h1>
@@ -278,8 +279,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Protocolo e esquema de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Protocolo e esquema de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Pattern</th><th>Faixa típica</th><th>Via</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Pattern</th><th scope="col">Faixa típica</th><th scope="col">Via</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Ensaios humanos mais antigos</td><td>25 nmol/kg</td><td>IV</td><td>Cursos curtos de 4 a 7 noites; publicados entre 1981 e 1987 em insones crônicos de meia-idade.</td></tr>
       <tr><td>Planejamento em faixa mais baixa</td><td>100-200 mcg</td><td>Subcutânea</td><td>Faixa mais comum na comunidade; descrita em relatos, não em ensaios clínicos.</td></tr>
@@ -289,8 +290,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Diretrizes de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Diretrizes de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>Duração</th><th>Ponto de revisão</th><th>Contexto típico</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">Duração</th><th scope="col">Ponto de revisão</th><th scope="col">Contexto típico</th></tr></thead>
     <tbody>
       <tr><td>Curso curto</td><td>5-7 nights</td><td>Fim da semana 1</td><td>Espelha as janelas dos ensaios humanos publicados.</td></tr>
       <tr><td>Standard ciclo</td><td>4 semanas</td><td>Semana 4</td><td>Contexto de planejamento geral.</td></tr>
@@ -300,8 +301,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">DSIP Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">DSIP Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>Aspiração de 100 mcg</th><th>Aspiração de 200 mcg</th><th>Aspiração de 300 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">Aspiração de 100 mcg</th><th scope="col">Aspiração de 200 mcg</th><th scope="col">Aspiração de 300 mcg</th></tr></thead>
     <tbody>
       <tr><td>10 mg</td><td class="num">2,0 mL</td><td class="num">5,0 mg/mL (5.000 mcg/mL)</td><td class="num">0,02 mL = 2 unidades</td><td class="num">0,04 mL = 4 unidades</td><td class="num">0,06 mL = 6 unidades</td></tr>
     </tbody></table></div>
@@ -309,8 +310,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">DSIP vs. melatonina vs. epitalon vs. benzodiazepínicos</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">DSIP vs. melatonina vs. epitalon vs. benzodiazepínicos</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Composto</th><th>O que é</th><th>Mecanismo (em linguagem direta)</th><th>Status regulatório (EUA)</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Composto</th><th scope="col">O que é</th><th scope="col">Mecanismo (em linguagem direta)</th><th scope="col">Status regulatório (EUA)</th></tr></thead>
     <tbody>
       <tr><td>DSIP</td><td>Nonapeptide</td><td>Modula a arquitetura do sono; não é sedativo.</td><td>Não aprovado pela FDA · Categoria 2 (2023) · PCAC em julho de 2026</td></tr>
       <tr><td>Melatonin</td><td>Suplemento hormonal</td><td>Desloca o horário do sono pelo sistema circadiano.</td><td>Suplemento de venda livre</td></tr>

@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -256,7 +257,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>Álcool e esteatose</h1>
@@ -282,8 +283,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec1">A nomenclatura mudou em 2023, e a mudança não é cosmética</h2>
 <p>Se você procurar "esteatose hepática não alcoólica" ou "NAFLD", vai achar literatura abundante e desatualizada no nome. Em 2023, um consenso Delphi multissociedade — reunindo a associação americana, a europeia e a latino-americana de estudo do fígado — trocou a terminologia inteira.</p>
 <p>O motivo é mais interessante que a troca. O nome antigo definia a doença pelo que ela <em>não</em> era: não alcoólica. Isso obrigava a excluir quem bebia — e criava um limbo para a maioria real das pessoas, que tem disfunção metabólica <strong>e</strong> bebe. A nova classificação parou de tratar as duas causas como excludentes.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Sigla</th><th>Nome</th><th>O que define</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec1">
+  <thead><tr><th scope="col">Sigla</th><th scope="col">Nome</th><th scope="col">O que define</th></tr></thead>
   <tbody>
     <tr><td>SLD</td><td>Doença hepática esteatótica</td><td>Termo guarda-chuva: qualquer acúmulo de gordura no fígado, de qualquer causa</td></tr>
     <tr><td><strong>MASLD</strong></td><td>Esteatose associada a disfunção metabólica</td><td>Gordura no fígado + <strong>pelo menos um</strong> dos cinco fatores de risco cardiometabólico, sem outra causa identificável. Substituiu a sigla NAFLD</td></tr>
@@ -294,8 +295,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec2">Os números que definem o MetALD, e o que eles são em copos</h2>
 <p>O consenso fixou a faixa em gramas de álcool por semana: <strong>140 a 350 g para mulheres</strong> e <strong>210 a 420 g para homens</strong>. Grama de álcool não é unidade que alguém use no sábado à noite, então converto — declarando a conta, porque a conta é minha e não do consenso.</p>
 <p>O NIAAA define <strong>dose padrão como 14 g de álcool puro</strong>. Dividindo uma coisa pela outra:</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th></th><th>Gramas por dia (consenso)</th><th>Gramas por semana (consenso)</th><th>Doses padrão por semana (conta minha)</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec2">
+  <thead><tr><th scope="col"></th><th scope="col">Gramas por dia (consenso)</th><th scope="col">Gramas por semana (consenso)</th><th scope="col">Doses padrão por semana (conta minha)</th></tr></thead>
   <tbody>
     <tr><td>Mulheres</td><td>20 a 50 g</td><td>140 a 350 g</td><td><strong>10 a 25 doses</strong></td></tr>
     <tr><td>Homens</td><td>30 a 60 g</td><td>210 a 420 g</td><td><strong>15 a 30 doses</strong></td></tr>
@@ -310,8 +311,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Este é o achado que justifica a categoria nova, e é o mais importante desta página. Também é o trecho que precisei refazer: a primeira versão publicada atribuiu à revisão citada abaixo números que não estão nela. Fui ao original. O que ele sustenta é isto.</p>
 <p>A revisão crítica de Åberg, Färkkilä e Männistö, publicada em <em>Alcoholism: Clinical and Experimental Research</em> em 2020, conclui que evidência clínica e mecanística apontam <strong>efeitos consideráveis de interação supra-aditiva</strong> entre uso nocivo de álcool e anormalidades metabólicas — obesidade, diabetes e síndrome metabólica — no desenvolvimento e na progressão da doença hepática crônica. Em bom português: quem tem os dois não corre a soma dos dois riscos, corre mais que isso.</p>
 <p>Três conclusões dessa revisão merecem ser lidas na formulação dela:</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Sobre</th><th>O que está escrito</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec4">
+  <thead><tr><th scope="col">Sobre</th><th scope="col">O que está escrito</th></tr></thead>
   <tbody>
     <tr><td>Beber muito de vez em quando</td><td>Binge intermitente <strong>uma vez por mês ou mais</strong> parece associado a progressão da doença hepática <em>mesmo quando o consumo médio está dentro dos limites</em> hoje aceitos para o diagnóstico de esteatose não alcoólica. E há relato de interação supra-aditiva entre binge e síndrome metabólica</td></tr>
     <tr><td>Quem já tem gordura no fígado</td><td>A presença de esteatose <strong>parece amplificar a hepatotoxicidade do álcool</strong>. Estudos longitudinais recentes em pessoas com esteatose associam <em>consumo baixo</em> de álcool tanto a progressão de fibrose quanto a risco elevado de câncer de fígado e de doença hepática grave</td></tr>
@@ -319,8 +320,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec5">Um número concreto, de um estudo que dá para conferir</h2>
 <p>Segundo o PubMed, o estudo Dionysos, publicado nos <em>Annals of Internal Medicine</em> em 2000, mediu esteatose por ultrassom em <strong>257 pessoas</strong> divididas em quatro grupos: 67 controles, 66 obesos, 69 grandes bebedores e 55 que eram as duas coisas.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Grupo</th><th>Tinha esteatose</th><th>Risco em relação aos controles</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec5">
+  <thead><tr><th scope="col">Grupo</th><th scope="col">Tinha esteatose</th><th scope="col">Risco em relação aos controles</th></tr></thead>
   <tbody>
     <tr><td>Controles</td><td>16,4%</td><td>—</td></tr>
     <tr><td>Grandes bebedores</td><td>46,4%</td><td>2,8× (IC 95% 1,4 a 7,1)</td></tr>
@@ -340,8 +341,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec8">Por que a enzima não vê isso</h2>
 <p>A página do fígado mostrou que uma hora de musculação altera AST e ALT por sete dias. O problema aqui é o inverso e pior: <strong>a esteatose e mesmo a fibrose avançada convivem com transaminase normal</strong>. Enzima é marcador de lesão em curso, não de cicatriz acumulada — e a esteatose é diagnosticada por imagem ou biópsia, não por sangue.</p>
 <p>É por isso que existe o <strong>FIB-4</strong>, índice que a associação americana de estudo do fígado reconhece como ferramenta de rastreio de fibrose avançada. Ele não é exame novo: é uma conta feita com quatro coisas que você provavelmente já tem no último check-up.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Item</th><th>Detalhe</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec8">
+  <thead><tr><th scope="col">Item</th><th scope="col">Detalhe</th></tr></thead>
   <tbody>
     <tr><td>Fórmula</td><td><code>(idade × AST) ÷ (plaquetas × √ALT)</code> — precisa de idade, AST (TGO), ALT (TGP) e contagem de plaquetas</td></tr>
     <tr><td>Abaixo de 1,3</td><td>Fibrose avançada improvável. Acompanhamento na atenção primária — a cada 1 a 2 anos com diabetes, pré-diabetes ou dois ou mais fatores de risco metabólico; a cada 2 a 3 anos sem eles</td></tr>
@@ -357,8 +358,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </ul>
 <h2 id="sec10">O que existe de tratamento — e o círculo que isso fecha</h2>
 <p>Até 2024 não havia nenhum medicamento aprovado para MASH. Hoje há dois, e o desenho regulatório dos dois vai parecer familiar a quem leu a página de doença renal.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Medicamento</th><th>Aprovação</th><th>Indicação exata</th><th>Sobre que desfecho</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec10">
+  <thead><tr><th scope="col">Medicamento</th><th scope="col">Aprovação</th><th scope="col">Indicação exata</th><th scope="col">Sobre que desfecho</th></tr></thead>
   <tbody>
     <tr><td><strong>Rezdiffra</strong> (resmetirom) — agonista do receptor beta do hormônio tireoidiano</td><td>14 de março de 2024 — <strong>acelerada</strong>. Primeiro medicamento aprovado para a doença</td><td>MASH não cirrótica com fibrose moderada a avançada (estágios F2 a F3), junto de dieta e exercício. <strong>Evitar em cirrose descompensada</strong> e em Child-Pugh B ou C</td><td>Melhora de MASH e de fibrose em biópsia, em ensaio com 888 pacientes. A manutenção do registro depende de ensaio confirmatório</td></tr>
     <tr><td><strong>Wegovy</strong> (semaglutida) — agonista de GLP-1, já catalogado neste site</td><td>15 de agosto de 2025 — <strong>acelerada</strong></td><td>MASH não cirrótica com fibrose moderada a avançada (F2 a F3), com dieta de calorias reduzidas e mais atividade física</td><td>Ensaio ESSENCE, semana 72: resolução de MASH sem piora da fibrose em <strong>63%</strong> contra <strong>34%</strong> do placebo (534 e 266 pessoas); melhora de fibrose sem piora da esteato-hepatite em <strong>37%</strong> contra <strong>22%</strong></td></tr>

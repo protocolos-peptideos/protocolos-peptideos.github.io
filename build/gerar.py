@@ -495,7 +495,7 @@ def gera_index(itens, stats):
         "Peptídeos, nootrópicos, SARMs e correlatos em português: dose, ciclo, registro na ANVISA e o limite da evidência. Experimental, não é conselho médico.",
         "", "inicio", caminho="/index.html")]
 
-    partes.append('<main id="principal" class="env-largo">')
+    partes.append('<main id="principal" tabindex="-1" class="env-largo">')
     partes.append(f"""<section class="hero">
   <span class="hero-sobre">Referência experimental</span>
   <h1>Peptídeos, nootrópicos e correlatos — <em>em português</em>, com o limite da evidência à mostra.</h1>
@@ -540,7 +540,7 @@ def gera_index(itens, stats):
       toolname="filtrar_compostos"
       tooldescription="Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os {{n}} compostos continuam listados e linkados na pagina mesmo sem usar o filtro.">
   <div class="busca-campo">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
     <label for="busca" class="pular">Buscar composto</label>
     <input type="search" id="busca" name="q" placeholder="Buscar por nome, classe ou sigla — KLOW, Semax, GLP-1, reparo…" autocomplete="off"
            toolparamdescription="Texto a procurar no nome, na classe ou na sigla do composto — por exemplo BPC-157, GLP-1, Semax ou reparo. Vazio nao filtra por texto.">
@@ -569,6 +569,12 @@ def gera_index(itens, stats):
     partes.append('<p class="nota-filtro">O selo de registro vem da <a href="evidencia.html">varredura do dado aberto '
                   f'da ANVISA</a> feita em {DATA_APURACAO}, e só aparece nos 44 compostos que foram medidos um a '
                   'um. Combinações e páginas de método não têm selo.</p>')
+    # role="status" e regiao live educada: o leitor de tela anuncia a contagem
+    # quando ela muda, sem interromper o que estava lendo. Sem isso, quem
+    # filtra por teclado ouve o botao virar "pressionado" e nunca fica sabendo
+    # que a lista caiu de 76 para 7 (WCAG 4.1.3). Comeca vazia de proposito:
+    # nada a anunciar antes de o leitor mexer no filtro.
+    partes.append('<p id="contagem-filtro" class="pular" role="status" aria-live="polite"></p>')
     partes.append('<p id="vazio" hidden style="color:var(--texto-fraco);padding:40px 0">Nenhum composto corresponde à busca.</p>')
 
     for cat, (nome, desc) in CATEGORIAS.items():
@@ -666,7 +672,7 @@ def gera_composto(item):
         p.append(f'    <li><a href="#{aid}">{esc(rotulo)}</a></li>')
     p.append('  </ol>\n</aside>')
 
-    p.append('<main id="principal" class="conteudo">')
+    p.append('<main id="principal" tabindex="-1" class="conteudo">')
     p.append(f'<div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; {esc(cat_nome)}</div>')
     p.append('<div class="artigo-cabeca">')
     p.append(f'  <h1>{esc(m["nome"])}</h1>')
@@ -713,8 +719,11 @@ def gera_composto(item):
                     p.append(f'<p>{x}</p>')
             tab = sec.get('tabela')
             if tab:
-                p.append('<div class="tabela-env"><div class="tabela-rolagem"><table>')
-                p.append('  <thead><tr>' + ''.join(f'<th>{c}</th>' for c in tab['linhas'][0]) + '</tr></thead>')
+                # aria-labelledby aponta para o h2 da secao, que ja tem id: a
+                # tabela ganha nome no leitor de tela sem inventar texto novo.
+                # Sem isso, uma pagina com 8 tabelas e lida como "tabela 1..8".
+                p.append(f'<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec{k}">')
+                p.append('  <thead><tr>' + ''.join(f'<th scope="col">{c}</th>' for c in tab['linhas'][0]) + '</tr></thead>')
                 p.append('  <tbody>')
                 for r in tab['linhas'][1:]:
                     p.append('    <tr>' + ''.join(f'<td>{c}</td>' for c in r) + '</tr>')
@@ -749,9 +758,9 @@ def gera_composto(item):
         p.append(f'<h2 id="tab{k}">{esc(t["cap"])}</h2>')
         p.append('<div class="tabela-env">')
         p.append(f'  <div class="tabela-titulo">{esc(t["cap"])}</div>')
-        p.append('  <div class="tabela-rolagem"><table>')
+        p.append(f'  <div class="tabela-rolagem"><table aria-labelledby="tab{k}">')
         cab = t['linhas'][0]
-        p.append('    <thead><tr>' + ''.join(f'<th>{esc(c)}</th>' for c in cab) + '</tr></thead>')
+        p.append('    <thead><tr>' + ''.join(f'<th scope="col">{esc(c)}</th>' for c in cab) + '</tr></thead>')
         p.append('    <tbody>')
         for r in t['linhas'][1:]:
             tds = []
@@ -780,7 +789,7 @@ def gera_seguranca():
     p = [cabecalho("Segurança e limites — Protocolos",
                    "O que esta referência é, o que não é, e os riscos que não aparecem nas tabelas de dose.",
                    "", "seguranca", caminho="/seguranca.html")]
-    p.append('<main id="principal" class="env-largo" style="max-width:800px;padding-top:52px;padding-bottom:80px">')
+    p.append('<main id="principal" tabindex="-1" class="env-largo" style="max-width:800px;padding-top:52px;padding-bottom:80px">')
     p.append('<h1 style="font-family:var(--display);font-size:clamp(32px,4.6vw,44px);font-weight:600;letter-spacing:-.026em;margin:0 0 22px">Segurança e limites</h1>')
     p.append(AVISO)
     p.append('<div class="conteudo" style="padding:0">')
@@ -835,7 +844,7 @@ def gera_evidencia():
                    "com a consulta declarada em cada uma.",
                    "", "evidencia", indexavel=True, caminho="/evidencia.html",
                    procedencia='aferida')]
-    p.append('<main id="principal" class="env-largo" style="max-width:860px;padding-top:52px;padding-bottom:80px">')
+    p.append('<main id="principal" tabindex="-1" class="env-largo" style="max-width:860px;padding-top:52px;padding-bottom:80px">')
     p.append('<h1 style="font-family:var(--display);font-size:clamp(32px,4.6vw,44px);font-weight:600;'
              'letter-spacing:-.026em;margin:0 0 14px">Verificado em fonte primária</h1>')
     p.append('<p class="artigo-sub" style="margin-bottom:30px">Sete páginas, 105 compostos, cada número '
@@ -852,7 +861,7 @@ def gera_sobre(stats):
     p = [cabecalho("Sobre, fonte e método — Protocolos",
                    "De onde vieram os dados, como foram traduzidos e o que ficou de fora.",
                    "", "sobre", caminho="/sobre.html")]
-    p.append('<main id="principal" class="env-largo" style="max-width:800px;padding-top:52px;padding-bottom:80px">')
+    p.append('<main id="principal" tabindex="-1" class="env-largo" style="max-width:800px;padding-top:52px;padding-bottom:80px">')
     p.append('<h1 style="font-family:var(--display);font-size:clamp(32px,4.6vw,44px);font-weight:600;letter-spacing:-.026em;margin:0 0 22px">Sobre, fonte e método</h1>')
     p.append('<div class="conteudo" style="padding:0">')
     p.append(f"""

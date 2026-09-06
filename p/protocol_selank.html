@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -255,7 +256,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Neuro e cognição</div>
 <div class="artigo-cabeca">
   <h1>Selank (TP-7)</h1>
@@ -284,8 +285,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">SubQ Esquema</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">SubQ Esquema</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Duração</th><th>Dose diária</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Duração</th><th scope="col">Dose diária</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Initiation</td><td>Semanas 1–2</td><td>250-300 mcg</td><td>1×/dia. Checagem de tolerância basal.</td></tr>
       <tr><td>Manutenção</td><td>Semanas 3–4</td><td>400-500 mcg</td><td>Subir apenas se a dose menor tiver sido segura e estável.</td></tr>
@@ -296,8 +297,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Dose em spray nasal e protocolo intranasal</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Dose em spray nasal e protocolo intranasal</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Duração</th><th>Dose diária</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Duração</th><th scope="col">Dose diária</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Curso padrão</td><td>14–21 dias</td><td>600-2.700 mcg</td><td>dividida em 2–3 borrifadas diárias, conforme a prática clínica russa.</td></tr>
       <tr><td>washout</td><td>1–3 semanas</td><td class="num">0 mcg</td><td>Período de descanso antes de repetir o curso.</td></tr>
@@ -306,8 +307,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Selank Tabela de doses</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Selank Tabela de doses</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Via</th><th>Quantidade de referência</th><th>Frequência</th><th>Duração</th><th>Nível de evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Via</th><th scope="col">Quantidade de referência</th><th scope="col">Frequência</th><th scope="col">Duração</th><th scope="col">Nível de evidência</th></tr></thead>
     <tbody>
       <tr><td>Subcutânea</td><td>250–500 mcg</td><td>1×/dia nos esquemas de comunidade resumidos nesta página</td><td>Esquema comum de comunidade nesta página: 4 semanas</td><td>Prática relatada pela comunidade; não é dose clínica validada</td></tr>
       <tr><td>Intranasal</td><td>600–2.700 mcg por dia</td><td>Divided across 2–3 diário doses</td><td>14–21 dias</td><td>Referência clínica russa publicada, resumida nesta página</td></tr>
@@ -316,8 +317,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Selank 10 mg Cálculo de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Selank 10 mg Cálculo de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>250 mcg</th><th>300 mcg</th><th>500 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">250 mcg</th><th scope="col">300 mcg</th><th scope="col">500 mcg</th></tr></thead>
     <tbody>
       <tr><td>10 mg</td><td class="num">1 mL</td><td class="num">10.000 mcg/mL</td><td class="num">0,025 mL (2,5 unidades)</td><td class="num">0,03 mL (3 unidades)</td><td class="num">0,05 mL (5 unidades)</td></tr>
       <tr><td>10 mg</td><td class="num">2 mL</td><td class="num">5.000 mcg/mL</td><td class="num">0,05 mL (5 unidades)</td><td class="num">0,06 mL (6 unidades)</td><td class="num">0,10 mL (10 unidades)</td></tr>
@@ -326,8 +327,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Selank 10 mg Cálculo de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Selank 10 mg Cálculo de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>Dose de 250 mcg</th><th>Dose de 300 mcg</th><th>Dose de 500 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">Dose de 250 mcg</th><th scope="col">Dose de 300 mcg</th><th scope="col">Dose de 500 mcg</th></tr></thead>
     <tbody>
       <tr><td>30 mg</td><td class="num">3 mL</td><td class="num">10.000 mcg/mL</td><td class="num">0,025 mL (2,5 unidades)</td><td class="num">0,03 mL (3 unidades)</td><td class="num">0,05 mL (5 unidades)</td></tr>
       <tr><td>30 mg</td><td class="num">6 mL</td><td class="num">5.000 mcg/mL</td><td class="num">0,05 mL (5 unidades)</td><td class="num">0,06 mL (6 unidades)</td><td class="num">0,10 mL (10 unidades)</td></tr>
@@ -337,8 +338,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">Selank Linha do tempo e o que monitorar</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Selank Linha do tempo e o que monitorar</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>O que pode mudar</th><th>O que acompanhar</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Fase</th><th scope="col">O que pode mudar</th><th scope="col">O que acompanhar</th></tr></thead>
     <tbody>
       <tr><td>Dias 1–3</td><td>Calma leve. Dor de cabeça possível na primeira dose.</td><td>Qualidade do sono, dor de cabeça e reação no local da injeção.</td></tr>
       <tr><td>Dias 4–7</td><td>Efeito ansiolítico mais consistente.</td><td>diário anxiety self-rating (0-10 scale), focus, mood.</td></tr>
@@ -349,8 +350,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">Selank vs. Semax vs. diazepam</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Selank vs. Semax vs. diazepam</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>Selank</th><th>Semax</th><th>Diazepam</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">Item</th><th scope="col">Selank</th><th scope="col">Semax</th><th scope="col">Diazepam</th></tr></thead>
     <tbody>
       <tr><td>Class</td><td>Heptapeptídeo análogo de tuftsina</td><td>Heptapeptídeo análogo de ACTH(4-10)</td><td>Benzodiazepínico (molécula pequena)</td></tr>
       <tr><td>Mecanismo principal</td><td>Modulação de GABA, deslocamento de serotonina e estabilização de encefalinas</td><td>BDNF/NGF upregulation, dopamine e serotonin modulation</td><td>GABA-A positive allosteric modulator</td></tr>
@@ -365,8 +366,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">Evidência sobre a duração do ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Evidência sobre a duração do ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fonte</th><th>Active period</th><th>O que veio depois</th><th>O que sustenta</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">Fonte</th><th scope="col">Active period</th><th scope="col">O que veio depois</th><th scope="col">O que sustenta</th></tr></thead>
     <tbody>
       <tr><td>Instruções russas de uso médico vigentes</td><td>14 dias</td><td>May be repeated after 1–3 semanas when needed e after clinician consultation</td><td>Official duration e repeat timing for the Russian intranasal product</td></tr>
       <tr><td>Medvedev et al., 2014</td><td>14 dias</td><td>Patients were followed after treatment; the paper reported that the measured anxiolytic effect remained for at least 7 dias after the last administration</td><td>A de 14 dias human Selank monotherapy course with post-course follow-up</td></tr>
@@ -376,8 +377,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab8">Evidência de ciclo: intranasal vs. injetável</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Evidência de ciclo: intranasal vs. injetável</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Route ou context</th><th>Human ciclo evidence</th><th>ciclo-length takeaway</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab8">
+    <thead><tr><th scope="col">Route ou context</th><th scope="col">Human ciclo evidence</th><th scope="col">ciclo-length takeaway</th></tr></thead>
     <tbody>
       <tr><td>Intranasal Russian product</td><td>Sim</td><td>de 14 dias labeled course; repeat timing of 1–3 semanas is stated in the current instructions</td></tr>
       <tr><td>Estudos humanos publicados com Selank</td><td>Sim</td><td>de 14 dias courses are documented, with a de 21 dias extension in one 2015 study</td></tr>
@@ -388,8 +389,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab9">Selank Cycle Length vs. Selank Protocolo de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Selank Cycle Length vs. Selank Protocolo de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Question</th><th>Best page</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab9">
+    <thead><tr><th scope="col">Question</th><th scope="col">Best page</th></tr></thead>
     <tbody>
       <tr><td>How long is a Selank ciclo?</td><td>This Selank ciclo guide</td></tr>
       <tr><td>Qual o intervalo entre os cursos?</td><td>This Selank ciclo guide</td></tr>

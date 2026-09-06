@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -249,7 +250,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Metabólico e peso</div>
 <div class="artigo-cabeca">
   <h1>Tirzepatida</h1>
@@ -279,8 +280,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Titration ladder</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Titration ladder</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Mounjaro</th><th>Zepbound</th><th></th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Mounjaro</th><th scope="col">Zepbound</th><th scope="col"></th></tr></thead>
     <tbody>
       <tr><td>Fármaco ativo</td><td>Tirzepatide</td><td>Tirzepatide</td></tr>
       <tr><td>Indicação aprovada pela FDA</td><td>Diabetes tipo 2</td><td>Manejo crônico de peso; apneia obstrutiva do sono + obesidade</td></tr>
@@ -292,8 +293,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Esquema de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Esquema de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Semanas</th><th>Dose</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Semanas</th><th scope="col">Dose</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Fase 1 — início</td><td>Semanas 1–4</td><td class="num">2,5 mg 1×/semana</td><td>Dose de tolerabilidade. Não é dose terapêutica para perda de peso ou HbA1c.</td></tr>
       <tr><td>Fase 2 — manutenção inicial</td><td>Semanas 5–8</td><td class="num">5 mg 1×/semana</td><td>Primeira dose real de manutenção. É onde a redução de apetite costuma aparecer.</td></tr>
@@ -306,8 +307,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Tirzepatide Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Tirzepatide Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>2,5 mg</th><th>5 mg</th><th>7,5 mg</th><th>10 mg</th><th>15 mg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">2,5 mg</th><th scope="col">5 mg</th><th scope="col">7,5 mg</th><th scope="col">10 mg</th><th scope="col">15 mg</th></tr></thead>
     <tbody>
       <tr><td>5 mg</td><td class="num">1,0 mL</td><td class="num">5 mg/mL</td><td class="num">0,50 mL / 50 u</td><td class="num">1,00 mL / 100 u</td><td>—</td><td>—</td><td>—</td></tr>
       <tr><td>10 mg</td><td class="num">1,0 mL</td><td class="num">10 mg/mL</td><td class="num">0,25 mL / 25 u</td><td class="num">0,50 mL / 50 u</td><td class="num">0,75 mL / 75 u</td><td class="num">1,00 mL / 100 u</td><td>—</td></tr>
@@ -321,8 +322,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Tirzepatide Linha do tempo e o que monitorar</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Tirzepatide Linha do tempo e o que monitorar</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Timeframe</th><th>O que é relatado</th><th>O que os ensaios mediram</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Timeframe</th><th scope="col">O que é relatado</th><th scope="col">O que os ensaios mediram</th></tr></thead>
     <tbody>
       <tr><td>Semanas 1–2 (2,5 mg)</td><td>Redução leve de apetite; alguma náusea inicial.</td><td>Exames basais; nenhum desfecho de eficácia esperado.</td></tr>
       <tr><td>Semanas 4–8 (2,5 → 5 mg)</td><td>Supressão de apetite mais estável; primeiras mudanças de peso.</td><td>Primeira mudança de HbA1c no DM2; perda de peso modesta nos braços de obesidade.</td></tr>

@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -250,7 +251,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>O que existe no Brasil</h1>
@@ -276,8 +277,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec1">O número</h2>
 <p><strong>Dos 44 compostos de protocolo deste site, 40 não têm nenhum medicamento registrado no Brasil.</strong></p>
 <p>Não é que o registro seja difícil, ou que a ANVISA seja lenta. É que <strong>quase nada disto foi sequer submetido</strong>. Não há bula brasileira, não há dose aprovada, não há lote fiscalizado e não há a quem reclamar. O que circula é importação pessoal ou manipulação.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Grupo</th><th>Com registro ativo</th><th>Sem nenhum</th><th>Leitura</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec1">
+  <thead><tr><th scope="col">Grupo</th><th scope="col">Com registro ativo</th><th scope="col">Sem nenhum</th><th scope="col">Leitura</th></tr></thead>
   <tbody>
     <tr><td>Peptídeos e compostos de protocolo</td><td><strong>4</strong></td><td><strong>40</strong></td><td>Semaglutida, tirzepatida, ocitocina e azul de metileno. Todo o resto — BPC-157, TB-500, GHK-Cu, Epitalon, Ipamorelina, MOTS-c, NAD+, Melanotan II, Selank, Semax, retatrutida, cagrilintida, survodutida — <strong>zero</strong></td></tr>
     <tr><td>Medicamentos do leste europeu</td><td><strong>1</strong></td><td><strong>17</strong></td><td>E o único é enganoso: a cocarboxilase aparece como <strong>componente de um polivitamínico injetável</strong> (CERNE-12), não como o produto que se importa</td></tr>
@@ -286,8 +287,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec2">Os quatro que existem</h2>
 <p>Vale olhar de perto, porque três deles surpreendem.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Composto</th><th>Registros ativos</th><th>Produtos</th><th>O que isso diz</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec2">
+  <thead><tr><th scope="col">Composto</th><th scope="col">Registros ativos</th><th scope="col">Produtos</th><th scope="col">O que isso diz</th></tr></thead>
   <tbody>
     <tr><td><strong>Semaglutida</strong></td><td><strong>15</strong></td><td>OZEMPIC, WEGOVY, RYBELSUS, EXTENSIOR, POVIZTRA, SEMAVY, ORSEMA, SEEMASUN, SEMACLIQUE, YLUMÉC, OWOZY, OZIVY, ZEMPNEO e dois genéricos chamados SEMAGLUTIDA</td><td><strong>O achado mais inesperado da varredura.</strong> Já existem <strong>genérico e similar</strong> de semaglutida registrados — EMS, Germed, Sun, Ranbaxy, Cosmed, Brainfarma. A Novo Nordisk tem cinco, não três: além dos conhecidos, EXTENSIOR e POVIZTRA</td></tr>
     <tr><td><strong>Tirzepatida</strong></td><td><strong>2</strong></td><td>MOUNJARO e MOUNJARO MULTIDOSE</td><td>Marca única, sem genérico. O MULTIDOSE é apresentação, não molécula nova</td></tr>
@@ -299,8 +300,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Isso deu trabalho, e quase estragou a conta. Como os notificados não têm número, uma primeira versão desta varredura os agrupou todos numa linha só e <strong>subcontou o azul de metileno</strong>. Corrigi separando as duas colunas. Onde a página diz <em>notificado</em>, é isso que quer dizer.</p>
 <h2 id="sec4">Como conferir o que está aqui</h2>
 <p>O método inteiro cabe em três passos, e qualquer pessoa pode repetir:</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Passo</th><th>O que fiz</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec4">
+  <thead><tr><th scope="col">Passo</th><th scope="col">O que fiz</th></tr></thead>
   <tbody>
     <tr><td><strong>1. Fonte</strong></td><td>Baixei <code>DADOS_ABERTOS_MEDICAMENTOS.csv</code> do portal de dados abertos da ANVISA em 4 de setembro de 2026. São <strong>43.489 linhas</strong>, com princípio ativo, nome do produto, categoria regulatória, empresa e situação do registro</td></tr>
     <tr><td><strong>2. Busca</strong></td><td>Para cada composto, procurei o termo no princípio ativo <em>e</em> no nome do produto, sem acento e sem diferença de caixa, contando só o que está com situação <strong>Ativo</strong>. Registro inativo aparece na base e foi descartado</td></tr>

@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -258,7 +259,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>Ajuste de dose por função hepática</h1>
@@ -283,8 +284,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Há ainda uma inversão que vale registrar antes de tudo: <strong>o único composto citado neste site que a bula manda evitar em qualquer grau de insuficiência hepática é um remédio de rim</strong>.</p>
 <h2 id="sec1">O que a bula diz, literalmente</h2>
 <p>Extraído do mesmo endpoint, em 4 de setembro de 2026, seção 8.7 de cada rótulo.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Composto</th><th>Produto</th><th>O que a bula determina</th><th>Detalhe</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec1">
+  <thead><tr><th scope="col">Composto</th><th scope="col">Produto</th><th scope="col">O que a bula determina</th><th scope="col">Detalhe</th></tr></thead>
   <tbody>
     <tr><td>Semaglutida</td><td>Ozempic / Rybelsus</td><td><strong>A dose recomendada em pacientes com insuficiência hepática é a mesma de quem tem função hepática normal.</strong></td><td>Num estudo com diferentes graus de insuficiência hepática, não se observou mudança clinicamente relevante na farmacocinética</td></tr>
     <tr><td>Tirzepatida</td><td>Mounjaro</td><td><strong>Nenhum ajuste de dose é recomendado.</strong></td><td>Em estudo de farmacologia clínica com graus variados de insuficiência hepática, não se observou mudança na farmacocinética</td></tr>
@@ -300,8 +301,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec3">Por que você não consegue se classificar sozinho</h2>
 <p>Toda bula acima fala em <strong>Child-Pugh A, B ou C</strong>. É aqui que o lado hepático se separa do renal de um jeito que quase ninguém percebe.</p>
 <p>No rim, a classificação sai de uma conta: creatinina, idade e sexo entram na equação CKD-EPI e sai um número. O laboratório já entrega a TFGe impressa no laudo. No fígado, não existe equivalente. O Child-Pugh é um <strong>escore clínico</strong>, e dois dos seus cinco componentes não são exame — são achado de exame físico e de avaliação neurológica.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Componente</th><th>1 ponto</th><th>2 pontos</th><th>3 pontos</th><th>De onde vem</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec3">
+  <thead><tr><th scope="col">Componente</th><th scope="col">1 ponto</th><th scope="col">2 pontos</th><th scope="col">3 pontos</th><th scope="col">De onde vem</th></tr></thead>
   <tbody>
     <tr><td>Bilirrubina</td><td>abaixo de 2 mg/dL</td><td>2 a 3 mg/dL</td><td>acima de 3 mg/dL</td><td>Exame de sangue</td></tr>
     <tr><td>Albumina</td><td>acima de 3,5 g/dL</td><td>2,8 a 3,5 g/dL</td><td>abaixo de 2,8 g/dL</td><td>Exame de sangue</td></tr>
@@ -326,8 +327,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec7">Onde o dano hepático de verdade aparece neste público</h2>
 <p>Aqui os números deixam de ser sobre lacuna e passam a ser sobre caso contado, com desfecho.</p>
 <p>Segundo o PubMed, a Drug-Induced Liver Injury Network — rede de oito centros de referência nos Estados Unidos — acompanhou prospectivamente <strong>839 casos</strong> de lesão hepática por medicamento ou suplemento entre 2004 e 2013. Destes, <strong>130 (15,5%)</strong> foram atribuídos a ervas e suplementos alimentares, e a proporção <strong>subiu de 7% para 20%</strong> ao longo do período estudado (P &lt; 0,001).</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Agente</th><th>Casos</th><th>Perfil e desfecho</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec7">
+  <thead><tr><th scope="col">Agente</th><th scope="col">Casos</th><th scope="col">Perfil e desfecho</th></tr></thead>
   <tbody>
     <tr><td>Medicamentos</td><td>709</td><td>3% de óbito ou transplante</td></tr>
     <tr><td>Suplementos de fisiculturismo</td><td><strong>45</strong></td><td>Icterícia prolongada — mediana de <strong>91 dias</strong> — em homens jovens. <strong>Nenhum óbito e nenhum transplante</strong></td></tr>
@@ -343,8 +344,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Este site já tem uma página de <a href="proprio_sarms.html">SARMs</a>. O LiverTox — base de hepatotoxicidade do National Institute of Diabetes and Digestive and Kidney Diseases, ligado ao NIH — mantém uma entrada inteira sobre eles. O que segue foi conferido no texto da própria entrada, não em resumo dela.</p>
 <p>O primeiro achado desmonta a leitura tranquilizadora dos ensaios clínicos. Neles, os SARMs foram descritos como bem tolerados — mas nas doses maiores, as que mais aumentavam massa magra, houve elevação de aminotransferases em <strong>5% a 21%</strong> dos participantes, com casos de ALT isolada exigindo suspensão. Nenhum caso de icterícia apareceu nesses ensaios, e o LiverTox diz por quê: <em>a duração da terapia era curta, os pacientes eram monitorados regularmente, e uma pequena proporção interrompeu o tratamento por causa das elevações de ALT</em>.</p>
 <p>A icterícia apareceu depois, fora dos ensaios — em pessoas usando SARM por conta própria para musculação, sem supervisão médica.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Item</th><th>O que está documentado</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec9">
+  <thead><tr><th scope="col">Item</th><th scope="col">O que está documentado</th></tr></thead>
   <tbody>
     <tr><td>Tempo até aparecer</td><td>Latência <strong>tipicamente de 2 a 3 meses</strong>, com variação de algumas semanas a <strong>um ano</strong></td></tr>
     <tr><td>Como começa</td><td>Fadiga, perda de apetite, perda de peso, dor abdominal e coceira, seguidos de urina escura e icterícia</td></tr>
@@ -357,8 +358,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec10">A dose dos casos não é a dose dos ensaios</h2>
 <p>O LiverTox publica uma tabela que raramente aparece em qualquer outro lugar: a dose usada nos ensaios clínicos ao lado da dose usada pelas pessoas que tiveram lesão hepática.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Nome genérico</th><th>Também chamado de</th><th>Faixa em ensaios clínicos</th><th>Faixa nos casos de lesão hepática</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec10">
+  <thead><tr><th scope="col">Nome genérico</th><th scope="col">Também chamado de</th><th scope="col">Faixa em ensaios clínicos</th><th scope="col">Faixa nos casos de lesão hepática</th></tr></thead>
   <tbody>
     <tr><td>Ligandrol</td><td>LGD-4033, VK-5211</td><td>0,1 a 2,0 mg</td><td><strong>4 a 30 mg</strong></td></tr>
     <tr><td>Enobosarme</td><td>MK-2866, S-22, GTx-024, Ostarina</td><td>0,1 a 3,0 mg</td><td><strong>5 a 20 mg</strong></td></tr>

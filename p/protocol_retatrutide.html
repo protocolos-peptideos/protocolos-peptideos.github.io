@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -253,7 +254,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Metabólico e peso</div>
 <div class="artigo-cabeca">
   <h1>Retatrutida</h1>
@@ -284,8 +285,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Esquema de titulação da fase 3 (TRIUMPH)</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Esquema de titulação da fase 3 (TRIUMPH)</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Semanas</th><th>dose semanal</th><th>Nota sobre o desenho do ensaio</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Semanas</th><th scope="col">dose semanal</th><th scope="col">Nota sobre o desenho do ensaio</th></tr></thead>
     <tbody>
       <tr><td>1-4</td><td class="num">2 mg</td><td>Dose inicial usada em todo o programa TRIUMPH de fase 3.</td></tr>
       <tr><td>5-8</td><td class="num">4 mg</td><td>Primeiro degrau de escalonamento. Também é dose-alvo no TRIUMPH-1 e TRIUMPH-2.</td></tr>
@@ -297,8 +298,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Braços de dose da fase 2</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Braços de dose da fase 2</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Dose-alvo</th><th>Initial dose</th><th>Contexto do estudo</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Dose-alvo</th><th scope="col">Initial dose</th><th scope="col">Contexto do estudo</th></tr></thead>
     <tbody>
       <tr><td>1 mg</td><td class="num">1 mg</td><td>Braço fixo de 1 mg</td></tr>
       <tr><td>4 mg</td><td class="num">2 mg</td><td>alvo de 4 mg com dose inicial mais baixa</td></tr>
@@ -311,8 +312,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Retatrutide Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Retatrutide Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>1 mg</th><th>2 mg</th><th>4 mg</th><th>6 mg</th><th>9 mg</th><th>12 mg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">1 mg</th><th scope="col">2 mg</th><th scope="col">4 mg</th><th scope="col">6 mg</th><th scope="col">9 mg</th><th scope="col">12 mg</th></tr></thead>
     <tbody>
       <tr><td>5 mg</td><td class="num">1,0 mL</td><td class="num">5 mg/mL (5.000 mcg/mL)</td><td class="num">0,20 mL (20 unidades)</td><td class="num">0,40 mL (40 unidades)</td><td class="num">0,80 mL (80 unidades)</td><td>Exceeds frasco</td><td>Exceeds frasco</td><td>Exceeds frasco</td></tr>
       <tr><td>10 mg</td><td class="num">2,0 mL</td><td class="num">5 mg/mL (5.000 mcg/mL)</td><td class="num">0,20 mL (20 unidades)</td><td class="num">0,40 mL (40 unidades)</td><td class="num">0,80 mL (80 unidades)</td><td class="num">1,20 mL - dividida draw ou 2 vials</td><td>Exige 2 frascos</td><td>Exige 2 a 3 frascos</td></tr>
@@ -324,8 +325,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Dose de 12 mg e tabela de concentração</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Dose de 12 mg e tabela de concentração</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Quantidade de referência</th><th>Volume at 10 mg/mL</th><th>U-100 unidades</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Quantidade de referência</th><th scope="col">Volume at 10 mg/mL</th><th scope="col">U-100 unidades</th></tr></thead>
     <tbody>
       <tr><td>2 mg</td><td class="num">0,20 mL</td><td class="num">20 unidades</td></tr>
       <tr><td>4 mg</td><td class="num">0,40 mL</td><td class="num">40 unidades</td></tr>
@@ -337,8 +338,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Perda de peso dose a dose na fase 2 (NEJM)</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Perda de peso dose a dose na fase 2 (NEJM)</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Dose</th><th>24 semanas</th><th>48 semanas</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Dose</th><th scope="col">24 semanas</th><th scope="col">48 semanas</th></tr></thead>
     <tbody>
       <tr><td>1 mg</td><td>-7,2%</td><td>-8,7%</td></tr>
       <tr><td>4 mg</td><td>-12,9%</td><td>-17,5%</td></tr>
@@ -350,8 +351,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">Retatrutida vs. tirzepatida vs. semaglutida</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Retatrutida vs. tirzepatida vs. semaglutida</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Category</th><th>Retatrutide</th><th>Tirzepatide</th><th>Semaglutide</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Category</th><th scope="col">Retatrutide</th><th scope="col">Tirzepatide</th><th scope="col">Semaglutide</th></tr></thead>
     <tbody>
       <tr><td>Alvos de receptor</td><td>GLP-1 + GIP + glucagon (triplo)</td><td>GLP-1 + GIP (duplo)</td><td>Apenas GLP-1 (isolado)</td></tr>
       <tr><td>Meia-vida</td><td>~6 dias</td><td>~5 dias</td><td>~7 dias</td></tr>
@@ -366,8 +367,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">Tabela de duração de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Tabela de duração de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Duração</th><th>Estudo</th><th>O que a duração significa</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">Duração</th><th scope="col">Estudo</th><th scope="col">O que a duração significa</th></tr></thead>
     <tbody>
       <tr><td>12 semanas</td><td>Fase 1b em adultos com diabetes tipo 2</td><td>Early proof-of-concept study focused on safety, tolerability, pharmacokinetics, e pharmacodynamics. It did not establish a de 12 semanas ciclo standard.</td></tr>
       <tr><td>36 semanas</td><td>Ensaio de fase 2 em diabetes tipo 2</td><td>Later Phase 2 efficacy e safety outcomes were assessed through semana 36.</td></tr>
@@ -382,8 +383,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">Duração do ciclo vs. titulação</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Duração do ciclo vs. titulação</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Question</th><th>Best page</th><th>O que cabe ali</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">Question</th><th scope="col">Best page</th><th scope="col">O que cabe ali</th></tr></thead>
     <tbody>
       <tr><td>Por quanto tempo a retatrutida foi estudada?</td><td>This ciclo guide</td><td>12-, 36-, 40-, 48-, 68-, 80-, e de 104 semanas research timelines</td></tr>
       <tr><td>Is a de 12 semanas ciclo supported?</td><td>This ciclo guide</td><td>What the de 12 semanas Phase 1b study can e cannot establish</td></tr>

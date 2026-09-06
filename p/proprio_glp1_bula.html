@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -256,7 +257,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>Os GLP-1 contra a bula</h1>
@@ -281,8 +282,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Os GLP-1 são o único grupo do site onde dá para testar, porque são os únicos com <strong>bula aprovada por agência</strong>. Peguei as bulas oficiais na base da FDA e do DailyMed em 4 de setembro de 2026 e comparei degrau por degrau. O resultado tem duas metades bem diferentes.</p>
 <h2 id="sec1">Primeira metade: os números batem</h2>
 <p>Esta é a parte boa, e é a maior. <strong>Nenhuma escada de titulação do site está errada em valor de dose.</strong> Conferi as cinco, degrau por degrau.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Produto</th><th>O que o site publica</th><th>O que a bula diz</th><th>Veredito</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec1">
+  <thead><tr><th scope="col">Produto</th><th scope="col">O que o site publica</th><th scope="col">O que a bula diz</th><th scope="col">Veredito</th></tr></thead>
   <tbody>
     <tr><td>Wegovy injetável</td><td>0,25 → 0,5 → 1 → 1,7 → 2,4 mg/semana, degraus de 4 semanas, manutenção na semana 17</td><td>Tabela 1: semanas 1–4 / 5–8 / 9–12 / 13–16 / 17 em diante, exatamente esses valores</td><td><strong>Idêntico</strong></td></tr>
     <tr><td>Wegovy comprimido</td><td>1,5 → 4 → 9 → 25 mg/dia</td><td>Tabela 2: dias 1–30 / 31–60 / 61–90 / 91 em diante, esses mesmos valores</td><td><strong>Valores corretos</strong>, prazo comprimido em 6 dias</td></tr>
@@ -295,8 +296,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>A regra de segurar o degrau também está certa nos dois lados: o site manda acrescentar 4 semanas em qualquer degrau intolerável, e a bula diz literalmente para considerar adiar o escalonamento por 4 semanas quando o paciente não tolera.</p>
 <h2 id="sec3">Segunda metade: seis coisas faltando</h2>
 <p>Nenhuma delas é número errado. Todas são <strong>instrução da bula que o site não traz</strong> — e três mudam decisão.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Falta</th><th>O que a bula diz</th><th>Por que importa</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec3">
+  <thead><tr><th scope="col">Falta</th><th scope="col">O que a bula diz</th><th scope="col">Por que importa</th></tr></thead>
   <tbody>
     <tr><td><strong>1,7 mg é dose de manutenção, não só degrau</strong></td><td>A manutenção do Wegovy injetável é <strong>1,7 mg ou 2,4 mg</strong>, com 2,4 recomendada. Vale para redução de peso e para risco cardiovascular</td><td>O site tratava 1,7 como um degrau a caminho de 2,4. Quem não tolera 2,4 tem uma <strong>opção aprovada de parar em 1,7</strong> — e não sabia disso lendo esta página</td></tr>
     <tr><td><strong>A instrução de troca de via</strong></td><td>Quem não tolera os 25 mg do comprimido deve considerar mudar para <strong>Wegovy injetável 1,7 mg por semana</strong></td><td>É a única saída que a bula oferece a quem não suporta o oral. Não estava em lugar nenhum do site</td></tr>
@@ -313,8 +314,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Não é erro de tradução, nem da fonte secundária: é o que <strong>nenhuma das duas</strong> trouxe, e eu não conferi antes de publicar. É a falha mais grave que este site já teve, e ela estava no ar.</p>
 <h2 id="sec5">O que a tarja preta diz, em português</h2>
 <p>Tradução direta do texto das bulas do Wegovy, do Mounjaro, do Zepbound e do Rybelsus/Ozempic comprimidos, que trazem a mesma advertência com a molécula trocada:</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Item</th><th>O que a bula estabelece</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec5">
+  <thead><tr><th scope="col">Item</th><th scope="col">O que a bula estabelece</th></tr></thead>
   <tbody>
     <tr><td><strong>Tarja preta</strong></td><td>Em roedores, a substância causa tumores de células C da tireoide de forma dependente da dose e da duração do tratamento, em exposições clinicamente relevantes. <strong>Não se sabe se causa em humanos</strong>, incluindo carcinoma medular de tireoide — a relevância humana dos tumores de roedor não foi determinada</td></tr>
     <tr><td><strong>Contraindicação absoluta</strong></td><td>História <strong>pessoal ou familiar</strong> de carcinoma medular de tireoide, ou neoplasia endócrina múltipla tipo 2 (NEM 2)</td></tr>
@@ -324,8 +325,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec6">Os três que não têm bula nenhuma</h2>
 <p>Retatrutida, cagrilintida e survodutida: procurei na base de rótulos da FDA e <strong>nenhum dos três tem registro</strong>. A afirmação que o site já fazia — investigacional, em fase 3 — está confirmada.</p>
 <p>O que isso significa na prática é o contrário do que parece. Não é que sejam mais seguros por não terem tarja preta. É que <strong>não existe autoridade nenhuma para dizer qual é a dose certa</strong>: não há escada aprovada, não há máximo definido, não há lista de contraindicação. As tabelas desses três no site vêm inteiramente da fonte secundária e não têm com o que ser comparadas.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Composto</th><th>Rótulo na FDA</th><th>O que confirmei no ClinicalTrials.gov</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec6">
+  <thead><tr><th scope="col">Composto</th><th scope="col">Rótulo na FDA</th><th scope="col">O que confirmei no ClinicalTrials.gov</th></tr></thead>
   <tbody>
     <tr><td>Retatrutida</td><td><strong>Nenhum</strong></td><td>Fase 3 em curso. TRIUMPH-4 é o NCT05931367, concluído, 445 participantes. Há também um ensaio de desfecho cardiovascular e renal com <strong>10.000</strong> participantes (NCT06383390) e uma comparação direta com tirzepatida (NCT06662383, 800)</td></tr>
     <tr><td>Cagrilintida (e CagriSema)</td><td><strong>Nenhum</strong></td><td>Fase 3 em curso. REDEFINE 3 é o NCT05669755, com <strong>7.101</strong> participantes, e há um ensaio concluído em diabetes tipo 2 com 1.200</td></tr>
@@ -339,16 +340,16 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>A seção 4 das bulas de Ozempic, Rybelsus e Wegovy diz, as três com a mesma frase: <em>hipersensibilidade ao princípio ativo ou a qualquer um dos excipientes</em>. Só isso. O carcinoma medular aparece bem mais adiante, na seção 5, e com outro peso: a relevância humana é <strong>considerada baixa, mas não pode ser completamente excluída</strong>, e por isso o medicamento <strong>deve ser usado com cautela</strong> em quem tem história pessoal ou familiar.</p>
 <p>A bula do MOUNJARO faz o contrário, na seção 4 e com todas as letras: <em>MOUNJARO é contraindicado em pacientes com histórico pessoal ou familiar de carcinoma medular de tireoide (CMT) ou em pacientes com neoplasia endócrina múltipla tipo 2 (NEM 2)</em>.</p>
 <p><strong>Isso muda o que este site deve dizer.</strong> O aviso que publiquei hoje de manhã afirmava contraindicação absoluta para as duas moléculas, seguindo a FDA. Está corrigido: agora o aviso separa as duas, porque no Brasil elas são coisas diferentes.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Molécula</th><th>FDA</th><th>ANVISA</th><th>Consequência prática</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec8">
+  <thead><tr><th scope="col">Molécula</th><th scope="col">FDA</th><th scope="col">ANVISA</th><th scope="col">Consequência prática</th></tr></thead>
   <tbody>
     <tr><td><strong>Semaglutida</strong><br><small>Ozempic, Wegovy, Rybelsus</small></td><td>Tarja preta e <strong>contraindicação absoluta</strong></td><td><strong>Não é contraindicação.</strong> Seção 4 traz só hipersensibilidade. Na seção 5: usar <strong>com cautela</strong>, relevância humana <strong>considerada baixa</strong></td><td>No Brasil, quem tem história familiar de CMT não está proibido de usar — está sob cautela, e a decisão é do prescritor</td></tr>
     <tr><td><strong>Tirzepatida</strong><br><small>MOUNJARO</small></td><td>Tarja preta e contraindicação absoluta</td><td><strong>Contraindicação absoluta</strong>, na seção 4, com o mesmo alcance da FDA</td><td>No Brasil, é proibição — e é a única das duas moléculas que carrega isso</td></tr>
   </tbody></table></div></div>
 <h2 id="sec9">Cinco divergências de dose</h2>
 <p>Nenhuma delas está no site, e duas apontam para doses que <strong>não existem</strong> na bula americana ou <strong>não existem</strong> na brasileira.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Ponto</th><th>FDA</th><th>ANVISA</th><th>O que o site publica</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec9">
+  <thead><tr><th scope="col">Ponto</th><th scope="col">FDA</th><th scope="col">ANVISA</th><th scope="col">O que o site publica</th></tr></thead>
   <tbody>
     <tr><td><strong>Dose máxima do Wegovy</strong></td><td>2,4 mg/semana</td><td><strong>7,2 mg/semana</strong> — individualizada, só em adulto com IMC ≥ 30 no início, após no mínimo 4 semanas em 2,4 mg e quando a resposta a 2,4 for insuficiente. Aplicada como <strong>três injeções de 2,4 mg</strong>, a pelo menos 5 cm uma da outra. Sem melhora adicional, <strong>volta para 2,4</strong></td><td>2,4 mg como teto. <strong>A dose brasileira é o triplo disso</strong>, e não estava aqui</td></tr>
     <tr><td><strong>Manutenção do Wegovy</strong></td><td><strong>1,7 mg ou 2,4 mg</strong>, com 2,4 recomendada</td><td>2,4 mg. O 1,7 é degrau, não destino</td><td>Tratava 1,7 como degrau — o que está certo no Brasil e errado nos EUA. As duas bulas discordam entre si</td></tr>

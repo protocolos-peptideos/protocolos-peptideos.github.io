@@ -611,6 +611,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 }
 .proc-aferida a:focus-visible { outline-color: var(--aferido); }
 
+/* O <main> tem tabindex="-1" para o "Pular para o conteúdo" mover o foco de
+   verdade, que é o que faz o leitor de tela anunciar aonde a pessoa chegou.
+   Sem esta regra o Chrome desenha o anel padrão ao redor da coluna inteira,
+   de borda a borda: um retângulo de 1400px que não aponta para nada. A pista
+   de foco aqui é a rolagem e o anúncio, não o contorno. Os elementos de
+   dentro continuam com o contorno de cima quando recebem foco. */
+#principal:focus { outline: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }

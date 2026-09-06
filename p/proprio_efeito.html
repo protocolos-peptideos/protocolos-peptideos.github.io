@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -250,7 +251,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>Tamanho de efeito</h1>
@@ -276,8 +277,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>A ordem das faixas é por <strong>a quem a evidência se aplica</strong>, e não por magnitude. Esse é o achado principal do levantamento, e está explicado na última seção.</p>
 <h2 id="sec1">Faixa A — metanálise em pessoa saudável</h2>
 <p>O único grupo em que existe evidência agregada de efeito em quem <strong>não</strong> está doente. É uma lista curta, e dois dos itens dela são negativos.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Composto</th><th>Tamanho de efeito publicado</th><th>Base</th><th>Ressalva</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec1">
+  <thead><tr><th scope="col">Composto</th><th scope="col">Tamanho de efeito publicado</th><th scope="col">Base</th><th scope="col">Ressalva</th></tr></thead>
   <tbody>
     <tr><td>Creatina monoidratada</td><td>Memória <strong>SMD 0,31</strong> (IC 0,18–0,44). Certeza GRADE <strong>moderada</strong></td><td>16 ECRs, 492 pessoas</td><td><strong>A certeza mais alta desta página inteira.</strong> Sem efeito em função executiva nem em cognição global</td></tr>
     <tr><td>Creatina — o recorte que importa</td><td>Memória <strong>SMD 0,88</strong> (IC 0,22–1,55) em 66–76 anos contra <strong>0,03, não significativo</strong>, em 11–31 anos</td><td>Metanálise separada, 10 ECRs</td><td>Dose de 2,2 a 20 g/dia e duração de 5 dias a 24 semanas <strong>não mudaram o resultado</strong>. O que muda é a idade</td></tr>
@@ -292,8 +293,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec2">Faixa B — a evidência existe, mas é toda em paciente</h2>
 <p>Aqui está a maior parte do que o mercado vende como nootrópico. A literatura é real, às vezes robusta, e é <strong>inteiramente em demência, AVC, traumatismo craniano ou esquizofrenia</strong>. Nenhum destes tem metanálise em pessoa saudável.</p>
 <p>Extrapolar da população do estudo para quem quer render mais no trabalho é o erro mais comum do campo — e é silencioso, porque o número citado está tecnicamente correto.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Composto</th><th>Tamanho de efeito publicado</th><th>População</th><th>Ressalva</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec2">
+  <thead><tr><th scope="col">Composto</th><th scope="col">Tamanho de efeito publicado</th><th scope="col">População</th><th scope="col">Ressalva</th></tr></thead>
   <tbody>
     <tr><td>Huperzina A</td><td>Entre os 5 melhores em MMSE e <strong>o melhor em atividades de vida diária</strong>. Em esquizofrenia: quociente de memória <strong>WMD 10,59</strong> (IC 5,65–15,53) e QI <strong>WMD 3,97–5,66</strong></td><td>Metanálise em rede de 194 ECRs e 21 fármacos, em demência vascular; e 12 ECRs (n=1117) em esquizofrenia</td><td><strong>Os 12 ensaios de esquizofrenia foram todos feitos na China.</strong> É inibidor de acetilcolinesterase de verdade — não combinar com donepezila e afins</td></tr>
     <tr><td>L-oxiracetam</td><td><strong>+8,97 pontos</strong> no LOTCA vs. placebo (IC 5,69–12,26), <strong>Cohen's d 0,48</strong>; e superior ao oxiracetam comum</td><td>ECR fase 3 multicêntrico duplo-cego, 51 hospitais na China, n=590, em traumatismo cranioencefálico leve a moderado</td><td>É o ensaio positivo mais bem desenhado desta página. Nada nele fala sobre pessoa saudável</td></tr>
@@ -306,8 +307,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec3">Faixa C — pessoa saudável, mas base fina e com o fabricante dentro</h2>
 <p>Dois compostos têm ensaio em adulto saudável e resultado positivo. Em ambos, o desenho é pequeno ou o patrocínio é da parte interessada — e nos dois casos isso está declarado no próprio artigo.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Composto</th><th>Tamanho de efeito publicado</th><th>Base</th><th>Ressalva</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec3">
+  <thead><tr><th scope="col">Composto</th><th scope="col">Tamanho de efeito publicado</th><th scope="col">Base</th><th scope="col">Ressalva</th></tr></thead>
   <tbody>
     <tr><td>Alfa-GPC em pessoa saudável</td><td>Stroop total <strong>d 0,61</strong> com 630 mg e <strong>d 0,48</strong> com 315 mg; tempo de conclusão <strong>d 0,56</strong></td><td>ECR cruzado duplo-cego, n=20 homens treinados, dose única</td><td><strong>Sem</strong> diferença em Flanker, N-Back, desempenho físico ou hormônio do crescimento. n=20, dose única, autor único, e o produto testado é de marca</td></tr>
     <tr><td>Magnésio L-treonato</td><td>Três ensaios positivos: sono e humor (n=80, 21 dias); memória (n=109, 30 dias); cognição total no NIH Toolbox p=0,043 e reação p=0,031 (n=100, 6 semanas)</td><td>Três ECRs em adultos saudáveis, <strong>todos com o ingrediente de marca Magtein</strong></td><td><strong>Um é assinado por funcionários da AIDP, fabricante do ingrediente.</strong> Outro testou fórmula combinada com fosfatidilserina e vitaminas C e D, o que impede atribuir o efeito ao magnésio. O terceiro foi conduzido por uma CRO. <strong>Não existe metanálise independente</strong></td></tr>

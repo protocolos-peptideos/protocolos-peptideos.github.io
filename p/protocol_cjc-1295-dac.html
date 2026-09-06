@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -250,7 +251,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Eixo do hormônio do crescimento</div>
 <div class="artigo-cabeca">
   <h1>CJC-1295 com DAC</h1>
@@ -279,8 +280,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Protocolo e esquema de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Protocolo e esquema de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Janela</th><th>dose semanal</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Janela</th><th scope="col">dose semanal</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Initiation</td><td>Semanas 1–2</td><td>500-1.000 mcg 1×/semana</td><td>Começar baixo para avaliar a tolerância. A administração noturna é comum no planejamento.</td></tr>
       <tr><td>Faixa terapêutica</td><td>Semanas 3–8</td><td class="num">1.000 mcg 1×/semana</td><td>Dose de manutenção mais comum nos fluxos de comunidade.</td></tr>
@@ -291,8 +292,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Estrutura do ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Estrutura do ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>ciclo length</th><th>Intervalo</th><th>Indicado para</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">ciclo length</th><th scope="col">Intervalo</th><th scope="col">Indicado para</th></tr></thead>
     <tbody>
       <tr><td>Padrão</td><td>8–12 semanas</td><td>4–6 semanas</td><td>Planejamento geral para limitar o risco de dessensibilização.</td></tr>
       <tr><td>Estendido</td><td>12–16 semanas</td><td>6–8 semanas</td><td>Contextos de janela longa, em que o alvo é IGF-1 em estado estável.</td></tr>
@@ -302,8 +303,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>500 mcg</th><th>1.000 mcg</th><th>2.000 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">500 mcg</th><th scope="col">1.000 mcg</th><th scope="col">2.000 mcg</th></tr></thead>
     <tbody>
       <tr><td>10 mg</td><td class="num">1,0 mL</td><td class="num">10.000 mcg/mL</td><td class="num">0,05 mL (5 unidades)</td><td class="num">0,10 mL (10 unidades)</td><td class="num">0,20 mL (20 unidades)</td></tr>
       <tr><td>10 mg</td><td class="num">2,0 mL</td><td class="num">5.000 mcg/mL</td><td class="num">0,10 mL (10 unidades)</td><td class="num">0,20 mL (20 unidades)</td><td class="num">0,40 mL (40 unidades)</td></tr>
@@ -313,8 +314,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Linha do tempo e o que monitorar</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Linha do tempo e o que monitorar</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Janela</th><th>O que foi medido</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Janela</th><th scope="col">O que foi medido</th></tr></thead>
     <tbody>
       <tr><td>0–6 dias após dose única</td><td>GH elevado de 2 a 10 vezes (Teichman, 2006).</td></tr>
       <tr><td>De 0–9 a 11 dias após dose única</td><td>IGF-1 elevado de 1,5 a 3 vezes (Teichman, 2006).</td></tr>
@@ -325,8 +326,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">CJC-1295 com DAC vs. sem DAC vs. tesamorelina vs. ipamorelina</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">CJC-1295 com DAC vs. sem DAC vs. tesamorelina vs. ipamorelina</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>CJC-1295 com DAC</th><th>CJC-1295 No DAC</th><th>Tesamorelin</th><th>Ipamorelin</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Item</th><th scope="col">CJC-1295 com DAC</th><th scope="col">CJC-1295 No DAC</th><th scope="col">Tesamorelin</th><th scope="col">Ipamorelin</th></tr></thead>
     <tbody>
       <tr><td>Class</td><td>Análogo de GHRH de ação longa (ligante de albumina)</td><td>Análogo de GHRH</td><td>Análogo de GHRH</td><td>GHRP (mimético de grelina)</td></tr>
       <tr><td>Meia-vida</td><td>6–8 dias</td><td>~30 min</td><td>~26 min</td><td class="num">~2 h</td></tr>

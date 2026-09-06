@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -250,7 +251,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Metabólico e peso</div>
 <div class="artigo-cabeca">
   <h1>Cagrilintida</h1>
@@ -280,8 +281,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Protocolo e esquema de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Protocolo e esquema de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Semanas</th><th>Cagrilintide Dose</th><th>Purpose</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Semanas</th><th scope="col">Cagrilintide Dose</th><th scope="col">Purpose</th></tr></thead>
     <tbody>
       <tr><td>Initiation</td><td>Semanas 1–4</td><td class="num">0,25 mg/semana</td><td>Adaptação gastrointestinal; menor dose tolerada</td></tr>
       <tr><td>Step 2</td><td>Semanas 5–8</td><td class="num">0,5 mg/semana</td><td>Dose escalation</td></tr>
@@ -293,8 +294,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Diretrizes de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Diretrizes de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>Duração</th><th>Ponto de revisão</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">Duração</th><th scope="col">Ponto de revisão</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Short ciclo</td><td>16 semanas</td><td>Semana 16</td><td>Chega à manutenção exatamente quando a titulação termina</td></tr>
       <tr><td>Standard ciclo</td><td>26–32 semanas</td><td>Semana 26 / 32</td><td>Corresponde às durações do ensaio de fase 2</td></tr>
@@ -304,8 +305,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Cagrilintide Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cagrilintide Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>Aspiração de 0,6 mg</th><th>Aspiração de 1,2 mg</th><th>Aspiração de 2,4 mg</th><th>Aspiração de 4,5 mg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">Aspiração de 0,6 mg</th><th scope="col">Aspiração de 1,2 mg</th><th scope="col">Aspiração de 2,4 mg</th><th scope="col">Aspiração de 4,5 mg</th></tr></thead>
     <tbody>
       <tr><td>5 mg</td><td class="num">2,0 mL</td><td class="num">2,5 mg/mL</td><td class="num">0,24 mL / 24 unidades</td><td class="num">0,48 mL / 48 unidades</td><td class="num">0,96 mL / 96 unidades</td><td class="num">1,80 mL / 180 unidades*</td></tr>
       <tr><td>5 mg</td><td class="num">3,0 mL</td><td class="num">1,67 mg/mL</td><td class="num">0,36 mL / 36 unidades</td><td class="num">0,72 mL / 72 unidades</td><td class="num">1,44 mL / 144 unidades*</td><td>Exceeds frasco</td></tr>
@@ -316,8 +317,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Cagrilintide Linha do tempo e o que monitorar</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cagrilintide Linha do tempo e o que monitorar</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Ensaio</th><th>Duração</th><th>Population</th><th>Perda média de peso</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Ensaio</th><th scope="col">Duração</th><th scope="col">Population</th><th scope="col">Perda média de peso</th></tr></thead>
     <tbody>
       <tr><td>Lancet 2021, fase 2</td><td>26 semanas</td><td>Sobrepeso/obesidade, sem DM2 (n=706)</td><td class="num">10,8% com 4,5 mg versus 3,0% no placebo</td></tr>
       <tr><td>Lancet 2023, fase 2</td><td>32 semanas</td><td>DM2 + obesidade (n=92)</td><td class="num">8,1% com cagrilintida isolada; 15,6% com semaglutida</td></tr>
@@ -328,8 +329,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Cagrilintida vs. semaglutida vs. tirzepatida vs. retatrutida</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cagrilintida vs. semaglutida vs. tirzepatida vs. retatrutida</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Parameter</th><th>Cagrilintide</th><th>Semaglutide</th><th>Tirzepatide</th><th>Retatrutide</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Parameter</th><th scope="col">Cagrilintide</th><th scope="col">Semaglutide</th><th scope="col">Tirzepatide</th><th scope="col">Retatrutide</th></tr></thead>
     <tbody>
       <tr><td>Receptors</td><td>AMY1R/2R/3R + receptor de calcitonina</td><td>GLP-1R</td><td>GLP-1R + GIPR</td><td>GLP-1R + GIPR + receptor de glucagon</td></tr>
       <tr><td>Meia-vida</td><td>~7–8 dias</td><td>~7 dias</td><td>~5 dias</td><td>~6 dias</td></tr>

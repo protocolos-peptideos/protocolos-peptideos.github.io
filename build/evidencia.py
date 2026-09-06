@@ -15,10 +15,10 @@ dentro da própria página, para que qualquer pessoa possa repetir e me contradi
 <p>Não é uma seção de destaque por vaidade de método. É porque, das duas coisas que um site destes pode fazer —
 listar dose ou dizer o que a dose vale —, só a segunda é difícil de achar em português.</p>
 
-<h2>As quinze páginas</h2>
+<h2 id="quinze">As quinze páginas</h2>
 
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-<thead><tr><th>Página</th><th>Compostos</th><th>O achado central</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="quinze">
+<thead><tr><th scope="col">Página</th><th scope="col">Compostos</th><th scope="col">O achado central</th></tr></thead>
 <tbody>
 <tr>
   <td><a href="p/proprio_anvisa.html"><strong>O que existe no Brasil</strong></a></td>

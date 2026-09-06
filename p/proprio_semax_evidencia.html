@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -247,7 +248,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>Semax — a evidência</h1>
@@ -272,8 +273,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>As duas coisas não estão erradas: são <strong>contextos diferentes</strong>. A dose russa é hospitalar, para AVC isquêmico agudo, em curso curto. A dose de comunidade é para cognição, por tempo indeterminado. Mas quem lê só a página de protocolo não faz ideia de que a evidência clínica do Semax foi construída num regime completamente diferente daquele que se pratica.</p>
 <h2 id="sec1">Quanta evidência existe</h2>
 <p>PubMed e ClinicalTrials.gov, consultados em 4 de setembro de 2026.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Base</th><th>Consulta</th><th>Resultado</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec1">
+  <thead><tr><th scope="col">Base</th><th scope="col">Consulta</th><th scope="col">Resultado</th></tr></thead>
   <tbody>
     <tr><td>PubMed</td><td><code>Semax</code></td><td>231 artigos</td></tr>
     <tr><td>PubMed</td><td><code>Semax AND (Clinical Trial[Publication Type] OR Randomized Controlled Trial[Publication Type])</code></td><td><strong>4 artigos</strong></td></tr>
@@ -281,8 +282,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec2">Os quatro ensaios, com as doses que usaram</h2>
 <p>Segundo o PubMed, é isto que existe de clínico sobre o Semax. Todos em russo, todos no mesmo par de periódicos, e três deles com Miasoedov ou Skvortsova entre os autores — o grupo que desenvolveu o composto.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Estudo</th><th>N</th><th>Contexto</th><th><strong>Dose usada</strong></th><th>O que encontrou</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec2">
+  <thead><tr><th scope="col">Estudo</th><th scope="col">N</th><th scope="col">Contexto</th><th scope="col"><strong>Dose usada</strong></th><th scope="col">O que encontrou</th></tr></thead>
   <tbody>
     <tr><td>Gusev et al., 2018<br><small>Zh Nevrol Psikhiatr 118(3 Pt 2):61-68</small></td><td>110</td><td>Reabilitação pós-AVC isquêmico, precoce vs. tardia</td><td><strong>6.000 mcg/dia</strong>, 2 cursos de 10 dias com 20 dias de intervalo</td><td>Elevou o BDNF plasmático e acelerou a melhora no índice de Barthel, com o efeito somando-se ao da reabilitação precoce</td></tr>
     <tr><td>Serdiuk et al., 2007<br><small>Zh Nevrol Psikhiatr 107(4):29-39</small></td><td>27</td><td>Doença do neurônio motor</td><td><strong>12.000 mcg/dia</strong> intranasal, 2 cursos de 10 dias</td><td><strong>Não alterou o curso da denervação nem os desfechos clínicos.</strong> Melhorou apenas a qualidade de vida, por estado emocional e motivação, com pico no dia 10</td></tr>

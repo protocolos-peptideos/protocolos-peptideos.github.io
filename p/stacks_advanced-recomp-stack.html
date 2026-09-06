@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -253,7 +254,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Combinações</div>
 <div class="artigo-cabeca">
   <h1>Advanced Recomp</h1>
@@ -282,8 +283,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Fases de titulação</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Fases de titulação</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Semanas</th><th>Dose semanal</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Semanas</th><th scope="col">Dose semanal</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Initiation</td><td>1-4</td><td class="num">2 mg</td><td>Dose inicial; avaliar a tolerância gastrointestinal.</td></tr>
       <tr><td>Escalonamento inicial</td><td>5-8</td><td class="num">4 mg</td><td>Aumentar 2 mg a cada 4 semanas.</td></tr>
@@ -295,8 +296,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Titulação (igual nos dois formatos)</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Titulação (igual nos dois formatos)</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Semanas</th><th>Dose semanal</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Semanas</th><th scope="col">Dose semanal</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Initiation</td><td>1-4</td><td class="num">2 mg</td><td>Início; avaliar a tolerância gastrointestinal.</td></tr>
       <tr><td>Escalonamento inicial</td><td>5-8</td><td class="num">4 mg</td><td>Subir um degrau a cada 4 semanas.</td></tr>
@@ -308,8 +309,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Diretrizes de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Diretrizes de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>Duração</th><th>Intervalo</th><th>Indicado para</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">Duração</th><th scope="col">Intervalo</th><th scope="col">Indicado para</th></tr></thead>
     <tbody>
       <tr><td>Standard ciclo</td><td>12–16 semanas</td><td>4 semanas sem CJC/Ipa; a retatrutida pode continuar</td><td>Recomposição moderada; primeira vez</td></tr>
       <tr><td>Extended ciclo</td><td>16–24 semanas</td><td>4–6 semanas sem CJC/Ipa</td><td>Recomposição agressiva; usuários experientes</td></tr>
@@ -319,8 +320,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Retatrutide Reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Retatrutide Reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>Dose de 2 mg</th><th>Dose de 4 mg</th><th>Dose de 8 mg</th><th>Dose de 12 mg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">Dose de 2 mg</th><th scope="col">Dose de 4 mg</th><th scope="col">Dose de 8 mg</th><th scope="col">Dose de 12 mg</th></tr></thead>
     <tbody>
       <tr><td>5 mg</td><td class="num">1 mL</td><td class="num">5 mg/mL</td><td class="num">0,4 mL (40 U)</td><td class="num">0,8 mL (80 U)</td><td>—</td><td>—</td></tr>
       <tr><td>10 mg</td><td class="num">2 mL</td><td class="num">5 mg/mL</td><td class="num">0,4 mL (40 U)</td><td class="num">0,8 mL (80 U)</td><td class="num">1,6 mL (160 U)*</td><td>—</td></tr>
@@ -331,8 +332,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">CJC-1295 (No DAC) Reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">CJC-1295 (No DAC) Reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>Dose de 100 mcg</th><th>Dose de 200 mcg</th><th>Dose de 300 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">Dose de 100 mcg</th><th scope="col">Dose de 200 mcg</th><th scope="col">Dose de 300 mcg</th></tr></thead>
     <tbody>
       <tr><td>2 mg</td><td class="num">1 mL</td><td class="num">2.000 mcg/mL</td><td class="num">0,05 mL (5 U)</td><td class="num">0,10 mL (10 U)</td><td class="num">0,15 mL (15 U)</td></tr>
       <tr><td>5 mg</td><td class="num">2 mL</td><td class="num">2.500 mcg/mL</td><td class="num">0,04 mL (4 U)</td><td class="num">0,08 mL (8 U)</td><td class="num">0,12 mL (12 U)</td></tr>
@@ -342,8 +343,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">Retatrutide Reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Retatrutide Reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>2 mg</th><th>4 mg</th><th>6 mg</th><th>9 mg</th><th>12 mg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">2 mg</th><th scope="col">4 mg</th><th scope="col">6 mg</th><th scope="col">9 mg</th><th scope="col">12 mg</th></tr></thead>
     <tbody>
       <tr><td>10 mg</td><td class="num">2 mL</td><td class="num">5 mg/mL</td><td>40 U</td><td>80 U</td><td>120 U*</td><td>180 U*</td><td>240 U*</td></tr>
       <tr><td>10 mg</td><td class="num">1 mL</td><td class="num">10 mg/mL</td><td>20 U</td><td>40 U</td><td>60 U</td><td>90 U</td><td>120 U*</td></tr>
@@ -352,8 +353,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">Reconstituição do frasco combinado CJC-1295 + ipamorelina</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Reconstituição do frasco combinado CJC-1295 + ipamorelina</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração (por peptídeo)</th><th>100 mcg de cada</th><th>200 mcg de cada</th><th>300 mcg de cada</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração (por peptídeo)</th><th scope="col">100 mcg de cada</th><th scope="col">200 mcg de cada</th><th scope="col">300 mcg de cada</th></tr></thead>
     <tbody>
       <tr><td>5 mg + 5 mg (10 mg no total)</td><td class="num">2 mL</td><td class="num">2.500 mcg/mL de cada</td><td>4 U (0,04 mL)</td><td>8 U (0,08 mL)</td><td>12 U (0,12 mL)</td></tr>
       <tr><td>5 mg + 5 mg</td><td class="num">2,5 mL</td><td class="num">2.000 mcg/mL de cada</td><td>5 U (0,05 mL)</td><td>10 U (0,10 mL)</td><td>15 U (0,15 mL)</td></tr>
@@ -363,8 +364,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">Advanced Recomp vs. CagriSema vs. retatrutida isolada vs. retatrutida + MOTS-c</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Advanced Recomp vs. CagriSema vs. retatrutida isolada vs. retatrutida + MOTS-c</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>Combinação Advanced Recomp</th><th>CagriSema</th><th>Retatrutida isolada</th><th>Retatrutida + MOTS-c</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">Item</th><th scope="col">Combinação Advanced Recomp</th><th scope="col">CagriSema</th><th scope="col">Retatrutida isolada</th><th scope="col">Retatrutida + MOTS-c</th></tr></thead>
     <tbody>
       <tr><td>Components</td><td>Retatrutida + CJC-1295 (sem DAC) + ipamorelina</td><td>Cagrilintida + semaglutida</td><td>Apenas retatrutida</td><td>Retatrutida + MOTS-c</td></tr>
       <tr><td>Alvos de receptor</td><td>GLP-1 + GIP + glucagon + GHRH + grelina</td><td>GLP-1 + amilina</td><td>GLP-1 + GIP + glucagon</td><td>GLP-1 + GIP + glucagon + mitocondrial</td></tr>

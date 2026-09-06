@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -251,7 +252,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Combinações</div>
 <div class="artigo-cabeca">
   <h1>CagriSema</h1>
@@ -280,8 +281,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Titulação típica de 16 semanas</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Titulação típica de 16 semanas</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Semana</th><th>Cagrilintide</th><th>Semaglutide</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Semana</th><th scope="col">Cagrilintide</th><th scope="col">Semaglutide</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>1–4</td><td class="num">0,25 mg</td><td class="num">0,25 mg</td><td>Início: a tolerabilidade gastrointestinal é a prioridade máxima.</td></tr>
       <tr><td>5–8</td><td class="num">0,5 mg</td><td class="num">0,5 mg</td><td>Escalonamento inicial; a náusea costuma ter pico nessa janela.</td></tr>
@@ -293,8 +294,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Diretrizes de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Diretrizes de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>Duração</th><th>Intervalo</th><th>Indicado para</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">Duração</th><th scope="col">Intervalo</th><th scope="col">Indicado para</th></tr></thead>
     <tbody>
       <tr><td>Ciclo que espelha o ensaio</td><td>68 semanas</td><td>Conforme orientação clínica</td><td>Correspondendo aos ensaios clínicos REDEFINE 1 e REDEFINE 2.</td></tr>
       <tr><td>Ciclo padrão</td><td>12–24 semanas</td><td>4–8 semanas</td><td>Maioria das janelas de planejamento; alinha-se aos resultados dos ensaios de fase 2 em obesidade.</td></tr>
@@ -304,8 +305,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Reconstituição por formato de frasco</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Reconstituição por formato de frasco</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Total de mg por frasco</th><th>Água bacteriostática</th><th>Concentração (combinada)</th><th>Aspiração semanal aproximada, a 4,8 mg no total</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Total de mg por frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração (combinada)</th><th scope="col">Aspiração semanal aproximada, a 4,8 mg no total</th></tr></thead>
     <tbody>
       <tr><td>20 mg (4 doses completas)</td><td class="num">2,0 mL</td><td class="num">10 mg/mL</td><td class="num">0,48 mL = 48 unidades na U-100</td></tr>
       <tr><td>20 mg (4 doses completas)</td><td class="num">3,0 mL</td><td class="num">6,67 mg/mL</td><td class="num">0,72 mL = 72 unidades na U-100</td></tr>
@@ -315,8 +316,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Reconstituição por formato de frasco</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Reconstituição por formato de frasco</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Composto</th><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>Aspiração semanal a 2,4 mg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Composto</th><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">Aspiração semanal a 2,4 mg</th></tr></thead>
     <tbody>
       <tr><td>Cagrilintide</td><td class="num">5 mg</td><td class="num">2,0 mL</td><td class="num">2,5 mg/mL</td><td class="num">0,96 mL = 96 unidades na U-100</td></tr>
       <tr><td>Cagrilintide</td><td class="num">10 mg</td><td class="num">3,0 mL</td><td class="num">3,33 mg/mL</td><td class="num">0,72 mL = 72 unidades na U-100</td></tr>
@@ -327,8 +328,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Janela de estabilidade após a reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Janela de estabilidade após a reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Cagrilintide</th><th>Semaglutide</th><th>CagriSema pré-misturado</th><th></th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Cagrilintide</th><th scope="col">Semaglutide</th><th scope="col">CagriSema pré-misturado</th><th scope="col"></th></tr></thead>
     <tbody>
       <tr><td>Lyophilized (pó form)</td><td>−20 °C, longo prazo</td><td>−20 °C, longo prazo</td><td>−20 °C, longo prazo</td></tr>
       <tr><td>Reconstituído (forma líquida)</td><td>2–8 °C</td><td>2–8 °C</td><td>2–8 °C</td></tr>
@@ -339,8 +340,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">CagriSema vs. tirzepatida vs. semaglutida isolada</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">CagriSema vs. tirzepatida vs. semaglutida isolada</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>CagriSema</th><th>Tirzepatida (Zepbound)</th><th>Semaglutida isolada (Wegovy)</th><th>Cagrilintida isolada</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Item</th><th scope="col">CagriSema</th><th scope="col">Tirzepatida (Zepbound)</th><th scope="col">Semaglutida isolada (Wegovy)</th><th scope="col">Cagrilintida isolada</th></tr></thead>
     <tbody>
       <tr><td>Alvos de receptor</td><td>Amilina/calcitonina + GLP-1</td><td>GIP + GLP-1</td><td>GLP-1</td><td>Amilina/calcitonina (DACRA)</td></tr>
       <tr><td>Frequência de dose</td><td>1×/semana</td><td>1×/semana</td><td>1×/semana</td><td>1×/semana</td></tr>

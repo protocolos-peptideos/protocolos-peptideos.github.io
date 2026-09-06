@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -255,7 +256,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Metabólico e peso</div>
 <div class="artigo-cabeca">
   <h1>5-Amino-1MQ</h1>
@@ -284,8 +285,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">5-Amino-1MQ Formatos de protocolo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">5-Amino-1MQ Formatos de protocolo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Dose diária</th><th>Unidades na seringa U-100</th><th>Volume</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Dose diária</th><th scope="col">Unidades na seringa U-100</th><th scope="col">Volume</th></tr></thead>
     <tbody>
       <tr><td>Dias 1–2 (tolerância)</td><td class="num">2,5 mg 1×/dia</td><td class="num">15 unidades</td><td class="num">0,15 mL</td></tr>
       <tr><td>Dias 3+ (padrão)</td><td class="num">5 mg 1×/dia</td><td class="num">30 unidades</td><td class="num">0,30 mL</td></tr>
@@ -295,8 +296,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Dose oral e evidência</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Dose oral e evidência</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>Dose diária</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Fase</th><th scope="col">Dose diária</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Semanas 1–2 (começar baixo)</td><td class="num">50 mg 1×/dia</td><td>A dose matinal é o padrão mais relatado; sono, energia e digestão são os itens mais acompanhados nos relatos de comunidade.</td></tr>
       <tr><td>Semana 3 em diante (standard)</td><td class="num">100 mg 1×/dia</td><td>A dose-alvo mais comum na comunidade.</td></tr>
@@ -307,8 +308,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">5-Amino-1MQ Cápsula oral vs. injeção</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">5-Amino-1MQ Cápsula oral vs. injeção</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Factor</th><th>Oral cápsulas</th><th>Subcutaneous injeção</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Factor</th><th scope="col">Oral cápsulas</th><th scope="col">Subcutaneous injeção</th></tr></thead>
     <tbody>
       <tr><td>Administration</td><td>Cápsula, por via oral</td><td>Solução reconstituída aplicada sob a pele</td></tr>
       <tr><td>Quantidades comumente discutidas</td><td>50 a 150 mg por dia nos relatos de comunidade</td><td>2,5 a 5 mg por dia nos relatos de comunidade</td></tr>
@@ -322,8 +323,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Meia-vida e frequência de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Meia-vida e frequência de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Measure</th><th>Achado publicado</th><th>O que significa</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Measure</th><th scope="col">Achado publicado</th><th scope="col">O que significa</th></tr></thead>
     <tbody>
       <tr><td>Meia-vida intravenosa</td><td>3,80 ± 1,10 h em ratos</td><td>Só dados intravenosos em animais; não descreve o comportamento oral ou subcutâneo em humanos.</td></tr>
       <tr><td>Meia-vida oral</td><td>6,90 ± 1,20 h em ratos</td><td>Só dados orais em animais; não é uma meia-vida humana estabelecida.</td></tr>
@@ -334,8 +335,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">5-Amino-1MQ Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">5-Amino-1MQ Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Água bacteriostática</th><th>Concentração final</th><th>Quantidade de pesquisa</th><th>Volume a aspirar</th><th>unidades na seringa U-100</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Água bacteriostática</th><th scope="col">Concentração final</th><th scope="col">Quantidade de pesquisa</th><th scope="col">Volume a aspirar</th><th scope="col">unidades na seringa U-100</th></tr></thead>
     <tbody>
       <tr><td>1,0 mL</td><td class="num">10 mg/mL</td><td class="num">1 mg</td><td class="num">0,10 mL</td><td class="num">10 unidades</td></tr>
       <tr><td>1,0 mL</td><td class="num">10 mg/mL</td><td class="num">2,5 mg</td><td class="num">0,25 mL</td><td class="num">25 unidades</td></tr>
@@ -345,8 +346,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">5-Amino-1MQ Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">5-Amino-1MQ Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Água bacteriostática</th><th>Concentração final</th><th>Quantidade de pesquisa</th><th>Volume a aspirar</th><th>unidades na seringa U-100</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Água bacteriostática</th><th scope="col">Concentração final</th><th scope="col">Quantidade de pesquisa</th><th scope="col">Volume a aspirar</th><th scope="col">unidades na seringa U-100</th></tr></thead>
     <tbody>
       <tr><td>2,0 mL</td><td class="num">10 mg/mL</td><td class="num">1 mg</td><td class="num">0,10 mL</td><td class="num">10 unidades</td></tr>
       <tr><td>2,0 mL</td><td class="num">10 mg/mL</td><td class="num">2,5 mg</td><td class="num">0,25 mL</td><td class="num">25 unidades</td></tr>
@@ -356,8 +357,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">5-Amino-1MQ Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">5-Amino-1MQ Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Água bacteriostática</th><th>Concentração final</th><th>Quantidade de pesquisa</th><th>Volume a aspirar</th><th>unidades na seringa U-100</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">Água bacteriostática</th><th scope="col">Concentração final</th><th scope="col">Quantidade de pesquisa</th><th scope="col">Volume a aspirar</th><th scope="col">unidades na seringa U-100</th></tr></thead>
     <tbody>
       <tr><td>3,0 mL</td><td class="num">16,7 mg/mL</td><td class="num">1 mg</td><td class="num">0,06 mL</td><td class="num">6 unidades</td></tr>
       <tr><td>3,0 mL</td><td class="num">16,7 mg/mL</td><td class="num">2,5 mg</td><td class="num">0,15 mL</td><td class="num">15 unidades</td></tr>
@@ -368,8 +369,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">5-Amino-1MQ vs. AOD-9604 vs. semaglutida vs. NAD+</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">5-Amino-1MQ vs. AOD-9604 vs. semaglutida vs. NAD+</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Composto</th><th>Mecanismo</th><th>Via</th><th>Age no apetite?</th><th>Status FDA</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">Composto</th><th scope="col">Mecanismo</th><th scope="col">Via</th><th scope="col">Age no apetite?</th><th scope="col">Status FDA</th></tr></thead>
     <tbody>
       <tr><td>5-Amino-1MQ</td><td>Inibidor de NNMT; eleva o NAD+ e reduz as células de gordura</td><td>Oral cápsulas (50–150 mg/dia)</td><td>Não</td><td>Não aprovado pela FDA</td></tr>
       <tr><td>AOD-9604</td><td>Fragmento modificado de GH; promove oxidação de gordura</td><td>Subcutaneous injeção</td><td>Não</td><td>Não aprovado pela FDA</td></tr>
@@ -380,8 +381,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab8">De onde vem o ciclo de 8–12 semanas</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">De onde vem o ciclo de 8–12 semanas</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>ciclo length</th><th>Nível de evidência</th><th>Best interpretation</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab8">
+    <thead><tr><th scope="col">ciclo length</th><th scope="col">Nível de evidência</th><th scope="col">Best interpretation</th></tr></thead>
     <tbody>
       <tr><td>About 2 semanas</td><td>Close to the de 11 dias mouse proof-of-concept study</td><td>A short animal-study reference point, not a human minimum ciclo.</td></tr>
       <tr><td>4 semanas</td><td>Matches the de 28 dias mouse study duration</td><td>A published animal duration, not a validated human ciclo.</td></tr>
@@ -393,8 +394,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab9">Cycle Length Is Not the Same as Half-Life</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cycle Length Is Not the Same as Half-Life</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Concept</th><th>O que significa</th><th>O que isso não significa</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab9">
+    <thead><tr><th scope="col">Concept</th><th scope="col">O que significa</th><th scope="col">O que isso não significa</th></tr></thead>
     <tbody>
       <tr><td>Meia-vida</td><td>How fast measured drug concentration declines in a specific PK study</td><td>How many weeks a ciclo should last</td></tr>
       <tr><td>Dose interval</td><td>How often a study administers a compound</td><td>Por quanto tempo o experimento inteiro deve seguir</td></tr>

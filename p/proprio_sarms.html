@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -259,7 +260,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>SARMs</h1>
@@ -284,8 +285,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Por isso a página começa pelo frasco, e só depois fala de molécula.</p>
 <h2 id="sec1">Comece pelo frasco, não pela molécula</h2>
 <p>Duas análises químicas independentes compraram produtos vendidos como SARM e mediram o que havia dentro. Os números abaixo são delas, não meus.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Achado</th><th><em>JAMA</em>, 2017 — 44 produtos<br><small>comprados nos EUA pela internet</small></th><th><em>Sex Med</em>, 2024 — 13 produtos<br><small>comprados na Itália pela internet</small></th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec1">
+  <thead><tr><th scope="col">Achado</th><th scope="col"><em>JAMA</em>, 2017 — 44 produtos<br><small>comprados nos EUA pela internet</small></th><th scope="col"><em>Sex Med</em>, 2024 — 13 produtos<br><small>comprados na Itália pela internet</small></th></tr></thead>
   <tbody>
     <tr><td>Continha o SARM declarado</td><td><strong>23 de 44 (52%)</strong></td><td>cerca de <strong>70%</strong></td></tr>
     <tr><td>Continha <strong>outro</strong> SARM, não o do rótulo</td><td>—</td><td><strong>23%</strong></td></tr>
@@ -305,8 +306,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>A coluna <strong>Consulta</strong> traz o termo exato que produziu o número ao lado. Copie no PubMed e o resultado tem que ser o mesmo — se não for, o número aqui está velho, e o que vale é o que a base devolver a você.</p>
 <p>No ClinicalTrials.gov a busca foi por intervenção, com os mesmos sinônimos — inclusive <code>VK5211</code> para o ligandrol, sob o qual o ensaio de fratura de quadril está registrado. Sem esse sinônimo a busca devolve zero, e a página afirmaria que não existe ensaio nenhum do composto.</p>
 <p>Levantamento feito no PubMed e no ClinicalTrials.gov em 4 de setembro de 2026. A coluna que decide não é a de artigos: é a de <strong>ensaio registrado em humano</strong>.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Composto</th><th>Consulta no PubMed</th><th>Artigos no PubMed</th><th>Ensaios no ClinicalTrials.gov</th><th>Fase máxima atingida</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec3">
+  <thead><tr><th scope="col">Composto</th><th scope="col">Consulta no PubMed</th><th scope="col">Artigos no PubMed</th><th scope="col">Ensaios no ClinicalTrials.gov</th><th scope="col">Fase máxima atingida</th></tr></thead>
   <tbody>
     <tr><td>Enobosarme<br><small>ostarina · MK-2866 · GTx-024</small></td><td><code>enobosarm OR ostarine OR "MK-2866"</code></td><td>112</td><td>17</td><td><strong>Fase 3</strong> — dois ensaios, concluídos em 2013</td></tr>
     <tr><td>LGD-4033<br><small>ligandrol · VK5211</small></td><td><code>"LGD-4033" OR ligandrol OR VK5211</code></td><td>50</td><td>1</td><td>Fase 2</td></tr>
@@ -332,8 +333,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Vale abrir esse ensaio, porque ele é a base humana inteira do composto mais vendido do mercado paralelo — e porque o que há dentro dele quase nunca é citado.</p>
 <p>É o <strong>NCT03088527</strong>, primeiro em humano, publicado por LoRusso e colegas em 2022. Desenho de escalonamento de dose 3+3 em mulheres na pós-menopausa com câncer de mama metastático RE+/HER2−, <strong>fortemente pré-tratadas</strong>. Os níveis de dose foram <strong>50 mg (n=6), 100 mg (n=13) e 150 mg (n=3)</strong>, uma vez ao dia.</p>
 <p>Guarde esses três números. <strong>Quando qualquer fonte cita uma “faixa de dose em ensaio clínico” para o RAD140, é daqui que ela vem</strong> — não existe outra. E é faixa de oncologia, calibrada contra câncer metastático, não contra hipertrofia.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Evento</th><th>Frequência</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec5">
+  <thead><tr><th scope="col">Evento</th><th scope="col">Frequência</th></tr></thead>
   <tbody>
     <tr><td>AST elevada</td><td><strong>59,1%</strong></td></tr>
     <tr><td>ALT elevada</td><td><strong>45,5%</strong></td></tr>
@@ -353,8 +354,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Os ensaios <strong>POWER 1</strong> e <strong>POWER 2</strong> testaram enobosarm contra placebo em perda muscular por câncer de pulmão, com <strong>651 pacientes somados</strong>. São o topo da pirâmide de evidência de todos os SARMs.</p>
 <p><strong>E não existe artigo sobre eles.</strong> Nenhuma publicação de resultados foi indexada no PubMed nem consta vinculada aos próprios registros — a única referência ligada aos dois é o artigo de <em>desenho</em>. Os números abaixo foram extraídos da <strong>API v2 do ClinicalTrials.gov</strong> em 4 de setembro de 2026, que é o único lugar onde eles existem.</p>
 <p>Os dois ensaios tinham <strong>desfechos coprimários</strong>, medidos no dia 84 como percentual de respondedores: ganho de <strong>≥10% na potência de subida de escada</strong> para função física, e variação <strong>≥0%</strong> (isto é, não perder) para massa magra.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Ensaio</th><th>Desfecho coprimário</th><th>Enobosarm</th><th>Placebo</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec7">
+  <thead><tr><th scope="col">Ensaio</th><th scope="col">Desfecho coprimário</th><th scope="col">Enobosarm</th><th scope="col">Placebo</th></tr></thead>
   <tbody>
     <tr><td><strong>POWER 1</strong><br><small>NCT01355484 · platina + taxano<br>160 vs. 161</small></td><td>Função física</td><td>29,4% <small>(IC95% 22,4–37,1)</small></td><td>24,2% <small>(IC95% 17,8–31,6)</small></td></tr>
     <tr><td></td><td>Massa magra</td><td>41,9% <small>(IC95% 34,1–49,9)</small></td><td>30,4% <small>(IC95% 23,4–38,2)</small></td></tr>
@@ -378,8 +379,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Registro a diferença porque ela é fonte comum de confusão ao comparar uma publicação com o registro do mesmo ensaio — e porque foi conferir uma coisa contra a outra que revelou a distinção aqui.</p>
 <h2 id="sec10">Os números de eficácia que existem, e o tamanho deles</h2>
 <p>Fora dos POWER, três ensaios publicados sustentam quase tudo o que se afirma sobre SARM. Vale ver o que cada um mediu, em quem, e por quanto tempo.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Ensaio</th><th>Composto</th><th>Quem</th><th>O que achou</th><th>Ressalva</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec10">
+  <thead><tr><th scope="col">Ensaio</th><th scope="col">Composto</th><th scope="col">Quem</th><th scope="col">O que achou</th><th scope="col">Ressalva</th></tr></thead>
   <tbody>
     <tr><td>Basaria 2013<br><small>J Gerontol A · duplo-cego, controlado por placebo</small></td><td><strong>LGD-4033</strong></td><td>76 homens saudáveis de 21 a 50 anos, <strong>21 dias</strong>, 0,1 / 0,3 / 1,0 mg</td><td>Massa magra subiu de forma dose-dependente; gordura não mudou. Bem tolerado, sem evento adverso grave. PSA, hemoglobina, AST, ALT e intervalo QT sem alteração</td><td><strong>Supressão dose-dependente de testosterona total, SHBG, HDL e triglicerídeos.</strong> FSH e testosterona livre caíram só na dose de 1,0 mg. Tudo voltou ao basal após a suspensão. <strong>Vinte e um dias</strong> não dizem nada sobre um ciclo de doze semanas</td></tr>
     <tr><td>Dobs 2013<br><small>Lancet Oncol · fase 2, duplo-cego</small></td><td><strong>Enobosarm</strong></td><td>159 pacientes com câncer e perda de peso, <strong>113 dias</strong></td><td>Massa magra total vs. basal: <strong>+1,5 kg</strong> na dose de 1 mg (p=0,0012) e <strong>+1,0 kg</strong> na de 3 mg (p=0,046). Placebo: +0,02 kg, não significativo</td><td>O desfecho é variação <strong>contra o próprio basal</strong>, não contra o placebo. E repare na <strong>não-monotonicidade</strong>: a dose maior rendeu menos que a menor</td></tr>
@@ -392,8 +393,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Ou seja: para a pessoa saudável que treina, que é quem compra, o nível de evidência agregada de SARM é <strong>zero revisão sistemática elegível</strong>. Enquanto isso, o dano já tem série de casos, hospitalização e um transplante — a seção seguinte.</p>
 <h2 id="sec12">Segurança: o que está documentado</h2>
 <p>Ao contrário da eficácia, o dano tem número, tem série de casos e tem desfecho duro.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Levantamento</th><th>O que encontrou</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec12">
+  <thead><tr><th scope="col">Levantamento</th><th scope="col">O que encontrou</th></tr></thead>
   <tbody>
     <tr><td><strong>Revisão sistemática de segurança</strong><br><small>Vignali 2023 · 33 estudos, 2.136 pacientes, <strong>1.447 expostos</strong></small></td><td>Nos relatos de caso: <strong>15 de lesão hepática induzida por fármaco (DILI)</strong>, 1 ruptura de tendão de Aquiles, 1 rabdomiólise, 1 elevação reversível de enzimas. Nos ensaios clínicos, elevação de ALT em média <strong>7,1%</strong> dos expostos, e <strong>2 casos de rabdomiólise</strong> com GSK2881078. Conclusão dos autores: o uso recreativo deve ser fortemente desencorajado</td></tr>
     <tr><td><strong>Revisão sistemática do abuso por atletas</strong><br><small>Vasireddi 2025 · 72 artigos, 2003 a 2022</small></td><td>Prevalência estimada de <strong>1% a 3%</strong>. Treze relatos descrevendo 15 casos: <strong>todos homens</strong>, mediana de 32 anos, todos por via oral, curso médio de 8 semanas. <strong>Cinco pacientes negaram explicitamente uso de droga ilícita</strong> — acreditavam estar dentro da lei. Doses relatadas <strong>muito acima</strong> das estudadas clinicamente</td></tr>
@@ -402,8 +403,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec13">No Brasil, isto é proibido — e a proibição inclui a manipulação</h2>
 <p>Esta é a diferença prática entre a página de SARM e quase todas as outras deste site. Aqui não existe zona cinzenta de importação pessoal ou de fórmula manipulada: existe uma resolução que fecha as duas portas.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Jurisdição</th><th>Situação</th><th>Detalhe verificado</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec13">
+  <thead><tr><th scope="col">Jurisdição</th><th scope="col">Situação</th><th scope="col">Detalhe verificado</th></tr></thead>
   <tbody>
     <tr><td><strong>Brasil</strong> <small>(ANVISA)</small></td><td><strong>Proibido</strong></td><td>A <strong>Resolução (RE) 791/2021</strong>, publicada em <strong>23/02/2021</strong>, proibiu a comercialização, a distribuição, a fabricação, a importação, a <strong>manipulação</strong>, a propaganda e o uso de produtos com SARM, e determinou <strong>apreensão e inutilização</strong>. Aplica-se a produto industrializado e manipulado, importado e nacional, em meio físico e remoto. A própria ANVISA registra que <strong>não há medicamento com SARM registrado</strong> na Agência</td></tr>
     <tr><td><strong>Antidopagem</strong> <small>(WADA / ABCD)</small></td><td><strong>Proibido em todo tempo</strong></td><td>Lista Proibida 2026, em vigor desde <strong>01/01/2026</strong>, seção <strong>S1.2 — Outros Agentes Anabolizantes</strong>. O texto nomeia <strong>andarina, enobosarm (ostarina), LGD-4033 (ligandrol), RAD140, S-23 e YK-11</strong>. Categoria S1 vale <strong>dentro e fora de competição</strong></td></tr>
@@ -411,8 +412,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec14">Os três que são vendidos como SARM e não são</h2>
 <p>Os três apareceram como substituto ou adulterante nos produtos analisados pelo <em>JAMA</em>. Nenhum age no receptor androgênico.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Composto</th><th>O que é de fato</th><th>Literatura no PubMed</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec14">
+  <thead><tr><th scope="col">Composto</th><th scope="col">O que é de fato</th><th scope="col">Literatura no PubMed</th></tr></thead>
   <tbody>
     <tr><td><strong>MK-677 · ibutamoren</strong></td><td><strong>Secretagogo de GH</strong> — agonista do receptor de grelina. Não toca no receptor androgênico</td><td>Literatura clínica própria, antiga, de outro campo</td></tr>
     <tr><td><strong>GW501516 · cardarine</strong></td><td><strong>Agonista de PPARδ</strong></td><td>372 artigos</td></tr>

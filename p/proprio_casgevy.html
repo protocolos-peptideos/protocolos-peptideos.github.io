@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -264,7 +265,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>Casgevy</h1>
@@ -288,8 +289,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>O resultado curto, e ele não é o que se espera: <strong>o gargalo declarado não é o preço</strong>. Quando o avaliador britânico explica por que projeta adesão baixa, ele não cita custo. Cita a internação.</p>
 <h2 id="sec1">O preço, nas duas moedas em que ele é público</h2>
 <p>O preço britânico está declarado em texto idêntico nas duas orientações do NICE — a da beta-talassemia, publicada em 11 de setembro de 2024, e a da doença falciforme, publicada em 26 de fevereiro de 2025.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Mercado</th><th>Preço de lista</th><th>O que se sabe do preço real</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec1">
+  <thead><tr><th scope="col">Mercado</th><th scope="col">Preço de lista</th><th scope="col">O que se sabe do preço real</th></tr></thead>
   <tbody>
     <tr><td>Reino Unido</td><td><strong>£1.651.000</strong> por curso de tratamento, dose única — o mesmo nas duas indicações</td><td>A empresa tem acordo comercial que dá desconto ao NHS. <strong>O tamanho do desconto é sigilo comercial</strong>, declarado como tal pelo próprio NICE</td></tr>
     <tr><td>Estados Unidos</td><td><strong>US$ 2,2 milhões</strong> (preço de tabela, <em>wholesale acquisition cost</em>)</td><td>Preço antes de descontos e reembolsos. O concorrente lentiviral, lovotibeglogene autotemcel, está em US$ 3,1 milhões</td></tr>
@@ -301,8 +302,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>A ressalva importa: a faixa foi calculada <em>antes</em> do preço existir. É a comparação de uma estimativa prévia com um número posterior, não um julgamento do instituto sobre o preço final.</p>
 <h2 id="sec3">O funil de elegibilidade, com cada porcentagem exposta</h2>
 <p>O NICE publica a conta inteira. Vale seguir passo a passo, porque é aqui que “aprovado para doença falciforme” vira <strong>78 pessoas por ano</strong>.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Filtro</th><th>Proporção que passa</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec3">
+  <thead><tr><th scope="col">Filtro</th><th scope="col">Proporção que passa</th></tr></thead>
   <tbody>
     <tr><td>Têm genótipo βS/βS, βS/β+ ou βS/β0</td><td>~70%</td></tr>
     <tr><td>Desses, tiveram ≥2 crises vaso-oclusivas por ano nos 2 anos anteriores</td><td>48%</td></tr>
@@ -312,8 +313,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec4">E do elegível para o tratado</h2>
 <p>A tabela seguinte é do mesmo relatório. A última linha é a que importa.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th></th><th>2025-26</th><th>2026-27</th><th>2027-28</th><th>2028-29</th><th>2029-30</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec4">
+  <thead><tr><th scope="col"></th><th scope="col">2025-26</th><th scope="col">2026-27</th><th scope="col">2027-28</th><th scope="col">2028-29</th><th scope="col">2029-30</th></tr></thead>
   <tbody>
     <tr><td>Selecionados para tratar (intenção de tratar)</td><td>29</td><td>72</td><td>90</td><td>96</td><td>96</td></tr>
     <tr><td>Proporção que conclui o tratamento</td><td>81%</td><td>81%</td><td>81%</td><td>81%</td><td>81%</td></tr>
@@ -336,8 +337,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>A resposta foi criar um modelo em que o <strong>próprio governo federal negocia acordos baseados em desfecho</strong> com os fabricantes, em nome dos estados: os estados participantes recebem descontos e reembolsos garantidos <strong>caso a terapia não entregue o benefício prometido</strong>.</p>
 <p>Em anúncio de <strong>15 de julho de 2025</strong>: 33 estados, mais o Distrito de Colúmbia e Porto Rico, aderiram. O órgão federal afirma que <strong>84% dos beneficiários do Medicaid com doença falciforme</strong> residem em estados participantes.</p>
 <p>Mas há a conta, e ela é dura. Análise da perspectiva do Medicaid do Colorado, com dados reais de 2018 a 2023:</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Medida</th><th>Valor</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec7">
+  <thead><tr><th scope="col">Medida</th><th scope="col">Valor</th></tr></thead>
   <tbody>
     <tr><td>Custo médio anual do <strong>padrão de cuidado</strong> para falciforme grave (138 pacientes)</td><td><strong>US$ 45.941</strong> por ano (desvio-padrão US$ 59.653)</td></tr>
     <tr><td>Saldo cumulativo em <strong>6 anos de contrato</strong>, com preço de lista, comparado ao padrão de cuidado — exa-cel</td><td><strong>−US$ 2,11 milhões</strong> por paciente</td></tr>
@@ -350,8 +351,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </ul>
 <h2 id="sec9">O comparador que a discussão evitou</h2>
 <p>Esta é a peça mais dura do levantamento, e é de 2026. Uma análise de custo-efetividade publicada em <em>Blood</em> comparou três estratégias em adultos e crianças com doença falciforme: padrão de cuidado, <strong>transplante alogênico haploidêntico com condicionamento não-mieloablativo</strong> — aquele em que o doador é meio-compatível, um pai, uma mãe, um irmão — e terapia gênica.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Estratégia</th><th>Anos de vida ajustados por qualidade</th><th>Custo</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec9">
+  <thead><tr><th scope="col">Estratégia</th><th scope="col">Anos de vida ajustados por qualidade</th><th scope="col">Custo</th></tr></thead>
   <tbody>
     <tr><td>Padrão de cuidado</td><td>14,3</td><td>US$ 1,22 milhão</td></tr>
     <tr><td><strong>Transplante haploidêntico</strong></td><td><strong>20,1</strong></td><td><strong>US$ 1,15 milhão</strong></td></tr>
@@ -367,8 +368,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </ul>
 <h2 id="sec11">Onde estão os pacientes, e onde está a terapia</h2>
 <p>Estudo de Carga Global de Doença, 204 países e territórios, série de 2000 a 2021.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Medida</th><th>Valor</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec11">
+  <thead><tr><th scope="col">Medida</th><th scope="col">Valor</th></tr></thead>
   <tbody>
     <tr><td>Nascimentos de bebês com a doença, por ano</td><td><strong>515.000</strong> (425.000–614.000) — alta de 13,7% desde 2000, puxada pelo crescimento populacional no <strong>Caribe e na África subsaariana ocidental e central</strong></td></tr>
     <tr><td>Pessoas vivendo com a doença</td><td><strong>7,74 milhões</strong> (6,51–9,2) — alta de <strong>41,4%</strong> desde 2000</td></tr>
@@ -395,8 +396,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Consulta em 4 de setembro de 2026 à base pública de petições da ANVISA — o sistema “Situação de Documentos”, que permite filtrar por CNPJ e por código de assunto.</p>
 <p>Terapia gênica e celular não entra no cadastro de medicamentos: é <strong>Produto de Terapia Avançada</strong>, com registro separado sob a RDC 505 de 2021. Buscar “exagamglogene” na base aberta de medicamentos devolve zero, e isso não significa nada — é a base errada.</p>
 <p>O universo completo de pedidos de registro de terapia avançada já protocolados na Agência, somando os quatro códigos de assunto que existem para isso, são <strong>12 petições, de 9 empresas</strong>. Estas são as 11 da Classe II:</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Empresa</th><th>Situação</th><th>Processo</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec15">
+  <thead><tr><th scope="col">Empresa</th><th scope="col">Situação</th><th scope="col">Processo</th></tr></thead>
   <tbody>
     <tr><td>Novartis Biociências</td><td>Publicado deferimento</td><td>25351530600202181</td></tr>
     <tr><td>Novartis Biociências</td><td>Publicado deferimento</td><td>25351520073201982</td></tr>
@@ -413,8 +414,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec16">A varredura que fecha a pergunta</h2>
 <p>Nenhuma das 12 é da Vertex, detentora do Casgevy. Para eliminar a hipótese de a petição estar sob outro código de assunto, a varredura foi refeita por CNPJ.</p>
 <p>A <strong>Vertex Farmacêutica do Brasil</strong> — identificada pelo CNPJ que consta como detentora dos registros de Trikafta, Symdeko, Orkambi e Kalydeco, todos medicamentos de fibrose cística — tem 541 petições no sistema da ANVISA. Todas foram baixadas e classificadas por assunto.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Recorte</th><th>Petições</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec16">
+  <thead><tr><th scope="col">Recorte</th><th scope="col">Petições</th></tr></thead>
   <tbody>
     <tr><td>Total no sistema da ANVISA</td><td><strong>541</strong></td></tr>
     <tr><td>Com assunto de <strong>Produto de Terapia Avançada</strong></td><td><strong>0</strong></td></tr>
@@ -431,8 +432,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </ul>
 <h2 id="sec18">E, se um dia destravar, avaliaremos no escuro</h2>
 <p>O Relatório de Recomendação nº 924 da CONITEC, de 2024, que estabelece o protocolo clínico da doença falciforme no SUS, traz a epidemiologia oficial brasileira — e o buraco dentro dela.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Medida</th><th>Valor oficial</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec18">
+  <thead><tr><th scope="col">Medida</th><th scope="col">Valor oficial</th></tr></thead>
   <tbody>
     <tr><td>População com traço falciforme</td><td>estima-se <strong>4%</strong>, com distribuição heterogênea entre as regiões</td></tr>
     <tr><td>Recém-nascidos diagnosticados pelo Programa Nacional de Triagem Neonatal, de 2014 a 2018</td><td><strong>5.428</strong></td></tr>

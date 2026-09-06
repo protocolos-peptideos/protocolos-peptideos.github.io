@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -264,7 +265,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>CRISPR</h1>
@@ -293,8 +294,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>A parte que quase nunca é contada: <strong>a tesoura é precisa, o conserto não é</strong>. Quem repara a quebra é a própria célula, e o modo mais comum de reparo gera pequenas inserções e deleções que desligam o gene. Escrever uma sequência nova no lugar é bem menos eficiente. Boa parte dos problemas de segurança mais adiante nesta página vem dessa segunda metade, não da primeira.</p>
 <h2 id="sec2">Cronologia verificada</h2>
 <p>Cada linha abaixo foi conferida no PubMed pelo identificador do artigo. Duas coisas que a versão popular da história costuma apagar aparecem aqui: <strong>passaram-se 25 anos entre ver e entender</strong> — as repetições estavam publicadas desde 1987 e ninguém sabia o que eram — e <strong>a demonstração de que aquilo era um sistema imune saiu de uma fabricante de iogurte</strong>, resolvendo um problema industrial de fermento morto por bacteriófago.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Ano</th><th>O que foi estabelecido</th><th>Publicação</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec2">
+  <thead><tr><th scope="col">Ano</th><th scope="col">O que foi estabelecido</th><th scope="col">Publicação</th></tr></thead>
   <tbody>
     <tr><td>1987</td><td>Primeira observação das repetições, em <em>E. coli</em> — num artigo sobre um gene de fosfatase alcalina. Aparecem como curiosidade de sequência, sem função conhecida</td><td>Ishino, <em>J Bacteriol</em></td></tr>
     <tr><td>2005</td><td>Três grupos, independentes, descobrem que os espaçadores <strong>vêm de vírus e plasmídeos</strong> — a pista de que aquilo era defesa</td><td>Mojica, <em>J Mol Evol</em> · Bolotin e Pourcel, <em>Microbiology</em></td></tr>
@@ -314,8 +315,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec3">O tamanho real do campo</h2>
 <p>Busca no PubMed em 4 de setembro de 2026, com o termo no título ou no resumo. O último número da tabela é o que importa para calibrar qualquer manchete sobre CRISPR.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Recorte</th><th>Registros</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec3">
+  <thead><tr><th scope="col">Recorte</th><th scope="col">Registros</th></tr></thead>
   <tbody>
     <tr><td>Total</td><td><strong>64.641</strong></td></tr>
     <tr><td>Publicados em 2012</td><td>139</td></tr>
@@ -334,8 +335,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec5">O único produto aprovado</h2>
 <p>Um só chegou aqui: <strong>Casgevy</strong> (exagamglogene autotemcel). É terapia celular autóloga não-viral. Colhem-se as células-tronco do sangue do próprio paciente; edita-se <em>fora do corpo</em>, com CRISPR-Cas9, a região que controla o gene <strong>BCL11A</strong>; e reinfunde-se depois de quimioterapia mieloablativa com bussulfano.</p>
 <p>A lógica é indireta e elegante: o BCL11A é o que desliga a hemoglobina fetal depois do nascimento. Desligando o BCL11A, a hemoglobina fetal volta — e compensa a hemoglobina adulta defeituosa. <strong>Não se conserta o gene doente; contorna-se ele religando um gene de reserva.</strong></p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Data</th><th>Agência</th><th>Escopo</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec5">
+  <thead><tr><th scope="col">Data</th><th scope="col">Agência</th><th scope="col">Escopo</th></tr></thead>
   <tbody>
     <tr><td>15 de novembro de 2023</td><td>MHRA (Reino Unido)</td><td><strong>Primeira autorização do mundo.</strong> Falciforme e beta-talassemia dependente de transfusão, a partir de 12 anos</td></tr>
     <tr><td>8 de dezembro de 2023</td><td>FDA (Estados Unidos)</td><td>Doença falciforme com crises vaso-oclusivas recorrentes, a partir de 12 anos</td></tr>
@@ -346,8 +347,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec6">Os números de eficácia, e o que eles não dizem</h2>
 <p>Os dois ensaios de fase 3 são de braço único e abertos — <strong>não há grupo de comparação</strong>. Isso limita a leitura e precisa ser dito antes dos números, não depois.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th></th><th>Doença falciforme</th><th>Beta-talassemia dependente de transfusão</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec6">
+  <thead><tr><th scope="col"></th><th scope="col">Doença falciforme</th><th scope="col">Beta-talassemia dependente de transfusão</th></tr></thead>
   <tbody>
     <tr><td>Pacientes tratados</td><td>44</td><td>52</td></tr>
     <tr><td>Seguimento mediano</td><td>19,3 meses (0,8 a 48,1)</td><td>20,4 meses (2,1 a 48,1)</td></tr>
@@ -361,8 +362,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p><strong>A edição funcionou em 100% dos pacientes.</strong> Nos dois ensaios, todos enxertaram. O que limita o alcance da terapia não é a etapa de edição: é o <strong>transplante autólogo em volta dela</strong>. Os eventos adversos mais frequentes que a FDA lista são mucosite e febre neutropênica — quimioterapia, não edição genômica. A rotulagem traz ainda advertência para falha de enxertia de neutrófilos e para edição fora do alvo.</p>
 <p>Quem recebe Casgevy passa por um transplante autólogo completo, com toda a morbidade de um. É isso que separa “cura funcional” de “cura”.</p>
 <p>E há um custo que não aparece em nenhuma tabela de eficácia. O bussulfano é gonadotóxico — isso não é efeito adverso raro, é o fármaco funcionando como esperado. Numa experiência de centro único com 40 pacientes submetidos a terapia gênica:</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Achado</th><th>Número</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec7">
+  <thead><tr><th scope="col">Achado</th><th scope="col">Número</th></tr></thead>
   <tbody>
     <tr><td>Mulheres com captação de oócitos bem-sucedida</td><td>todas as 23, mediana de 1,3 a 1,4 ciclos</td></tr>
     <tr><td>Trombose durante estimulação ovariana (7 tinham histórico de evento trombótico)</td><td><strong>nenhuma</strong>, todas com profilaxia anticoagulante</td></tr>
@@ -378,8 +379,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </ul>
 <h2 id="sec9">Por que existem edição de base e prime editing</h2>
 <p>Entre 2018 e 2021, uma série de resultados corrigiu o otimismo da primeira fase. Todos abaixo foram conferidos no PubMed.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Ano</th><th>Achado</th><th>Publicação</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec9">
+  <thead><tr><th scope="col">Ano</th><th scope="col">Achado</th><th scope="col">Publicação</th></tr></thead>
   <tbody>
     <tr><td>2018</td><td>O reparo das quebras gera, além de indels pequenos, <strong>deleções de milhares de bases e rearranjos complexos</strong> — e esses eventos <strong>escapam da genotipagem por PCR curta</strong>. Parte do dano não era vista porque não se olhava longe o bastante</td><td>Kosicki, <em>Nat Biotechnol</em></td></tr>
     <tr><td>2018</td><td>A edição por Cas9 dispara resposta de dano ao DNA mediada por <strong>p53</strong>, o que reduz a eficiência</td><td>Haapaniemi, <em>Nat Med</em></td></tr>
@@ -393,8 +394,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec11">O que mudou em 2026: saiu do transplante e entrou na veia</h2>
 <p>O Casgevy edita células fora do corpo. A geração seguinte edita <strong>dentro</strong> — nanopartícula lipídica que carrega o RNA mensageiro da Cas9 e o guia até o fígado, por infusão intravenosa. Sem colheita de célula, sem quimioterapia, sem transplante.</p>
 <p>E essa geração já tem <strong>fase 3 controlada por placebo</strong>, o que o Casgevy nunca teve.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Produto e alvo</th><th>Estudo</th><th>Resultado verificado</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec11">
+  <thead><tr><th scope="col">Produto e alvo</th><th scope="col">Estudo</th><th scope="col">Resultado verificado</th></tr></thead>
   <tbody>
     <tr><td><strong>Lonvoguran ziclumeran</strong> — angioedema hereditário</td><td><strong>Fase 3</strong>, duplo-cego, randomizado 2:1, 80 pacientes (52 tratados, 28 placebo), dose única de 50 mg</td><td>Taxa mensal de crises entre as semanas 5 e 28: <strong>0,26</strong> contra <strong>2,10</strong> no placebo. Diferença relativa de <strong>−87%</strong> (IC95% −93 a −78), p&lt;0,001</td></tr>
     <tr><td><strong>Nexiguran ziclumeran</strong> — amiloidose por transtirretina</td><td>Fase 1, 36 pacientes com cardiomiopatia, ≥12 meses de seguimento</td><td>Redução média da proteína-alvo no sangue: <strong>−89%</strong> em 28 dias e <strong>−90%</strong> em 12 meses. 5 reações à infusão e 2 elevações transitórias de enzimas hepáticas</td></tr>
@@ -409,8 +410,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </ul>
 <h2 id="sec13">O cemitério</h2>
 <p>Levantamento no ClinicalTrials.gov em 4 de setembro de 2026: <strong>119 estudos registrados</strong> com CRISPR como intervenção. Uma amostra de 60 foi examinada registro a registro. O padrão que aparece não é aleatório.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Produto</th><th>Patrocinador</th><th>Situação</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec13">
+  <thead><tr><th scope="col">Produto</th><th scope="col">Patrocinador</th><th scope="col">Situação</th></tr></thead>
   <tbody>
     <tr><td>CTX110 — anti-CD19 alogênico</td><td>CRISPR Therapeutics</td><td><strong>Encerrado</strong>, 93 pacientes</td></tr>
     <tr><td>CTX120 — anti-BCMA</td><td>CRISPR Therapeutics</td><td><strong>Encerrado</strong>, 26 pacientes</td></tr>
@@ -431,8 +432,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>O Casgevy tem preço de lista de <strong>£1.651.000</strong> por tratamento no Reino Unido — o mesmo nas duas indicações, com desconto ao serviço público cujo tamanho é <strong>sigilo comercial declarado</strong> — e de <strong>US$ 2,2 milhões</strong> nos Estados Unidos. Antes da aprovação, o instituto americano de avaliação de tecnologias em saúde havia calculado um teto de US$ 1,35 a 2,05 milhões. O preço saiu <strong>acima do topo dessa faixa</strong>.</p>
 <p>Mas o número que realmente explica o acesso não é esse. Quando o NICE, na Inglaterra, projeta quantas pessoas serão tratadas, ele <strong>não cita custo</strong> como motivo da adesão baixa. Cita “a internação hospitalar longa necessária para o processo envolvido”.</p>
 <p>Esta seção é um resumo. O levantamento inteiro — quem paga, sob que condições, o comparador mais barato que ganha em 100% das simulações, o que o Brasil sabe e o que não sabe sobre a própria população de pacientes — está em <a href="proprio_casgevy.html">Casgevy — preço e acesso</a>.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Etapa</th><th>Efeito</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec15">
+  <thead><tr><th scope="col">Etapa</th><th scope="col">Efeito</th></tr></thead>
   <tbody>
     <tr><td>População com doença falciforme</td><td>—</td></tr>
     <tr><td>Têm um dos três genótipos elegíveis</td><td>~70%</td></tr>
@@ -452,8 +453,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec17">No Brasil: não é fila lenta, é fila não iniciada</h2>
 <p>Consulta em 4 de setembro de 2026 à base pública de petições da ANVISA — o sistema “Situação de Documentos” de <code>consultas.anvisa.gov.br</code>, que permite filtrar por CNPJ e por código de assunto.</p>
 <p>Terapia gênica e celular não entra no cadastro de medicamentos: é <strong>Produto de Terapia Avançada</strong> (PTA), com registro separado, sob a RDC 505 de 2021. Buscar “exagamglogene” na base aberta de medicamentos devolve zero — e isso não significa nada, porque é a base errada.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Código de assunto</th><th>O que é</th><th>Petições</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec17">
+  <thead><tr><th scope="col">Código de assunto</th><th scope="col">O que é</th><th scope="col">Petições</th></tr></thead>
   <tbody>
     <tr><td>11586</td><td>Registro de PTA Classe I</td><td>1 — e é de “EMPRESA DE TESTE LTDA. (VS01)”, registro de teste do próprio sistema</td></tr>
     <tr><td>11587</td><td>Registro de PTA <strong>Classe II</strong></td><td><strong>11</strong></td></tr>
@@ -464,8 +465,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec18">A varredura que fecha a pergunta</h2>
 <p>As 12 petições são de Novartis (3, deferidas), Gilead (2, deferidas), PTC, Janssen, Roche, BioMarin (cancelada), Bristol-Myers Squibb, Ferring e Ultragenyx — estas três últimas ainda em análise. <strong>Nenhuma é da Vertex</strong>, detentora do Casgevy.</p>
 <p>Para eliminar a hipótese de a petição estar sob outro assunto, a varredura foi refeita por CNPJ. A <strong>Vertex Farmacêutica do Brasil Ltda.</strong> — identificada pelo CNPJ que consta como detentora dos registros de Trikafta, Symdeko, Orkambi e Kalydeco, todos medicamentos de fibrose cística — tem <strong>541 petições</strong> no sistema da ANVISA.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Recorte</th><th>Petições</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec18">
+  <thead><tr><th scope="col">Recorte</th><th scope="col">Petições</th></tr></thead>
   <tbody>
     <tr><td>Total no sistema da ANVISA</td><td><strong>541</strong></td></tr>
     <tr><td>Com assunto de <strong>Produto de Terapia Avançada</strong></td><td><strong>0</strong></td></tr>

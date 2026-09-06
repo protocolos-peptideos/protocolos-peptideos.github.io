@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -256,7 +257,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Reparo e tecido</div>
 <div class="artigo-cabeca">
   <h1>KPV</h1>
@@ -285,8 +286,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">KPV Peptide Tabela de doses</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">KPV Peptide Tabela de doses</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Cálculo de pesquisa</th><th>Frasco de 5 mg + 1 mL</th><th>Frasco de 10 mg + 2 mL</th><th>unidades na seringa U-100</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Cálculo de pesquisa</th><th scope="col">Frasco de 5 mg + 1 mL</th><th scope="col">Frasco de 10 mg + 2 mL</th><th scope="col">unidades na seringa U-100</th></tr></thead>
     <tbody>
       <tr><td>200 mcg</td><td class="num">0,04 mL</td><td class="num">0,04 mL</td><td class="num">4 unidades</td></tr>
       <tr><td>300 mcg</td><td class="num">0,06 mL</td><td class="num">0,06 mL</td><td class="num">6 unidades</td></tr>
@@ -297,8 +298,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">KPV 10 mg Tabela de doses</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">KPV 10 mg Tabela de doses</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Cálculo de pesquisa</th><th>Volume</th><th>U-100 unidades</th><th>Cálculo aproximado por frasco</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Cálculo de pesquisa</th><th scope="col">Volume</th><th scope="col">U-100 unidades</th><th scope="col">Cálculo aproximado por frasco</th></tr></thead>
     <tbody>
       <tr><td>200 mcg</td><td class="num">0,04 mL</td><td class="num">4 unidades</td><td>50</td></tr>
       <tr><td>300 mcg</td><td class="num">0,06 mL</td><td class="num">6 unidades</td><td>33</td></tr>
@@ -309,8 +310,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">KPV 5 mg Tabela de doses</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">KPV 5 mg Tabela de doses</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Cálculo de pesquisa</th><th>Volume</th><th>U-100 unidades</th><th>Cálculo aproximado por frasco</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Cálculo de pesquisa</th><th scope="col">Volume</th><th scope="col">U-100 unidades</th><th scope="col">Cálculo aproximado por frasco</th></tr></thead>
     <tbody>
       <tr><td>200 mcg</td><td class="num">0,04 mL</td><td class="num">4 unidades</td><td>25</td></tr>
       <tr><td>300 mcg</td><td class="num">0,06 mL</td><td class="num">6 unidades</td><td>16 doses completas, com sobra</td></tr>
@@ -321,8 +322,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Protocolo: dose diária, frequência e esquema</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Protocolo: dose diária, frequência e esquema</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Via</th><th>Faixa comumente discutida</th><th>Frequência discutida em protocolos de comunidade</th><th>Rótulo de evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Via</th><th scope="col">Faixa comumente discutida</th><th scope="col">Frequência discutida em protocolos de comunidade</th><th scope="col">Rótulo de evidência</th></tr></thead>
     <tbody>
       <tr><td>Subcutânea</td><td>200–500 mcg</td><td>Em geral 1×/dia</td><td>Prática relatada pela comunidade; não estabelecida clinicamente</td></tr>
       <tr><td>Oral</td><td>200–500 mcg</td><td>Em geral 1× ou 2×/dia</td><td>Prática relatada pela comunidade; não estabelecida clinicamente</td></tr>
@@ -332,8 +333,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Reconstituição formulas</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Reconstituição formulas</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>200 mcg</th><th>300 mcg</th><th>500 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">200 mcg</th><th scope="col">300 mcg</th><th scope="col">500 mcg</th></tr></thead>
     <tbody>
       <tr><td>5 mg</td><td class="num">1 mL</td><td class="num">5.000 mcg/mL</td><td class="num">0,04 mL (4 unidades)</td><td class="num">0,06 mL (6 unidades)</td><td class="num">0,10 mL (10 unidades)</td></tr>
       <tr><td>5 mg</td><td class="num">2 mL</td><td class="num">2.500 mcg/mL</td><td class="num">0,08 mL (8 unidades)</td><td class="num">0,12 mL (12 unidades)</td><td class="num">0,20 mL (20 unidades)</td></tr>
@@ -345,8 +346,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">KPV vs. BPC-157 vs. α-MSH</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">KPV vs. BPC-157 vs. α-MSH</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>KPV</th><th>BPC-157</th><th>α-MSH (molécula inteira)</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Item</th><th scope="col">KPV</th><th scope="col">BPC-157</th><th scope="col">α-MSH (molécula inteira)</th></tr></thead>
     <tbody>
       <tr><td>Origin</td><td>Tripeptídeo C-terminal do α-MSH</td><td>Fragmento sintético de proteína gástrica, com 15 aminoácidos</td><td>Hormônio melanocortina endógeno, de 13 aminoácidos</td></tr>
       <tr><td>Mecanismo principal</td><td>Captação por PepT1; inibição de NF-κB</td><td>Angiogênese; sinalização protetora de tecido</td><td>Ativação do receptor de melanocortina</td></tr>
@@ -359,8 +360,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">Tabela de duração de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Tabela de duração de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Framework</th><th>Período ativo relatado</th><th>Pausa relatada</th><th>Nível de evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">Framework</th><th scope="col">Período ativo relatado</th><th scope="col">Pausa relatada</th><th scope="col">Nível de evidência</th></tr></thead>
     <tbody>
       <tr><td>Short ciclo</td><td>4 semanas</td><td>2–4 semanas</td><td>Common community reference; no controlled human trial</td></tr>
       <tr><td>Faixa padrão de comunidade</td><td>6–8 semanas</td><td>2–4 semanas</td><td>Muito discutido; não estabelecido clinicamente</td></tr>
@@ -371,8 +372,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">Ciclos de comunidade vs. duração dos estudos</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Ciclos de comunidade vs. duração dos estudos</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fonte</th><th>Example duration</th><th>O que foi estudado</th><th>O que isso nos diz</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">Fonte</th><th scope="col">Example duration</th><th scope="col">O que foi estudado</th><th scope="col">O que isso nos diz</th></tr></thead>
     <tbody>
       <tr><td>Protocolos de comunidade</td><td>4–8 semanas</td><td>Oral ou SubQ research frameworks</td><td>Shows a commonly discussed schedule, not a validated ciclo</td></tr>
       <tr><td>Protocolos de comunidade estendidos</td><td>8–12 semanas</td><td>Planejamento de prazo mais longo</td><td>Documenta uma extensão, não prova de que mais longo é melhor</td></tr>
@@ -385,8 +386,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab8">What About a 6- to 8-Week KPV Cycle?</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">What About a 6- to 8-Week KPV Cycle?</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Active period</th><th>Dias</th><th>Total KPV</th><th>10 mg vials</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab8">
+    <thead><tr><th scope="col">Active period</th><th scope="col">Dias</th><th scope="col">Total KPV</th><th scope="col">10 mg vials</th></tr></thead>
     <tbody>
       <tr><td>6 semanas</td><td>42</td><td class="num">21 mg</td><td>3 vials</td></tr>
       <tr><td>8 semanas</td><td>56</td><td class="num">28 mg</td><td>3 vials</td></tr>
@@ -395,8 +396,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab9">O KPV precisa ser ciclado?</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">O KPV precisa ser ciclado?</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Active framework</th><th>Pausa relatada</th><th>Nota sobre a evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab9">
+    <thead><tr><th scope="col">Active framework</th><th scope="col">Pausa relatada</th><th scope="col">Nota sobre a evidência</th></tr></thead>
     <tbody>
       <tr><td>4 semanas</td><td>2–4 semanas</td><td>Community convention; no trial comparison</td></tr>
       <tr><td>6–8 semanas</td><td>2–4 semanas</td><td>Commonly discussed; no proven reset period</td></tr>
@@ -407,8 +408,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab10">A via de administração muda a duração do ciclo?</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">A via de administração muda a duração do ciclo?</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Via</th><th>O que se discute</th><th>ciclo evidence</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab10">
+    <thead><tr><th scope="col">Via</th><th scope="col">O que se discute</th><th scope="col">ciclo evidence</th></tr></thead>
     <tbody>
       <tr><td>Oral</td><td>Gut-focused community frameworks e animal PepT1 studies</td><td>No established human oral ciclo</td></tr>
       <tr><td>Subcutânea</td><td>Protocolos de comunidade por via sistêmica</td><td>No completed human SubQ dose ou ciclo trial</td></tr>

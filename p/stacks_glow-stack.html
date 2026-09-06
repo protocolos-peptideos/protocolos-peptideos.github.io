@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -253,7 +254,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Combinações</div>
 <div class="artigo-cabeca">
   <h1>GLOW</h1>
@@ -281,8 +282,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Diretrizes de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Diretrizes de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>Duração</th><th>Intervalo</th><th>Indicado para</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">Duração</th><th scope="col">Intervalo</th><th scope="col">Indicado para</th></tr></thead>
     <tbody>
       <tr><td>Padrão</td><td>4–6 semanas</td><td>2–4 semanas</td><td>Pesquisa em pele e remodelamento geral</td></tr>
       <tr><td>Estendido</td><td>8–12 semanas</td><td>4–8 semanas</td><td>Contextos de recuperação complexos</td></tr>
@@ -292,8 +293,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Choose Your Formato de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Choose Your Formato de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Metric</th><th>Valor</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Metric</th><th scope="col">Valor</th></tr></thead>
     <tbody>
       <tr><td>Composição da blend</td><td class="num">50 mg de GHK-Cu + 10 mg de TB-500 + 10 mg de BPC-157</td></tr>
       <tr><td>Água bacteriostática</td><td class="num">3 mL</td></tr>
@@ -304,8 +305,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Choose Your Formato de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Choose Your Formato de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Composto</th><th>Quantidade por dose</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Composto</th><th scope="col">Quantidade por dose</th></tr></thead>
     <tbody>
       <tr><td>GHK-Cu</td><td class="num">~1,67 mg</td></tr>
       <tr><td>TB-500</td><td class="num">~0,33 mg</td></tr>
@@ -315,8 +316,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Choose Your Formato de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Choose Your Formato de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>250 mcg</th><th>500 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">250 mcg</th><th scope="col">500 mcg</th></tr></thead>
     <tbody>
       <tr><td>5 mg</td><td class="num">2 mL</td><td class="num">2.500 mcg/mL</td><td class="num">10 unidades (0,10 mL)</td><td class="num">20 unidades (0,20 mL)</td></tr>
       <tr><td>10 mg</td><td class="num">2 mL</td><td class="num">5.000 mcg/mL</td><td class="num">5 unidades (0,05 mL)</td><td class="num">10 unidades (0,10 mL)</td></tr>
@@ -325,8 +326,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Choose Your Formato de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Choose Your Formato de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>2,5 mg</th><th>5 mg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">2,5 mg</th><th scope="col">5 mg</th></tr></thead>
     <tbody>
       <tr><td>5 mg</td><td class="num">1 mL</td><td class="num">5 mg/mL</td><td class="num">50 unidades (0,50 mL)</td><td class="num">100 unidades (1,00 mL)</td></tr>
       <tr><td>10 mg</td><td class="num">2 mL</td><td class="num">5 mg/mL</td><td class="num">50 unidades (0,50 mL)</td><td class="num">100 unidades (1,00 mL)</td></tr>
@@ -335,8 +336,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">Choose Your Formato de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Choose Your Formato de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>1 mg</th><th>2 mg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">1 mg</th><th scope="col">2 mg</th></tr></thead>
     <tbody>
       <tr><td>50 mg</td><td class="num">5 mL</td><td class="num">10 mg/mL</td><td class="num">10 unidades (0,10 mL)</td><td class="num">20 unidades (0,20 mL)</td></tr>
       <tr><td>100 mg</td><td class="num">10 mL</td><td class="num">10 mg/mL</td><td class="num">10 unidades (0,10 mL)</td><td class="num">20 unidades (0,20 mL)</td></tr>
@@ -345,8 +346,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">GLOW Peptide Linha do tempo e o que monitorar</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">GLOW Peptide Linha do tempo e o que monitorar</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Janela</th><th>O que costuma ser relatado</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">Janela</th><th scope="col">O que costuma ser relatado</th></tr></thead>
     <tbody>
       <tr><td>Semanas 1–2</td><td>Mudanças ligadas à inflamação, cicatrização mais rápida de feridas pequenas e fadiga durante o ataque de TB-500.</td></tr>
       <tr><td>Semanas 3–4</td><td>Primeiras mudanças de qualidade da pele: toque mais firme e leve melhora de textura.</td></tr>
@@ -357,8 +358,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">GLOW vs. Wolverine vs. KLOW vs. peptídeos isolados</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">GLOW vs. Wolverine vs. KLOW vs. peptídeos isolados</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>GLOW</th><th>Wolverine</th><th>KLOW</th><th>Peptídeo isolado</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">Item</th><th scope="col">GLOW</th><th scope="col">Wolverine</th><th scope="col">KLOW</th><th scope="col">Peptídeo isolado</th></tr></thead>
     <tbody>
       <tr><td>Compounds</td><td>BPC-157 + TB-500 + GHK-Cu</td><td>BPC-157 + TB-500</td><td>BPC-157 + TB-500 + GHK-Cu + KPV</td><td>Apenas um</td></tr>
       <tr><td>Pesquisa de pele e antienvelhecimento</td><td>Forte (GHK-Cu)</td><td>Limitada</td><td>Forte (GHK-Cu + KPV)</td><td>Variável (o GHK-Cu isolado é o mais próximo)</td></tr>

@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -258,7 +259,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>Doença renal</h1>
@@ -284,8 +285,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec1">De zero a seis, em quatro anos e meio</h2>
 <p>A doença é a <strong>nefropatia por IgA</strong> — glomerulopatia primária mais comum do mundo, conhecida também como doença de Berger. Até dezembro de 2021 não havia um único medicamento aprovado especificamente para ela em lugar nenhum: tratava-se com bloqueio do sistema renina-angiotensina e, na crise, corticoide sistêmico.</p>
 <p>Hoje são seis, todos aprovados pela FDA. A coluna que importa é a última.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Medicamento</th><th>Princípio ativo</th><th>Mecanismo</th><th>1ª aprovação FDA</th><th>Sobre que desfecho</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec1">
+  <thead><tr><th scope="col">Medicamento</th><th scope="col">Princípio ativo</th><th scope="col">Mecanismo</th><th scope="col">1ª aprovação FDA</th><th scope="col">Sobre que desfecho</th></tr></thead>
   <tbody>
     <tr><td>Tarpeyo</td><td>budesonida de liberação retardada</td><td>corticoide de ação local nas placas de Peyer, onde a IgA anômala é produzida</td><td>dezembro de 2021 — <strong>acelerada</strong></td><td>proteinúria</td></tr>
     <tr><td>Filspari</td><td>sparsentana</td><td>antagonista duplo: receptor de endotelina A e receptor AT<sub>1</sub> de angiotensina II</td><td>17 de fevereiro de 2023 — <strong>acelerada</strong></td><td>proteinúria</td></tr>
@@ -298,8 +299,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>É um caminho em que a agência aceita um <strong>desfecho substituto</strong> — um número que se acredita prever o benefício real — em troca do compromisso de provar o benefício real depois, num ensaio confirmatório. Se a confirmação não vier, o registro pode ser retirado.</p>
 <p>Na nefropatia por IgA o substituto é a proteinúria. O desfecho real é a <strong>taxa de filtração glomerular estimada (TFGe)</strong> — quanto o rim ainda filtra, e com que velocidade isso cai. Ninguém morre de proteinúria; morre-se de rim que parou.</p>
 <p>Não é interpretação minha: <strong>está escrito na bula de cada um</strong>. Fui buscar o texto vigente de todos os seis no endpoint de rótulos da FDA, em 4 de setembro de 2026, e a divisão aparece sozinha.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Produto</th><th>Indicação vigente</th><th>A bula declara aprovação acelerada?</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec2">
+  <thead><tr><th scope="col">Produto</th><th scope="col">Indicação vigente</th><th scope="col">A bula declara aprovação acelerada?</th></tr></thead>
   <tbody>
     <tr><td>Vanrafia (atrasentana)</td><td><em>reduzir proteinúria</em> em adultos com IgAN primária em risco de progressão rápida, geralmente com relação proteína/creatinina urinária ≥ 1,5 g/g</td><td><strong>Sim.</strong> "Esta indicação é aprovada sob aprovação acelerada com base em redução de proteinúria. <em>Não foi estabelecido se o VANRAFIA retarda o declínio da função renal</em>"</td></tr>
     <tr><td>Voyxact (sibeprenlimabe)</td><td><em>reduzir proteinúria</em> em adultos com IgAN primária em risco de progressão</td><td><strong>Sim.</strong> Mesma fórmula: "não foi estabelecido se retarda o declínio da função renal a longo prazo"</td></tr>
@@ -310,8 +311,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec3">Quem já saiu do substituto — com os números publicados</h2>
 <p>Três dos seis converteram a aprovação acelerada em plena, e os ensaios que sustentam isso estão publicados. Abaixo estão os números como saíram no artigo revisado por pares, não como saíram no comunicado da fabricante — a diferença entre as duas coisas apareceu na conferência e está registrada no fim desta página.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Medicamento</th><th>Ensaio</th><th>Efeito sobre a TFGe</th><th>Desfecho duro de falência renal</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec3">
+  <thead><tr><th scope="col">Medicamento</th><th scope="col">Ensaio</th><th scope="col">Efeito sobre a TFGe</th><th scope="col">Desfecho duro de falência renal</th></tr></thead>
   <tbody>
     <tr><td>Fabhalta (iptacopana)</td><td>APPLAUSE-IgAN, NCT04578834 — <em>New England Journal of Medicine</em>, 2026. 477 pacientes na análise final</td><td>Queda anualizada de <strong>−3,10</strong> contra <strong>−6,12</strong> mL/min/1,73 m²/ano no placebo em 24 meses (diferença 3,02; IC 95% 2,02 a 4,01; P&lt;0,001)</td><td><strong>21,4% contra 33,5%</strong> no placebo (razão de risco 0,57; IC 95% 0,40 a 0,81; P=0,003). É o único dos três com redução significativa em desfecho duro. <strong>Infecções graves em 6,7% contra 2,1%</strong>; nenhuma morte</td></tr>
     <tr><td>Tarpeyo (budesonida DR)</td><td>NefIgArd, NCT03643965 — <em>The Lancet</em>, 2023. 364 pacientes, 9 meses de tratamento e 15 de observação</td><td>Média ponderada no tempo da TFGe em 2 anos: benefício de <strong>5,05</strong> mL/min/1,73 m² (IC 95% 3,24 a 7,38; p&lt;0,0001) — <strong>−2,47</strong> com Nefecon contra <strong>−7,52</strong> com placebo</td><td>Não foi desfecho do estudo. Efeitos adversos mais frequentes: edema periférico (17% contra 4%), hipertensão (12% contra 3%), cãibras e acne</td></tr>
@@ -332,8 +333,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </ul>
 <h2 id="sec6">O levantamento de literatura</h2>
 <p>Consultas feitas por mim no PubMed e no ClinicalTrials.gov em 4 de setembro de 2026. A consulta está escrita para que qualquer pessoa possa repetir e conferir o número.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Base</th><th>Consulta</th><th>Resultado</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec6">
+  <thead><tr><th scope="col">Base</th><th scope="col">Consulta</th><th scope="col">Resultado</th></tr></thead>
   <tbody>
     <tr><td>PubMed</td><td><code>IgA nephropathy</code></td><td>13.624 artigos</td></tr>
     <tr><td>PubMed</td><td><code>atrasentan</code></td><td>521 artigos</td></tr>
@@ -350,8 +351,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>Não se trata de dizer que um é bom e o outro é ruim. Trata-se de mostrar o que uma base de evidência parece quando ela existe — para que a ausência dela, nas outras páginas, tenha com o que ser comparada.</p>
 <h2 id="sec8">O que disso chegou ao Brasil</h2>
 <p>Varri o dado aberto de medicamentos da ANVISA — 43.491 registros, baixado em 4 de setembro de 2026 — procurando cada um dos seis princípios ativos e cada nome comercial. O resultado:</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Princípio ativo</th><th>Produto</th><th>Registro</th><th>Empresa</th><th>Situação</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec8">
+  <thead><tr><th scope="col">Princípio ativo</th><th scope="col">Produto</th><th scope="col">Registro</th><th scope="col">Empresa</th><th scope="col">Situação</th></tr></thead>
   <tbody>
     <tr><td>cloridrato de atrasentana</td><td><strong>VANRAFIA</strong></td><td>100681190 · processo finalizado em 31/08/2026</td><td>Novartis Biociências S.A. (56.994.502/0001-30)</td><td><strong>Ativo</strong></td></tr>
     <tr><td>cloridrato de iptacopana monoidratado</td><td><strong>FABHALTA</strong></td><td>100681187 · finalizado em 27/01/2025</td><td>Novartis Biociências S.A.</td><td><strong>Ativo</strong></td></tr>

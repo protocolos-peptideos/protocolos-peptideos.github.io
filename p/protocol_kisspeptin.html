@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -251,7 +252,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Hormonal e sexual</div>
 <div class="artigo-cabeca">
   <h1>Kisspeptina</h1>
@@ -280,8 +281,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Kisspeptin Formatos de protocolo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Kisspeptin Formatos de protocolo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>Faixa típica</th><th>Frequência</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">Faixa típica</th><th scope="col">Frequência</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>Pulso de dose baixa</td><td>50-100 mcg</td><td>1×/dia SC</td><td>SC significa sob a pele. Frequentemente posicionada antes do sono no planejamento.</td></tr>
       <tr><td>Pulso padrão</td><td>100-200 mcg</td><td>1×/dia SC</td><td>Faixa comum na comunidade, apoiada em parte nos dados de ensaios com kisspeptina-54.</td></tr>
@@ -291,8 +292,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Taquifilaxia com uso crônico</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Taquifilaxia com uso crônico</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Contexto do ensaio</th><th>Dose Studied</th><th>Via</th><th>Fonte / observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Contexto do ensaio</th><th scope="col">Dose Studied</th><th scope="col">Via</th><th scope="col">Fonte / observações</th></tr></thead>
     <tbody>
       <tr><td>Gatilho de maturação de oócito em FIV (alto risco de hiperestimulação ovariana)</td><td>3,2–12,8 nmol/kg em bolus único</td><td>Subcutânea</td><td>Ensaio de fase 2 em 60 mulheres, Hammersmith Hospital, 2013–2014</td></tr>
       <tr><td>Gatilho de maturação de oócito em FIV (prova de conceito)</td><td>1,6–12,8 nmol/kg em bolus único</td><td>Subcutânea</td><td>Ensaio com 53 mulheres; o LH teve pico em ~5 h e voltou ao nível pré-gatilho em 12–14 h</td></tr>
@@ -303,8 +304,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Estrutura do ciclo e dessensibilização</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Estrutura do ciclo e dessensibilização</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>Comprimento ativo</th><th>Intervalo</th><th>Reasoning</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">Comprimento ativo</th><th scope="col">Intervalo</th><th scope="col">Reasoning</th></tr></thead>
     <tbody>
       <tr><td>Ciclo de pulso curto</td><td>2–4 semanas</td><td>2–4 semanas</td><td>Limita a dessensibilização; alinhado à maior parte dos dados agudos</td></tr>
       <tr><td>Standard ciclo</td><td>4–6 semanas</td><td>4 semanas</td><td>Janela mais citada na comunidade; ciclos mais longos arriscam apagar a resposta de LH</td></tr>
@@ -314,8 +315,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Kisspeptin Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Kisspeptin Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Água bacteriostática adicionada</th><th>Concentração final</th><th>Volume para 100 mcg</th><th>U-100 unidades</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Água bacteriostática adicionada</th><th scope="col">Concentração final</th><th scope="col">Volume para 100 mcg</th><th scope="col">U-100 unidades</th></tr></thead>
     <tbody>
       <tr><td>1,0 mL</td><td class="num">10 mg/mL</td><td class="num">0,01 mL</td><td class="num">1 unidade</td></tr>
       <tr><td>1,5 mL</td><td class="num">6,67 mg/mL</td><td class="num">0,015 mL</td><td class="num">1,5 unidades</td></tr>
@@ -326,8 +327,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Kisspeptin Linha do tempo e o que monitorar</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Kisspeptin Linha do tempo e o que monitorar</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Form</th><th>Início de efeito</th><th>Peak</th><th>Retorno ao basal</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Form</th><th scope="col">Início de efeito</th><th scope="col">Peak</th><th scope="col">Retorno ao basal</th></tr></thead>
     <tbody>
       <tr><td>Kisspeptina-10 (bolus intravenoso)</td><td>Minutes</td><td>~10-30 min</td><td class="num">&lt;1 h</td></tr>
       <tr><td>Kisspeptina-10 (bolus subcutâneo)</td><td>&lt;30 min</td><td>~30-60 min</td><td>Várias horas</td></tr>
@@ -338,8 +339,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">Kisspeptina vs. hCG vs. clomifeno vs. GnRH</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Kisspeptina vs. hCG vs. clomifeno vs. GnRH</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Composto</th><th>Local de ação</th><th>Contexto de uso</th><th>Diferença principal em relação à kisspeptina</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Composto</th><th scope="col">Local de ação</th><th scope="col">Contexto de uso</th><th scope="col">Diferença principal em relação à kisspeptina</th></tr></thead>
     <tbody>
       <tr><td>Kisspeptin-10 / -54</td><td>Sinal cerebral anterior ao GnRH</td><td>Pesquisa; gatilho de FIV; ensaios em TDSH</td><td>Age no topo da via; não aprovado pela FDA</td></tr>
       <tr><td>GnRH e seus análogos</td><td>Liberação hipofisária de LH e FSH</td><td>Alguns aprovados pela FDA; fertilidade e câncer de próstata</td><td>Um degrau abaixo na via; histórico clínico mais longo</td></tr>

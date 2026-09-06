@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -249,7 +250,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Reparo e tecido</div>
 <div class="artigo-cabeca">
   <h1>ARA-290 (cibinetida)</h1>
@@ -278,8 +279,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Protocolo e esquema de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Protocolo e esquema de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Contexto do estudo</th><th>Dose &amp; route</th><th>Esquema</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Contexto do estudo</th><th scope="col">Dose &amp; route</th><th scope="col">Esquema</th></tr></thead>
     <tbody>
       <tr><td>Piloto em sarcoidose (2012)</td><td class="num">2 mg por via intravenosa</td><td>3×/semana, 4 semanas</td></tr>
       <tr><td>Sarcoidose com neuropatia de fibras finas (2013)</td><td>diário subQ</td><td>28 dias</td></tr>
@@ -291,8 +292,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Protocolo e esquema de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Protocolo e esquema de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>Comumente relatado</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Item</th><th scope="col">Comumente relatado</th></tr></thead>
     <tbody>
       <tr><td>Faixa típica</td><td>1-4 mg/dia</td></tr>
       <tr><td>Faixa mais alta citada</td><td>até 8 mg/dia (teto do ensaio)</td></tr>
@@ -304,8 +305,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">ARA-290 Guia de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">ARA-290 Guia de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Dose</th><th>Volume</th><th>U-100 unidades</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Dose</th><th scope="col">Volume</th><th scope="col">U-100 unidades</th></tr></thead>
     <tbody>
       <tr><td>1 mg</td><td class="num">0,13 mL</td><td class="num">~13 unidades</td></tr>
       <tr><td>2 mg</td><td class="num">0,25 mL</td><td class="num">25 unidades</td></tr>
@@ -315,8 +316,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">ARA-290 vs. BPC-157 e peptídeos próximos</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">ARA-290 vs. BPC-157 e peptídeos próximos</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Peptide</th><th>Enquadramento principal da pesquisa</th><th>Melhor evidência humana</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Peptide</th><th scope="col">Enquadramento principal da pesquisa</th><th scope="col">Melhor evidência humana</th></tr></thead>
     <tbody>
       <tr><td>ARA-290</td><td>Reparo nervoso, dor neuropática e inflamação</td><td>ECRs de fase 2 (sarcoidose e diabetes)</td></tr>
       <tr><td>BPC-157</td><td>Recuperação ampla de tecido mole</td><td>Majoritariamente pré-clínico</td></tr>

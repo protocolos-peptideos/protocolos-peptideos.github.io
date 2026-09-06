@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -252,7 +253,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#refs">Referências</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Verificado em fonte primária</div>
 <div class="artigo-cabeca">
   <h1>Meldonium (mildronato)</h1>
@@ -280,8 +281,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>No sistema nervoso central a explicação não fecha, porque o cérebro não usa ácido graxo como combustível. A revisão de Sjakste, Gutcaits e Kalvinsh — este último o inventor do composto — propõe um segundo mecanismo, independente de carnitina, via produção de óxido nítrico no endotélio vascular.</p>
 <h2 id="sec2">Quanta evidência existe</h2>
 <p>Levantamento feito no PubMed e no ClinicalTrials.gov em 4 de setembro de 2026.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Base</th><th>Consulta</th><th>Resultado</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec2">
+  <thead><tr><th scope="col">Base</th><th scope="col">Consulta</th><th scope="col">Resultado</th></tr></thead>
   <tbody>
     <tr><td>PubMed</td><td><code>meldonium OR mildronate</code></td><td>357 artigos</td></tr>
     <tr><td>PubMed</td><td><code>(meldonium OR mildronate) AND (Clinical Trial[Publication Type] OR Randomized Controlled Trial[Publication Type])</code></td><td>35 artigos</td></tr>
@@ -289,8 +290,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   </tbody></table></div></div>
 <h2 id="sec3">Os ensaios registrados</h2>
 <p>Estes são os sete. Repare que dois deles testam o meldonium <strong>combinado com o Mexidol</strong> (etilmetilhidroxipiridina succinato), sob a marca BRAINMAX — os dois compostos aparecem separados no mesmo catálogo de importação que originou esta lista.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Registro</th><th>Fase</th><th>Condição</th><th>N</th><th>Situação</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec3">
+  <thead><tr><th scope="col">Registro</th><th scope="col">Fase</th><th scope="col">Condição</th><th scope="col">N</th><th scope="col">Situação</th></tr></thead>
   <tbody>
     <tr><td>NCT01831011</td><td>2</td><td>AVC isquêmico agudo — mildronato vs. cinepazida</td><td>227</td><td>Concluído</td></tr>
     <tr><td>NCT01800357</td><td>2</td><td>AVC isquêmico agudo — contra placebo</td><td>240</td><td>Situação desconhecida</td></tr>
@@ -303,8 +304,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="sec4">O ponto que decide o uso: a janela de detecção</h2>
 <p>O meldonium entrou na lista de substâncias proibidas da <strong>WADA em 1º de janeiro de 2016</strong>, depois de um ano no Programa de Monitoramento de 2015. Nos primeiros meses de 2016, laboratórios antidoping relataram um número anormal de amostras com concentração alta.</p>
 <p>O que importa para quem faz exame antidoping não é a proibição em si, e sim <strong>quanto tempo a molécula continua detectável</strong>. Dois estudos independentes mediram isso, e o resultado é fora do comum:</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Estudo</th><th>Dose testada</th><th>Janela de detecção</th><th>Observação</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec4">
+  <thead><tr><th scope="col">Estudo</th><th scope="col">Dose testada</th><th scope="col">Janela de detecção</th><th scope="col">Observação</th></tr></thead>
   <tbody>
     <tr><td>Görgens et al., 2017<br><small>German Sport University, Colônia</small></td><td>500 mg, dose única (5 voluntários)</td><td><strong>até 65 dias</strong></td><td>Acima do limite de quantificação de 10 ng/mL</td></tr>
     <tr><td>Görgens et al., 2017</td><td>2 × 500 mg/dia por 6 dias (5 voluntários)</td><td><strong>até 117 dias</strong></td><td>Excreção bifásica, não linear e dependente da dose</td></tr>
@@ -319,8 +320,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </ul>
 <h2 id="sec6">Doses usadas em estudos humanos publicados</h2>
 <p>Isto <strong>não é recomendação de dose</strong>: é o registro do que foi administrado em estudos publicados, com a finalidade de cada um. Fora do contexto do estudo, esses números não se transferem.</p>
-<div class="tabela-env"><div class="tabela-rolagem"><table>
-  <thead><tr><th>Estudo</th><th>Dose</th><th>Duração</th><th>Finalidade do estudo</th></tr></thead>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec6">
+  <thead><tr><th scope="col">Estudo</th><th scope="col">Dose</th><th scope="col">Duração</th><th scope="col">Finalidade do estudo</th></tr></thead>
   <tbody>
     <tr><td>Görgens et al., 2017</td><td>500 mg, oral, dose única</td><td>1 dia</td><td>Medir a janela de detecção</td></tr>
     <tr><td>Görgens et al., 2017</td><td>2 × 500 mg/dia, oral</td><td>6 dias</td><td>Medir a janela de detecção com dose repetida</td></tr>

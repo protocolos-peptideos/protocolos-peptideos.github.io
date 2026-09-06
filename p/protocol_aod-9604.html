@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -255,7 +256,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Metabólico e peso</div>
 <div class="artigo-cabeca">
   <h1>AOD-9604</h1>
@@ -284,8 +285,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Protocolo de dose</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Protocolo de dose</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>quantidade diária de pesquisa</th><th>Volume</th><th>U-100 unidades</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Fase</th><th scope="col">quantidade diária de pesquisa</th><th scope="col">Volume</th><th scope="col">U-100 unidades</th></tr></thead>
     <tbody>
       <tr><td>Initial 4 semanas</td><td class="num">300 mcg</td><td class="num">0,18 mL</td><td class="num">18 unidades</td></tr>
       <tr><td>Semanas 5–12</td><td class="num">500 mcg</td><td class="num">0,30 mL</td><td class="num">30 unidades</td></tr>
@@ -295,8 +296,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Tabela de doses: frasco de 5 mg e unidades U-100</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Tabela de doses: frasco de 5 mg e unidades U-100</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>quantidade diária de pesquisa</th><th>5 mg + 1 mL de água bacteriostática</th><th>5 mg + 2 mL de água bacteriostática</th><th>5 mg + 3 mL de água bacteriostática</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">quantidade diária de pesquisa</th><th scope="col">5 mg + 1 mL de água bacteriostática</th><th scope="col">5 mg + 2 mL de água bacteriostática</th><th scope="col">5 mg + 3 mL de água bacteriostática</th></tr></thead>
     <tbody>
       <tr><td>300 mcg</td><td class="num">6 unidades</td><td class="num">12 unidades</td><td class="num">18 unidades</td></tr>
       <tr><td>500 mcg</td><td class="num">10 unidades</td><td class="num">20 unidades</td><td class="num">30 unidades</td></tr>
@@ -305,8 +306,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Dose por dia</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Dose por dia</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Contexto de pesquisa</th><th>Quantidade ou duração</th><th>Nível de evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Contexto de pesquisa</th><th scope="col">Quantidade ou duração</th><th scope="col">Nível de evidência</th></tr></thead>
     <tbody>
       <tr><td>Planejamento subcutâneo de comunidade</td><td>300–500 mcg por dia</td><td>Padrão anedótico de comunidade</td></tr>
       <tr><td>Ensaios humanos publicados</td><td>Via e dose variaram conforme o estudo</td><td>Pesquisa publicada</td></tr>
@@ -316,8 +317,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Guia de reconstituição: como misturar um frasco de 5 mg</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Guia de reconstituição: como misturar um frasco de 5 mg</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Água bacteriostática</th><th>Concentração</th><th>300 mcg</th><th>500 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">300 mcg</th><th scope="col">500 mcg</th></tr></thead>
     <tbody>
       <tr><td>1 mL</td><td class="num">5.000 mcg/mL</td><td class="num">6 unidades</td><td class="num">10 unidades</td></tr>
       <tr><td>2 mL</td><td class="num">2.500 mcg/mL</td><td class="num">12 unidades</td><td class="num">20 unidades</td></tr>
@@ -327,8 +328,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Cálculo de dose e reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cálculo de dose e reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Quantidade-alvo</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Quantidade-alvo</th></tr></thead>
     <tbody>
       <tr><td>2 mg</td><td class="num">1 mL</td><td class="num">300 mcg</td></tr>
       <tr><td>5 mg</td><td class="num">2 mL</td><td class="num">500 mcg</td></tr>
@@ -338,8 +339,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">Duração de ciclo: 8, 12 e 24 semanas na pesquisa</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Duração de ciclo: 8, 12 e 24 semanas na pesquisa</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>ciclo length</th><th>De onde vem</th><th>Como rotular</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">ciclo length</th><th scope="col">De onde vem</th><th scope="col">Como rotular</th></tr></thead>
     <tbody>
       <tr><td>8 semanas</td><td>Planejamento de comunidade</td><td>Anecdotal</td></tr>
       <tr><td>12 semanas</td><td>Duração do ensaio publicado e planejamento de comunidade</td><td>Contexto publicado e de comunidade</td></tr>
@@ -350,8 +351,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">AOD-9604 vs. HGH vs. GLP-1 Receptor Agonists</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">AOD-9604 vs. HGH vs. GLP-1 Receptor Agonists</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Composto</th><th>Class</th><th>Status na FDA</th><th>Força da evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">Composto</th><th scope="col">Class</th><th scope="col">Status na FDA</th><th scope="col">Força da evidência</th></tr></thead>
     <tbody>
       <tr><td>AOD-9604</td><td>Fragmento C-terminal sintético do hGH (16 aminoácidos)</td><td>Não aprovado pela FDA</td><td>Desfecho primário da fase 2b não atingido; sinal pré-clínico de perda de gordura e de cartilagem em coelho</td></tr>
       <tr><td>Fragmento 176-191 do hGH</td><td>Mesma molécula do AOD-9604, sem a tirosina estabilizadora</td><td>Não aprovado pela FDA</td><td>Mesma base de pesquisa; o AOD-9604 é a versão estabilizada e mais estudada</td></tr>
@@ -363,8 +364,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">Tabela de ciclo da comunidade</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Tabela de ciclo da comunidade</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Ciclo</th><th>Semanas 1–4</th><th>Semanas seguintes</th><th>Review points</th><th>Rótulo de evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">Ciclo</th><th scope="col">Semanas 1–4</th><th scope="col">Semanas seguintes</th><th scope="col">Review points</th><th scope="col">Rótulo de evidência</th></tr></thead>
     <tbody>
       <tr><td>8 semanas</td><td class="num">300 mcg 1×/dia</td><td class="num">500 mcg 1×/dia during semanas 5–8</td><td>Semana 4 e 8</td><td>Community standard</td></tr>
       <tr><td>12 semanas</td><td class="num">300 mcg 1×/dia</td><td class="num">500 mcg 1×/dia during semanas 5–12</td><td>Semana 4, 8, e 12</td><td>Community standard</td></tr>
@@ -374,8 +375,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab8">Cálculo de ciclo e de frasco</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cálculo de ciclo e de frasco</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>ciclo length</th><th>300 mcg phase</th><th>500 mcg phase</th><th>Total amount</th><th>5 mg vials</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab8">
+    <thead><tr><th scope="col">ciclo length</th><th scope="col">300 mcg phase</th><th scope="col">500 mcg phase</th><th scope="col">Total amount</th><th scope="col">5 mg vials</th></tr></thead>
     <tbody>
       <tr><td>8 semanas</td><td>28 dias × 0,3 mg = 8,4 mg</td><td>28 dias × 0,5 mg = 14 mg</td><td class="num">22,4 mg</td><td>5 vials</td></tr>
       <tr><td>12 semanas</td><td>28 dias × 0,3 mg = 8,4 mg</td><td>56 dias × 0,5 mg = 28 mg</td><td class="num">36,4 mg</td><td>8 vials</td></tr>
@@ -385,8 +386,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab9">Evidência publicada vs. protocolos de comunidade</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Evidência publicada vs. protocolos de comunidade</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Claim</th><th>Apoio humano publicado</th><th>Community support</th><th>Como deveria ser descrito</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab9">
+    <thead><tr><th scope="col">Claim</th><th scope="col">Apoio humano publicado</th><th scope="col">Community support</th><th scope="col">Como deveria ser descrito</th></tr></thead>
     <tbody>
       <tr><td>AOD-9604 was studied for 12 semanas</td><td>Yes, using oral doses</td><td>Often used as a community timeline</td><td>Published duration, but not a proven SubQ ciclo</td></tr>
       <tr><td>AOD-9604 was studied for 24 semanas</td><td>Yes, using oral comprimidos</td><td>Às vezes usado para justificar planos mais longos</td><td>Ensaio oral publicado; o objetivo de eficácia não foi atingido</td></tr>

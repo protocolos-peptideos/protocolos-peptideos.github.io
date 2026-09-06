@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -250,7 +251,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Combinações</div>
 <div class="artigo-cabeca">
   <h1>Retatrutida + MOTS-c</h1>
@@ -279,8 +280,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Diretrizes de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Diretrizes de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Abordagem</th><th>Duração</th><th>Padrão do MOTS-c</th><th>Indicado para</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Abordagem</th><th scope="col">Duração</th><th scope="col">Padrão do MOTS-c</th><th scope="col">Indicado para</th></tr></thead>
     <tbody>
       <tr><td>Início conservador</td><td>Retatrutida nas semanas 1–24 (titular até 4–6 mg no máximo)</td><td>MOTS-c apenas nas semanas 5–12, depois pausa</td><td>Primeiro uso da combinação, com preocupação metabólica</td></tr>
       <tr><td>Ciclo padrão</td><td>Retatrutida nas semanas 1–48 (alvo de 9 mg)</td><td>MOTS-c em pulsos de 8 semanas com pausas de 4 semanas</td><td>A maioria dos protocolos de comunidade</td></tr>
@@ -290,8 +291,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Retatrutide Cálculo de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Retatrutide Cálculo de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>Dose de 2 mg</th><th>Dose de 4 mg</th><th>Dose de 6 mg</th><th>Dose de 9 mg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">Dose de 2 mg</th><th scope="col">Dose de 4 mg</th><th scope="col">Dose de 6 mg</th><th scope="col">Dose de 9 mg</th></tr></thead>
     <tbody>
       <tr><td>5 mg</td><td class="num">1,0 mL</td><td class="num">5 mg/mL</td><td class="num">0,40 mL (40 unidades)</td><td class="num">0,80 mL (80 unidades)</td><td>n/d</td><td>n/d</td></tr>
       <tr><td>10 mg</td><td class="num">1,0 mL</td><td class="num">10 mg/mL</td><td class="num">0,20 mL (20 unidades)</td><td class="num">0,40 mL (40 unidades)</td><td class="num">0,60 mL (60 unidades)</td><td class="num">0,90 mL (90 unidades)</td></tr>
@@ -303,8 +304,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">MOTS-c Cálculo de reconstituição</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">MOTS-c Cálculo de reconstituição</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Frasco</th><th>Água bacteriostática</th><th>Concentração</th><th>Dose de 5 mg</th><th>Dose de 2,5 mg</th><th>Dose de 1 mg</th><th>Dose de 200 mcg</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Frasco</th><th scope="col">Água bacteriostática</th><th scope="col">Concentração</th><th scope="col">Dose de 5 mg</th><th scope="col">Dose de 2,5 mg</th><th scope="col">Dose de 1 mg</th><th scope="col">Dose de 200 mcg</th></tr></thead>
     <tbody>
       <tr><td>5 mg</td><td class="num">1,0 mL</td><td class="num">5 mg/mL</td><td class="num">1,0 mL (100 unidades)</td><td class="num">0,50 mL (50 unidades)</td><td class="num">0,20 mL (20 unidades)</td><td class="num">0,04 mL (4 unidades)</td></tr>
       <tr><td>5 mg</td><td class="num">2,0 mL</td><td class="num">2,5 mg/mL</td><td class="num">2,0 mL (200 unidades*)</td><td class="num">1,0 mL (100 unidades)</td><td class="num">0,40 mL (40 unidades)</td><td class="num">0,08 mL (8 unidades)</td></tr>
@@ -316,8 +317,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">MOTS-c vs. Retatrutide: qual é a diferença?</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">MOTS-c vs. Retatrutide: qual é a diferença?</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Comparison</th><th>Retatrutide</th><th>MOTS-c</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Comparison</th><th scope="col">Retatrutide</th><th scope="col">MOTS-c</th></tr></thead>
     <tbody>
       <tr><td>Tipo de composto</td><td>Agonista triplo de receptor, em investigação</td><td>Peptídeo derivado da mitocôndria</td></tr>
       <tr><td>Foco principal da pesquisa</td><td>Appetite, energy balance, e metabolic outcomes</td><td>Sinalização de energia celular e função mitocondrial</td></tr>
@@ -329,8 +330,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Retatrutida + MOTS-c vs. cagrilintida + retatrutida vs. Advanced Recomp</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Retatrutida + MOTS-c vs. cagrilintida + retatrutida vs. Advanced Recomp</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>Retatrutida + MOTS-c</th><th>Cagrilintida + retatrutida</th><th>Combinação Advanced Recomp</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Item</th><th scope="col">Retatrutida + MOTS-c</th><th scope="col">Cagrilintida + retatrutida</th><th scope="col">Combinação Advanced Recomp</th></tr></thead>
     <tbody>
       <tr><td>Components</td><td>Retatrutida + MOTS-c</td><td>Retatrutida + cagrilintida</td><td>Reta ou tirz + tesamorelin ou CJC/Ipa + MOTS-c (3+)</td></tr>
       <tr><td>Cobertura de vias</td><td>Agonista triplo + AMPK/mitocondrial</td><td>Agonista triplo + amilina (saciedade extra)</td><td>Agonista triplo + eixo do GH + AMPK</td></tr>

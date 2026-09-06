@@ -120,6 +120,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
 .hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
 .hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
 .procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
 .proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
 .procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
@@ -181,6 +182,11 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -189,10 +195,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 940px) {
-.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
-.trilha { display: none; }
 }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
@@ -210,8 +212,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }</style>
+}</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
@@ -261,7 +262,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <li><a href="#limites">Limites da evidência</a></li>
   </ol>
 </aside>
-<main id="principal" class="conteudo">
+<main id="principal" tabindex="-1" class="conteudo">
 <div class="migalha"><a href="../index.html">Compostos</a> &rsaquo; Reparo e tecido</div>
 <div class="artigo-cabeca">
   <h1>Cartalax</h1>
@@ -289,8 +290,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab0">Cartalax formatos de protocolo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cartalax formatos de protocolo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Fase</th><th>quantidade diária</th><th>U-100 unidades</th><th>Volume</th><th>Frequência relatada</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab0">
+    <thead><tr><th scope="col">Fase</th><th scope="col">quantidade diária</th><th scope="col">U-100 unidades</th><th scope="col">Volume</th><th scope="col">Frequência relatada</th></tr></thead>
     <tbody>
       <tr><td>Semanas 1–2</td><td class="num">2 mg</td><td class="num">30 unidades</td><td class="num">0,30 mL</td><td>1×/dia</td></tr>
       <tr><td>Semanas 3–4</td><td class="num">3 mg</td><td class="num">45 unidades</td><td class="num">0,45 mL</td><td>1×/dia</td></tr>
@@ -301,8 +302,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab1">Cartalax formatos de protocolo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cartalax formatos de protocolo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Modelo de pesquisa</th><th>Exposição ao Cartalax</th><th>Desfecho medido</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab1">
+    <thead><tr><th scope="col">Modelo de pesquisa</th><th scope="col">Exposição ao Cartalax</th><th scope="col">Desfecho medido</th></tr></thead>
     <tbody>
       <tr><td>Células-tronco mesenquimais humanas em envelhecimento replicativo</td><td>200 ng/mL em cultura de células</td><td>Expressão de SOX9, agrecano, colágeno tipo II e COMP</td></tr>
       <tr><td>Condrócitos de rato em cultura</td><td>200 ng/mL em cultura de células</td><td>Número e proliferação de condrócitos</td></tr>
@@ -313,8 +314,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab2">Cartalax: cápsula vs. injeção</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cartalax: cápsula vs. injeção</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>Produtos orais</th><th>Frascos injetáveis de pesquisa</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab2">
+    <thead><tr><th scope="col">Item</th><th scope="col">Produtos orais</th><th scope="col">Frascos injetáveis de pesquisa</th></tr></thead>
     <tbody>
       <tr><td>Forma típica</td><td>cápsulas, comprimidos, ou lingual product</td><td>Pó liofilizado em frasco</td></tr>
       <tr><td>Contexto comum de rótulo</td><td>Cursos comerciais curtos, de 10 a 30 dias</td><td>Esquemas de comunidade on-line, em geral com frasco de 20 mg</td></tr>
@@ -326,8 +327,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab3">Cartalax vs. BPC-157</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cartalax vs. BPC-157</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>Cartalax</th><th>BPC-157</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab3">
+    <thead><tr><th scope="col">Item</th><th scope="col">Cartalax</th><th scope="col">BPC-157</th></tr></thead>
     <tbody>
       <tr><td>Tamanho do peptídeo</td><td>Três aminoácidos</td><td>Quinze aminoácidos</td></tr>
       <tr><td>Nome comum</td><td>AED ou T-31</td><td>Body Protection Compound-157</td></tr>
@@ -341,8 +342,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab4">Sigumir vs. Cartalax</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Sigumir vs. Cartalax</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Item</th><th>Cartalax</th><th>Sigumir</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab4">
+    <thead><tr><th scope="col">Item</th><th scope="col">Cartalax</th><th scope="col">Sigumir</th></tr></thead>
     <tbody>
       <tr><td>Identidade principal</td><td>Tripeptídeo AED sintético</td><td>Complexo peptídico mais amplo, derivado de cartilagem, nas descrições comerciais</td></tr>
       <tr><td>Sequência definida</td><td>Ala-Glu-Asp</td><td>Pode conter uma mistura, e não um tripeptídeo único definido</td></tr>
@@ -353,8 +354,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab5">Tabela de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Tabela de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Semanas</th><th>quantidade diária</th><th>Dias</th><th>Phase total</th><th>Running total</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab5">
+    <thead><tr><th scope="col">Semanas</th><th scope="col">quantidade diária</th><th scope="col">Dias</th><th scope="col">Phase total</th><th scope="col">Running total</th></tr></thead>
     <tbody>
       <tr><td>1–2</td><td class="num">2 mg</td><td>14</td><td class="num">28 mg</td><td class="num">28 mg</td></tr>
       <tr><td>3–4</td><td class="num">3 mg</td><td>14</td><td class="num">42 mg</td><td class="num">70 mg</td></tr>
@@ -365,8 +366,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab6">Calendário do ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Calendário do ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>ciclo day</th><th>Semana</th><th>Marco do esquema de comunidade</th><th>quantidade diária</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab6">
+    <thead><tr><th scope="col">ciclo day</th><th scope="col">Semana</th><th scope="col">Marco do esquema de comunidade</th><th scope="col">quantidade diária</th></tr></thead>
     <tbody>
       <tr><td>Dia 1</td><td>Semana 1</td><td>Começa a primeira fase</td><td class="num">2 mg</td></tr>
       <tr><td>Dia 15</td><td>Semana 3</td><td>Começa a segunda fase</td><td class="num">3 mg</td></tr>
@@ -380,8 +381,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab7">Ciclo de 8 semanas</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Ciclo de 8 semanas</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Semanas</th><th>quantidade diária</th><th>quantidade semanal</th><th>Phase total</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab7">
+    <thead><tr><th scope="col">Semanas</th><th scope="col">quantidade diária</th><th scope="col">quantidade semanal</th><th scope="col">Phase total</th></tr></thead>
     <tbody>
       <tr><td>1–2</td><td class="num">2 mg</td><td class="num">14 mg</td><td class="num">28 mg</td></tr>
       <tr><td>3–4</td><td class="num">3 mg</td><td class="num">21 mg</td><td class="num">42 mg</td></tr>
@@ -391,8 +392,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab8">Ciclo de 12 semanas</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Ciclo de 12 semanas</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Semanas</th><th>quantidade diária</th><th>quantidade semanal</th><th>Phase total</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab8">
+    <thead><tr><th scope="col">Semanas</th><th scope="col">quantidade diária</th><th scope="col">quantidade semanal</th><th scope="col">Phase total</th></tr></thead>
     <tbody>
       <tr><td>1–2</td><td class="num">2 mg</td><td class="num">14 mg</td><td class="num">28 mg</td></tr>
       <tr><td>3–4</td><td class="num">3 mg</td><td class="num">21 mg</td><td class="num">42 mg</td></tr>
@@ -403,8 +404,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab9">Ciclo de 16 semanas</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Ciclo de 16 semanas</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Semanas</th><th>quantidade diária</th><th>quantidade semanal</th><th>Phase total</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab9">
+    <thead><tr><th scope="col">Semanas</th><th scope="col">quantidade diária</th><th scope="col">quantidade semanal</th><th scope="col">Phase total</th></tr></thead>
     <tbody>
       <tr><td>1–2</td><td class="num">2 mg</td><td class="num">14 mg</td><td class="num">28 mg</td></tr>
       <tr><td>3–4</td><td class="num">3 mg</td><td class="num">21 mg</td><td class="num">42 mg</td></tr>
@@ -416,8 +417,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab10">Comparação de duração de ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Comparação de duração de ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Ciclo</th><th>Total exposure</th><th>Difference</th><th>Situação da evidência</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab10">
+    <thead><tr><th scope="col">Ciclo</th><th scope="col">Total exposure</th><th scope="col">Difference</th><th scope="col">Situação da evidência</th></tr></thead>
     <tbody>
       <tr><td>8 semanas</td><td class="num">182 mg</td><td>Para depois da fase de 4 mg</td><td>Relatado pela comunidade</td></tr>
       <tr><td>12 semanas</td><td class="num">322 mg</td><td>Adds four weeks at 5 mg diário</td><td>Relatado pela comunidade</td></tr>
@@ -428,8 +429,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab11">Cartalax Cycle Breaks, Pauses, and Esquema Changes</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cartalax Cycle Breaks, Pauses, and Esquema Changes</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Question</th><th>Current answer</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab11">
+    <thead><tr><th scope="col">Question</th><th scope="col">Current answer</th></tr></thead>
     <tbody>
       <tr><td>Is a break required after eight weeks?</td><td>No published study provides a required break.</td></tr>
       <tr><td>Can another ciclo begin right away?</td><td>Human safety data do not support a clear answer.</td></tr>
@@ -441,8 +442,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab12">Cálculo de frasco para o ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cálculo de frasco para o ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Ciclo</th><th>Phase calculation</th><th>Total</th><th>Vials required</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab12">
+    <thead><tr><th scope="col">Ciclo</th><th scope="col">Phase calculation</th><th scope="col">Total</th><th scope="col">Vials required</th></tr></thead>
     <tbody>
       <tr><td>8 semanas</td><td class="num">28 mg + 42 mg + 112 mg</td><td class="num">182 mg</td><td>10 vials</td></tr>
       <tr><td>12 semanas</td><td class="num">182 mg + 140 mg</td><td class="num">322 mg</td><td>17 vials</td></tr>
@@ -453,8 +454,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab13">Cálculo de frasco para o ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cálculo de frasco para o ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>quantidade diária</th><th>Mathematical duration</th><th>Full diário amounts</th><th>Quantidade restante</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab13">
+    <thead><tr><th scope="col">quantidade diária</th><th scope="col">Mathematical duration</th><th scope="col">Full diário amounts</th><th scope="col">Quantidade restante</th></tr></thead>
     <tbody>
       <tr><td>2 mg</td><td>10 dias</td><td>10</td><td class="num">0 mg</td></tr>
       <tr><td>3 mg</td><td>About 6,7 dias</td><td>6</td><td class="num">2 mg</td></tr>
@@ -466,8 +467,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab14">Cálculo de frasco para o ciclo</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Cálculo de frasco para o ciclo</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Ciclo</th><th>Minimum from total milligrams</th><th>Phase totals rounded separately</th><th>Difference</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab14">
+    <thead><tr><th scope="col">Ciclo</th><th scope="col">Minimum from total milligrams</th><th scope="col">Phase totals rounded separately</th><th scope="col">Difference</th></tr></thead>
     <tbody>
       <tr><td>8 semanas</td><td>10 vials</td><td>11 vials</td><td>1 frasco</td></tr>
       <tr><td>12 semanas</td><td>17 vials</td><td>18 vials</td><td>1 frasco</td></tr>
@@ -477,8 +478,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <h2 id="tab15">Acompanhamento do ciclo e planejamento de estoque</h2>
 <div class="tabela-env">
   <div class="tabela-titulo">Acompanhamento do ciclo e planejamento de estoque</div>
-  <div class="tabela-rolagem"><table>
-    <thead><tr><th>Date</th><th>ciclo day</th><th>Fase</th><th>Quantidade planejada</th><th>frasco number</th><th>Cumulative total</th><th>Observações</th></tr></thead>
+  <div class="tabela-rolagem"><table aria-labelledby="tab15">
+    <thead><tr><th scope="col">Date</th><th scope="col">ciclo day</th><th scope="col">Fase</th><th scope="col">Quantidade planejada</th><th scope="col">frasco number</th><th scope="col">Cumulative total</th><th scope="col">Observações</th></tr></thead>
     <tbody>
       <tr><td>[Date]</td><td>[Dia]</td><td>[semanas 1–2, 3–4, 5–8, ou 9–12]</td><td>[Quantidade]</td><td>[frasco]</td><td>[Running total]</td><td>[Pause, loss, ou schedule change]</td></tr>
       <tr><td>[Date]</td><td>[Dia]</td><td>[Phase]</td><td>[Quantidade]</td><td>[frasco]</td><td>[Running total]</td><td>[Notes]</td></tr>
