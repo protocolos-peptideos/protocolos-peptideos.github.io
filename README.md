@@ -130,7 +130,7 @@ Ele distingue busca por condição de busca por intervenção no ClinicalTrials.
 
 ## Outros idiomas
 
-O site sai também em `/en/`, `/es/`, `/de/`, `/fr/` e `/ja/`, com a mesma estrutura da raiz e um seletor no cabeçalho. **A versão em português é a de referência**; cada página traduzida diz isso no topo.
+O site sai também em `/en/`, `/es/`, `/de/`, `/fr/` e `/ja/`, com a mesma estrutura da raiz e um seletor no cabeçalho. **A versão em português é a de referência**, e a página Sobre de cada idioma diz isso. As páginas traduzidas não trazem aviso de tradução no topo, por decisão de 10/09/2026.
 
 As versões não são traduções dos módulos Python: `build/idiomas.py` pega cada página em português **já gerada**, recorta os trechos de texto (parágrafo, item, célula, título, atributo visível) e substitui cada um pela entrada correspondente em `build/traducoes/<idioma>.json`. Duas consequências:
 

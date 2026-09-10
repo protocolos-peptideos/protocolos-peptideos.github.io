@@ -25,8 +25,9 @@ Por que pos-processar o HTML e nao traduzir os modulos de conteudo:
      -- as consultas do PubMed -- tem que ser identico. Trecho que nao passa
      nao e publicado: fica em portugues e vai para o relatorio de rejeitados.
 
-A versao em portugues e a de referencia. As outras avisam isso no topo de
-cada pagina.
+A versao em portugues e a de referencia. As paginas traduzidas nao trazem
+aviso de traducao no topo -- decisao do Fernando em 10/09/2026; o metodo e
+o limite da traducao estao na pagina Sobre de cada idioma.
 
 USO
 
@@ -514,10 +515,8 @@ def traduz_pagina(fonte, rel, idioma, mem, relat):
                 + m.group(3) + corpo + m.group(5))
     s = _CARD.sub(card, s)
 
-    # aviso de traducao, logo abaixo do cabecalho
-    pt_url = '/' + rel.replace(os.sep, '/')
-    aviso = ('<p class="nota-traducao" role="note">%s</p>\n' % conv['aviso'].format(pt=pt_url))
-    s = s.replace('<div class="env">\n', '<div class="env">\n' + aviso, 1)
+    # Sem aviso de traducao no topo, por decisao de 10/09/2026. Os textos do
+    # aviso continuam em IDIOMAS[...]['aviso'] caso ele volte.
     return s
 
 

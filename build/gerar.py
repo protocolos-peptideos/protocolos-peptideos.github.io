@@ -917,7 +917,7 @@ def gera_sobre(stats):
 <p>Compilado em {HOJE}, cobrindo {stats['n']} compostos e combinações. Protocolo de peptídeo muda rápido, e o status regulatório muda mais rápido ainda — várias datas de Categoria 2 da FDA citadas aqui têm revisão marcada para 2026. Confira antes de tratar qualquer status como atual.</p>
 
 <h2>Outros idiomas</h2>
-<p>O site existe também em inglês, espanhol, alemão, francês e japonês, pelo seletor no alto de cada página. Essas versões são traduzidas do português com auxílio de IA, trecho a trecho, e cada trecho só entra na página depois de passar por uma trava mecânica: os números têm de ser os mesmos do original, respeitado o separador decimal de cada idioma; as tags, os links e as consultas de banco de dados têm de ser idênticos. Trecho que não passa não é publicado — fica em português, marcado como tal. Nenhuma dessas versões foi revisada por tradutor humano, e cada página delas diz isso no topo. <strong>A versão em português é a de referência.</strong></p>
+<p>O site existe também em inglês, espanhol, alemão, francês e japonês, pelo seletor no alto de cada página. Essas versões são traduzidas do português com auxílio de IA, trecho a trecho, e cada trecho só entra na página depois de passar por uma trava mecânica: os números têm de ser os mesmos do original, respeitado o separador decimal de cada idioma; as tags, os links e as consultas de banco de dados têm de ser idênticos. Trecho que não passa não é publicado — fica em português, marcado como tal. Nenhuma dessas versões foi revisada por tradutor humano. <strong>A versão em português é a de referência.</strong></p>
 """)
     p.append('</div>\n</main>')
     p.append(rodape(""))
