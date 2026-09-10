@@ -58,6 +58,8 @@ build/gerar.py        gerador estático
 build/compostos.py    metadados PT-BR de cada composto (autoral)
 build/fatos.py        faixa de referência rápida por composto (autoral)
 build/dicionario*.py  dicionário EN→PT-BR das células de tabela
+build/idiomas.py      versões em en/ es/ de/ fr/ ja/, geradas do HTML em português
+build/traducoes/      memória de tradução por idioma (<idioma>.json) e o briefing dos tradutores
 build/datas.py        as duas datas do site, num lugar só
 build/trava_datas.py  trava que impede data cravada ou tirada do relógio
 build/trava_consultas.py  trava que exige a consulta ao lado da contagem
@@ -126,6 +128,26 @@ Ele distingue busca por condição de busca por intervenção no ClinicalTrials.
 
 **Não corrige nada.** A tentação óbvia seria reescrever os números sozinho — e aí o site passaria a afirmar, com a data de apuração antiga, resultados colhidos em outro dia. Número e data de apuração andam juntos: quem atualiza um atualiza o outro, e isso é decisão de quem apura, não de um script agendado.
 
+## Outros idiomas
+
+O site sai também em `/en/`, `/es/`, `/de/`, `/fr/` e `/ja/`, com a mesma estrutura da raiz e um seletor no cabeçalho. **A versão em português é a de referência**; cada página traduzida diz isso no topo.
+
+As versões não são traduções dos módulos Python: `build/idiomas.py` pega cada página em português **já gerada**, recorta os trechos de texto (parágrafo, item, célula, título, atributo visível) e substitui cada um pela entrada correspondente em `build/traducoes/<idioma>.json`. Duas consequências:
+
+1. **Texto novo em português aparece sozinho como pendente** nos outros idiomas. Até ser traduzido, sai em português, marcado com `lang="pt-BR"`, e o gerador imprime a cobertura de cada idioma a cada rodada.
+2. **Tradução não inventa número.** Antes de entrar na página, cada trecho passa por uma trava: o conjunto de números tem de ser o mesmo do original, lido no separador decimal do idioma (`1,125 mL` em português é `1.125 mL` em inglês e continua `1,125 mL` em alemão); as tags, os `href` e o conteúdo de `<code>` — as consultas do PubMed — têm de ser idênticos. Trecho reprovado não é publicado: fica em português e vai para `build/traducoes/rejeitados/`.
+
+Para o inglês, as células de tabela têm uma camada automática (`en-fonte.json`): a fonte era em inglês, então a "tradução" da célula é o próprio original. O resto — e tudo nos outros idiomas — foi traduzido com IA a partir do português, seguindo `build/traducoes/INSTRUCOES.md`, sem revisão de tradutor humano.
+
+Fluxo para traduzir o que estiver pendente:
+
+```bash
+python build/gerar.py                 # imprime a cobertura e grava build/traducoes/pendentes/<idioma>/parte-NN.json
+# traduzir cada parte para build/traducoes/entregas/<idioma>/parte-NN.json (formato em INSTRUCOES.md)
+python build/idiomas.py --incorporar  # valida e grava o que passou em <idioma>.json
+python build/gerar.py                 # regera as seis versões
+```
+
 ## Regenerar
 
 ```bash
@@ -140,7 +162,7 @@ O gerador depende de `build/src/*.json`, a extração da fonte — que **não es
 python -m http.server 8231
 ```
 
-Sem build, sem dependências, sem JavaScript de terceiros. As fontes vêm do Google Fonts; o resto é local.
+Sem build, sem dependências, sem JavaScript de terceiros. As fontes moram em `assets/fontes/`; tudo é local.
 
 ---
 

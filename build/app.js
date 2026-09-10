@@ -53,9 +53,14 @@
     // A frase inteira, nao so o numero: "7" solto nao diz nada quando lido
     // fora de contexto. E so escreve se mudou, para nao repetir o anuncio.
     if (contagem) {
-      var frase = achou === 0 ? 'Nenhum composto corresponde à busca.'
-                : achou === cards.length ? 'Mostrando todos os ' + cards.length + ' compostos.'
-                : 'Mostrando ' + achou + ' de ' + cards.length + ' compostos.';
+      // As frases vem do proprio elemento (data-frase-*), que o gerador
+      // escreve em portugues e as versoes em outros idiomas traduzem. O
+      // texto fixo abaixo e so o fallback para pagina antiga.
+      var d = contagem.dataset || {};
+      var frase = (achou === 0 ? (d.fraseNenhum || 'Nenhum composto corresponde à busca.')
+                : achou === cards.length ? (d.fraseTodos || 'Mostrando todos os {total} compostos.')
+                : (d.fraseParte || 'Mostrando {n} de {total} compostos.'))
+                .replace('{n}', achou).replace('{total}', cards.length);
       if (contagem.textContent !== frase) contagem.textContent = frase;
     }
     if (campoCat) campoCat.value = cat;

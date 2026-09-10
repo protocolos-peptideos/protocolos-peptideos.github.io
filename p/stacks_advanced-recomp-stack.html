@@ -11,6 +11,13 @@
 <meta property="og:description" content="Retatrutida + CJC-1295 sem DAC + ipamorelina">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://protocolos-peptideos.github.io/p/stacks_advanced-recomp-stack.html">
+<link rel="alternate" hreflang="pt-BR" href="https://protocolos-peptideos.github.io/p/stacks_advanced-recomp-stack.html">
+<link rel="alternate" hreflang="en" href="https://protocolos-peptideos.github.io/en/p/stacks_advanced-recomp-stack.html">
+<link rel="alternate" hreflang="es" href="https://protocolos-peptideos.github.io/es/p/stacks_advanced-recomp-stack.html">
+<link rel="alternate" hreflang="de" href="https://protocolos-peptideos.github.io/de/p/stacks_advanced-recomp-stack.html">
+<link rel="alternate" hreflang="fr" href="https://protocolos-peptideos.github.io/fr/p/stacks_advanced-recomp-stack.html">
+<link rel="alternate" hreflang="ja" href="https://protocolos-peptideos.github.io/ja/p/stacks_advanced-recomp-stack.html">
+<link rel="alternate" hreflang="x-default" href="https://protocolos-peptideos.github.io/p/stacks_advanced-recomp-stack.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -24,7 +31,7 @@
     "name": "Protocolos",
     "url": "https://protocolos-peptideos.github.io"
   },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-06"
 }
 </script>
 <link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -112,6 +119,11 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .nav { display: flex; gap: 22px; margin-left: auto; font-size: 14.5px; }
 .nav a { color: var(--texto-suave); font-weight: 500; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--cobre-claro); text-decoration: none; }
+.idiomas { display: flex; gap: 9px; font-size: 12px; letter-spacing: 0.06em; font-weight: 600; }
+.idiomas a { color: var(--texto-fraco); padding: 3px 5px; border-radius: 6px; border: 1px solid transparent; line-height: 1; }
+.idiomas a:hover { color: var(--texto); text-decoration: none; }
+.idiomas a[aria-current="true"] { color: var(--cobre-claro); border-color: var(--cobre-borda); background: var(--cobre-fundo); }
+:lang(ja) { --display: 'Fraunces', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; --corpo: 'Inter', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; }
 .env-largo { max-width: var(--largura); margin: 0px auto; padding: 0px 24px; }
 .hero { padding: 76px 0px 52px; }
 .hero-sobre { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cobre-claro); border: 1px solid var(--cobre-borda); background: var(--cobre-fundo); padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; }
@@ -182,36 +194,63 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.nota-traducao { margin: 0px; padding: 9px 24px; font-size: 13px; line-height: 1.5; text-align: center; color: var(--texto-suave); background: var(--superficie); border-bottom: 1px solid var(--linha); }
+.nota-traducao a { color: var(--cobre-claro); }
 .procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
 @media (max-width: 940px) {
 .pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
 .trilha { display: none; }
 }
 @media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
 .marca span:not(.marca-icone) { display: none; }
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
 }
 @media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
 .marca span:not(.marca-icone) { display: none; }
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
 .conteudo h2 { font-size: 23px; margin-top: 42px; }
 }
 @media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0px; }
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
 .marca span:not(.marca-icone) { display: none; }
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.nota-traducao { padding: 8px 16px; font-size: 12px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.hero { padding: 48px 0px 34px; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.nota-traducao { padding: 8px 16px; font-size: 12px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.conteudo h2 { font-size: 23px; margin-top: 42px; }
 }</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
@@ -230,6 +269,14 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
       <a href="../evidencia.html">Evidência</a>
       <a href="../seguranca.html">Segurança</a>
       <a href="../sobre.html">Sobre</a>
+    </nav>
+    <nav class="idiomas" aria-label="Idioma">
+      <a href="/p/stacks_advanced-recomp-stack.html" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
+      <a href="/en/p/stacks_advanced-recomp-stack.html" hreflang="en" lang="en">EN</a>
+      <a href="/es/p/stacks_advanced-recomp-stack.html" hreflang="es" lang="es">ES</a>
+      <a href="/de/p/stacks_advanced-recomp-stack.html" hreflang="de" lang="de">DE</a>
+      <a href="/fr/p/stacks_advanced-recomp-stack.html" hreflang="fr" lang="fr">FR</a>
+      <a href="/ja/p/stacks_advanced-recomp-stack.html" hreflang="ja" lang="ja">JA</a>
     </nav>
   </div>
 </header>

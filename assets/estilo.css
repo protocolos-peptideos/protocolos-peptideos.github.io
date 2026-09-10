@@ -160,6 +160,28 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .nav a { color: var(--texto-suave); font-weight: 500; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--cobre-claro); text-decoration: none; }
 
+/* Seletor de idioma: seis códigos de duas letras, ao lado da navegação. O
+   código, e não o endônimo por extenso, porque cabe no cabeçalho de 390px
+   sem virar segunda linha nem menu. */
+.idiomas { display: flex; gap: 9px; font-size: 12px; letter-spacing: 0.06em; font-weight: 600; }
+.idiomas a {
+  color: var(--texto-fraco); padding: 3px 5px; border-radius: 6px;
+  border: 1px solid transparent; line-height: 1;
+}
+.idiomas a:hover { color: var(--texto); text-decoration: none; }
+.idiomas a[aria-current="true"] { color: var(--cobre-claro); border-color: var(--cobre-borda); background: var(--cobre-fundo); }
+
+/* Aviso das versões traduzidas, entre o cabeçalho e o conteúdo. */
+.nota-traducao {
+  margin: 0; padding: 9px 24px; font-size: 13px; line-height: 1.5; text-align: center;
+  color: var(--texto-suave); background: var(--superficie); border-bottom: 1px solid var(--linha);
+}
+.nota-traducao a { color: var(--cobre-claro); }
+
+/* Japonês: as duas famílias latinas continuam nos números e nas siglas; o
+   que muda é a substituta para os ideogramas, que fica sem serifa. */
+:lang(ja) { --display: 'Fraunces', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; --corpo: 'Inter', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; }
+
 /* ---------------------------------------------------------------- layout */
 .env-largo { max-width: var(--largura); margin: 0 auto; padding: 0 24px; }
 
@@ -485,12 +507,15 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
   .rodape-in { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: nowrap; min-width: 0; }
+  .cabecalho-in { padding: 12px 16px; gap: 10px; flex-wrap: wrap; row-gap: 6px; min-width: 0; }
   .marca { font-size: 15.5px; gap: 8px; min-width: 0; }
   /* abaixo de 560px a marca fica so no icone: melhor que reticencias */
   .marca span:not(.marca-icone) { display: none; }
   .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
   .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+  /* no celular o seletor desce para uma segunda linha, alinhado à direita */
+  .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+  .nota-traducao { padding: 8px 16px; font-size: 12px; }
   .env-largo, .pagina { padding: 0 18px; }
   .hero { padding: 48px 0 34px; }
   .hero-numeros { gap: 26px; }

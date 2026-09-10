@@ -12,3 +12,8 @@ Thumbs.db
 
 # configuracao local da ferramenta, nao pertence ao projeto
 .claude/
+
+# fila de traducao: gerada e consumida localmente, ver build/idiomas.py
+build/traducoes/pendentes/
+build/traducoes/entregas/
+build/traducoes/rejeitados/

@@ -12,6 +12,7 @@ import json, glob, os, re, subprocess, sys, html
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dicionario as D
+import idiomas as I
 from compostos import COMPOSTOS, CATEGORIAS
 from fatos import FATOS
 from proprios import PROPRIOS
@@ -182,6 +183,8 @@ def traduz_tabela(t):
             total += 1
             if not ok:
                 ruins += 1
+            # a versao em ingles da celula e o original: fica registrado
+            I.registra_en(v, c)
             nova.append(v)
         linhas.append(nova)
     aprovada = total > 0 and (ruins / total) <= 0.02
@@ -271,6 +274,22 @@ def cabecalho(titulo, descricao, prefixo="", atual="", indexavel=False,
     # vira duas paginas para o robo.
     canon = (f'\n<link rel="canonical" href="{BASE}{caminho}">'
              if caminho else '')
+    # As versoes em outros idiomas moram em /<idioma>/<mesmo caminho>. A lista
+    # de alternates e identica em todas as versoes; so a canonical muda, e
+    # quem a troca e build/idiomas.py ao gravar cada uma. x-default aponta
+    # para o portugues, que e o original.
+    alternates = ''
+    seletor = ''
+    if caminho:
+        alternates = f'\n<link rel="alternate" hreflang="pt-BR" href="{BASE}{caminho}">'
+        for _idi in I.IDIOMAS:
+            alternates += f'\n<link rel="alternate" hreflang="{_idi}" href="{BASE}/{_idi}{caminho}">'
+        alternates += f'\n<link rel="alternate" hreflang="x-default" href="{BASE}{caminho}">'
+        _links = [f'<a href="{caminho}" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>']
+        for _idi in I.IDIOMAS:
+            _links.append(f'<a href="/{_idi}{caminho}" hreflang="{_idi}" lang="{_idi}">{_idi.upper()}</a>')
+        seletor = ('\n    <nav class="idiomas" aria-label="Idioma">\n      '
+                   + '\n      '.join(_links) + '\n    </nav>')
     ld = json_ld(titulo, descricao, caminho) if caminho else ''
     # Procedencia vira classe no <body>. O site inteiro se sustenta na
     # diferenca entre numero aferido em fonte primaria e numero transportado
@@ -293,7 +312,7 @@ def cabecalho(titulo, descricao, prefixo="", atual="", indexavel=False,
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="{esc(titulo)}">
 <meta property="og:description" content="{esc(descricao)}">
-<meta property="og:type" content="website">{canon}{ld}
+<meta property="og:type" content="website">{canon}{alternates}{ld}
 <link rel="preload" href="{prefixo}assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{prefixo}assets/fontes/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>{css_inline(prefixo)}</style>
@@ -314,7 +333,7 @@ def cabecalho(titulo, descricao, prefixo="", atual="", indexavel=False,
       <a href="{prefixo}evidencia.html"{cls('evidencia')}>Evidência</a>
       <a href="{prefixo}seguranca.html"{cls('seguranca')}>Segurança</a>
       <a href="{prefixo}sobre.html"{cls('sobre')}>Sobre</a>
-    </nav>
+    </nav>{seletor}
   </div>
 </header>
 <div class="env">
@@ -574,7 +593,12 @@ def gera_index(itens, stats):
     # filtra por teclado ouve o botao virar "pressionado" e nunca fica sabendo
     # que a lista caiu de 76 para 7 (WCAG 4.1.3). Comeca vazia de proposito:
     # nada a anunciar antes de o leitor mexer no filtro.
-    partes.append('<p id="contagem-filtro" class="pular" role="status" aria-live="polite"></p>')
+    # As tres frases moram aqui, e nao no app.js, para que as versoes em
+    # outros idiomas as traduzam como qualquer outro atributo da pagina.
+    partes.append('<p id="contagem-filtro" class="pular" role="status" aria-live="polite"'
+                  ' data-frase-nenhum="Nenhum composto corresponde à busca."'
+                  ' data-frase-todos="Mostrando todos os {total} compostos."'
+                  ' data-frase-parte="Mostrando {n} de {total} compostos."></p>')
     partes.append('<p id="vazio" hidden style="color:var(--texto-fraco);padding:40px 0">Nenhum composto corresponde à busca.</p>')
 
     for cat, (nome, desc) in CATEGORIAS.items():
@@ -891,6 +915,9 @@ def gera_sobre(stats):
 
 <h2>Estado desta compilação</h2>
 <p>Compilado em {HOJE}, cobrindo {stats['n']} compostos e combinações. Protocolo de peptídeo muda rápido, e o status regulatório muda mais rápido ainda — várias datas de Categoria 2 da FDA citadas aqui têm revisão marcada para 2026. Confira antes de tratar qualquer status como atual.</p>
+
+<h2>Outros idiomas</h2>
+<p>O site existe também em inglês, espanhol, alemão, francês e japonês, pelo seletor no alto de cada página. Essas versões são traduzidas do português com auxílio de IA, trecho a trecho, e cada trecho só entra na página depois de passar por uma trava mecânica: os números têm de ser os mesmos do original, respeitado o separador decimal de cada idioma; as tags, os links e as consultas de banco de dados têm de ser idênticos. Trecho que não passa não é publicado — fica em português, marcado como tal. Nenhuma dessas versões foi revisada por tradutor humano, e cada página delas diz isso no topo. <strong>A versão em português é a de referência.</strong></p>
 """)
     p.append('</div>\n</main>')
     p.append(rodape(""))
@@ -953,7 +980,9 @@ def main():
                 continue
             linhas = [r + [''] * (largura - len(r)) for r in linhas]
             n_tab_ok += 1
-            tabelas.append({'cap': D.legenda(t['cap']), 'linhas': linhas})
+            _cap = D.legenda(t['cap'])
+            I.registra_en(_cap, t['cap'])
+            tabelas.append({'cap': _cap, 'linhas': linhas})
         itens.append({'slug': slug, 'meta': COMPOSTOS[slug],
                       'tabelas': tabelas, 'n_tabelas': len(tabelas)})
 
@@ -1001,17 +1030,27 @@ def main():
         if i['meta']['categoria'] == 'primaria']
     # <lastmod> vem da data do ultimo commit de cada arquivo -- fato
     # historico lido do git, nunca do relogio. Ver data_do_commit().
+    # Cada URL indexavel entra uma vez por idioma, e cada entrada lista todas
+    # as versoes como alternate -- e assim que o robo entende que sao a mesma
+    # pagina em idiomas diferentes, e nao seis paginas duplicadas.
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
-               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+               '        xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     sem_data = []
+    versoes = [('pt-BR', '')] + [(i, '/' + i) for i in I.IDIOMAS]
     for u in urls:
-        d = data_do_commit(u.lstrip('/'))
-        if d:
-            sitemap.append('  <url><loc>%s%s</loc><lastmod>%s</lastmod></url>'
-                           % (base, u, d))
-        else:
-            sem_data.append(u)
-            sitemap.append('  <url><loc>%s%s</loc></url>' % (base, u))
+        alts = ''.join('<xhtml:link rel="alternate" hreflang="%s" href="%s%s%s"/>'
+                       % (hl, base, pre, u) for hl, pre in versoes)
+        alts += '<xhtml:link rel="alternate" hreflang="x-default" href="%s%s"/>' % (base, u)
+        for hl, pre in versoes:
+            rel = (pre + u).lstrip('/')
+            d = data_do_commit(rel)
+            if d:
+                sitemap.append('  <url><loc>%s%s%s</loc><lastmod>%s</lastmod>%s</url>'
+                               % (base, pre, u, d, alts))
+            else:
+                sem_data.append(pre + u)
+                sitemap.append('  <url><loc>%s%s%s</loc>%s</url>' % (base, pre, u, alts))
     sitemap.append('</urlset>')
     NL = chr(10)
     grava('sitemap.xml', NL.join(sitemap) + NL)
@@ -1033,6 +1072,13 @@ def main():
     print('  publicadas   :', n_tab_ok)
     print('  descartadas  :', n_tab_total - n_tab_ok)
     print('paginas geradas:', stats['n'] + 3)
+
+    # As versoes em outros idiomas saem do HTML em portugues que acabou de
+    # ser gravado. Ver o cabecalho de build/idiomas.py: trecho sem traducao
+    # fica em portugues e vai para a fila; trecho que nao passa na trava de
+    # numeros nao entra na pagina.
+    I.gerar(['index.html', 'evidencia.html', 'seguranca.html', 'sobre.html']
+            + [os.path.join('p', i['slug'] + '.html') for i in itens])
     semtab = [i['slug'] for i in itens if i['n_tabelas'] == 0]
     if semtab:
         print('sem tabela     :', ', '.join(semtab))
