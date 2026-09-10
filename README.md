@@ -132,6 +132,8 @@ Ele distingue busca por condição de busca por intervenção no ClinicalTrials.
 
 O site sai também em `/en/`, `/es/`, `/de/`, `/fr/` e `/ja/`, com a mesma estrutura da raiz e um seletor no cabeçalho. **A versão em português é a de referência**, e a página Sobre de cada idioma diz isso. As páginas traduzidas não trazem aviso de tradução no topo, por decisão de 10/09/2026.
 
+**A ANVISA só aparece em português** (decisão de 10/09/2026). A página "O que existe no Brasil" não tem versão traduzida, nem seletor de idioma, nem alternates no sitemap. Nas outras versões, os selos e o filtro de registro do índice saem, a linha "No Brasil" de cada composto sai, e todo trecho que cita a ANVISA passa por `build/traducoes/sem-anvisa/<idioma>.json`, que o reescreve sem a agência ou o retira. Essa camada tem trava própria: a versão nova só pode **tirar** número, tag ou link da tradução que já passou na trava principal; a única troca de número aceita é a contagem do índice (76→75 compostos, 19→18 páginas aferidas), porque a página da ANVISA sai. Trecho novo em português que cite a ANVISA e ainda não tenha versão nessa camada é retirado das traduções, e o gerador avisa.
+
 As versões não são traduções dos módulos Python: `build/idiomas.py` pega cada página em português **já gerada**, recorta os trechos de texto (parágrafo, item, célula, título, atributo visível) e substitui cada um pela entrada correspondente em `build/traducoes/<idioma>.json`. Duas consequências:
 
 1. **Texto novo em português aparece sozinho como pendente** nos outros idiomas. Até ser traduzido, sai em português, marcado com `lang="pt-BR"`, e o gerador imprime a cobertura de cada idioma a cada rodada.

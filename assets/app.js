@@ -12,6 +12,9 @@
   var busca = document.getElementById('busca');
   var filtros = document.getElementById('filtros');
   var filtrosAnv = document.getElementById('filtros-anvisa');
+  // A ANVISA so existe na versao em portugues (decisao de 10/09/2026): nas
+  // outras, o filtro de registro nao esta na pagina, e a tool nao o anuncia.
+  var comRegistro = !!filtrosAnv;
   var form = document.getElementById('ferramenta-filtro');
   var campoCat = document.getElementById('par-cat');
   var campoAnv = document.getElementById('par-anv');
@@ -137,11 +140,15 @@
   try {
     mc.registerTool({
       name: 'listar_compostos',
-      description:
-        'Devolve os compostos listados nesta pagina, opcionalmente filtrados por texto, ' +
-        'por categoria e por registro na ANVISA. Somente leitura: nao altera nada no site ' +
-        'nem envia dado nenhum. O resultado e a mesma lista que os filtros da pagina mostram, ' +
-        'com nome, categoria, situacao de registro no Brasil e o endereco da pagina de cada um.',
+      description: comRegistro
+        ? 'Devolve os compostos listados nesta pagina, opcionalmente filtrados por texto, ' +
+          'por categoria e por registro na ANVISA. Somente leitura: nao altera nada no site ' +
+          'nem envia dado nenhum. O resultado e a mesma lista que os filtros da pagina mostram, ' +
+          'com nome, categoria, situacao de registro no Brasil e o endereco da pagina de cada um.'
+        : 'Devolve os compostos listados nesta pagina, opcionalmente filtrados por texto e ' +
+          'por categoria. Somente leitura: nao altera nada no site nem envia dado nenhum. ' +
+          'O resultado e a mesma lista que os filtros da pagina mostram, com nome, categoria ' +
+          'e o endereco da pagina de cada um.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -156,8 +163,10 @@
           anv: {
             type: 'string',
             enum: ['todos', 'sim', 'nao'],
-            description: 'Registro na ANVISA: "sim" so os com medicamento registrado no Brasil, ' +
-                         '"nao" so os sem registro, "todos" nao filtra.'
+            description: comRegistro
+              ? 'Registro na ANVISA: "sim" so os com medicamento registrado no Brasil, ' +
+                '"nao" so os sem registro, "todos" nao filtra.'
+              : 'Sem uso nesta versao do site. Use "todos".'
           },
           limite: {
             type: 'integer',
@@ -182,12 +191,13 @@
         try {
           cards.forEach(function (c) {
             if (!combina(c, termo)) return;
-            achados.push({
+            var item = {
               nome: (c.querySelector('h3') || {}).textContent || '',
               categoria: c.dataset.cat || '',
-              registro_anvisa: c.dataset.anv || 'nao medido',
               url: c.href
-            });
+            };
+            if (comRegistro) item.registro_anvisa = c.dataset.anv || 'nao medido';
+            achados.push(item);
           });
         } finally {
           cat = catAntes; anv = anvAntes;

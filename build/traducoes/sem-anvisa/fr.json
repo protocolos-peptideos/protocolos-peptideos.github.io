@@ -1,0 +1,392 @@
+[
+ {
+  "pt": "Peptídeos, nootrópicos, SARMs e correlatos em português: dose, ciclo, registro na ANVISA e o limite da evidência. Experimental, não é conselho médico.",
+  "trad": "Peptides, nootropiques, SARM et apparentés en français : dose, cycle et limite des preuves. Expérimental, pas un avis médical."
+ },
+ {
+  "pt": "76 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 19 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "75 composés et combinaisons — des peptides aux <a href=\"p/proprio_nootropicos.html\">nootropiques</a> et aux SARM —, avec dose, reconstitution, structure de cycle et statut réglementaire. Chaque page sépare ce qu’un essai publié a testé de ce qui n’est que pratique rapportée par la communauté, parce que la différence entre les deux est tout le sujet. Sur 18 d’entre elles, les chiffres ne viennent pas d’une source secondaire : ils ont été vérifiés sur <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, sur <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a> et dans la notice — avec la requête déclarée sur chaque page, pour que vous répétiez et me contredisiez.",
+  "ajuste": {
+   "76": "75",
+   "19": "18"
+  }
+ },
+ {
+  "pt": "páginas com o número <strong>aferido</strong> por mim no PubMed, na bula, no ClinicalTrials.gov e no dado aberto da ANVISA — com a consulta declarada em cada uma",
+  "trad": "pages avec le chiffre <strong>vérifié</strong> par moi sur PubMed, dans la notice et sur ClinicalTrials.gov — avec la requête déclarée sur chacune"
+ },
+ {
+  "pt": "A maior parte dos compostos aqui <strong>não tem aprovação da ANVISA nem da FDA para uso humano</strong>. Vários são vendidos com rótulo de \"uso exclusivo em pesquisa\", o que significa que não passaram por controle de pureza, esterilidade ou dosagem para consumo por pessoas. Dose descrita por comunidade não é dose validada: é o que alguém relatou ter feito.",
+  "trad": "La plupart des composés ici <strong>n’ont pas d’approbation de la FDA pour un usage humain</strong>. Plusieurs sont vendus avec l’étiquette « usage exclusivement en recherche », ce qui signifie qu’ils n’ont passé aucun contrôle de pureté, de stérilité ou de dosage pour une consommation par des personnes. Une dose décrite par la communauté n’est pas une dose validée : c’est ce que quelqu’un a rapporté avoir fait."
+ },
+ {
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 76 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "Filtre la liste des composes de cette page par texte et par categorie. Ne modifie rien : change seulement quelles cartes restent visibles, et renvoie le decompte de ce qui reste. Les 75 composes restent listes et lies sur la page meme sans utiliser le filtre.",
+  "ajuste": {
+   "76": "75"
+  }
+ },
+ {
+  "pt": "Registro na ANVISA. Valores aceitos: todos, sim, nao. sim devolve so os compostos com medicamento registrado no Brasil; nao devolve so os sem registro; todos nao filtra.",
+  "trad": "Enregistrement. Valeurs acceptees : todos, sim, nao. sim renvoie seulement les composes avec un medicament enregistre au Bresil ; nao renvoie seulement ceux sans enregistrement ; todos ne filtre pas."
+ },
+ {
+  "pt": "O selo de registro vem da <a href=\"evidencia.html\">varredura do dado aberto da ANVISA</a> feita em 4 de setembro de 2026, e só aparece nos 44 compostos que foram medidos um a um. Combinações e páginas de método não têm selo.",
+  "trad": "Le sceau d’enregistrement vient du <a href=\"evidencia.html\">balayage de la donnée ouverte</a> fait le 4 septembre 2026, et n’apparaît que sur les 44 composés qui ont été mesurés un à un. Les combinaisons et les pages de méthode n’ont pas de sceau."
+ },
+ {
+  "pt": "15 medicamento(s) com registro ativo na ANVISA",
+  "trad": "15 médicament(s) avec enregistrement actif"
+ },
+ {
+  "pt": "ANVISA",
+  "trad": ""
+ },
+ {
+  "pt": "2 medicamento(s) com registro ativo na ANVISA",
+  "trad": "2 médicament(s) avec enregistrement actif"
+ },
+ {
+  "pt": "4 medicamento(s) com registro ativo na ANVISA",
+  "trad": "4 médicament(s) avec enregistrement actif"
+ },
+ {
+  "pt": "3 medicamento(s) com registro ativo na ANVISA",
+  "trad": "3 médicament(s) avec enregistrement actif"
+ },
+ {
+  "pt": "40 dos 44 compostos deste site não têm nenhum medicamento registrado na ANVISA",
+  "trad": "40 des 44 composés de ce site n’ont aucun médicament enregistré"
+ },
+ {
+  "pt": "Sem registro na ANVISA",
+  "trad": "Sans enregistrement"
+ },
+ {
+  "pt": "As 19 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
+  "trad": "Les 18 pages où chaque chiffre est venu de la source primaire — PubMed, ClinicalTrials.gov, notice et WADA — avec la requête déclarée sur chacune.",
+  "ajuste": {
+   "19": "18"
+  }
+ },
+ {
+  "pt": "<strong>40 dos 44 compostos deste site não têm nenhum medicamento registrado na ANVISA.</strong> Varredura do dado aberto oficial, 43.489 registros. O resultado agora aparece em cada página de composto",
+  "trad": "<strong>40 des 44 composés de ce site n’ont aucun médicament enregistré.</strong> Balayage de la donnée ouverte officielle, 43 489 enregistrements. Le résultat apparaît désormais sur chaque page de composé"
+ },
+ {
+  "pt": "A única página deste site conferida contra <strong>gabarito oficial</strong>, e a única com duas fontes regulatórias. As escadas <strong>batem com a FDA e com a ANVISA</strong>, degrau por degrau. Faltava a <strong>tarja preta</strong>, faltava a dose de <strong>7,2 mg</strong> que só existe no Brasil, e as duas agências <strong>discordam</strong> sobre contraindicar a semaglutida",
+  "trad": "Les paliers <strong>concordent avec la FDA</strong>, marche par marche. Il manquait l’<strong>encadré noir</strong>, il manquait la dose de <strong>7,2 mg</strong> qui n’existe qu’au Brésil"
+ },
+ {
+  "pt": "O composto com a <strong>evidência mais madura de todo o site</strong>, e o contrário do padrão daqui: <strong>12 ensaios de fase 3</strong>, com GLORY-1 no NEJM, GLORY-2 na JAMA e as duas DREAMS na Nature — e <strong>nenhum registro na FDA ou na ANVISA</strong>. Os 12 são de patrocinador e população <strong>chineses</strong>, e a meta-análise que reúne 2.292 participantes classifica a certeza em obesidade como <strong>muito baixa</strong> no mesmo texto em que reporta perda de peso de dois dígitos",
+  "trad": "Le composé avec les <strong>preuves les plus mûres de tout le site</strong>, et le contraire du schéma d’ici : <strong>12 essais de phase 3</strong>, avec GLORY-1 dans le NEJM, GLORY-2 dans le JAMA et les deux DREAMS dans Nature — et <strong>aucun enregistrement à la FDA</strong>. Les 12 sont de promoteur et de population <strong>chinois</strong>, et la méta-analyse qui réunit 2 292 participants classe la certitude en obésité comme <strong>très faible</strong> dans le même texte où elle rapporte une perte de poids à deux chiffres"
+ },
+ {
+  "pt": "<strong>A coluna não soma 175.</strong> Duas páginas são segundo corte dos mesmos compostos, não compostos novos: a de tamanho de efeito reanalisa 19 que já aparecem nas outras, e a de registro na ANVISA varre os 44 compostos de protocolo do site, que não são contados como material de fonte primária.",
+  "trad": "<strong>La colonne ne totalise pas 175.</strong> Deux pages sont un second découpage des mêmes composés, pas de nouveaux composés : celle de la taille d’effet en réanalyse 19 qui figurent déjà dans les autres."
+ },
+ {
+  "pt": "Nenhum dos compostos marcados como \"não aprovado\" nesta referência tem registro na ANVISA para as finalidades descritas. Semaglutida, tirzepatida e tesamorelina têm registro para indicações específicas e exigem prescrição. Importar produto de uso em pesquisa para consumo pessoal não os transforma em medicamento — muda apenas quem carrega o risco.",
+  "trad": "Aucun des composés marqués « non approuvé » dans cette référence n’a d’enregistrement pour les finalités décrites. Le sémaglutide, la tirzépatide et la tésamoréline ont un enregistrement pour des indications spécifiques et exigent une ordonnance. Importer un produit à usage de recherche pour consommation personnelle n’en fait pas un médicament — cela change seulement qui porte le risque."
+ },
+ {
+  "pt": "<strong>Fontes primárias, nas páginas importadas.</strong> Nas páginas de protocolo que vêm da fonte secundária, nenhum artigo do PubMed, registro de ensaio ou bula foi aberto para conferir os números: a checagem foi contra a fonte, e só. Isso continua sendo a limitação principal desta referência.<br><strong>As páginas de <a href=\"evidencia.html\">evidência verificada</a> são a exceção, e existem justamente para corrigir isso</strong> — nelas cada número foi levantado por mim no PubMed, no ClinicalTrials.gov, na bula da ANVISA ou na lista da WADA, com a consulta declarada na própria página. As duas coisas não têm o mesmo peso, e estão marcadas de forma diferente em todo o site.",
+  "trad": "<strong>Sources primaires, dans les pages importées.</strong> Dans les pages de protocole issues de la source secondaire, aucun article de PubMed, registre d’essai ni notice n’a été ouvert pour vérifier les chiffres : la vérification a été faite contre la source, et c’est tout. Cela reste la limite principale de cette référence.<br><strong>Les pages de <a href=\"evidencia.html\">preuves vérifiées</a> sont l’exception, et existent justement pour corriger cela</strong> — dans celles-ci, chaque chiffre a été relevé par moi sur PubMed, sur ClinicalTrials.gov, dans la notice ou sur la liste de la WADA, avec la requête déclarée sur la page elle-même. Les deux choses n’ont pas le même poids, et sont marquées différemment sur tout le site."
+ },
+ {
+  "pt": "Varredura do dado aberto oficial da ANVISA — 43.489 registros de medicamento, baixado em 4 de setembro de 2026 — atrás de cada composto do site, por princípio ativo e por nome de produto. Quatro existem: semaglutida, tirzepatida, ocitocina e azul de metileno. Os outros quarenta não têm bula brasileira, dose aprovada nem lote fiscalizado. O resultado agora aparece em cada página de composto, numa linha própria. O achado lateral mais inesperado: já existem genéricos e similares de semaglutida registrados no Brasil, de EMS, Germed, Sun e outras — são quinze produtos ao todo.",
+  "trad": "Balayage des données ouvertes officielles — 43 489 enregistrements de médicaments, téléchargées le 4 septembre 2026 — à la recherche de chaque composé du site, par principe actif et par nom de produit. Quatre existent : sémaglutide, tirzépatide, ocytocine et bleu de méthylène. Les quarante autres n'ont ni notice brésilienne, ni dose approuvée, ni lot contrôlé. Le résultat apparaît désormais sur chaque page de composé, sur une ligne propre. La trouvaille latérale la plus inattendue : il existe déjà des génériques et des similaires de sémaglutide enregistrés au Brésil, d'EMS, Germed, Sun et d'autres — quinze produits au total."
+ },
+ {
+  "pt": "A auditoria dos GLP-1 só foi possível porque havia bula. Ao terminá-la, ficou a dúvida óbvia: <strong>quantos dos compostos deste site têm bula?</strong> Fui contar. Baixei o dado aberto oficial da ANVISA — <strong>43.489 registros de medicamento</strong> — e procurei cada composto por princípio ativo e por nome de produto.",
+  "trad": "L’audit des GLP-1 n’a été possible que parce qu’il y avait une notice. En le terminant, la question évidente est restée : <strong>combien des composés de ce site ont une notice ?</strong> Je suis allé compter. J’ai téléchargé la donnée ouverte officielle — <strong>43 489 enregistrements de médicaments</strong> — et j’ai cherché chaque composé par principe actif et par nom de produit."
+ },
+ {
+  "pt": "Não é que o registro seja difícil, ou que a ANVISA seja lenta. É que <strong>quase nada disto foi sequer submetido</strong>. Não há bula brasileira, não há dose aprovada, não há lote fiscalizado e não há a quem reclamar. O que circula é importação pessoal ou manipulação.",
+  "trad": "Ce n'est pas que l'enregistrement soit difficile. C'est que <strong>presque rien de tout cela n'a même été soumis</strong>. Pas de notice brésilienne, pas de dose approuvée, pas de lot contrôlé et personne à qui réclamer. Ce qui circule, c'est de l'importation personnelle ou de la préparation magistrale."
+ },
+ {
+  "pt": "Baixei <code>DADOS_ABERTOS_MEDICAMENTOS.csv</code> do portal de dados abertos da ANVISA em 4 de setembro de 2026. São <strong>43.489 linhas</strong>, com princípio ativo, nome do produto, categoria regulatória, empresa e situação do registro",
+  "trad": "J’ai téléchargé <code>DADOS_ABERTOS_MEDICAMENTOS.csv</code> du portail de données ouvertes le 4 septembre 2026. Ce sont <strong>43 489 lignes</strong>, avec principe actif, nom du produit, catégorie réglementaire, entreprise et situation de l’enregistrement"
+ },
+ {
+  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Cada número desta página veio do dado aberto oficial da ANVISA, baixado em 4 de setembro de 2026, contando apenas registros com situação Ativo. <strong>Esta página não usa o PubMed</strong> — a pergunta dela é regulatória, não de evidência.",
+  "trad": "<strong>Cette page ne vient pas de la source secondaire.</strong> Chaque chiffre de cette page vient de la donnée ouverte officielle, téléchargée le 4 septembre 2026, en ne comptant que les enregistrements en situation Ativo. <strong>Cette page n’utilise pas PubMed</strong> — sa question est réglementaire, pas de preuves."
+ },
+ {
+  "pt": "Dados abertos da ANVISA, arquivo DADOS_ABERTOS_MEDICAMENTOS.csv, baixado em 4 de setembro de 2026 com 43.489 registros. É a fonte de toda a contagem desta página.",
+  "trad": "Données ouvertes, fichier DADOS_ABERTOS_MEDICAMENTOS.csv, téléchargé le 4 septembre 2026 avec 43 489 enregistrements. C'est la source de tout le décompte de cette page."
+ },
+ {
+  "pt": "Bulário eletrônico da ANVISA — a consulta que falhou no controle e foi descartada como método, mas que serve para ler a bula de quem tem registro.",
+  "trad": "Bulário eletrônico — la requête qui a échoué au contrôle et a été écartée comme méthode, mais qui sert à lire la notice de ce qui est enregistré."
+ },
+ {
+  "pt": "Consulta a medicamentos registrados da ANVISA, usada para conferir categoria regulatória e vencimento dos registros de semaglutida e tirzepatida.",
+  "trad": "Consultation des médicaments enregistrés, utilisée pour vérifier la catégorie réglementaire et l'échéance des enregistrements du sémaglutide et du tirzépatide."
+ },
+ {
+  "pt": "Auditoria dos GLP-1 contra as bulas da FDA e da ANVISA, que originou esta varredura.",
+  "trad": "Audit des GLP-1 contre les notices de la FDA, qui est à l’origine de ce balayage."
+ },
+ {
+  "pt": "<strong>Brasil:</strong> nenhum tem registro na ANVISA.",
+  "trad": "<strong>Brésil :</strong> aucun n'a d'enregistrement."
+ },
+ {
+  "pt": "Consulta em 4 de setembro de 2026 à base pública de petições da ANVISA — o sistema “Situação de Documentos”, que permite filtrar por CNPJ e por código de assunto.",
+  "trad": "Consultation le 4 septembre 2026 de la base publique des pétitions — le système « Situação de Documentos », qui permet de filtrer par CNPJ et par code de sujet."
+ },
+ {
+  "pt": "A <strong>Vertex Farmacêutica do Brasil</strong> — identificada pelo CNPJ que consta como detentora dos registros de Trikafta, Symdeko, Orkambi e Kalydeco, todos medicamentos de fibrose cística — tem 541 petições no sistema da ANVISA. Todas foram baixadas e classificadas por assunto.",
+  "trad": "<strong>Vertex Farmacêutica do Brasil</strong> — identifiée par le CNPJ qui figure comme titulaire des enregistrements de Trikafta, Symdeko, Orkambi et Kalydeco, tous des médicaments de la mucoviscidose — a 541 pétitions dans le système. Toutes ont été téléchargées et classées par sujet."
+ },
+ {
+  "pt": "Total no sistema da ANVISA",
+  "trad": "Total dans le système"
+ },
+ {
+  "pt": "<strong>As fontes em português que afirmam aprovação da ANVISA “no início de 2024” estão erradas.</strong> Agora isso se afirma por evidência positiva, não por ausência de prova.",
+  "trad": "<strong>Les sources en portugais qui affirment une approbation « début 2024 » sont fausses.</strong> Cela s'affirme désormais par preuve positive, pas par absence de preuve."
+ },
+ {
+  "pt": "<strong>Sem registro, a comissão de incorporação não pode nem avaliar.</strong> O Decreto 7.646/2011, no artigo 15, exige que o pedido de incorporação ao SUS instrua o processo com o número e a validade do registro na ANVISA, além de evidência científica, avaliação econômica comparativa e o preço fixado pela câmara de regulação. <strong>O debate brasileiro sobre preço do Casgevy não está travado no preço — está travado três degraus antes.</strong>",
+  "trad": "<strong>Sans enregistrement, la commission d'incorporation ne peut même pas évaluer.</strong> Le décret 7 646/2011, à l'article 15, exige que la demande d'incorporation au SUS instruise le dossier avec le numéro et la validité de l'enregistrement, en plus des preuves scientifiques, d'une évaluation économique comparative et du prix fixé par la chambre de régulation. <strong>Le débat brésilien sur le prix du Casgevy n'est pas bloqué au prix — il est bloqué trois marches avant.</strong>"
+ },
+ {
+  "pt": "Decreto nº 7.646, de 21 de dezembro de 2011 — artigo 15: o pedido de incorporação ao SUS exige o número e a validade do registro na ANVISA, evidência científica, avaliação econômica comparativa e o preço fixado pela CMED.",
+  "trad": "Décret n° 7 646 du 21 décembre 2011 — article 15 : la demande d'incorporation au SUS exige le numéro et la validité de l'enregistrement, des preuves scientifiques, une évaluation économique comparative et le prix fixé par la CMED."
+ },
+ {
+  "pt": "ANVISA — base pública de petições, sistema “Situação de Documentos”. Consultas por código de assunto (11586, 11587, 11614 e 11615) e por CNPJ da Vertex Farmacêutica do Brasil, feitas em 4 de setembro de 2026.",
+  "trad": "Base publique des pétitions, système « Situação de Documentos ». Requêtes par code de sujet (11586, 11587, 11614 et 11615) et par CNPJ de Vertex Farmacêutica do Brasil, faites le 4 septembre 2026."
+ },
+ {
+  "pt": "ANVISA — base aberta de medicamentos, usada para identificar o CNPJ da Vertex Farmacêutica do Brasil pelos registros de Trikafta, Symdeko, Orkambi e Kalydeco.",
+  "trad": "Base ouverte des médicaments, utilisée pour identifier le CNPJ de Vertex Farmacêutica do Brasil par les enregistrements de Trikafta, Symdeko, Orkambi et Kalydeco."
+ },
+ {
+  "pt": "CRISPR entra nesta referência como contraponto, não como protocolo: é o único lugar onde a promessa de engenharia genética virou medicamento aprovado por agência, e ver o preço disso em evidência calibra a leitura de todo o resto do site. A ferramenta tem 14 anos e um produto aprovado, o Casgevy, para doença falciforme e beta-talassemia. Nos dois ensaios de fase 3, a edição funcionou em 100% dos pacientes; 97% ficaram livres de crise vaso-oclusiva e 91% ficaram independentes de transfusão. O que limita a terapia é o condicionamento mieloablativo com bussulfano que precede a infusão — e o número mais duro do levantamento é de fertilidade: das 17 mulheres com mais de um ano de seguimento, 17 tiveram falência ovariana. No Reino Unido, o NICE conta 1.794 elegíveis e projeta 23 tratamentos no primeiro ano. No Brasil não há registro, não há petição de registro e não há nem ensaio clínico: a varredura das 541 petições da Vertex na ANVISA devolveu zero de terapia avançada.",
+  "trad": "CRISPR entre dans cette référence comme contrepoint, pas comme protocole : c'est le seul endroit où la promesse du génie génétique est devenue un médicament approuvé par une agence, et voir ce que cela a coûté en preuves calibre la lecture de tout le reste du site. L'outil a 14 ans et un produit approuvé, le Casgevy, pour la drépanocytose et la bêta-thalassémie. Dans les deux essais de phase 3, l'édition a fonctionné chez 100% des patients ; 97% ont été libérés des crises vaso-occlusives et 91% sont devenus indépendants des transfusions. Ce qui limite la thérapie, c'est le conditionnement myéloablatif au busulfan qui précède la perfusion — et le chiffre le plus dur du relevé concerne la fertilité : des 17 femmes avec plus d'un an de suivi, 17 ont eu une insuffisance ovarienne. Au Royaume-Uni, le NICE compte 1 794 éligibles et projette 23 traitements la première année. Au Brésil, il n'y a pas d'enregistrement, pas de pétition d'enregistrement et même pas d'essai clinique : le balayage des 541 pétitions de Vertex a renvoyé zéro thérapie avancée."
+ },
+ {
+  "pt": "ANVISA (Brasil)",
+  "trad": "Brésil"
+ },
+ {
+  "pt": "Consulta em 4 de setembro de 2026 à base pública de petições da ANVISA — o sistema “Situação de Documentos” de <code>consultas.anvisa.gov.br</code>, que permite filtrar por CNPJ e por código de assunto.",
+  "trad": "Requête le 4 septembre 2026 à la base publique de pétitions — le système « Situação de Documentos », qui permet de filtrer par CNPJ et par code de sujet."
+ },
+ {
+  "pt": "Para eliminar a hipótese de a petição estar sob outro assunto, a varredura foi refeita por CNPJ. A <strong>Vertex Farmacêutica do Brasil Ltda.</strong> — identificada pelo CNPJ que consta como detentora dos registros de Trikafta, Symdeko, Orkambi e Kalydeco, todos medicamentos de fibrose cística — tem <strong>541 petições</strong> no sistema da ANVISA.",
+  "trad": "Pour éliminer l'hypothèse que la pétition soit classée sous un autre sujet, le balayage a été refait par CNPJ. <strong>Vertex Farmacêutica do Brasil Ltda.</strong> — identifiée par le CNPJ qui figure comme titulaire des enregistrements de Trikafta, Symdeko, Orkambi et Kalydeco, tous des médicaments de la mucoviscidose — a <strong>541 pétitions</strong> dans le système."
+ },
+ {
+  "pt": "<strong>As fontes em português que afirmam aprovação da ANVISA “no início de 2024” estão erradas.</strong> Agora dá para dizer isso por evidência positiva, não por ausência de prova.",
+  "trad": "<strong>Les sources en portugais qui affirment une approbation « début 2024 » sont fausses.</strong> On peut désormais le dire par preuve positive, pas par absence de preuve."
+ },
+ {
+  "pt": "<strong>Sem registro, o SUS não pode nem avaliar.</strong> O Decreto 7.646/2011, no artigo 15, exige que o pedido de incorporação instrua o processo com o número e a validade do registro na ANVISA. O debate brasileiro sobre preço do Casgevy não está travado no preço — está travado três degraus antes.",
+  "trad": "<strong>Sans enregistrement, le SUS ne peut même pas évaluer.</strong> Le Décret 7 646/2011, à l'article 15, exige que la demande d'incorporation instruise le dossier avec le numéro et la validité de l'enregistrement. Le débat brésilien sur le prix du Casgevy n'est pas bloqué au prix — il est bloqué trois marches avant."
+ },
+ {
+  "pt": "Decreto nº 7.646, de 21 de dezembro de 2011 — artigo 15: o pedido de incorporação ao SUS exige o número e a validade do registro na ANVISA.",
+  "trad": "Décret nº 7 646, du 21 décembre 2011 — article 15 : la demande d'incorporation au SUS exige le numéro et la validité de l'enregistrement."
+ },
+ {
+  "pt": "ANVISA — base pública de petições, sistema “Situação de Documentos”. Consultas por código de assunto (11586, 11587, 11614, 11615) e por CNPJ, feitas em 4 de setembro de 2026.",
+  "trad": "Base publique de pétitions, système « Situação de Documentos ». Requêtes par code de sujet (11586, 11587, 11614, 11615) et par CNPJ, effectuées le 4 septembre 2026."
+ },
+ {
+  "pt": "ANVISA — Bulário eletrônico, para o texto que vale no Brasil",
+  "trad": "Bulário eletrônico, pour le texte qui fait foi au Brésil"
+ },
+ {
+  "pt": "<strong>Não substitui a bula brasileira.</strong> O que está acima é o rótulo americano. Para o que vale no Brasil, a fonte é o bulário da ANVISA — e a página dos GLP-1 contra a bula, neste mesmo site, mostra que os dois textos divergem em pontos que importam.",
+  "trad": "<strong>Ne remplace pas la notice brésilienne.</strong> Ce qui figure ci-dessus est l'étiquetage américain. Pour ce qui vaut au Brésil, la source est le répertoire de notices — et la page des GLP-1 face à la notice, sur ce même site, montre que les deux textes divergent sur des points qui comptent."
+ },
+ {
+  "pt": "<strong>Não conferi a situação regulatória na ANVISA item a item.</strong> A suspensão do oxiracetam na Coreia do Sul é afirmação dos autores do ensaio, não verificação independente em fonte regulatória coreana.",
+  "trad": "<strong>Je n'ai pas vérifié la situation réglementaire item par item.</strong> La suspension de l'oxiracétam en Corée du Sud est une affirmation des auteurs de l'essai, pas une vérification indépendante dans une source réglementaire coréenne."
+ },
+ {
+  "pt": "Situação regulatória no Brasil: base da ANVISA.",
+  "trad": "Situation réglementaire au Brésil."
+ },
+ {
+  "pt": "A metade brasileira: quatro bulas da ANVISA",
+  "trad": "La moitié brésilienne : quatre notices"
+ },
+ {
+  "pt": "Primeira auditoria deste site contra um gabarito oficial. Comparei as cinco escadas de titulação de semaglutida e tirzepatida, degrau por degrau, com as bulas aprovadas pela FDA, lidas em 4 de setembro de 2026. Nenhum valor de dose está errado — e o site até acerta um detalhe difícil, que 7,5 e 12,5 mg de tirzepatida são degraus de passagem e não de manutenção. Mas faltavam seis instruções da bula, e faltava a coisa mais importante: nas nove páginas de GLP-1 não havia uma única menção a tireoide, carcinoma medular ou NEM 2. Numa segunda rodada li as quatro bulas da ANVISA, e elas divergem da FDA em seis pontos — inclusive uma dose de 7,2 mg do Wegovy que não existe nos Estados Unidos.",
+  "trad": "Premier audit de ce site contre un référentiel officiel. J'ai comparé les cinq schémas de titration du sémaglutide et du tirzépatide, palier par palier, avec les notices approuvées par la FDA, lues le 4 septembre 2026. Aucune valeur de dose n'est fausse — et le site a même bon sur un détail difficile, à savoir que 7,5 et 12,5 mg de tirzépatide sont des paliers de passage et non d'entretien. Mais il manquait six instructions de la notice, et il manquait le plus important : dans les neuf pages de GLP-1, il n'y avait pas une seule mention de la thyroïde, du carcinome médullaire ou de la NEM 2."
+ },
+ {
+  "pt": "A primeira versão desta página usava a bula da FDA e declarava isso como limite. Fui buscar a brasileira. No bulário da ANVISA existem <strong>quatro</strong> produtos desta classe registrados: Ozempic, Rybelsus, Wegovy e MOUNJARO. <strong>Zepbound não existe no Brasil</strong> — aqui a tirzepatida tem uma marca só, cobrindo as três indicações.",
+  "trad": "La première version de cette page utilisait la notice de la FDA et le déclarait comme limite. Je suis allé chercher la brésilienne. Dans le répertoire de notices, il existe <strong>quatre</strong> produits de cette classe enregistrés : Ozempic, Rybelsus, Wegovy et MOUNJARO. <strong>Zepbound n'existe pas au Brésil</strong> — ici le tirzépatide n'a qu'une seule marque, couvrant les trois indications."
+ },
+ {
+  "pt": "<strong>No Brasil, a semaglutida não é contraindicada em carcinoma medular de tireoide. A tirzepatida é.</strong> Mesma classe, mesmo risco de roedor, dois tratamentos regulatórios opostos — e a divisão não é entre FDA e ANVISA, é entre as duas moléculas <em>dentro</em> da ANVISA.",
+  "trad": "<strong>Au Brésil, le sémaglutide n'est pas contre-indiqué dans le carcinome médullaire de la thyroïde. Le tirzépatide l'est.</strong> Même classe, même risque chez le rongeur, deux traitements réglementaires opposés."
+ },
+ {
+  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Cada afirmação desta página foi conferida contra a bula oficial — FDA e ANVISA — em 4 de setembro de 2026. <strong>Esta página não usa o PubMed</strong>: o gabarito aqui é regulatório.",
+  "trad": "<strong>Cette page ne vient pas de la source secondaire.</strong> Chaque affirmation de cette page a été vérifiée contre la notice officielle — FDA — le 4 septembre 2026. <strong>Cette page n'utilise pas PubMed</strong> : le référentiel ici est réglementaire."
+ },
+ {
+  "pt": "Bulário eletrônico da ANVISA — origem das quatro bulas profissionais lidas na segunda rodada desta auditoria.",
+  "trad": "Bulário eletrônico — origine des quatre notices professionnelles lues lors de la deuxième tournée de cet audit."
+ },
+ {
+  "pt": "Actovegin, Mexidol, Cytoflavin, Polyoxidonium, Afobazol, Neuromidin, Pantogam, Picamilon, Cortexin, Derinat, Galavit, Etoxidol, Nanotropil, Stresam, Memoprove, cocarboxilase e citocromo C — os dezoito medicamentos de um catálogo de importação, nenhum com registro na ANVISA. Este bloco surpreendeu: contra os zero ensaios registrados dos bioreguladores russos, encontrei 29 no ClinicalTrials.gov, vários de fase 3 com centenas de participantes. A ressalva é que quase todos são patrocinados pelo próprio fabricante e conduzidos na Rússia — o Actovegin é a exceção, com fase 3 da Takeda e da Nycomed.",
+  "trad": "Actovegin, Mexidol, Cytoflavin, Polyoxidonium, Afobazol, Neuromidin, Pantogam, Picamilon, Cortexin, Derinat, Galavit, Etoxidol, Nanotropil, Stresam, Memoprove, cocarboxylase et cytochrome C — les dix-huit médicaments d'un catalogue d'importation, aucun avec enregistrement. Ce bloc a surpris : contre les zéro essais enregistrés des biorégulateurs russes, j'en ai trouvé 29 sur ClinicalTrials.gov, plusieurs de phase 3 avec des centaines de participants. La réserve est que presque tous sont promus par le fabricant lui-même et conduits en Russie — l'Actovegin est l'exception, avec une phase 3 de Takeda et de Nycomed."
+ },
+ {
+  "pt": "Dezoito medicamentos registrados na Rússia, na Letônia ou no leste europeu, que chegam ao Brasil por importação. Nenhum tem registro na ANVISA. Vieram de um catálogo de importadora, e a lista original trazia 26 produtos — a diferença são variantes cápsula/injetável, uma duplicata, e Cerebrolisina, Selank e Semax, que já têm página própria nesta referência.",
+  "trad": "Dix-huit médicaments enregistrés en Russie, en Lettonie ou en Europe de l'Est, qui arrivent au Brésil par importation. Aucun n'a d'enregistrement. Ils viennent d'un catalogue d'importateur, et la liste d'origine comptait 26 produits — la différence tient aux variantes gélule/injectable, à un doublon, et à la Cérébrolysine, au Selank et au Semax, qui ont déjà leur propre page dans cette référence."
+ },
+ {
+  "pt": "<strong>Nenhum tem registro na ANVISA.</strong> Importar não transforma nenhum deles em medicamento aprovado no Brasil — muda apenas quem carrega o risco.",
+  "trad": "<strong>Aucun n'a d'enregistrement.</strong> Importer ne transforme aucun d'eux en médicament approuvé au Brésil — cela change seulement qui porte le risque."
+ },
+ {
+  "pt": "Agonista duplo de GLP-1 e glucagon, semanal e subcutâneo, desenvolvido na China pela Innovent Biologics a partir de uma molécula da Eli Lilly. Aparece com três nomes — mazdutida, IBI362 e LY3305677 — e buscar por um só devolve menos do que existe. É o composto com a evidência mais madura de todo este site: 12 ensaios de fase 3 registrados, com GLORY-1 no NEJM, GLORY-2 na JAMA e as duas DREAMS na Nature. Na GLORY-2, 9 mg por semana levaram a 16,65% de perda de peso em 60 semanas contra 1,50% do placebo, ao custo de vômito em 53,1% dos tratados. E, mesmo assim, não há registro na FDA nem na ANVISA — as duas bases conferidas em 5 de setembro de 2026. O achado que reorganiza a leitura é outro: os 12 ensaios de fase 3 são todos de patrocinador chinês e população chinesa, e a própria meta-análise pede estudos multiétnicos antes de generalizar.",
+  "trad": "Agoniste double du GLP-1 et du glucagon, hebdomadaire et sous-cutané, développé en Chine par Innovent Biologics à partir d'une molécule d'Eli Lilly. Il apparaît sous trois noms — mazdutide, IBI362 et LY3305677 — et chercher un seul renvoie moins que ce qui existe. C'est le composé aux preuves les plus mûres de tout ce site : 12 essais de phase 3 enregistrés, avec GLORY-1 dans le NEJM, GLORY-2 dans le JAMA et les deux DREAMS dans Nature. Dans GLORY-2, 9 mg par semaine ont conduit à 16,65% de perte de poids en 60 semaines contre 1,50% sous placebo, au prix de vomissements chez 53,1% des traités. Et, malgré cela, il n'y a pas d'enregistrement à la FDA — base vérifiée le 5 septembre 2026. La découverte qui réorganise la lecture est autre : les 12 essais de phase 3 sont tous de promoteur chinois et de population chinoise, et la méta-analyse elle-même demande des études multiethniques avant de généraliser."
+ },
+ {
+  "pt": "<strong>E mesmo assim não tem bula em lugar nenhum onde eu procurei.</strong> Zero na FDA, zero na ANVISA. Quem compra mazdutida hoje está comprando um fármaco que passou na fase 3 e não passou por agência nenhuma que eu tenha conferido.",
+  "trad": "<strong>Et pourtant il n'a de notice nulle part où j'ai cherché.</strong> Zéro à la FDA. Qui achète du mazdutide aujourd'hui achète un médicament qui a passé la phase 3 et n'est passé par aucune agence que j'aie vérifiée."
+ },
+ {
+  "pt": "Procurei na base de rótulos da FDA em 5 de setembro de 2026, pelo nome genérico e por busca livre: <strong>a mazdutida não tem registro</strong>. No dado aberto da ANVISA, também não.",
+  "trad": "J'ai cherché dans la base des étiquettes de la FDA le 5 septembre 2026, par nom générique et par recherche libre : <strong>le mazdutide n'a pas d'enregistrement</strong>. Dans les données ouvertes, non plus."
+ },
+ {
+  "pt": "<strong>Não conferi se a mazdutida tem registro na China.</strong> Todo o programa clínico é chinês, e a agência que naturalmente decidiria primeiro é a NMPA — que eu não consultei. Qualquer afirmação minha sobre aprovação chinesa seria chute. O que está verificado é a ausência na FDA e na ANVISA.",
+  "trad": "<strong>Je n'ai pas vérifié si le mazdutide a un enregistrement en Chine.</strong> Tout le programme clinique est chinois, et l'agence qui déciderait naturellement en premier est la NMPA — que je n'ai pas consultée. Toute affirmation de ma part sur une approbation chinoise serait une supposition. Ce qui est vérifié, c'est l'absence à la FDA."
+ },
+ {
+  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Cada número desta página foi levantado por mim em 5 de setembro de 2026 no PubMed, no ClinicalTrials.gov, na base de rótulos da FDA e no dado aberto da ANVISA, e a consulta usada está declarada acima. <strong>Esta página é um dia mais nova que as outras desta seção</strong>, e por isso carrega data própria.",
+  "trad": "<strong>Cette page ne vient pas de la source secondaire.</strong> Chaque chiffre de cette page a été relevé par moi le 5 septembre 2026 sur PubMed, sur ClinicalTrials.gov, dans la base des étiquettes de la FDA, et la requête utilisée est déclarée ci-dessus. <strong>Cette page est d'un jour plus récente que les autres de cette section</strong>, et porte donc sa propre date."
+ },
+ {
+  "pt": "Dado aberto de medicamentos registrados da ANVISA, a mesma base usada na página O que existe no Brasil.",
+  "trad": ""
+ },
+ {
+  "pt": "<strong>Brasil:</strong> sem registro na ANVISA.",
+  "trad": "<strong>Brésil :</strong> sans enregistrement."
+ },
+ {
+  "pt": "O racetam com mais ensaios depois do piracetam. Sem registro na ANVISA — mas, ao contrário do que esta página dizia antes, <strong>o piracetam tem</strong>: NOOTROPIL, registro ativo com vencimento em agosto de 2036. É o único da família que existe legalmente no Brasil",
+  "trad": "Le racétam avec le plus d'essais après le piracétam. Sans enregistrement — mais, contrairement à ce que cette page disait avant, <strong>le piracétam en a un</strong> : NOOTROPIL, enregistrement actif expirant en août 2036. C'est le seul de la famille qui existe légalement au Brésil"
+ },
+ {
+  "pt": "<strong>Vinpocetina e bromantano não são tarja aqui</strong>, mas nenhum dos dois tem registro na ANVISA. Circulam por importação, sem controle de lote e sem bula em português.",
+  "trad": "<strong>La vinpocétine et le bromantane ne sont pas des médicaments à bande d'avertissement ici</strong>, mais aucun des deux n'a d'enregistrement. Ils circulent par importation, sans contrôle de lot et sans notice en portugais."
+ },
+ {
+  "pt": "<strong>Não conferi a situação regulatória na ANVISA item a item.</strong> Onde afirmo ausência de registro, é para os racetams, o bromantano e a vinpocetina, que são de importação declarada.",
+  "trad": "<strong>Je n'ai pas vérifié le statut réglementaire produit par produit.</strong> Là où j'affirme l'absence d'enregistrement, c'est pour les racétams, le bromantane et la vinpocétine, qui sont d'importation déclarée."
+ },
+ {
+  "pt": "A nefropatia por IgA não tinha nenhum medicamento aprovado até dezembro de 2021. Hoje tem seis, todos pela FDA. Esta página entra na referência como régua: mostra o que uma base de evidência parece quando ela existe de verdade — fase 3 multicêntrica, placebo, centenas de pacientes, agência exigindo confirmação — e, ao mesmo tempo, mostra o preço disso. Cinco das seis aprovações se apoiaram em proteinúria, que é desfecho substituto; só três já converteram em aprovação plena apresentando efeito sobre a função renal, e o ensaio que vai responder isso para a atrasentana só fecha a coleta em abril de 2028. No Brasil, a varredura dos 43.491 registros do dado aberto da ANVISA encontrou dois dos seis: Vanrafia, registrado em 31/08/2026, e Fabhalta, em 27/01/2025. A busca no ClinicalTrials.gov por peptídeos desta referência em doença renal devolveu dois registros, e em nenhum dos dois o peptídeo é o tratamento.",
+  "trad": "La néphropathie à IgA n'avait aucun médicament approuvé jusqu'en décembre 2021. Aujourd'hui elle en a six, tous par la FDA. Cette page entre dans la référence comme étalon : elle montre à quoi ressemble une base de preuves quand elle existe vraiment — phase 3 multicentrique, placebo, des centaines de patients, une agence exigeant confirmation — et, en même temps, elle en montre le prix. Cinq des six approbations se sont appuyées sur la protéinurie, qui est un critère de substitution ; seules trois ont déjà été converties en approbation pleine en présentant un effet sur la fonction rénale, et l'essai qui répondra à cela pour l'atrasentan ne clôt son recueil qu'en avril 2028. Au Brésil, le balayage des 43 491 enregistrements des données ouvertes a trouvé deux des six : Vanrafia, enregistré le 31/08/2026, et Fabhalta, le 27/01/2025. La recherche sur ClinicalTrials.gov des peptides de cette référence en maladie rénale a renvoyé deux registres, et dans aucun des deux le peptide n'est le traitement."
+ },
+ {
+  "pt": "Varri o dado aberto de medicamentos da ANVISA — 43.491 registros, baixado em 4 de setembro de 2026 — procurando cada um dos seis princípios ativos e cada nome comercial. O resultado:",
+  "trad": "J'ai balayé les données ouvertes de médicaments — 43 491 enregistrements, téléchargées le 4 septembre 2026 — à la recherche de chacun des six principes actifs et de chaque nom commercial. Le résultat :"
+ },
+ {
+  "pt": "<strong>O dado aberto da ANVISA não traz a indicação aprovada.</strong> Ele diz que o FABHALTA tem registro ativo no Brasil desde janeiro de 2025 — não diz para qual doença. A iptacopana também é aprovada para hemoglobinúria paroxística noturna e para glomerulopatia por C3, e o registro brasileiro pode ser de qualquer uma delas. Afirmar que o Brasil tem iptacopana aprovada <em>para nefropatia por IgA</em> seria dedução, não dado. Não farei isso.",
+  "trad": "<strong>Les données ouvertes ne donnent pas l'indication approuvée.</strong> Elles disent que le FABHALTA a un enregistrement actif au Brésil depuis janvier 2025 — pas pour quelle maladie. L'iptacopan est aussi approuvé pour l'hémoglobinurie paroxystique nocturne et pour la glomérulopathie à C3, et l'enregistrement brésilien peut concerner n'importe laquelle d'entre elles. Affirmer que le Brésil a l'iptacopan approuvé <em>pour la néphropathie à IgA</em> serait une déduction, pas une donnée. Je ne le ferai pas."
+ },
+ {
+  "pt": "A ANVISA aprovou o registro da <strong>Vanrafia (cloridrato de atrasentana)</strong> para adultos com nefropatia primária por imunoglobulina A em risco de progressão, pela Resolução RE nº 3.416/2026, publicada no Diário Oficial da União. É o mais novo dos dois — e é, justamente, um dos três que ainda não provaram efeito sobre a função renal. O ensaio que vai responder isso fecha em 2028.",
+  "trad": "L'enregistrement du <strong>Vanrafia (chlorhydrate d'atrasentan)</strong> a été approuvé pour les adultes atteints de néphropathie primitive à immunoglobuline A à risque de progression, par la Résolution RE nº 3 416/2026, publiée au Diário Oficial da União. C'est le plus récent des deux — et c'est, justement, l'un des trois qui n'ont pas encore prouvé d'effet sur la fonction rénale. L'essai qui répondra à cela se clôt en 2028."
+ },
+ {
+  "pt": "No Brasil, a ANVISA aprovou em 2 de fevereiro de 2026 nova indicação para a <strong>semaglutida</strong>: diabetes tipo 2 <em>com</em> doença renal crônica, como adjuvante à terapia padrão, com redução de progressão da insuficiência renal e de mortes por eventos cardiovasculares graves. A própria ANVISA contextualiza com o dado da Sociedade Brasileira de Nefrologia de 2024: 29% dos pacientes em diálise no país têm diabetes.",
+  "trad": "Au Brésil, une nouvelle indication a été approuvée le 2 février 2026 pour le <strong>sémaglutide</strong> : diabète de type 2 <em>avec</em> maladie rénale chronique, en adjuvant du traitement standard, avec réduction de la progression de l'insuffisance rénale et des décès par événements cardiovasculaires graves. Le contexte inclut la donnée de la Société brésilienne de néphrologie de 2024 : 29 % des patients dialysés du pays ont un diabète."
+ },
+ {
+  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Os números de literatura vêm do PubMed e do ClinicalTrials.gov; as datas e o tipo de cada aprovação vêm das páginas da própria FDA e dos comunicados das fabricantes, citados um a um; o registro brasileiro vem do dado aberto de medicamentos da ANVISA, baixado em 4 de setembro de 2026 (43.491 registros). Nada aqui foi lido em fonte secundária.",
+  "trad": "<strong>Cette page ne vient pas de la source secondaire.</strong> Les chiffres de littérature viennent de PubMed et de ClinicalTrials.gov ; les dates et le type de chaque approbation viennent des pages de la FDA elle-même et des communiqués des fabricants, cités un à un ; l'enregistrement brésilien vient des données ouvertes de médicaments, téléchargées le 4 septembre 2026 (43 491 enregistrements). Rien ici n'a été lu dans une source secondaire."
+ },
+ {
+  "pt": "ANVISA. Novo medicamento para nefropatia primária por imunoglobulina A é aprovado pela Anvisa — Vanrafia, RE nº 3.416/2026, 31/08/2026",
+  "trad": "Novo medicamento para nefropatia primária por imunoglobulina A é aprovado — Vanrafia, RE nº 3 416/2026, 31/08/2026"
+ },
+ {
+  "pt": "ANVISA. Anvisa aprova novas indicações para semaglutida e tezepelumabe — semaglutida em diabetes tipo 2 com doença renal crônica, 02/02/2026",
+  "trad": "Novas indicações aprovadas para semaglutida e tezepelumabe — sémaglutide dans le diabète de type 2 avec maladie rénale chronique, 02/02/2026"
+ },
+ {
+  "pt": "ANVISA. Dados abertos de medicamentos registrados (DADOS_ABERTOS_MEDICAMENTOS.csv) — base usada para a varredura de registro brasileiro",
+  "trad": "Données ouvertes des médicaments enregistrés (DADOS_ABERTOS_MEDICAMENTOS.csv) — base utilisée pour le balayage de l'enregistrement brésilien"
+ },
+ {
+  "pt": "Levantamento dos 16 compostos que circulam como SARM, no PubMed e no ClinicalTrials.gov. O ranking de evidência é quase o inverso do ranking de vendas: o enobosarm tem 17 ensaios registrados e dois de fase 3; o RAD140, o mais discutido em fórum de treino, tem um único ensaio em toda a história, com 20 pacientes; andarina, YK-11, S-23, ACP-105, LGD-3303 e RAD-150 têm zero. Os dois ensaios de fase 3 do campo, com 651 pacientes somados, nunca foram publicados em revista — os resultados existem apenas como tabela postada no ClinicalTrials.gov, e um deles levou sete anos e meio para ser postado. Uma revisão guarda-chuva sobre drogas de desempenho em atletas saudáveis procurou estudos de SARM e não achou nenhum elegível. Do outro lado, o dano tem número: 23 casos de lesão hepática numa série australiana, 17 internações e um transplante. No Brasil, a RE 791/2021 da ANVISA proíbe venda, importação, propaganda, uso e também manipulação.",
+  "trad": "Relevé des 16 composés qui circulent comme SARM, dans PubMed et sur ClinicalTrials.gov. Le classement des preuves est presque l'inverse du classement des ventes : l'enobosarm a 17 essais enregistrés et deux de phase 3 ; le RAD140, le plus discuté sur les forums d'entraînement, a un seul essai dans toute son histoire, avec 20 patientes ; andarine, YK-11, S-23, ACP-105, LGD-3303 et RAD-150 en ont zéro. Les deux essais de phase 3 du domaine, avec 651 patients au total, n'ont jamais été publiés dans une revue — les résultats n'existent que sous forme de tableau mis en ligne sur ClinicalTrials.gov, et l'un d'eux a mis sept ans et demi à l'être. Une revue parapluie sur les substances de performance chez des athlètes sains a cherché des études sur les SARM et n'en a trouvé aucune éligible. De l'autre côté, le dommage a des chiffres : 23 cas de lésion hépatique dans une série australienne, 17 hospitalisations et une transplantation. Au Brésil, la RE 791/2021 interdit la vente, l'importation, la publicité, l'usage et aussi la préparation magistrale."
+ },
+ {
+  "pt": "(ANVISA)",
+  "trad": ""
+ },
+ {
+  "pt": "A <strong>Resolução (RE) 791/2021</strong>, publicada em <strong>23/02/2021</strong>, proibiu a comercialização, a distribuição, a fabricação, a importação, a <strong>manipulação</strong>, a propaganda e o uso de produtos com SARM, e determinou <strong>apreensão e inutilização</strong>. Aplica-se a produto industrializado e manipulado, importado e nacional, em meio físico e remoto. A própria ANVISA registra que <strong>não há medicamento com SARM registrado</strong> na Agência",
+  "trad": "La <strong>Résolution (RE) 791/2021</strong>, publiée le <strong>23/02/2021</strong>, a interdit la commercialisation, la distribution, la fabrication, l'importation, la <strong>préparation magistrale</strong>, la publicité et l'usage de produits contenant des SARM, et a ordonné <strong>saisie et destruction</strong>. Elle s'applique aux produits industriels et magistraux, importés et nationaux, en vente physique et à distance."
+ },
+ {
+  "pt": "<strong>Não traz dose, meia-vida, protocolo de ciclo nem esquema de reconstituição</strong>, por decisão. É a segunda página do site sem posologia, depois da de itens de tarja. Descrever um esquema de uso para substância cuja manipulação a ANVISA proibiu seria escrever o que não deve ser seguido.",
+  "trad": "<strong>Elle ne donne ni dose, ni demi-vie, ni protocole de cycle, ni schéma de reconstitution</strong>, par décision. C'est la deuxième page du site sans posologie, après celle des produits sous ordonnance. Décrire un schéma d'usage pour une substance dont la préparation magistrale a été interdite reviendrait à écrire ce qui ne doit pas être suivi."
+ },
+ {
+  "pt": "<strong>Não conferi o inteiro teor da RE 791/2021.</strong> O número, a data e o alcance da medida vieram da página oficial da ANVISA; a lista nominal de produtos apreendidos, que circula em fontes secundárias, <strong>não foi conferida no texto da resolução</strong>.",
+  "trad": "<strong>Je n'ai pas vérifié le texte intégral de la RE 791/2021.</strong> Le numéro, la date et la portée de la mesure viennent de la page officielle ; la liste nominale des produits saisis, qui circule dans des sources secondaires, <strong>n'a pas été vérifiée dans le texte de la résolution</strong>."
+ },
+ {
+  "pt": "ANVISA — &#x27;Medida proíbe comercialização de produtos que contenham SARM&#x27;, notícia oficial que descreve a Resolução (RE) 791/2021, publicada em 23 de fevereiro de 2021.",
+  "trad": "&#x27;Medida proíbe comercialização de produtos que contenham SARM&#x27;, communiqué officiel décrivant la Résolution (RE) 791/2021, publiée le 23 février 2021."
+ },
+ {
+  "pt": "<strong>Melatonina:</strong> a ANVISA autoriza como suplemento alimentar apenas até <strong>0,21 mg por dia</strong> para adultos. As apresentações de 0,5 mg e 3 mg estão acima desse limite e, no Brasil, não se enquadram como suplemento de venda livre.",
+  "trad": "<strong>Mélatonine :</strong> elle n'est autorisée comme complément alimentaire que jusqu'à <strong>0,21 mg par jour</strong> pour les adultes. Les présentations à 0,5 mg et 3 mg dépassent cette limite et, au Brésil, ne relèvent pas du complément en vente libre."
+ },
+ {
+  "pt": "Base ampla, melhor para fuso e atraso de fase. <strong>ANVISA limita a 0,21 mg/dia como suplemento.</strong> Dose menor costuma funcionar melhor que dose alta",
+  "trad": "Base large, meilleure pour le décalage horaire et le retard de phase. <strong>Limitée à 0,21 mg/jour comme complément.</strong> Une dose plus faible fonctionne souvent mieux qu'une dose élevée"
+ },
+ {
+  "pt": "Situação regulatória de suplementos no Brasil, incluindo o limite da melatonina: ANVISA.",
+  "trad": "Situation réglementaire des compléments au Brésil, y compris la limite de la mélatonine."
+ },
+ {
+  "pt": "Nenhuma dose foi publicada nesta página, por decisão editorial. As indicações registradas devem ser conferidas na bula do produto e na base da ANVISA.",
+  "trad": "Aucune dose n'a été publiée sur cette page, par décision éditoriale. Les indications enregistrées doivent être vérifiées dans la notice du produit."
+ },
+ {
+  "pt": "<strong>No Brasil: nenhum medicamento registrado com este princípio ativo.</strong> Conferido em 4 de setembro de 2026 no dado aberto da ANVISA, com 43.489 registros. Não existe bula brasileira, dose aprovada nem lote fiscalizado — o que circula é importação ou manipulação. A varredura completa está em <a href=\"proprio_anvisa.html\">O que existe no Brasil</a>.",
+  "trad": "<strong>Au Brésil : aucun médicament enregistré avec ce principe actif.</strong> Vérifié le 4 septembre 2026 dans les données ouvertes, sur 43 489 enregistrements. Il n'existe ni notice brésilienne, ni dose approuvée, ni lot contrôlé — ce qui circule relève de l'importation ou de la préparation magistrale."
+ },
+ {
+  "pt": "<strong>No Brasil: 4 medicamento(s) com registro ativo na ANVISA.</strong> CYSTEX, CYSTEX DUO, PILULAS DE LUSSEN, SEPURIN. Levantado em 4 de setembro de 2026 no dado aberto da agência. A varredura dos 44 compostos está em <a href=\"proprio_anvisa.html\">O que existe no Brasil</a>.",
+  "trad": "<strong>Au Brésil : 4 médicament(s) avec enregistrement actif.</strong> CYSTEX, CYSTEX DUO, PILULAS DE LUSSEN, SEPURIN. Relevé le 4 septembre 2026 dans les données ouvertes de l'agence."
+ },
+ {
+  "pt": "<strong>No Brasil: 3 medicamento(s) com registro ativo na ANVISA.</strong> OCITOCINA, OXITON, SYNTOCINON. Levantado em 4 de setembro de 2026 no dado aberto da agência. A varredura dos 44 compostos está em <a href=\"proprio_anvisa.html\">O que existe no Brasil</a>.",
+  "trad": "<strong>Au Brésil : 3 médicament(s) avec enregistrement actif.</strong> OCITOCINA, OXITON, SYNTOCINON. Relevé le 4 septembre 2026 dans les données ouvertes de l'agence."
+ },
+ {
+  "pt": "<strong>No Brasil: 15 medicamento(s) com registro ativo na ANVISA.</strong> EXTENSIOR, ORSEMA, OWOZY, OZEMPIC, OZIVY, POVIZTRA.... Levantado em 4 de setembro de 2026 no dado aberto da agência. A varredura dos 44 compostos está em <a href=\"proprio_anvisa.html\">O que existe no Brasil</a>.",
+  "trad": "<strong>Au Brésil : 15 médicament(s) avec enregistrement actif.</strong> EXTENSIOR, ORSEMA, OWOZY, OZEMPIC, OZIVY, POVIZTRA.... Relevé le 4 septembre 2026 dans les données ouvertes de l'agence."
+ },
+ {
+  "pt": "Esta advertência não estava nesta página até 4 de setembro de 2026, e a falha era deste site, não da fonte. A auditoria das tabelas de dose contra as bulas da FDA e da ANVISA está em <a href=\"proprio_glp1_bula.html\">Os GLP-1 contra a bula</a>.",
+  "trad": "Cet avertissement ne figurait pas sur cette page jusqu'au 4 septembre 2026, et la faute en revenait à ce site, pas à la source. L'audit des tableaux de dose par rapport aux notices de la FDA se trouve dans <a href=\"proprio_glp1_bula.html\">Les GLP-1 face à la notice</a>."
+ },
+ {
+  "pt": "<strong>No Brasil: 2 medicamento(s) com registro ativo na ANVISA.</strong> MOUNJARO, MOUNJARO MULTIDOSE. Levantado em 4 de setembro de 2026 no dado aberto da agência. A varredura dos 44 compostos está em <a href=\"proprio_anvisa.html\">O que existe no Brasil</a>.",
+  "trad": "<strong>Au Brésil : 2 médicament(s) avec enregistrement actif.</strong> MOUNJARO, MOUNJARO MULTIDOSE. Relevé le 4 septembre 2026 dans les données ouvertes de l'agence."
+ }
+]

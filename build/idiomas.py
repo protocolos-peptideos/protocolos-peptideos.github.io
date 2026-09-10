@@ -87,6 +87,16 @@ ORDEM = ['pt-BR'] + list(IDIOMAS)
 # Cada idioma ganha uma pasta com a mesma estrutura da raiz.
 PAGINAS_RAIZ = ['index.html', 'evidencia.html', 'seguranca.html', 'sobre.html']
 
+# ANVISA so em portugues, por decisao do Fernando em 10/09/2026. A pagina
+# abaixo nao existe nas outras versoes (nem no seletor, nem no sitemap), e todo
+# trecho que cita a ANVISA passa pela camada build/traducoes/sem-anvisa/, que
+# reescreve o trecho sem a agencia ou o retira da pagina.
+SO_PT = {'p/proprio_anvisa.html'}
+
+# Unicas correcoes de numero aceitas na camada sem ANVISA: a contagem de
+# paginas do indice cai um quando a pagina da ANVISA sai.
+AJUSTES_PERMITIDOS = {('76', '75'), ('19', '18')}
+
 
 # ------------------------------------------------------------------ trava
 _FULLWIDTH = {ord(c): str(i) for i, c in enumerate('０１２３４５６７８９')}
@@ -232,6 +242,132 @@ def valida(chave, trad, idioma):
     if any('０' <= c <= '９' for c in trad):
         probs.append('digito de largura inteira')
     return probs
+
+
+def valida_sem(chave, orig, nova, idioma, ajuste=None):
+    """Trava da camada sem ANVISA.
+
+    A versao nova so pode TIRAR coisas da traducao que ja passou na trava
+    principal: nenhum numero, tag, href ou <code> que ela nao tivesse. A unica
+    troca de numero aceita e a de AJUSTES_PERMITIDOS, declarada no arquivo."""
+    probs = []
+    base = orig if orig else chave
+    conv = IDIOMAS[idioma] if orig else PT
+    if re.search('anvisa|アンビサ', nova, re.I):
+        probs.append('ainda cita a ANVISA')
+    if 'proprio_anvisa' in nova:
+        probs.append('link para a pagina da ANVISA')
+    a = numeros(base, conv)
+    for k, v in (ajuste or {}).items():
+        if (str(k), str(v)) not in AJUSTES_PERMITIDOS:
+            probs.append('ajuste de numero nao permitido: %s -> %s' % (k, v))
+            continue
+        kf, vf = float(k), float(v)
+        if a[kf]:
+            a[vf] += a[kf]
+            del a[kf]
+    sobra = numeros(nova, IDIOMAS[idioma]) - a
+    if sobra:
+        probs.append('numero que a traducao nao tinha: %s' % sorted(sobra.elements()))
+    if _tags(nova) - _tags(base):
+        probs.append('tag ou href novo')
+    abre = Counter(n for f, n, h in _tags(nova).elements() if not f)
+    fecha = Counter(n for f, n, h in _tags(nova).elements() if f)
+    for n in set(abre) | set(fecha):
+        if n not in VAZIO and abre[n] != fecha[n]:
+            probs.append('tag <%s> desbalanceada' % n)
+    if Counter(_CODE.findall(nova)) - Counter(_CODE.findall(base)):
+        probs.append('<code> alterado')
+    return probs
+
+
+def carrega_sem_anvisa(idioma):
+    """{trecho pt: (versao sem ANVISA, ajuste)} de sem-anvisa/<idioma>*.json."""
+    pasta = os.path.join(PASTA, 'sem-anvisa')
+    out = {}
+    if not os.path.isdir(pasta):
+        return out
+    for f in sorted(os.listdir(pasta)):
+        if not re.fullmatch(re.escape(idioma) + r'(-[\w-]+)?\.json', f):
+            continue
+        for it in _le_json(os.path.join(pasta, f)):
+            chave = _norm(it['pt'])
+            nova = _norm(it.get('trad') or '')
+            if idioma == 'fr' and nova:
+                nova = _conserta_milhar_fr(chave, nova)
+            # A linha "No Brasil: ..." de cada composto e so dado da ANVISA:
+            # sai em todos os idiomas, qualquer que seja a reescrita entregue.
+            if chave.startswith('<strong>No Brasil:'):
+                nova = ''
+            out[chave] = (nova, it.get('ajuste') or {})
+    return out
+
+
+def _remocao(fonte, ini, fim, tipo, no):
+    """Faixa a apagar quando o trecho sem ANVISA fica vazio."""
+    if no.tag in ('td', 'th'):
+        return (ini, fim, '—') if tipo == 'inner' else (ini, fim, '')
+    if tipo == 'attr' and no.tag in ('meta', 'form', 'title'):
+        return (ini, fim, '')
+    alvo = no
+    # sobe enquanto o pai so contem este elemento: <li> com um link so, etc.
+    while (alvo.pai is not None and alvo.pai.tag in ('li', 'p', 'small', 'strong', 'em')
+           and alvo.pai.fim is not None and len(alvo.pai.filhos) == 1 and not alvo.pai.texto):
+        alvo = alvo.pai
+    a, b = alvo.ini, alvo.fim
+    while a > 0 and fonte[a - 1] in ' \t':
+        a -= 1
+    if b < len(fonte) and fonte[b] == '\n' and (a == 0 or fonte[a - 1] == '\n'):
+        b += 1
+    return (a, b, '')
+
+
+_EXTRAS_BUSCA = (' anvisa registro brasil registrado', ' sem registro anvisa importacao manipulado',
+                 ' notificado anvisa baixo risco')
+
+
+def _limpa_so_pt(s):
+    """Tira das versoes traduzidas o que so existe em portugues."""
+    removidos_prim = 0
+    for pag in SO_PT:
+        nome = re.escape(pag.split('/')[-1])
+
+        def tira_card(m):
+            nonlocal removidos_prim
+            if 'data-cat="primaria"' in m.group(0):
+                removidos_prim += 1
+            return ''
+        s = re.sub(r'[ \t]*<a class="card[^"]*" href="(?:\.\./)*p/' + nome + r'".*?</a>\n?', tira_card, s, flags=re.S)
+        s = re.sub(r'[ \t]*<tr>(?:(?!</tr>).)*?href="[^"]*' + nome + r'"(?:(?!</tr>).)*?</tr>\n?', '', s, flags=re.S)
+        s = re.sub(r'[ \t]*<li>(?:(?!</li>).)*?href="[^"]*' + nome + r'"(?:(?!</li>).)*?</li>\n?', '', s, flags=re.S)
+        s = re.sub(r'<a [^>]*href="[^"]*' + nome + r'"[^>]*>(.*?)</a>', r'\1', s, flags=re.S)
+    # referencia cujo link leva ao site da ANVISA (bulario, consultas): o texto
+    # nem sempre nomeia a agencia, mas o destino e ela
+    # (anvisa.gov.br e gov.br/anvisa: o padrao pega os dois)
+    s = re.sub(r'[ \t]*<li[^>]*>(?:(?!</li>).)*?href="[^"]*anvisa[^"]*"(?:(?!</li>).)*?</li>\n?', '', s,
+               flags=re.S | re.I)
+    s = re.sub(r'<a [^>]*href="[^"]*anvisa[^"]*"[^>]*>(.*?)</a>', r'\1', s, flags=re.S | re.I)
+    # Referencias que ficaram vazias (a unica fonte era da ANVISA): sai o bloco
+    # inteiro -- titulo, nota e lista -- e o item dele no indice lateral.
+    s2 = re.sub(r'[ \t]*<h2 id="refs">.*?</h2>\s*<div class="nota">.*?</div>\s*<ol[^>]*>\s*</ol>\n?', '', s, flags=re.S)
+    if s2 != s:
+        s = re.sub(r'[ \t]*<li><a href="#refs">.*?</a></li>\n?', '', s2)
+    # selos, filtro e campo de registro brasileiro do indice
+    s = re.sub(r'<span class="selo selo-anv-[^"]*"[^>]*>.*?</span>', '', s, flags=re.S)
+    s = re.sub(r'[ \t]*<div class="filtros filtros-anvisa".*?</div>\n?', '', s, flags=re.S)
+    s = re.sub(r'[ \t]*<input type="hidden" id="par-anv"[^>]*>\n?', '', s)
+    s = re.sub(r' data-anv="[^"]*"', '', s)
+    for extra in _EXTRAS_BUSCA:
+        s = s.replace(extra, '')
+    if removidos_prim:
+        s = re.sub(r'(<div class="proc-lado proc-aferida">\s*<b>)(\d+)(</b>)',
+                   lambda m: m.group(1) + str(int(m.group(2)) - removidos_prim) + m.group(3), s, count=1)
+    return s
+
+
+def resto_anvisa(s):
+    """Quantas vezes a ANVISA ainda aparece na pagina, fora do CSS."""
+    return len(re.findall('anvisa', re.sub(r'<style>.*?</style>', '', s, flags=re.S), re.I))
 
 
 # --------------------------------------------------------------- extracao
@@ -440,12 +576,35 @@ _CARD = re.compile(r'(<a class="card[^"]*" href="p/[^"]+"[^>]*data-busca=")([^"]
 _TXT = re.compile(r'<[^>]+>')
 
 
-def traduz_pagina(fonte, rel, idioma, mem, relat):
-    """Devolve o HTML de `rel` no idioma dado, usando a memoria `mem`."""
+def traduz_pagina(fonte, rel, idioma, mem, relat, sem=None):
+    """Devolve o HTML de `rel` no idioma dado, usando a memoria `mem`.
+
+    `sem`: camada sem ANVISA ({trecho pt: (versao, ajuste)}), aplicada antes
+    da memoria. Versao vazia, ou reprovada na trava, tira o elemento."""
     conv = IDIOMAS[idioma]
     segs = segmentos(fonte)
+    sem = sem or {}
     trocas = []     # (ini, fim, texto)
     for ini, fim, chave, tipo, no in segs:
+        if chave in sem:
+            nova, ajuste = sem[chave]
+            probs = valida_sem(chave, mem.get(chave), nova, idioma, ajuste) if nova else []
+            if probs:
+                relat['rejeitados'][chave] = ['sem-anvisa: ' + p for p in probs]
+                nova = ''
+            if nova == '':
+                trocas.append(_remocao(fonte, ini, fim, tipo, no))
+            elif tipo == 'attr':
+                trocas.append((ini, fim, html.escape(nova, quote=True)))
+            else:
+                trocas.append((ini, fim, nova))
+            relat['traduzidos'].add(chave)
+            continue
+        if re.search('anvisa', chave, re.I):
+            # trecho com ANVISA sem versao na camada: nao pode ir para a pagina
+            relat['sem_versao'][chave] = rel
+            trocas.append(_remocao(fonte, ini, fim, tipo, no))
+            continue
         trad = mem.get(chave)
         if trad is None:
             relat['pendentes'][chave] = relat['pendentes'].get(chave) or rel
@@ -467,10 +626,13 @@ def traduz_pagina(fonte, rel, idioma, mem, relat):
             trocas.append((ini, fim, html.escape(trad, quote=True)))
         else:
             trocas.append((ini, fim, trad))
-    trocas.sort(key=lambda t: (t[0], t[1]))
+    # remocao de um elemento inteiro vem antes dos trechos que ficam dentro dele
+    trocas.sort(key=lambda t: (t[0], -t[1]))
     partes, pos = [], 0
     for ini, fim, txt in trocas:
         if ini < pos:
+            if fim <= pos:
+                continue    # dentro de um elemento ja retirado
             raise RuntimeError('trechos sobrepostos em %s @%d' % (rel, ini))
         partes.append(fonte[pos:ini])
         partes.append(txt)
@@ -517,6 +679,12 @@ def traduz_pagina(fonte, rel, idioma, mem, relat):
 
     # Sem aviso de traducao no topo, por decisao de 10/09/2026. Os textos do
     # aviso continuam em IDIOMAS[...]['aviso'] caso ele volte.
+
+    # ANVISA so em portugues (10/09/2026)
+    s = _limpa_so_pt(s)
+    n = resto_anvisa(s)
+    if n:
+        relat['resto_anvisa'][rel.replace(os.sep, '/')] = n
     return s
 
 
@@ -546,17 +714,26 @@ def gerar(paginas, log=print, fila=False):
             raise SystemExit('idiomas: ha entregas nao incorporadas em %s. Rode --incorporar '
                              'antes de reescrever a fila.' % ', '.join(abertas))
     mem = carrega_memorias()
+    paginas = [p for p in paginas if p.replace(os.sep, '/') not in SO_PT]
     saida = {}
     for idioma in IDIOMAS:
-        relat = dict(traduzidos=set(), pendentes={}, rejeitados={})
+        relat = dict(traduzidos=set(), pendentes={}, rejeitados={}, sem_versao={}, resto_anvisa={})
+        sem = carrega_sem_anvisa(idioma)
+        for pag in SO_PT:   # versao traduzida antiga, de antes da decisao
+            velho = os.path.join(RAIZ, idioma, pag)
+            if os.path.exists(velho):
+                os.remove(velho)
         for rel in paginas:
             with open(os.path.join(RAIZ, rel), encoding='utf-8') as f:
                 fonte = f.read()
             dest = os.path.join(RAIZ, idioma, rel)
             os.makedirs(os.path.dirname(dest), exist_ok=True)
             with open(dest, 'w', encoding='utf-8', newline='\n') as f:
-                f.write(traduz_pagina(fonte, rel, idioma, mem[idioma], relat))
+                f.write(traduz_pagina(fonte, rel, idioma, mem[idioma], relat, sem))
         saida[idioma] = relat
+        if relat['sem_versao'] or relat['resto_anvisa']:
+            log('idioma %s: %d trecho(s) com ANVISA sem versao na camada (retirados); ANVISA ainda em %d pagina(s)'
+                % (idioma, len(relat['sem_versao']), len(relat['resto_anvisa'])))
         _grava_json(os.path.join(PASTA, 'rejeitados', idioma + '.json'), relat['rejeitados'])
     if fila:
         _grava_pendentes(saida, mem)

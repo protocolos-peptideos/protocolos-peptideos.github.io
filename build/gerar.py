@@ -280,7 +280,9 @@ def cabecalho(titulo, descricao, prefixo="", atual="", indexavel=False,
     # para o portugues, que e o original.
     alternates = ''
     seletor = ''
-    if caminho:
+    # Pagina que so existe em portugues (ANVISA, decisao de 10/09/2026): sem
+    # alternates e sem seletor, porque nao ha outra versao para apontar.
+    if caminho and caminho.lstrip('/') not in I.SO_PT:
         alternates = f'\n<link rel="alternate" hreflang="pt-BR" href="{BASE}{caminho}">'
         for _idi in I.IDIOMAS:
             alternates += f'\n<link rel="alternate" hreflang="{_idi}" href="{BASE}/{_idi}{caminho}">'
@@ -1039,10 +1041,13 @@ def main():
     sem_data = []
     versoes = [('pt-BR', '')] + [(i, '/' + i) for i in I.IDIOMAS]
     for u in urls:
-        alts = ''.join('<xhtml:link rel="alternate" hreflang="%s" href="%s%s%s"/>'
-                       % (hl, base, pre, u) for hl, pre in versoes)
-        alts += '<xhtml:link rel="alternate" hreflang="x-default" href="%s%s"/>' % (base, u)
-        for hl, pre in versoes:
+        vs = [('pt-BR', '')] if u.lstrip('/') in I.SO_PT else versoes
+        alts = ''
+        if len(vs) > 1:
+            alts = ''.join('<xhtml:link rel="alternate" hreflang="%s" href="%s%s%s"/>'
+                           % (hl, base, pre, u) for hl, pre in vs)
+            alts += '<xhtml:link rel="alternate" hreflang="x-default" href="%s%s"/>' % (base, u)
+        for hl, pre in vs:
             rel = (pre + u).lstrip('/')
             d = data_do_commit(rel)
             if d:
