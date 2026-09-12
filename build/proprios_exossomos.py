@@ -206,12 +206,12 @@ EXOSSOMOS = {
         dict(h="O que existe no Brasil", tipo="p", corpo=[
             f"Baixei o dado aberto de medicamentos registrados da ANVISA em {_DT} e procurei "
             "<code>exossom</code> e <code>exosom</code>: <strong>zero ocorrências</strong>. Não há medicamento "
-            "com exossomo registrado nessa base.",
-            "<strong>E isso não fecha a pergunta.</strong> Essa base não cobre <strong>Produto de Terapia "
-            "Avançada</strong>, que tem registro separado sob a RDC 505/2021 — a mesma armadilha descrita em "
-            "<a href=\"proprio_casgevy.html\">Casgevy</a>. Se algum exossomo foi protocolado como terapia "
-            "avançada, não é ali que apareceria. <strong>NÃO VERIFIQUEI</strong> a lista de produtos de terapia "
-            "avançada: a página oficial que deveria exibi-la não renderiza produto nenhum.",
+            "com exossomo registrado nessa base — e <strong>isso não fecha a pergunta</strong>, porque essa "
+            "base não cobre <strong>Produto de Terapia Avançada</strong>, que tem registro separado sob a "
+            "RDC 505/2021 — a mesma armadilha descrita em <a href=\"proprio_casgevy.html\">Casgevy</a>. Se "
+            "algum exossomo foi protocolado como terapia avançada, não é ali que apareceria. "
+            "<strong>NÃO VERIFIQUEI</strong> a lista de produtos de terapia avançada: a página oficial que "
+            "deveria exibi-la não renderiza produto nenhum.",
             "O que está verificado na ANVISA é o enquadramento, e ele é direto. Na página da agência sobre "
             "cosméticos para tratamentos estéticos, publicada em 16/11/2023: <em>“Produtos estéticos destinados "
             "a procedimentos injetáveis não podem ser regularizados como cosméticos.”</em> Injetável entra como "
