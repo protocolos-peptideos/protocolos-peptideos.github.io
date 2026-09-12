@@ -97,14 +97,17 @@ SO_PT = {'p/proprio_anvisa.html'}
 # paginas do indice cai um quando a pagina da ANVISA sai.
 #
 # ATENCAO ao mexer aqui: estes pares seguem a contagem do site e envelhecem a
-# cada pagina nova. Em 12/09/2026, ao entrar a pagina de anticorpos
-# monoclonais, 76->75 e 19->18 viraram 77->76 e 20->19; no mesmo dia, ao entrar
-# a pagina de exossomos, viraram 78->77 e 21->20. O par 19->18 CONTINUA
-# na lista, mas por outro motivo: o trecho "A coluna nao soma 175" diz quantos
-# compostos a pagina de tamanho de efeito reanalisa, e esse numero tambem cai
-# um quando a pagina da ANVISA sai. E contagem de conteudo, nao de paginas, e
-# por isso nao subiu junto.
-AJUSTES_PERMITIDOS = {('78', '77'), ('21', '20'), ('19', '18')}
+# cada pagina nova. So em 12/09/2026 eles andaram tres vezes, de 76->75 e
+# 19->18 ate 87->86 e 30->29, conforme entravam a pagina de anticorpos
+# monoclonais, a de exossomos e as nove paginas da rodada daquele dia. Ao
+# abrir pagina nova, conferir aqui: par velho nao quebra nada, so deixa de
+# valer, e o gerador passa a rejeitar a versao sem ANVISA do trecho que conta.
+#
+# O par 19->18 CONTINUA na lista, mas por outro motivo: o trecho "A coluna nao
+# soma 179" diz quantos compostos a pagina de tamanho de efeito reanalisa, e
+# esse numero tambem cai um quando a pagina da ANVISA sai. E contagem de
+# conteudo, nao de paginas, e por isso nao anda junto com as outras.
+AJUSTES_PERMITIDOS = {('87', '86'), ('30', '29'), ('19', '18')}
 
 
 # ------------------------------------------------------------------ trava
@@ -276,6 +279,18 @@ def valida_sem(chave, orig, nova, idioma, ajuste=None):
             a[vf] += a[kf]
             del a[kf]
     sobra = numeros(nova, IDIOMAS[idioma]) - a
+    # Mesma tolerancia que a trava principal (valida) ja da ao japones, e por
+    # engano faltava aqui: "12 de setembro de 2026" vira "2026年9月12日", e o
+    # mes, que em portugues era nome, vira algarismo. Sem isto, 10 dos 46
+    # trechos da camada sem ANVISA caiam em 12/09/2026 por causa de um "9" que
+    # e o mes. Continua estreita: so passa se o que sobrou sao inteiros de 1 a
+    # 12, em quantidade coberta pelos nomes de mes do portugues de origem.
+    if sobra and idioma == 'ja':
+        meses_pt = sum(len(re.findall(chr(92) + 'b' + m + chr(92) + 'b', chave, re.I))
+                       for m in MESES_PT)
+        if (all(v == int(v) and 1 <= v <= 12 for v in sobra.elements())
+                and meses_pt >= sum(sobra.values())):
+            sobra = Counter()
     if sobra:
         probs.append('numero que a traducao nao tinha: %s' % sorted(sobra.elements()))
     if _tags(nova) - _tags(base):
@@ -368,6 +383,17 @@ def _limpa_so_pt(s):
     s = re.sub(r' data-anv="[^"]*"', '', s)
     for extra in _EXTRAS_BUSCA:
         s = s.replace(extra, '')
+    # A metade em portugues do data-busca de cada cartao e copiada do texto
+    # original, e por isso ainda nomeia a agencia mesmo depois de o cartao ja
+    # ter sido traduzido. O termo sai do indice de busca; o resto da string
+    # fica, para quem procura em portugues continuar achando o cartao.
+    # A preposicao que vinha antes sai junto ("ativos na anvisa" -> "ativos"),
+    # senao o indice fica com um "na" solto no meio da frase.
+    _busca_anv = re.compile(r'\b(?:n[ao]s?|d[ao]s?|pel[ao]s?|em|com)\s+anvisa\b|\banvisa\b', re.I)
+    s = re.sub(r'data-busca="([^"]*)"',
+               lambda m: 'data-busca="%s"'
+               % re.sub(r' {2,}', ' ', _busca_anv.sub('', m.group(1))).strip(),
+               s)
     if removidos_prim:
         s = re.sub(r'(<div class="proc-lado proc-aferida">\s*<b>)(\d+)(</b>)',
                    lambda m: m.group(1) + str(int(m.group(2)) - removidos_prim) + m.group(3), s, count=1)
