@@ -4,9 +4,9 @@ Referência em português sobre peptídeos, nootrópicos, SARMs e compostos corr
 
 O repositório e a URL guardam o nome antigo, `protocolos-peptideos` — renomear quebraria todo link já publicado. O site cobre mais que peptídeos desde setembro de 2026.
 
-**70 compostos e combinações · 362 tabelas de dose · 73 páginas estáticas.**
+**87 compostos e combinações · 424 tabelas de dose · 90 páginas estáticas.**
 
-Contagens da última execução do gerador, em 4 de setembro de 2026. Ele as imprime a cada rodada — se divergirem daqui, o gerador é que está certo.
+Contagens da última execução do gerador, em 12 de setembro de 2026. Ele as imprime a cada rodada — se divergirem daqui, o gerador é que está certo.
 
 ### ▶ [protocolos-peptideos.github.io](https://protocolos-peptideos.github.io/)
 
@@ -39,7 +39,7 @@ Todo conteúdo comercial da fonte foi removido: links de fornecedor, cupons, se�
 ### O que ficou de fora
 
 - **Fontes primárias, nas páginas importadas.** Nas páginas de protocolo vindas da fonte secundária, nenhum artigo do PubMed, registro de ensaio ou bula foi aberto: a checagem foi contra a fonte, e só. Continua sendo a limitação principal delas.
-- **A exceção são as páginas de evidência verificada**, hoje 13, onde cada número foi levantado no PubMed, no ClinicalTrials.gov, no dado aberto da ANVISA, na bula ou na lista da WADA, com a consulta declarada na própria página.
+- **A exceção são as páginas de evidência verificada**, hoje 25, onde cada número foi levantado no PubMed, no ClinicalTrials.gov, no dado aberto da ANVISA, na bula ou na lista da WADA, com a consulta declarada na própria página.
 - **Calculadoras interativas**, para não dar aparência de precisão a uma conta que depende de conferir o frasco na mão.
 - **Fornecedores e preços**, deliberadamente.
 
@@ -101,7 +101,7 @@ Os quatro levantamentos foram **refeitos em 04/09/2026**, com a consulta de cada
 
 Ficou uma lição registrada no código: buscando `LGD-4033 OR ligandrol` no ClinicalTrials.gov o resultado é **zero**, e a página teria afirmado que o ligandrol nunca entrou em ensaio. O ensaio existe — fase 2, 108 participantes, fratura de quadril — registrado sob o sinônimo `VK5211`. Consulta declarada não serve só para o leitor conferir: serve para quem escreve **perceber que a própria busca estava incompleta**.
 
-Estado atual, medido reexecutando toda consulta declarada em tabela no site: **63 de 65 reproduzem**. As duas restantes são o Semax, que oscila em um artigo conforme a indexação do dia, e uma linha cuja base é o ClinicalTrials.gov e não o PubMed.
+Estado atual, medido em 12 de setembro de 2026 reexecutando toda consulta declarada em tabela no site: **433 contagens, 416 iguais, 13 oscilando dentro de 2% e 4 divergindo**. As quatro divergentes estão identificadas — uma na página da mazdutida, três na de anticorpos monoclonais — e são do tipo que o reconferidor foi feito para achar: filtro escrito fora do `<code>`, e contagem de base que não é PubMed nem ClinicalTrials.gov publicada em coluna que o script lê como se fosse. As nove páginas abertas em 12 de setembro reproduzem **316 de 318**, com duas oscilações de um artigo.
 
 ## Reconferir os números, de tempos em tempos
 
@@ -114,10 +114,10 @@ python build/reconferir.py --quieto
 ```
 
 ```
-Reconferência de 87 contagens publicadas.
+Reconferência de 433 contagens publicadas.
 Data de apuração declarada no site: 4 de setembro de 2026
 
-  iguais 87 · oscilaram dentro de 2.0% 0 · DIVERGEM 0 · erro de rede 0
+  iguais 416 · oscilaram dentro de 2.0% 13 · DIVERGEM 4 · erro de rede 0
 ```
 
 Opções: `--pagina proprio_leste` para conferir só uma, `--limiar 5` para tolerar 5% de variação, `--json arquivo.json` para gravar o relatório. **Sai com código 1 quando algo diverge**, para servir de gatilho em tarefa agendada.

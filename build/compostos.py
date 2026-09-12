@@ -379,3 +379,30 @@ COMPOSTOS.update(_X16)
 
 from compostos_exossomos import EXTRA_EXOSSOMOS as _XEXO
 COMPOSTOS.update(_XEXO)
+
+from compostos_incretinas import EXTRA_INCRETINAS as _XINC
+COMPOSTOS.update(_XINC)
+
+from compostos_eixo_gh import EXTRA_EIXO_GH as _XGH
+COMPOSTOS.update(_XGH)
+
+from compostos_geroprotetores import EXTRA_GEROPROTETORES as _XGERO
+COMPOSTOS.update(_XGERO)
+
+from compostos_figado_lipidio import EXTRA_FIGADO_LIPIDIO as _XFIG
+COMPOSTOS.update(_XFIG)
+
+from compostos_calvicie import EXTRA_CALVICIE as _XCALV
+COMPOSTOS.update(_XCALV)
+
+from compostos_reparo_novos import EXTRA_REPARO_NOVOS as _XREP
+COMPOSTOS.update(_XREP)
+
+from compostos_neuro_novos import EXTRA_NEURO_NOVOS as _XNEU
+COMPOSTOS.update(_XNEU)
+
+from compostos_musculo_hpg import EXTRA_MUSCULO_HPG as _XMUS
+COMPOSTOS.update(_XMUS)
+
+from compostos_procedimentos import EXTRA_PROCEDIMENTOS as _XPROC
+COMPOSTOS.update(_XPROC)

@@ -247,3 +247,30 @@ PROPRIOS.update(_MABS)
 
 from proprios_exossomos import EXOSSOMOS as _EXO
 PROPRIOS.update(_EXO)
+
+from proprios_incretinas import INCRETINAS as _INC
+PROPRIOS.update(_INC)
+
+from proprios_eixo_gh import EIXO_GH as _GH
+PROPRIOS.update(_GH)
+
+from proprios_geroprotetores import GEROPROTETORES as _GERO
+PROPRIOS.update(_GERO)
+
+from proprios_figado_lipidio import FIGADO_LIPIDIO as _FIG
+PROPRIOS.update(_FIG)
+
+from proprios_calvicie import CALVICIE as _CALV
+PROPRIOS.update(_CALV)
+
+from proprios_reparo_novos import REPARO_NOVOS as _REP
+PROPRIOS.update(_REP)
+
+from proprios_neuro_novos import NEURO_NOVOS as _NEU
+PROPRIOS.update(_NEU)
+
+from proprios_musculo_hpg import MUSCULO_HPG as _MUS
+PROPRIOS.update(_MUS)
+
+from proprios_procedimentos import PROCEDIMENTOS as _PROC
+PROPRIOS.update(_PROC)

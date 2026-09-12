@@ -29,3 +29,4 @@ DATA_APURACAO = "4 de setembro de 2026"   # PubMed, ClinicalTrials.gov, ANVISA, 
 DATA_MAZDUTIDA = "5 de setembro de 2026"  # PubMed, ClinicalTrials.gov, openFDA, ANVISA
 DATA_MABS = "12 de setembro de 2026"      # PubMed, ClinicalTrials.gov, openFDA, INN/OMS
 DATA_EXOSSOMOS = "12 de setembro de 2026"  # PubMed, ClinicalTrials.gov, openFDA, ANVISA, FDA, SBD
+DATA_NOVAS_CLASSES = "12 de setembro de 2026"  # PubMed, ClinicalTrials.gov, dado aberto da ANVISA
