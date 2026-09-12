@@ -27,3 +27,5 @@ futura refizer TUDO no mesmo dia, estas constantes voltam a ser uma so.
 DATA_FONTE = "3 de setembro de 2026"      # acesso a peptidedosingprotocols.com
 DATA_APURACAO = "4 de setembro de 2026"   # PubMed, ClinicalTrials.gov, ANVISA, WADA
 DATA_MAZDUTIDA = "5 de setembro de 2026"  # PubMed, ClinicalTrials.gov, openFDA, ANVISA
+DATA_MABS = "12 de setembro de 2026"      # PubMed, ClinicalTrials.gov, openFDA, INN/OMS
+DATA_EXOSSOMOS = "12 de setembro de 2026"  # PubMed, ClinicalTrials.gov, openFDA, ANVISA, FDA, SBD

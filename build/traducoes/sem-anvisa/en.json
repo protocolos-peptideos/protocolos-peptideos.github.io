@@ -4,11 +4,11 @@
   "trad": "Peptides, nootropics, SARMs and related compounds in English: dose, cycle and the limits of the evidence. Experimental, not medical advice."
  },
  {
-  "pt": "76 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 19 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
-  "trad": "75 compounds and combinations — from peptides to <a href=\"p/proprio_nootropicos.html\">nootropics</a> and SARMs —, with dose, reconstitution, cycle structure and regulatory status. Every page separates what a published trial tested from what is only community-reported practice, because the difference between the two is the whole subject. On 18 of them the numbers did not come from a secondary source: they were checked in <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a> and the package insert — with the query declared on each page, for you to repeat and contradict me.",
+  "pt": "78 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 21 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "77 compounds and combinations — from peptides to <a href=\"p/proprio_nootropicos.html\">nootropics</a> and SARMs —, with dose, reconstitution, cycle structure and regulatory status. Every page separates what a published trial tested from what is only community-reported practice, because the difference between the two is the whole subject. On 20 of them the numbers did not come from a secondary source: they were checked in <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a> and the package insert — with the query declared on each page, for you to repeat and contradict me.",
   "ajuste": {
-   "76": "75",
-   "19": "18"
+   "78": "77",
+   "21": "20"
   }
  },
  {
@@ -20,10 +20,10 @@
   "trad": "Most of the compounds here <strong>have no FDA approval for human use</strong>. Several are sold labeled \"research use only\", which means they have not gone through purity, sterility or dosage controls for human consumption. A community-reported dose is not a validated dose: it is what someone reported having done."
  },
  {
-  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 76 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
-  "trad": "Filters the list of compounds on this page by text and by category. It changes nothing: it only changes which cards stay visible, and returns the count of what is left. The 75 compounds remain listed and linked on the page even without using the filter.",
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 78 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "Filters the list of compounds on this page by text and by category. It changes nothing: it only changes which cards stay visible, and returns the count of what is left. The 77 compounds remain listed and linked on the page even without using the filter.",
   "ajuste": {
-   "76": "75"
+   "78": "77"
   }
  },
  {
@@ -63,10 +63,10 @@
   "trad": "No registration"
  },
  {
-  "pt": "As 19 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
-  "trad": "The 18 pages where every number came from the primary source — PubMed, ClinicalTrials.gov, package insert and WADA — with the query declared in each one.",
+  "pt": "As 21 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
+  "trad": "The 20 pages where every number came from the primary source — PubMed, ClinicalTrials.gov, package insert and WADA — with the query declared in each one.",
   "ajuste": {
-   "19": "18"
+   "21": "20"
   }
  },
  {

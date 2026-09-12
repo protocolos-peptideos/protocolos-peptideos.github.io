@@ -241,3 +241,9 @@ PROPRIOS.update(_ALC)
 
 from proprios18 import MAZDUTIDA as _MAZD
 PROPRIOS.update(_MAZD)
+
+from proprios19 import MABS as _MABS
+PROPRIOS.update(_MABS)
+
+from proprios_exossomos import EXOSSOMOS as _EXO
+PROPRIOS.update(_EXO)

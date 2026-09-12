@@ -95,7 +95,16 @@ SO_PT = {'p/proprio_anvisa.html'}
 
 # Unicas correcoes de numero aceitas na camada sem ANVISA: a contagem de
 # paginas do indice cai um quando a pagina da ANVISA sai.
-AJUSTES_PERMITIDOS = {('76', '75'), ('19', '18')}
+#
+# ATENCAO ao mexer aqui: estes pares seguem a contagem do site e envelhecem a
+# cada pagina nova. Em 12/09/2026, ao entrar a pagina de anticorpos
+# monoclonais, 76->75 e 19->18 viraram 77->76 e 20->19; no mesmo dia, ao entrar
+# a pagina de exossomos, viraram 78->77 e 21->20. O par 19->18 CONTINUA
+# na lista, mas por outro motivo: o trecho "A coluna nao soma 175" diz quantos
+# compostos a pagina de tamanho de efeito reanalisa, e esse numero tambem cai
+# um quando a pagina da ANVISA sai. E contagem de conteudo, nao de paginas, e
+# por isso nao subiu junto.
+AJUSTES_PERMITIDOS = {('78', '77'), ('21', '20'), ('19', '18')}
 
 
 # ------------------------------------------------------------------ trava

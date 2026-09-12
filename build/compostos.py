@@ -373,3 +373,9 @@ COMPOSTOS.update(_X14)
 
 from compostos16 import EXTRA15 as _X15
 COMPOSTOS.update(_X15)
+
+from compostos17 import EXTRA16 as _X16
+COMPOSTOS.update(_X16)
+
+from compostos_exossomos import EXTRA_EXOSSOMOS as _XEXO
+COMPOSTOS.update(_XEXO)

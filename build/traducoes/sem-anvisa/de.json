@@ -4,11 +4,11 @@
   "trad": "Peptide, Nootropika, SARMs und Verwandtes auf Deutsch: Dosis, Zyklus und die Grenze der Evidenz. Experimentell, keine medizinische Beratung."
  },
  {
-  "pt": "76 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 19 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
-  "trad": "75 Wirkstoffe und Kombinationen — von Peptiden über <a href=\"p/proprio_nootropicos.html\">Nootropika</a> bis zu SARMs —, mit Dosis, Rekonstitution, Zyklusstruktur und regulatorischem Status. Jede Seite trennt, was eine publizierte Studie getestet hat, von dem, was nur von der Community berichtete Praxis ist, denn der Unterschied zwischen beidem ist das ganze Thema. Auf 18 davon stammen die Zahlen nicht aus einer Sekundärquelle: Sie wurden auf <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, auf <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a> und in der Fachinformation geprüft — mit der auf jeder Seite genannten Suchanfrage, damit Sie sie wiederholen und mir widersprechen können.",
+  "pt": "78 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 21 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "77 Wirkstoffe und Kombinationen — von Peptiden über <a href=\"p/proprio_nootropicos.html\">Nootropika</a> bis zu SARMs —, mit Dosis, Rekonstitution, Zyklusstruktur und regulatorischem Status. Jede Seite trennt, was eine publizierte Studie getestet hat, von dem, was nur von der Community berichtete Praxis ist, denn der Unterschied zwischen beidem ist das ganze Thema. Auf 20 davon stammen die Zahlen nicht aus einer Sekundärquelle: Sie wurden auf <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, auf <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a> und in der Fachinformation geprüft — mit der auf jeder Seite genannten Suchanfrage, damit Sie sie wiederholen und mir widersprechen können.",
   "ajuste": {
-   "76": "75",
-   "19": "18"
+   "78": "77",
+   "21": "20"
   }
  },
  {
@@ -20,10 +20,10 @@
   "trad": "Die meisten Wirkstoffe hier <strong>haben keine Zulassung der FDA für die Anwendung am Menschen</strong>. Viele werden mit dem Etikett „nur für Forschungszwecke“ verkauft, was bedeutet, dass sie keine Kontrolle auf Reinheit, Sterilität oder Dosierung für den Konsum durch Menschen durchlaufen haben. Eine von der Community beschriebene Dosis ist keine validierte Dosis: Sie ist das, was jemand berichtet hat, getan zu haben."
  },
  {
-  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 76 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
-  "trad": "Filtert die Liste der Wirkstoffe dieser Seite nach Text und nach Kategorie. Aendert nichts: Es wird nur geaendert, welche Karten sichtbar bleiben, und die Anzahl der verbleibenden wird zurueckgegeben. Die 75 Wirkstoffe bleiben auch ohne Filter auf der Seite aufgelistet und verlinkt.",
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 78 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "Filtert die Liste der Wirkstoffe dieser Seite nach Text und nach Kategorie. Aendert nichts: Es wird nur geaendert, welche Karten sichtbar bleiben, und die Anzahl der verbleibenden wird zurueckgegeben. Die 77 Wirkstoffe bleiben auch ohne Filter auf der Seite aufgelistet und verlinkt.",
   "ajuste": {
-   "76": "75"
+   "78": "77"
   }
  },
  {
@@ -63,10 +63,10 @@
   "trad": "Ohne Zulassung"
  },
  {
-  "pt": "As 19 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
-  "trad": "Die 18 Seiten, auf denen jede Zahl aus der Primärquelle kam — PubMed, ClinicalTrials.gov, Fachinformation und WADA — mit der auf jeder einzelnen genannten Suchanfrage.",
+  "pt": "As 21 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
+  "trad": "Die 20 Seiten, auf denen jede Zahl aus der Primärquelle kam — PubMed, ClinicalTrials.gov, Fachinformation und WADA — mit der auf jeder einzelnen genannten Suchanfrage.",
   "ajuste": {
-   "19": "18"
+   "21": "20"
   }
  },
  {

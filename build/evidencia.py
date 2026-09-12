@@ -7,17 +7,17 @@ CORPO = """
 <p>A maior parte deste site é tradução organizada de uma fonte secundária comercial. Está declarado em cada
 página, e é a fraqueza estrutural do material: se a fonte errou, eu repito o erro.</p>
 
-<p>As <strong>quinze páginas listadas abaixo</strong> são diferentes. Cada número nelas foi levantado por mim
+<p>As <strong>páginas listadas abaixo</strong> são diferentes. Cada número nelas foi levantado por mim
 diretamente no <strong>PubMed</strong> e no <strong>ClinicalTrials.gov</strong>, com a consulta usada declarada
 dentro da própria página, para que qualquer pessoa possa repetir e me contradizer. Cobrem
-<strong>175 compostos distintos</strong>.</p>
+<strong>176 compostos distintos</strong>.</p>
 
 <p>Não é uma seção de destaque por vaidade de método. É porque, das duas coisas que um site destes pode fazer —
 listar dose ou dizer o que a dose vale —, só a segunda é difícil de achar em português.</p>
 
-<h2 id="quinze">As quinze páginas</h2>
+<h2 id="paginas">As páginas desta seção</h2>
 
-<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="quinze">
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="paginas">
 <thead><tr><th scope="col">Página</th><th scope="col">Compostos</th><th scope="col">O achado central</th></tr></thead>
 <tbody>
 <tr>
@@ -42,6 +42,16 @@ listar dose ou dizer o que a dose vale —, só a segunda é difícil de achar e
       e <strong>nenhum registro na FDA ou na ANVISA</strong>. Os 12 são de patrocinador e população
       <strong>chineses</strong>, e a meta-análise que reúne 2.292 participantes classifica a certeza em
       obesidade como <strong>muito baixa</strong> no mesmo texto em que reporta perda de peso de dois dígitos</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_exossomos.html"><strong>Exossomos</strong></a></td>
+  <td>1</td>
+  <td>A assimetria mais extrema do site: <strong>45.674 artigos no PubMed e 83 ensaios randomizados</strong>,
+      menos de 0,2%. Dos 378 registros no ClinicalTrials.gov, <strong>142 são observacionais</strong> — medem
+      exossomo como marcador, não tratam ninguém com ele. Abri os <strong>nove de fase 3</strong>: um é um
+      estudo de PET/CT em câncer de próstata que entrou na busca por citar “exosome analysis”, e sete dos
+      outros oito têm <strong>135 participantes ou menos</strong>. A FDA diz desde 2019 que <strong>não existe
+      exossomo aprovado</strong>, com carta de advertência nova em fevereiro de 2026</td>
 </tr>
 <tr>
   <td><a href="p/proprio_sarms.html"><strong>SARMs</strong></a></td>
@@ -123,7 +133,7 @@ listar dose ou dizer o que a dose vale —, só a segunda é difícil de achar e
 </tbody>
 </table></div></div>
 
-<p class="nota"><strong>A coluna não soma 175.</strong> Duas páginas são segundo corte dos mesmos compostos,
+<p class="nota"><strong>A coluna não soma 176.</strong> Duas páginas são segundo corte dos mesmos compostos,
 não compostos novos: a de tamanho de efeito reanalisa 19 que já aparecem nas outras, e a de registro na ANVISA
 varre os 44 compostos de protocolo do site, que não são contados como material de fonte primária.</p>
 
@@ -167,7 +177,7 @@ de 9 para <strong>zero</strong>.</p>
       citocromo C e Etoxidol não têm <strong>nenhum</strong> ensaio randomizado.</li>
   <li><strong>Literatura russa fora do PubMed não foi consultada.</strong> A escola de Khavinson publica muito em
       periódico não indexado — a ausência aqui não prova ausência absoluta.</li>
-  <li><strong>As outras 54 páginas do site continuam dependendo da fonte secundária.</strong> Este método ainda
+  <li><strong>As outras 57 páginas do site continuam dependendo da fonte secundária.</strong> Este método ainda
       não foi aplicado a elas.</li>
 </ul>
 

@@ -4,11 +4,11 @@
   "trad": "Péptidos, nootrópicos, SARMs y afines en español: dosis, ciclo y el límite de la evidencia. Experimental, no es consejo médico."
  },
  {
-  "pt": "76 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 19 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
-  "trad": "75 compuestos y combinaciones — de péptidos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a> y SARMs —, con dosis, reconstitución, estructura de ciclo y estatus regulatorio. Cada página separa lo que un ensayo publicado probó de lo que es apenas práctica relatada por la comunidad, porque la diferencia entre las dos cosas es todo el asunto. En 18 de ellas los números no vinieron de fuente secundaria: se comprobaron en <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, en <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a> y en el prospecto — con la consulta declarada en cada página, para que usted la repita y me contradiga.",
+  "pt": "78 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 21 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "77 compuestos y combinaciones — de péptidos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a> y SARMs —, con dosis, reconstitución, estructura de ciclo y estatus regulatorio. Cada página separa lo que un ensayo publicado probó de lo que es apenas práctica relatada por la comunidad, porque la diferencia entre las dos cosas es todo el asunto. En 20 de ellas los números no vinieron de fuente secundaria: se comprobaron en <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, en <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a> y en el prospecto — con la consulta declarada en cada página, para que usted la repita y me contradiga.",
   "ajuste": {
-   "76": "75",
-   "19": "18"
+   "78": "77",
+   "21": "20"
   }
  },
  {
@@ -20,10 +20,10 @@
   "trad": "La mayor parte de los compuestos de aquí <strong>no tiene aprobación de la FDA para uso humano</strong>. Varios se venden con etiqueta de \"uso exclusivo en investigación\", lo que significa que no pasaron por control de pureza, esterilidad ni dosificación para consumo por personas. Dosis descrita por la comunidad no es dosis validada: es lo que alguien relató haber hecho."
  },
  {
-  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 76 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
-  "trad": "Filtra la lista de compuestos de esta pagina por texto y por categoria. No altera nada: solo cambia cuales tarjetas quedan visibles, y devuelve el recuento de lo que quedo. Los 75 compuestos siguen listados y enlazados en la pagina aunque no se use el filtro.",
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 78 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "Filtra la lista de compuestos de esta pagina por texto y por categoria. No altera nada: solo cambia cuales tarjetas quedan visibles, y devuelve el recuento de lo que quedo. Los 77 compuestos siguen listados y enlazados en la pagina aunque no se use el filtro.",
   "ajuste": {
-   "76": "75"
+   "78": "77"
   }
  },
  {
@@ -63,10 +63,10 @@
   "trad": ""
  },
  {
-  "pt": "As 19 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
-  "trad": "Las 18 páginas en que cada número vino de la fuente primaria — PubMed, ClinicalTrials.gov, prospecto y WADA — con la consulta declarada en cada una.",
+  "pt": "As 21 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
+  "trad": "Las 20 páginas en que cada número vino de la fuente primaria — PubMed, ClinicalTrials.gov, prospecto y WADA — con la consulta declarada en cada una.",
   "ajuste": {
-   "19": "18"
+   "21": "20"
   }
  },
  {
