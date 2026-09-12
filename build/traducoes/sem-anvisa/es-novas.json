@@ -6,7 +6,9 @@
  {
   "pt": "As 30 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
   "trad": "Las 29 páginas en las que cada cifra vino de la fuente primaria — PubMed, ClinicalTrials.gov, prospecto y WADA — con la consulta declarada en cada una.",
-  "ajuste": {"30": "29"}
+  "ajuste": {
+   "30": "29"
+  }
  },
  {
   "pt": "Treze moléculas que disputam o lugar da semaglutida — 11 já têm fase 3 registrada e 9 das 11 com DCI publicada não têm um único registro ativo na ANVISA",
@@ -42,7 +44,7 @@
  },
  {
   "pt": "<strong>8 das 14 buscas voltam vazias na ANVISA.</strong> Entre elas, setmelanotida, afamelanotida, enclomifeno e apitegromabe — as quatro que aparecem em fórum como se fossem compráveis.",
-  "trad": ""
+  "trad": "<strong>8 de las 14 búsquedas vuelven vacías.</strong> Entre ellas, setmelanotida, afamelanotida, enclomifeno y apitegromabe — las cuatro que aparecen en foros como si fueran comprables."
  },
  {
   "pt": "Esta página não veio da fonte secundária que originou a maior parte deste site. Foi montada do zero, no PubMed, no ClinicalTrials.gov, na base de rótulos da FDA e no dado aberto da ANVISA.",
@@ -82,7 +84,7 @@
  },
  {
   "pt": "<strong>8 dos 13 princípios ativos buscados não têm registro ativo na ANVISA.</strong> Os que têm — sirolimo, metformina, canaquinumabe, dasatinibe, acarbose — têm para transplante, diabetes, doença autoinflamatória e leucemia. Nenhum tem para idade.",
-  "trad": ""
+  "trad": "<strong>8 de los 13 principios activos buscados no tienen registro activo.</strong> Los que tienen — sirolimo, metformina, canaquinumabe, dasatinibe, acarbose — tienen para trasplante, diabetes, enfermedad autoinflamatoria y leucemia. Ninguno tiene para la edad."
  },
  {
   "pt": "<strong>GHRP-2 e hexarelina têm zero estudos registrados no ClinicalTrials.gov</strong>, com 256 e 313 artigos no PubMed. A molécula foi estudada; o tratamento, não. Do outro lado, a somatropina tem 183 ensaios de fase 3 e 9 registros ativos na ANVISA",
@@ -107,7 +109,9 @@
  {
   "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 87 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
   "trad": "Filtra la lista de compuestos de esta página por texto y por categoría. No altera nada: solo cambia qué tarjetas quedan visibles, y devuelve el recuento de lo que quedó. Los 86 compuestos siguen listados y enlazados en la página aunque no se use el filtro.",
-  "ajuste": {"87": "86"}
+  "ajuste": {
+   "87": "86"
+  }
  },
  {
   "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 12 de setembro de 2026 — 43.508 linhas, contando apenas situação <strong>Ativo</strong>. A coluna de classe terapêutica é a que a própria base declara para o produto.",
@@ -135,7 +139,7 @@
  },
  {
   "pt": "O que está verificado na ANVISA é o enquadramento, e ele é direto. Na página da agência sobre cosméticos para tratamentos estéticos, publicada em 16/11/2023: <em>“Produtos estéticos destinados a procedimentos injetáveis não podem ser regularizados como cosméticos.”</em> Injetável entra como medicamento ou produto para a saúde, e não existe cosmético injetável.",
-  "trad": "En la página de la agencia sobre cosméticos para tratamientos estéticos, publicada el 16 de noviembre de 2023: <em>“Productos estéticos destinados a procedimientos inyectables no pueden ser regularizados como cosméticos.”</em> Lo inyectable entra como medicamento o producto para la salud, y no existe cosmético inyectable."
+  "trad": ""
  },
  {
   "pt": "<strong>Atenção específica deste composto:</strong> Nenhuma das cinco linhas tem registro ativo na ANVISA sob o nome buscado, e nenhuma tem apresentação injetável aprovada para reparo. O PDRN, que é o mais vendido em estética no Brasil, é o exemplo mais direto: classe não é registro — o que autoriza um frasco é nome comercial mais número de registro, não a sigla no rótulo.",
@@ -176,7 +180,10 @@
  {
   "pt": "87 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 30 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
   "trad": "86 compuestos y combinaciones — de péptidos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs y lo que existe registrado en Brasil —, con dosis, reconstitución, estructura de ciclo y estatus regulatorio. Cada página separa lo que un ensayo publicado probó de lo que es apenas práctica relatada por la comunidad, porque la diferencia entre las dos cosas es el tema entero. En 29 de ellas los números no vinieron de fuente secundaria: fueron verificados en <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, en <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a> y en el prospecto — con la consulta declarada en cada página, para que la repitas y me contradigas.",
-  "ajuste": {"87": "86", "30": "29"}
+  "ajuste": {
+   "87": "86",
+   "30": "29"
+  }
  },
  {
   "pt": "<strong>Atenção específica deste composto:</strong> Não existe cosmético injetável no Brasil: a ANVISA diz, na página de cosméticos para tratamentos estéticos, que produto estético destinado a procedimento injetável não pode ser regularizado como cosmético. A Sociedade Brasileira de Dermatologia foi além e disse pelo nome, em nota técnica de setembro de 2024, que exossomos não podem ser aplicados em terapia injetável independentemente da técnica, da indicação, da competência do prescritor ou da qualidade do produto. E a razão pela qual esta página não traz tabela de dose é a mesma que torna o produto incomparável: dose de exossomo é anunciada em contagem de partículas, em micrograma de proteína, em mililitro ou em “frascos”, cada laboratório medindo pelo método que escolheu.",

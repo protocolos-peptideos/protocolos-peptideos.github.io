@@ -1,186 +1,189 @@
 [
  {
-  "pt": "87 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 30 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
-  "trad": "87 compounds and combinations — from peptides to <a href=\"p/proprio_nootropicos.html\">nootropics</a>, SARMs, and what is registered in Brazil —, with dose, reconstitution, cycle structure, and regulatory status. Each page separates what a published trial tested from what is merely community-reported practice, because the difference between the two is the whole point. On 30 of them the numbers didn't come from a secondary source: they were checked against <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, Brazil's open drug registry data, and the package insert — with the query stated on every page, for you to repeat and prove me wrong."
- },
- {
-  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 87 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
-  "trad": "Filters this page's list of compounds by text, by category, and by registration status in Brazil. It changes nothing: it only changes which cards stay visible, and returns a count of what's left. All 87 compounds stay listed and linked on the page even without using the filter."
- },
- {
-  "pt": "Dezoito tratamentos medidos na mesma régua: o minoxidil tem 23 registros ativos na ANVISA como antialopecia, e o PP405, que circula como pó de pesquisa, tem 1 artigo no PubMed",
-  "trad": "Eighteen treatments measured on the same scale: minoxidil has 23 active registrations in Brazil as an anti-baldness drug, and PP405, which circulates as a research powder, has 1 article on PubMed"
- },
- {
-  "pt": "Treze moléculas com dois dígitos de artigo no PubMed e ensaios de desfecho de até 17.300 participantes — e uma só delas, a inclisirana, tem registro ativo na ANVISA",
-  "trad": "Thirteen molecules with two-digit PubMed article counts and outcome trials with up to 17,300 participants — and only one of them, inclisiran, has an active registration in Brazil"
- },
- {
-  "pt": "Dezessete candidatos a retardar o envelhecimento: 6 não têm um único ensaio de fase 3 registrado, e 8 dos 13 princípios ativos buscados não têm registro ativo na ANVISA",
-  "trad": "Seventeen candidates for slowing aging: 6 don't have a single registered phase 3 trial, and 8 of the 13 active ingredients searched have no active registration in Brazil"
- },
- {
-  "pt": "Treze moléculas que disputam o lugar da semaglutida — 11 já têm fase 3 registrada e 9 das 11 com DCI publicada não têm um único registro ativo na ANVISA",
-  "trad": "Thirteen molecules competing for semaglutide's spot — 11 already have a registered phase 3 trial, and 9 of the 11 with a published INN don't have a single active registration in Brazil"
- },
- {
-  "pt": "Quinze moléculas que a conversa de peptídeo cita como se fossem equivalentes aos frascos de pesquisa — 6 das 14 buscadas têm registro ativo na ANVISA, com nome comercial e classe terapêutica declarada",
-  "trad": "Fifteen molecules that peptide-forum talk cites as if they were equivalent to research vials — 6 of the 14 searched have an active registration in Brazil, with a declared brand name and therapeutic class"
- },
- {
-  "pt": "Noopept, fenilpiracetam, bromantano e cortexina somam 0 estudos registrados no ClinicalTrials.gov; lecanemabe e donanemabe já têm registro ativo na ANVISA",
-  "trad": "Noopept, phenylpiracetam, bromantane, and cortexin add up to 0 studies registered on ClinicalTrials.gov; lecanemab and donanemab already have an active registration in Brazil"
- },
- {
-  "pt": "O hormônio recombinante tem 54.472 artigos, 183 ensaios de fase 3 e 9 registros ativos na ANVISA; os secretagogos que a comunidade usa no lugar dele têm zero registros ativos",
-  "trad": "The recombinant hormone has 54,472 articles, 183 phase 3 trials, and 9 active registrations in Brazil; the secretagogues the community uses in its place have zero active registrations"
+  "pt": "Dado aberto de medicamentos registrados da ANVISA — a mesma base usada na página O que existe no Brasil.",
+  "trad": "Open data on registered medicines — the same database used on the \"What Exists in Brazil\" page."
  },
  {
   "pt": "As 30 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
-  "trad": "The 30 pages where every figure came from the primary source — PubMed, ClinicalTrials.gov, Brazil's drug registry, the package insert, and WADA — with the query stated on each one."
+  "trad": "The 29 pages where every figure came from a primary source — PubMed, ClinicalTrials.gov, package inserts and WADA — with the query declared on each one.",
+  "ajuste": {"30": "29"}
  },
  {
-  "pt": "A inversão entre literatura e desenvolvimento. O <strong>HRS-9531 tem 0 artigos no PubMed e 9 ensaios de fase 3 registrados</strong>; a liraglutida, que serve de régua, tem 5.909. Quem julga estas moléculas pela contagem de artigo conclui que metade não existe. <strong>9 das 11 com DCI publicada não têm registro ativo na ANVISA</strong>",
-  "trad": "The inversion between literature and development. <strong>HRS-9531 has 0 articles on PubMed and 9 registered phase 3 trials</strong>; liraglutide, which serves as the yardstick, has 5,909. Anyone judging these molecules by article count concludes that half of them don't exist. <strong>9 of the 11 with a published INN have no active registration in Brazil</strong>"
+  "pt": "Treze moléculas que disputam o lugar da semaglutida — 11 já têm fase 3 registrada e 9 das 11 com DCI publicada não têm um único registro ativo na ANVISA",
+  "trad": "Thirteen molecules competing for semaglutide's spot — 11 already have a registered phase 3, and 9 of the 11 with a published INN have not a single active registration"
  },
  {
-  "pt": "<strong>GHRP-2 e hexarelina têm zero estudos registrados no ClinicalTrials.gov</strong>, com 256 e 313 artigos no PubMed. A molécula foi estudada; o tratamento, não. Do outro lado, a somatropina tem 183 ensaios de fase 3 e 9 registros ativos na ANVISA",
-  "trad": "<strong>GHRP-2 and hexarelin have zero studies registered on ClinicalTrials.gov</strong>, with 256 and 313 articles on PubMed. The molecule was studied; the treatment wasn't. On the other hand, somatropin has 183 phase 3 trials and 9 active registrations in Brazil"
+  "pt": "Noopept, fenilpiracetam, bromantano e cortexina somam 0 estudos registrados no ClinicalTrials.gov; lecanemabe e donanemabe já têm registro ativo na ANVISA",
+  "trad": "Noopept, phenylpiracetam, bromantane, and cortexin together have 0 registered studies on ClinicalTrials.gov; lecanemab and donanemab already have active registration"
  },
  {
-  "pt": "O contrário do padrão do site: literatura de dezenas de artigos e <strong>ensaios de desfecho de até 17.300 participantes</strong> — os quatro maiores somam 46.047. E, das treze, <strong>só a inclisirana tem registro ativo na ANVISA</strong>",
-  "trad": "The opposite of the site's usual pattern: literature running into dozens of articles and <strong>outcome trials with up to 17,300 participants</strong> — the four largest add up to 46,047. And of the thirteen, <strong>only inclisiran has an active registration in Brazil</strong>"
+  "pt": "Treze moléculas com dois dígitos de artigo no PubMed e ensaios de desfecho de até 17.300 participantes — e uma só delas, a inclisirana, tem registro ativo na ANVISA",
+  "trad": "Thirteen molecules with two-digit PubMed article counts and outcome trials of up to 17,300 participants — and only one of them, inclisiran, has active registration"
  },
  {
-  "pt": "Noopept, fenilpiracetam, bromantano e cortexina somam <strong>0 estudos registrados</strong> no ClinicalTrials.gov, apesar de somarem 435 artigos no PubMed. No mesmo levantamento, <strong>lecanemabe e donanemabe já têm registro ativo na ANVISA</strong>",
-  "trad": "Noopept, phenylpiracetam, bromantane, and cortexin add up to <strong>0 registered studies</strong> on ClinicalTrials.gov, despite totaling 435 articles on PubMed. In the same survey, <strong>lecanemab and donanemab already have an active registration in Brazil</strong>"
+  "pt": "Dezessete candidatos a retardar o envelhecimento: 6 não têm um único ensaio de fase 3 registrado, e 8 dos 13 princípios ativos buscados não têm registro ativo na ANVISA",
+  "trad": "Seventeen candidates to delay aging: 6 don't have a single registered phase 3 trial, and 8 of the 13 active ingredients searched have no active registration"
  },
  {
-  "pt": "O ensaio testou doença rara; o frasco promete recomposição. <strong>Os 6 ensaios de fase 3 de afamelanotida que abri são de protoporfiria eritropoiética</strong>, e os de setmelanotida, de obesidade por variante genética. <strong>8 das 14 buscas voltam vazias na ANVISA</strong>",
-  "trad": "The trial tested a rare disease; the vial promises body recomposition. <strong>The 6 afamelanotide phase 3 trials I opened are for erythropoietic protoporphyria</strong>, and the setmelanotide ones are for genetic-variant obesity. <strong>8 of the 14 searches come up empty in Brazil's drug registry</strong>"
+  "pt": "O hormônio recombinante tem 54.472 artigos, 183 ensaios de fase 3 e 9 registros ativos na ANVISA; os secretagogos que a comunidade usa no lugar dele têm zero registros ativos",
+  "trad": "The recombinant hormone has 54,472 articles, 183 phase 3 trials, and 9 active registrations; the secretagogues the community uses instead have zero active registrations"
  },
  {
-  "pt": "<strong>A coluna não soma 179.</strong> Duas páginas são segundo corte dos mesmos compostos, não compostos novos: a de tamanho de efeito reanalisa 19 que já aparecem nas outras, e a de registro na ANVISA varre os 44 compostos de protocolo do site, que não são contados como material de fonte primária.",
-  "trad": "<strong>The column doesn't add up to 179.</strong> Two pages are a second cut of the same compounds, not new compounds: the effect-size page reanalyzes 19 that already appear elsewhere, and the Brazil-registration page sweeps the site's 44 protocol compounds, which aren't counted as primary-source material."
- },
- {
-  "pt": "<strong>PP405 é o caso mais claro de nome vendido antes de existir.</strong> 1 artigo no PubMed, 1 estudo registrado, 0 de fase 3, e nenhum registro na base da ANVISA. Não existe produto: existe um programa de pesquisa, e um nome que já circula à venda.",
-  "trad": "<strong>PP405 is the clearest case of a name sold before it exists.</strong> 1 article on PubMed, 1 registered study, 0 in phase 3, and no registration in Brazil's drug database. There's no product: there's a research program, and a name already circulating for sale."
- },
- {
-  "pt": "<strong>A pirilutamida é o mesmo padrão, com patrocinador chinês.</strong> 1 artigo indexado, 2 ensaios de fase 3 com 756 e 740 participantes, patrocínio da Kintor. Nenhum registro ativo na ANVISA.",
-  "trad": "<strong>Pyrilutamide follows the same pattern, with a Chinese sponsor.</strong> 1 indexed article, 2 phase 3 trials with 756 and 740 participants, sponsored by Kintor. No active registration in Brazil."
- },
- {
-  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 12 de setembro de 2026 — 43.508 linhas, contando apenas situação <strong>Ativo</strong>. A coluna de classe terapêutica é a que a própria base declara.",
-  "trad": "I looked up each active ingredient in <strong>Brazil's open data on registered medicines</strong>, downloaded on September 12, 2026 — 43,508 rows, counting only <strong>Active</strong> status. The therapeutic-class column is the one the dataset itself declares."
- },
- {
-  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Todas as contagens desta página foram levantadas por mim em 12 de setembro de 2026, com a consulta declarada ao lado de cada número. As indicações citadas vêm da classe terapêutica declarada no dado aberto da ANVISA e do campo de condição dos registros de fase 3 — não de bula lida por mim, e a página não afirma mais do que isso. <strong>Esta página foi apurada em dia próprio</strong>, e por isso carrega data própria.",
-  "trad": "<strong>This page didn't come from the secondary source.</strong> Every count on this page was gathered by me on September 12, 2026, with the query stated next to each number. The indications cited come from the therapeutic class declared in Brazil's open drug data and from the condition field of the phase 3 registrations — not from a package insert I read, and the page claims no more than that. <strong>This page was fact-checked on its own day</strong>, and that's why it carries its own date."
- },
- {
-  "pt": "Dado aberto de medicamentos registrados da ANVISA — a mesma base usada na página O que existe no Brasil.",
-  "trad": "Brazil's open data on registered medicines — the same dataset used on the What Exists in Brazil page."
- },
- {
-  "pt": "Este site já cobre sete compostos do eixo do hormônio do crescimento: CJC-1295 com e sem DAC, GHRP-6, ipamorelina, sermorelina, tesamorelina e IGF-1 LR3. Faltavam os que aparecem na mesma conversa e não são peptídeo injetável de pesquisa — o secretagogo oral MK-677, os primos do GHRP-6 (GHRP-2 e hexarelina), o hormônio recombinante inteiro e as duas formulações de IGF que têm nome farmacêutico. O contraste é o assunto da página. A somatropina — o GH recombinante, o produto com bula — tem 54.472 artigos no PubMed, 817 estudos registrados, 183 deles de fase 3, e 9 registros ativos na ANVISA. O GHRP-2 e a hexarelina, que a comunidade discute como se fossem alternativas, têm zero estudos registrados no ClinicalTrials.gov. Não é pouca evidência: é nenhuma, na base onde ensaio se registra.",
-  "trad": "This site already covers seven compounds in the growth hormone axis: CJC-1295 with and without DAC, GHRP-6, ipamorelin, sermorelin, tesamorelin, and IGF-1 LR3. Missing were the ones that come up in the same conversation and aren't research injectable peptides — the oral secretagogue MK-677, GHRP-6's cousins (GHRP-2 and hexarelin), the full recombinant hormone, and the two IGF formulations that have pharmaceutical names. The contrast is the subject of the page. Somatropin — recombinant GH, the product with a package insert — has 54,472 articles on PubMed, 817 registered studies, 183 of them phase 3, and 9 active registrations in Brazil. GHRP-2 and hexarelin, which the community discusses as if they were alternatives, have zero studies registered on ClinicalTrials.gov. That's not scant evidence: it's none, in the database where a trial registers."
- },
- {
-  "pt": "<strong>A mecasermina é o IGF que existe como medicamento.</strong> 103 artigos, 37 estudos registrados, 8 de fase 3 — e nenhum registro ativo na ANVISA. O <a href=\"protocol_igf-1-lr3.html\">IGF-1 LR3</a>, que este site já marca como o de maior risco do grupo, é a versão sem nada disso.",
-  "trad": "<strong>Mecasermin is the IGF that exists as a medicine.</strong> 103 articles, 37 registered studies, 8 of them phase 3 — and no active registration in Brazil. <a href=\"protocol_igf-1-lr3.html\">IGF-1 LR3</a>, which this site already flags as the riskiest of the group, is the version with none of that."
- },
- {
-  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 12 de setembro de 2026 — 43.508 linhas, contando apenas situação <strong>Ativo</strong>.",
-  "trad": "I looked up each active ingredient in <strong>Brazil's open data on registered medicines</strong>, downloaded on September 12, 2026 — 43,508 rows, counting only <strong>Active</strong> status."
- },
- {
-  "pt": "<strong>Atenção específica deste composto:</strong> Não existe cosmético injetável no Brasil: a ANVISA diz, na página de cosméticos para tratamentos estéticos, que produto estético destinado a procedimento injetável não pode ser regularizado como cosmético. A Sociedade Brasileira de Dermatologia foi além e disse pelo nome, em nota técnica de setembro de 2024, que exossomos não podem ser aplicados em terapia injetável independentemente da técnica, da indicação, da competência do prescritor ou da qualidade do produto. E a razão pela qual esta página não traz tabela de dose é a mesma que torna o produto incomparável: dose de exossomo é anunciada em contagem de partículas, em micrograma de proteína, em mililitro ou em “frascos”, cada laboratório medindo pelo método que escolheu.",
-  "trad": "<strong>Compound-specific note:</strong> There's no such thing as an injectable cosmetic in Brazil: the Brazilian regulator's page on cosmetics for aesthetic treatments states that an aesthetic product meant for an injectable procedure cannot be regularized as a cosmetic. The Brazilian Society of Dermatology went further and said by name, in a technical note from September 2024, that exosomes cannot be applied in injectable therapy regardless of technique, indication, prescriber competence, or product quality. And the reason this page carries no dose table is the same thing that makes the product incomparable: exosome dose is advertised in particle counts, in micrograms of protein, in milliliters, or in \"vials,\" each lab measuring by whatever method it chose."
- },
- {
-  "pt": "Esta página não veio da fonte secundária que originou a maior parte deste site. Foi montada do zero, no PubMed, no ClinicalTrials.gov, na base de rótulos da FDA e no dado aberto da ANVISA.",
-  "trad": "This page didn't come from the secondary source that gave rise to most of this site. It was built from scratch, using PubMed, ClinicalTrials.gov, the FDA's label database, and Brazil's open drug data."
- },
- {
-  "pt": "No dado aberto de medicamentos registrados da ANVISA, <code>exossom</code> e <code>exosom</code> devolvem <strong>zero ocorrências</strong>. O que essa ausência significa — e o que ela não significa — está na seção sobre o Brasil.",
-  "trad": "In Brazil's open data on registered medicines, <code>exossom</code> and <code>exosom</code> return <strong>zero matches</strong>. What that absence means — and what it doesn't — is in the section about Brazil."
- },
- {
-  "pt": "Baixei o dado aberto de medicamentos registrados da ANVISA em 12 de setembro de 2026 e procurei <code>exossom</code> e <code>exosom</code>: <strong>zero ocorrências</strong>. Não há medicamento com exossomo registrado nessa base — e <strong>isso não fecha a pergunta</strong>, porque essa base não cobre <strong>Produto de Terapia Avançada</strong>, que tem registro separado sob a RDC 505/2021 — a mesma armadilha descrita em <a href=\"proprio_casgevy.html\">Casgevy</a>. Se algum exossomo foi protocolado como terapia avançada, não é ali que apareceria. <strong>NÃO VERIFIQUEI</strong> a lista de produtos de terapia avançada: a página oficial que deveria exibi-la não renderiza produto nenhum.",
-  "trad": "I downloaded Brazil's open data on registered medicines on September 12, 2026 and searched for <code>exossom</code> and <code>exosom</code>: <strong>zero matches</strong>. No medicine with an exosome is registered in that database — and <strong>that doesn't close the question</strong>, because that database doesn't cover <strong>Advanced Therapy Products</strong>, which have a separate registration under RDC 505/2021 — the same trap described under <a href=\"proprio_casgevy.html\">Casgevy</a>. If any exosome was filed as an advanced therapy, that's not where it would show up. <strong>I DIDN'T VERIFY</strong> the list of advanced therapy products: the official page that's supposed to display it doesn't render a single product."
- },
- {
-  "pt": "O que está verificado na ANVISA é o enquadramento, e ele é direto. Na página da agência sobre cosméticos para tratamentos estéticos, publicada em 16/11/2023: <em>“Produtos estéticos destinados a procedimentos injetáveis não podem ser regularizados como cosméticos.”</em> Injetável entra como medicamento ou produto para a saúde, e não existe cosmético injetável.",
-  "trad": "What's verified is the classification, and it's straightforward. On the regulator's page about cosmetics for aesthetic treatments, published on November 16, 2023: <em>\"Aesthetic products intended for injectable procedures cannot be regularized as cosmetics.\"</em> Injectable falls under medicine or health product, and there's no such thing as an injectable cosmetic."
- },
- {
-  "pt": "A mesma nota afirma que a ANVISA classifica exossomos como cosméticos, de uso restrito ao tópico. <strong>Registro isso como afirmação da SBD, não como ato que eu tenha lido.</strong> Procurei e não encontrei a resolução ou nota da ANVISA que diga isso sobre exossomos pelo nome — e não vou afirmar pela agência o que li na sociedade.",
-  "trad": "The same note states that the regulator classifies exosomes as cosmetics, restricted to topical use. <strong>I'm logging this as a claim made by the SBD, not as an act I read myself.</strong> I searched and didn't find the resolution or note from the regulator that says this about exosomes by name — and I won't assert on the regulator's behalf what I read in the society's note."
- },
- {
-  "pt": "<strong>Li resumos e registros, não artigos inteiros.</strong> As exceções são as páginas da FDA, da ANVISA e da SBD, que abri e li — e das quais as frases citadas são literais.",
-  "trad": "<strong>I read abstracts and records, not full articles.</strong> The exceptions are the FDA, Brazil's regulator, and SBD pages, which I opened and read — and the quoted sentences from them are verbatim."
- },
- {
-  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Cada número desta página foi levantado por mim em 12 de setembro de 2026 no PubMed, no ClinicalTrials.gov, na base de rótulos da FDA, no dado aberto da ANVISA e nas páginas da FDA, da ANVISA e da Sociedade Brasileira de Dermatologia, e a consulta usada está declarada acima. <strong>Esta página foi apurada em dia próprio</strong>, e por isso carrega data própria.",
-  "trad": "<strong>This page didn't come from the secondary source.</strong> Every number on this page was gathered by me on September 12, 2026 from PubMed, ClinicalTrials.gov, the FDA's label database, Brazil's open drug data, and the FDA, the Brazilian regulator, and the Brazilian Society of Dermatology pages, and the query used is stated above. <strong>This page was fact-checked on its own day</strong>, and that's why it carries its own date."
- },
- {
-  "pt": "ANVISA. Cosméticos para tratamentos estéticos, publicado em 16 de novembro de 2023 — “Produtos estéticos destinados a procedimentos injetáveis não podem ser regularizados como cosméticos”.",
-  "trad": "Brazil's regulator. Cosmetics for aesthetic treatments, published November 16, 2023 — \"Aesthetic products intended for injectable procedures cannot be regularized as cosmetics.\""
- },
- {
-  "pt": "<strong>O resmetiroma tem 487 artigos e 4 ensaios de fase 3</strong>, os dois maiores com 1.343 e 810 participantes, patrocínio da Madrigal. É a linha com mais evidência publicada do bloco de fígado — e mesmo assim não tem registro ativo na ANVISA.",
-  "trad": "<strong>Resmetirom has 487 articles and 4 phase 3 trials</strong>, the two largest with 1,343 and 810 participants, sponsored by Madrigal. It's the line with the most published evidence in the liver block — and even so it has no active registration in Brazil."
- },
- {
-  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 12 de setembro de 2026 — 43.508 linhas, contando apenas situação <strong>Ativo</strong>. A coluna de classe terapêutica é a que a própria base declara para o produto.",
-  "trad": "I looked up each active ingredient in <strong>Brazil's open data on registered medicines</strong>, downloaded on September 12, 2026 — 43,508 rows, counting only <strong>Active</strong> status. The therapeutic-class column is the one the dataset itself declares for the product."
- },
- {
-  "pt": "<strong>8 dos 13 princípios ativos buscados não têm registro ativo na ANVISA.</strong> Os que têm — sirolimo, metformina, canaquinumabe, dasatinibe, acarbose — têm para transplante, diabetes, doença autoinflamatória e leucemia. Nenhum tem para idade.",
-  "trad": "<strong>8 of the 13 active ingredients searched have no active registration in Brazil.</strong> The ones that do — sirolimus, metformin, canakinumab, dasatinib, acarbose — are registered for transplant, diabetes, autoinflammatory disease, and leukemia. None for aging."
- },
- {
-  "pt": "<strong>Atenção específica deste composto:</strong> Esta página não traz tabela de dose, e é deliberado. Nenhuma destas moléculas novas tem bula no Brasil, e dose de ensaio de fase 3 é dose de protocolo — com monitoramento, comitê de segurança e critério de interrupção. Não é posologia. A exceção são liraglutida e dulaglutida, que têm registro ativo na ANVISA e bula pública. Para essas duas, a fonte é a bula, e não este site.",
-  "trad": "<strong>Compound-specific note:</strong> This page carries no dose table, and that's deliberate. None of these new molecules has a package insert in Brazil, and a phase 3 trial dose is a protocol dose — with monitoring, a safety committee, and stopping criteria. It isn't a dosing regimen. The exception is liraglutide and dulaglutide, which have an active registration in Brazil and a public package insert. For those two, the source is the package insert, not this site."
+  "pt": "Dezoito tratamentos medidos na mesma régua: o minoxidil tem 23 registros ativos na ANVISA como antialopecia, e o PP405, que circula como pó de pesquisa, tem 1 artigo no PubMed",
+  "trad": "Eighteen treatments measured on the same yardstick: minoxidil has 23 active registrations as an anti-baldness treatment, and PP405, which circulates as a research powder, has 1 article on PubMed"
  },
  {
   "pt": "Nenhum número desta página veio da fonte secundária do site. Tudo foi levantado direto no PubMed, no ClinicalTrials.gov e no dado aberto de medicamentos registrados da ANVISA.",
-  "trad": "No number on this page came from the site's secondary source. Everything was gathered directly from PubMed, ClinicalTrials.gov, and Brazil's open data on registered medicines."
+  "trad": "No figure on this page came from the site's secondary source. Everything was gathered straight from PubMed, ClinicalTrials.gov, and the open data on registered medicines."
  },
  {
-  "pt": "<strong>9 das 11 com DCI publicada não têm nenhum registro ativo na ANVISA.</strong> As duas que têm são as antigas. Nenhuma das moléculas novas desta página está aprovada para uso no Brasil, em indicação nenhuma.",
-  "trad": "<strong>9 of the 11 with a published INN have no active registration in Brazil.</strong> The two that do are the older ones. None of the new molecules on this page is approved for use in Brazil, in any indication."
- },
- {
-  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 12 de setembro de 2026 — 43.508 linhas. A tabela conta apenas os registros com situação <strong>Ativo</strong> e lista os nomes de produto encontrados.",
-  "trad": "I looked up each active ingredient in <strong>Brazil's open data on registered medicines</strong>, downloaded on September 12, 2026 — 43,508 rows. The table counts only registrations with <strong>Active</strong> status and lists the product names found."
- },
- {
-  "pt": "Quatro blocos que este site tocava de raspão. Músculo e osso: apitegromabe (o anti-miostatina que é primo do bimagrumabe da página de anticorpos), romosozumabe, abaloparatida, palopegteriparatida, vosoritida. Melanocortina: setmelanotida e afamelanotida — os primos com bula do MT-2 e do PT-141. Eixo HPG: gonadorelina, hCG, enclomifeno, carbetocina — o contraste da kisspeptina de pesquisa. Imune: efgartigimode, tezepelumabe, IL-2 em dose baixa e imunofan, ao lado da TA-1. O que a tabela mostra é a diferença entre ter e não ter bula. 6 das 14 linhas buscadas têm registro ativo na ANVISA. As que não têm incluem justamente as que a comunidade mais discute: setmelanotida, afamelanotida, enclomifeno e apitegromabe.",
-  "trad": "Four blocks that this site had only touched in passing. Muscle and bone: apitegromab (the anti-myostatin that's a cousin of bimagrumab from the antibodies page), romosozumab, abaloparatide, palopegteriparatide, vosoritide. Melanocortin: setmelanotide and afamelanotide — the cousins with a package insert of MT-2 and PT-141. HPG axis: gonadorelin, hCG, enclomiphene, carbetocin — the contrast to research kisspeptin. Immune: efgartigimod, tezepelumab, low-dose IL-2, and Immunofan, alongside TA-1. What the table shows is the difference between having and not having a package insert. 6 of the 14 rows searched have an active registration in Brazil. The ones that don't include exactly the ones the community discusses most: setmelanotide, afamelanotide, enclomiphene, and apitegromab."
+  "pt": "<strong>Li resumos e registros, não artigos inteiros.</strong> As exceções são as páginas da FDA, da ANVISA e da SBD, que abri e li — e das quais as frases citadas são literais.",
+  "trad": "<strong>I read abstracts and study records, not full articles.</strong> The exceptions are the FDA and SBD pages, which I opened and read — and from which the quoted sentences are verbatim."
  },
  {
   "pt": "<strong>8 das 14 buscas voltam vazias na ANVISA.</strong> Entre elas, setmelanotida, afamelanotida, enclomifeno e apitegromabe — as quatro que aparecem em fórum como se fossem compráveis.",
-  "trad": "<strong>8 of the 14 searches come up empty in Brazil's registry.</strong> Among them, setmelanotide, afamelanotide, enclomiphene, and apitegromab — the four that show up in forums as if they were purchasable."
+  "trad": "<strong>8 of the 14 searches come up empty.</strong> Among them, setmelanotide, afamelanotide, enclomiphene, and apitegromab — the four that show up in forums as if they were purchasable."
  },
  {
-  "pt": "Treze linhas divididas em duas metades que não se parecem. De um lado, os nootrópicos do leste — noopept, fenilpiracetam, bromantano, cortexina — e os experimentais dihexa e P021. Do outro, o que tem bula: modafinila, esketamina, zuranolona, KarXT, e os dois anti-amiloides lecanemabe e donanemabe. A separação aparece numa coluna só. Os quatro do bloco russo somam 0 estudos registrados no ClinicalTrials.gov, apesar de somarem 435 artigos no PubMed. Já o lecanemabe e o donanemabe têm registro ativo na ANVISA — LEQEMBI e KISUNLA — nas classes de sistema nervoso e antidemência.",
-  "trad": "Thirteen rows split into two halves that don't look alike. On one side, the eastern-bloc nootropics — noopept, phenylpiracetam, bromantane, cortexin — and the experimental dihexa and P021. On the other, what has a package insert: modafinil, esketamine, zuranolone, KarXT, and the two anti-amyloids lecanemab and donanemab. The split shows up in a single column. The four from the Russian bloc add up to 0 studies registered on ClinicalTrials.gov, despite totaling 435 articles on PubMed. Lecanemab and donanemab, meanwhile, have an active registration in Brazil — LEQEMBI and KISUNLA — under the nervous-system and anti-dementia classes."
+  "pt": "Esta página não veio da fonte secundária que originou a maior parte deste site. Foi montada do zero, no PubMed, no ClinicalTrials.gov, na base de rótulos da FDA e no dado aberto da ANVISA.",
+  "trad": "This page did not come from the secondary source that most of this site is built on. It was built from scratch, using PubMed, ClinicalTrials.gov, the FDA's label database, and open data."
  },
  {
-  "pt": "Quatro ressalvas de método, escritas antes dos números. <strong>Uma:</strong> a busca do KarXT usa <code>xanomeline AND trospium</code>, os dois princípios ativos, porque é assim que o registro escreve. <strong>Duas:</strong> <code>\"P021\"</code> entre aspas devolve artigos que usam o código para outras coisas — o número é teto. <strong>Três:</strong> o único registro de fase 3 do XPro1595 que a busca devolve é de COVID-19, não de Alzheimer. <strong>Quatro:</strong> a esketamina aparece na ANVISA sob a grafia <code>ESCETAMINA</code>, que é a que a base usa.",
-  "trad": "Four method caveats, written before the numbers. <strong>One:</strong> the KarXT search uses <code>xanomeline AND trospium</code>, the two active ingredients, because that's how the registration is written. <strong>Two:</strong> <code>\"P021\"</code> in quotes returns articles that use the code for other things — the number is a ceiling. <strong>Three:</strong> the only phase 3 registration for XPro1595 that the search returns is for COVID-19, not Alzheimer's. <strong>Four:</strong> esketamine appears in Brazil's registry under the spelling <code>ESCETAMINA</code>, which is what the database uses."
+  "pt": "ANVISA. Cosméticos para tratamentos estéticos, publicado em 16 de novembro de 2023 — “Produtos estéticos destinados a procedimentos injetáveis não podem ser regularizados como cosméticos”.",
+  "trad": ""
  },
  {
-  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Todas as contagens desta página foram levantadas por mim em 12 de setembro de 2026, com a consulta declarada ao lado de cada número. Esta página não tem tabela da ANVISA porque procedimento não tem princípio ativo para procurar no dado aberto de medicamentos. <strong>Esta página foi apurada em dia próprio</strong>, e por isso carrega data própria.",
-  "trad": "<strong>This page didn't come from the secondary source.</strong> Every count on this page was gathered by me on September 12, 2026, with the query stated next to each number. This page has no Brazil-registration table because a procedure has no active ingredient to look up in the open drug data. <strong>This page was fact-checked on its own day</strong>, and that's why it carries its own date."
+  "pt": "<strong>A pirilutamida é o mesmo padrão, com patrocinador chinês.</strong> 1 artigo indexado, 2 ensaios de fase 3 com 756 e 740 participantes, patrocínio da Kintor. Nenhum registro ativo na ANVISA.",
+  "trad": "<strong>Pyrilutamide follows the same pattern, with a Chinese sponsor.</strong> 1 indexed article, 2 phase 3 trials with 756 and 740 participants, sponsored by Kintor. No active registration."
+ },
+ {
+  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 12 de setembro de 2026 — 43.508 linhas, contando apenas situação <strong>Ativo</strong>.",
+  "trad": "I searched every active ingredient in the <strong>open data on registered medicines</strong>, downloaded on September 12, 2026 — 43,508 rows, counting only <strong>Active</strong> status."
+ },
+ {
+  "pt": "Quinze moléculas que a conversa de peptídeo cita como se fossem equivalentes aos frascos de pesquisa — 6 das 14 buscadas têm registro ativo na ANVISA, com nome comercial e classe terapêutica declarada",
+  "trad": "Fifteen molecules that peptide chatter cites as though they were equivalent to research vials — 6 of the 14 searched have active registration, with a declared commercial name and therapeutic class"
+ },
+ {
+  "pt": "<strong>9 das 11 com DCI publicada não têm nenhum registro ativo na ANVISA.</strong> As duas que têm são as antigas. Nenhuma das moléculas novas desta página está aprovada para uso no Brasil, em indicação nenhuma.",
+  "trad": "<strong>9 of the 11 with a published INN have no active registration.</strong> The two that do are the older ones. None of the new molecules on this page are approved for use in Brazil, for any indication."
+ },
+ {
+  "pt": "No dado aberto de medicamentos registrados da ANVISA, <code>exossom</code> e <code>exosom</code> devolvem <strong>zero ocorrências</strong>. O que essa ausência significa — e o que ela não significa — está na seção sobre o Brasil.",
+  "trad": "In the open data on registered medicines, <code>exossom</code> and <code>exosom</code> return <strong>zero occurrences</strong>. What that absence means — and what it doesn't — is covered in the section about Brazil."
+ },
+ {
+  "pt": "O contrário do padrão do site: literatura de dezenas de artigos e <strong>ensaios de desfecho de até 17.300 participantes</strong> — os quatro maiores somam 46.047. E, das treze, <strong>só a inclisirana tem registro ativo na ANVISA</strong>",
+  "trad": "The opposite of the site's usual pattern: literature spanning dozens of articles and <strong>outcome trials of up to 17,300 participants</strong> — the four largest add up to 46,047. And, of the thirteen, <strong>only inclisiran has active registration</strong>"
+ },
+ {
+  "pt": "<strong>O resmetiroma tem 487 artigos e 4 ensaios de fase 3</strong>, os dois maiores com 1.343 e 810 participantes, patrocínio da Madrigal. É a linha com mais evidência publicada do bloco de fígado — e mesmo assim não tem registro ativo na ANVISA.",
+  "trad": "<strong>Resmetirom has 487 articles and 4 phase 3 trials,</strong> the two largest with 1,343 and 810 participants, sponsored by Madrigal. It's the line with the most published evidence in the liver block — and still has no active registration."
+ },
+ {
+  "pt": "<strong>8 dos 13 princípios ativos buscados não têm registro ativo na ANVISA.</strong> Os que têm — sirolimo, metformina, canaquinumabe, dasatinibe, acarbose — têm para transplante, diabetes, doença autoinflamatória e leucemia. Nenhum tem para idade.",
+  "trad": "<strong>8 of the 13 active ingredients searched have no active registration.</strong> The ones that do — sirolimus, metformin, canakinumab, dasatinib, acarbose — are for transplant, diabetes, autoinflammatory disease, and leukemia. None are for aging."
+ },
+ {
+  "pt": "<strong>GHRP-2 e hexarelina têm zero estudos registrados no ClinicalTrials.gov</strong>, com 256 e 313 artigos no PubMed. A molécula foi estudada; o tratamento, não. Do outro lado, a somatropina tem 183 ensaios de fase 3 e 9 registros ativos na ANVISA",
+  "trad": "<strong>GHRP-2 and hexarelin have zero registered studies on ClinicalTrials.gov,</strong> with 256 and 313 articles on PubMed. The molecule has been studied; the treatment hasn't. On the other side, somatropin has 183 phase 3 trials and 9 active registrations"
+ },
+ {
+  "pt": "Noopept, fenilpiracetam, bromantano e cortexina somam <strong>0 estudos registrados</strong> no ClinicalTrials.gov, apesar de somarem 435 artigos no PubMed. No mesmo levantamento, <strong>lecanemabe e donanemabe já têm registro ativo na ANVISA</strong>",
+  "trad": "Noopept, phenylpiracetam, bromantane, and cortexin together have <strong>0 registered studies</strong> on ClinicalTrials.gov, despite totaling 435 articles on PubMed. In the same survey, <strong>lecanemab and donanemab already have active registration</strong>"
+ },
+ {
+  "pt": "<strong>PP405 é o caso mais claro de nome vendido antes de existir.</strong> 1 artigo no PubMed, 1 estudo registrado, 0 de fase 3, e nenhum registro na base da ANVISA. Não existe produto: existe um programa de pesquisa, e um nome que já circula à venda.",
+  "trad": "<strong>PP405 is the clearest case of a name sold before it exists.</strong> 1 article on PubMed, 1 registered study, 0 phase 3, and no registration in the database. There's no product: there's a research program, and a name that's already circulating for sale."
+ },
+ {
+  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 12 de setembro de 2026 — 43.508 linhas, contando apenas situação <strong>Ativo</strong>. A coluna de classe terapêutica é a que a própria base declara.",
+  "trad": "I searched every active ingredient in the <strong>open data on registered medicines</strong>, downloaded on September 12, 2026 — 43,508 rows, counting only <strong>Active</strong> status. The therapeutic class column is the one the dataset itself declares."
+ },
+ {
+  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 12 de setembro de 2026 — 43.508 linhas. A tabela conta apenas os registros com situação <strong>Ativo</strong> e lista os nomes de produto encontrados.",
+  "trad": "I searched every active ingredient in the <strong>open data on registered medicines</strong>, downloaded on September 12, 2026 — 43,508 rows. The table counts only records with <strong>Active</strong> status and lists the product names found."
+ },
+ {
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 87 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "Filters the list of compounds on this page by text and by category. It changes nothing: it only changes which cards stay visible, and returns the count of what's left. The 86 compounds stay listed and linked on the page even without using the filter.",
+  "ajuste": {"87": "86"}
+ },
+ {
+  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 12 de setembro de 2026 — 43.508 linhas, contando apenas situação <strong>Ativo</strong>. A coluna de classe terapêutica é a que a própria base declara para o produto.",
+  "trad": "I searched every active ingredient in the <strong>open data on registered medicines</strong>, downloaded on September 12, 2026 — 43,508 rows, counting only <strong>Active</strong> status. The therapeutic class column is the one the dataset itself declares for the product."
+ },
+ {
+  "pt": "O ensaio testou doença rara; o frasco promete recomposição. <strong>Os 6 ensaios de fase 3 de afamelanotida que abri são de protoporfiria eritropoiética</strong>, e os de setmelanotida, de obesidade por variante genética. <strong>8 das 14 buscas voltam vazias na ANVISA</strong>",
+  "trad": "The trial tested a rare disease; the vial promises recomposition. <strong>The 6 phase 3 trials of afamelanotide that I opened are for erythropoietic protoporphyria,</strong> and the ones for setmelanotide are for genetic-variant obesity. <strong>8 of the 14 searches come up empty</strong>"
+ },
+ {
+  "pt": "<strong>A mecasermina é o IGF que existe como medicamento.</strong> 103 artigos, 37 estudos registrados, 8 de fase 3 — e nenhum registro ativo na ANVISA. O <a href=\"protocol_igf-1-lr3.html\">IGF-1 LR3</a>, que este site já marca como o de maior risco do grupo, é a versão sem nada disso.",
+  "trad": "<strong>Mecasermin is the IGF that exists as a drug.</strong> 103 articles, 37 registered studies, 8 phase 3 — and no active registration. The <a href=\"protocol_igf-1-lr3.html\">IGF-1 LR3</a>, which this site already flags as the riskiest of the group, is the version without any of that."
+ },
+ {
+  "pt": "<strong>A coluna não soma 179.</strong> Duas páginas são segundo corte dos mesmos compostos, não compostos novos: a de tamanho de efeito reanalisa 19 que já aparecem nas outras, e a de registro na ANVISA varre os 44 compostos de protocolo do site, que não são contados como material de fonte primária.",
+  "trad": "<strong>The column doesn't add up to 179.</strong> Two pages are a second cut of the same compounds, not new compounds: the effect-size one reanalyzes 19 that already appear in the others, and the registration one covers the site's 44 protocol compounds, which aren't counted as primary-source material."
+ },
+ {
+  "pt": "A mesma nota afirma que a ANVISA classifica exossomos como cosméticos, de uso restrito ao tópico. <strong>Registro isso como afirmação da SBD, não como ato que eu tenha lido.</strong> Procurei e não encontrei a resolução ou nota da ANVISA que diga isso sobre exossomos pelo nome — e não vou afirmar pela agência o que li na sociedade.",
+  "trad": ""
+ },
+ {
+  "pt": "A inversão entre literatura e desenvolvimento. O <strong>HRS-9531 tem 0 artigos no PubMed e 9 ensaios de fase 3 registrados</strong>; a liraglutida, que serve de régua, tem 5.909. Quem julga estas moléculas pela contagem de artigo conclui que metade não existe. <strong>9 das 11 com DCI publicada não têm registro ativo na ANVISA</strong>",
+  "trad": "The inversion between literature and development. <strong>HRS-9531 has 0 articles on PubMed and 9 registered phase 3 trials;</strong> liraglutide, which serves as the yardstick, has 5,909. Anyone who judges these molecules by article count concludes that half of them don't exist. <strong>9 of the 11 with a published INN have no active registration</strong>"
+ },
+ {
+  "pt": "O que está verificado na ANVISA é o enquadramento, e ele é direto. Na página da agência sobre cosméticos para tratamentos estéticos, publicada em 16/11/2023: <em>“Produtos estéticos destinados a procedimentos injetáveis não podem ser regularizados como cosméticos.”</em> Injetável entra como medicamento ou produto para a saúde, e não existe cosmético injetável.",
+  "trad": ""
  },
  {
   "pt": "<strong>Atenção específica deste composto:</strong> Nenhuma das cinco linhas tem registro ativo na ANVISA sob o nome buscado, e nenhuma tem apresentação injetável aprovada para reparo. O PDRN, que é o mais vendido em estética no Brasil, é o exemplo mais direto: classe não é registro — o que autoriza um frasco é nome comercial mais número de registro, não a sigla no rótulo.",
-  "trad": "<strong>Compound-specific note:</strong> None of the five rows has an active registration in Brazil under the searched name, and none has an approved injectable presentation for repair. PDRN, the best-selling one in aesthetics in Brazil, is the clearest example: class isn't registration — what authorizes a vial is a brand name plus a registration number, not the acronym on the label."
+  "trad": "<strong>Compound-specific note:</strong> None of the five lines have active registration under the name searched, and none have an approved injectable presentation for repair. PDRN, the best-selling one in aesthetics in Brazil, is the clearest example: class isn't registration — what authorizes a vial is a commercial name plus a registration number, not the acronym on the label."
+ },
+ {
+  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Todas as contagens desta página foram levantadas por mim em 12 de setembro de 2026, com a consulta declarada ao lado de cada número. Esta página não tem tabela da ANVISA porque procedimento não tem princípio ativo para procurar no dado aberto de medicamentos. <strong>Esta página foi apurada em dia próprio</strong>, e por isso carrega data própria.",
+  "trad": "<strong>This page did not come from the secondary source.</strong> Every count on this page was gathered by me on September 12, 2026, with the query declared next to each figure. This page has no table because a procedure has no active ingredient to look up in the open data on medicines. <strong>This page was fact-checked on its own day,</strong> and that's why it carries its own date."
+ },
+ {
+  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Cada número desta página foi levantado por mim em 12 de setembro de 2026 no PubMed, no ClinicalTrials.gov, na base de rótulos da FDA, no dado aberto da ANVISA e nas páginas da FDA, da ANVISA e da Sociedade Brasileira de Dermatologia, e a consulta usada está declarada acima. <strong>Esta página foi apurada em dia próprio</strong>, e por isso carrega data própria.",
+  "trad": "<strong>This page did not come from the secondary source.</strong> Every figure on this page was gathered by me on September 12, 2026 from PubMed, ClinicalTrials.gov, the FDA's label database, open data, and the FDA and Brazilian Society of Dermatology pages, and the query used is declared above. <strong>This page was fact-checked on its own day,</strong> and that's why it carries its own date."
+ },
+ {
+  "pt": "<strong>Atenção específica deste composto:</strong> Esta página não traz tabela de dose, e é deliberado. Nenhuma destas moléculas novas tem bula no Brasil, e dose de ensaio de fase 3 é dose de protocolo — com monitoramento, comitê de segurança e critério de interrupção. Não é posologia. A exceção são liraglutida e dulaglutida, que têm registro ativo na ANVISA e bula pública. Para essas duas, a fonte é a bula, e não este site.",
+  "trad": "<strong>Compound-specific note:</strong> This page doesn't include a dose table, and that's deliberate. None of these new molecules have a package insert in Brazil, and a phase 3 trial dose is a protocol dose — with monitoring, a safety committee, and stopping criteria. It isn't a dosing regimen. The exception is liraglutide and dulaglutide, which have active registration and a public package insert. For those two, the source is the package insert, not this site."
+ },
+ {
+  "pt": "<strong>Esta página não veio da fonte secundária.</strong> Todas as contagens desta página foram levantadas por mim em 12 de setembro de 2026, com a consulta declarada ao lado de cada número. As indicações citadas vêm da classe terapêutica declarada no dado aberto da ANVISA e do campo de condição dos registros de fase 3 — não de bula lida por mim, e a página não afirma mais do que isso. <strong>Esta página foi apurada em dia próprio</strong>, e por isso carrega data própria.",
+  "trad": "<strong>This page did not come from the secondary source.</strong> Every count on this page was gathered by me on September 12, 2026, with the query declared next to each figure. The indications cited come from the therapeutic class declared in the open data and from the condition field of phase 3 registrations — not from a package insert I read, and the page doesn't claim more than that. <strong>This page was fact-checked on its own day,</strong> and that's why it carries its own date."
+ },
+ {
+  "pt": "Quatro ressalvas de método, escritas antes dos números. <strong>Uma:</strong> a busca do KarXT usa <code>xanomeline AND trospium</code>, os dois princípios ativos, porque é assim que o registro escreve. <strong>Duas:</strong> <code>\"P021\"</code> entre aspas devolve artigos que usam o código para outras coisas — o número é teto. <strong>Três:</strong> o único registro de fase 3 do XPro1595 que a busca devolve é de COVID-19, não de Alzheimer. <strong>Quatro:</strong> a esketamina aparece na ANVISA sob a grafia <code>ESCETAMINA</code>, que é a que a base usa.",
+  "trad": "Four methodological caveats, written before the numbers. <strong>One:</strong> the KarXT search uses <code>xanomeline AND trospium</code>, the two active ingredients, because that's how the registration is written. <strong>Two:</strong> <code>\"P021\"</code> in quotes returns articles that use the code for other things — the number is a ceiling. <strong>Three:</strong> the only phase 3 registration for XPro1595 that the search returns is for COVID-19, not Alzheimer's. <strong>Four:</strong> esketamine appears under the spelling <code>ESCETAMINA</code>, which is the one the database uses."
+ },
+ {
+  "pt": "Treze linhas divididas em duas metades que não se parecem. De um lado, os nootrópicos do leste — noopept, fenilpiracetam, bromantano, cortexina — e os experimentais dihexa e P021. Do outro, o que tem bula: modafinila, esketamina, zuranolona, KarXT, e os dois anti-amiloides lecanemabe e donanemabe. A separação aparece numa coluna só. Os quatro do bloco russo somam 0 estudos registrados no ClinicalTrials.gov, apesar de somarem 435 artigos no PubMed. Já o lecanemabe e o donanemabe têm registro ativo na ANVISA — LEQEMBI e KISUNLA — nas classes de sistema nervoso e antidemência.",
+  "trad": "Thirteen lines split into two halves that don't look alike. On one side, the nootropics from the East — noopept, phenylpiracetam, bromantane, cortexin — and the experimental dihexa and P021. On the other, the ones with a package insert: modafinil, esketamine, zuranolone, KarXT, and the two anti-amyloids lecanemab and donanemab. The split shows up in a single column. The four from the Russian bloc total 0 registered studies on ClinicalTrials.gov, despite totaling 435 articles on PubMed. Already, lecanemab and donanemab have active registration — LEQEMBI and KISUNLA — in the nervous system and anti-dementia classes."
+ },
+ {
+  "pt": "Baixei o dado aberto de medicamentos registrados da ANVISA em 12 de setembro de 2026 e procurei <code>exossom</code> e <code>exosom</code>: <strong>zero ocorrências</strong>. Não há medicamento com exossomo registrado nessa base — e <strong>isso não fecha a pergunta</strong>, porque essa base não cobre <strong>Produto de Terapia Avançada</strong>, que tem registro separado sob a RDC 505/2021 — a mesma armadilha descrita em <a href=\"proprio_casgevy.html\">Casgevy</a>. Se algum exossomo foi protocolado como terapia avançada, não é ali que apareceria. <strong>NÃO VERIFIQUEI</strong> a lista de produtos de terapia avançada: a página oficial que deveria exibi-la não renderiza produto nenhum.",
+  "trad": "I downloaded the open data on registered medicines on September 12, 2026 and searched for <code>exossom</code> and <code>exosom</code>: <strong>zero occurrences</strong>. There is no medicine with a registered exosome in that dataset — and <strong>that doesn't close the question</strong>, because that dataset doesn't cover <strong>Advanced Therapy Products</strong>, which have separate registration under RDC 505/2021 — the same trap described in <a href=\"proprio_casgevy.html\">Casgevy</a>. If any exosome was filed as an advanced therapy, that's not where it would show up. <strong>I DID NOT VERIFY</strong> the list of advanced therapy products: the official page that's supposed to display it doesn't render a single product."
+ },
+ {
+  "pt": "Quatro blocos que este site tocava de raspão. Músculo e osso: apitegromabe (o anti-miostatina que é primo do bimagrumabe da página de anticorpos), romosozumabe, abaloparatida, palopegteriparatida, vosoritida. Melanocortina: setmelanotida e afamelanotida — os primos com bula do MT-2 e do PT-141. Eixo HPG: gonadorelina, hCG, enclomifeno, carbetocina — o contraste da kisspeptina de pesquisa. Imune: efgartigimode, tezepelumabe, IL-2 em dose baixa e imunofan, ao lado da TA-1. O que a tabela mostra é a diferença entre ter e não ter bula. 6 das 14 linhas buscadas têm registro ativo na ANVISA. As que não têm incluem justamente as que a comunidade mais discute: setmelanotida, afamelanotida, enclomifeno e apitegromabe.",
+  "trad": "Four groups this site only skimmed. Muscle and bone: apitegromab (the anti-myostatin cousin of bimagrumab from the antibodies page), romosozumab, abaloparatide, palopegteriparatide, vosoritide. Melanocortin: setmelanotide and afamelanotide — the cousins with a package insert of MT-2 and PT-141. HPG axis: gonadorelin, hCG, enclomiphene, carbetocin — the contrast to research kisspeptin. Immune: efgartigimod, tezepelumab, low-dose IL-2, and immunofan, alongside TA-1. What the table shows is the difference between having and not having a package insert. 6 of the 14 lines searched have active registration. The ones that don't include exactly the ones the community discusses the most: setmelanotide, afamelanotide, enclomiphene, and apitegromab."
+ },
+ {
+  "pt": "87 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 30 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "86 compounds and combinations — from peptides to <a href=\"p/proprio_nootropicos.html\">nootropics</a>, SARMs, and what exists registered in Brazil —, with dose, reconstitution, cycle structure, and regulatory status. Each page separates what a published trial tested from what is merely community-reported practice, because the difference between the two is the whole subject. In 29 of them the figures did not come from a secondary source: they were checked against <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, and the package insert — with the query declared on each page, for you to repeat and contradict me.",
+  "ajuste": {"87": "86", "30": "29"}
+ },
+ {
+  "pt": "<strong>Atenção específica deste composto:</strong> Não existe cosmético injetável no Brasil: a ANVISA diz, na página de cosméticos para tratamentos estéticos, que produto estético destinado a procedimento injetável não pode ser regularizado como cosmético. A Sociedade Brasileira de Dermatologia foi além e disse pelo nome, em nota técnica de setembro de 2024, que exossomos não podem ser aplicados em terapia injetável independentemente da técnica, da indicação, da competência do prescritor ou da qualidade do produto. E a razão pela qual esta página não traz tabela de dose é a mesma que torna o produto incomparável: dose de exossomo é anunciada em contagem de partículas, em micrograma de proteína, em mililitro ou em “frascos”, cada laboratório medindo pelo método que escolheu.",
+  "trad": "<strong>Compound-specific note:</strong> There's no such thing as an injectable cosmetic in Brazil: an aesthetic product intended for an injectable procedure cannot be regularized as a cosmetic. The Brazilian Society of Dermatology went further and said by name, in a technical note from September 2024, that exosomes cannot be applied in injectable therapy regardless of technique, indication, prescriber competence, or product quality. And the reason this page doesn't have a dose table is the same one that makes the product incomparable: exosome dose is advertised in particle count, in micrograms of protein, in milliliters, or in “vials,” with each lab measuring by whatever method it chose."
+ },
+ {
+  "pt": "Este site já cobre sete compostos do eixo do hormônio do crescimento: CJC-1295 com e sem DAC, GHRP-6, ipamorelina, sermorelina, tesamorelina e IGF-1 LR3. Faltavam os que aparecem na mesma conversa e não são peptídeo injetável de pesquisa — o secretagogo oral MK-677, os primos do GHRP-6 (GHRP-2 e hexarelina), o hormônio recombinante inteiro e as duas formulações de IGF que têm nome farmacêutico. O contraste é o assunto da página. A somatropina — o GH recombinante, o produto com bula — tem 54.472 artigos no PubMed, 817 estudos registrados, 183 deles de fase 3, e 9 registros ativos na ANVISA. O GHRP-2 e a hexarelina, que a comunidade discute como se fossem alternativas, têm zero estudos registrados no ClinicalTrials.gov. Não é pouca evidência: é nenhuma, na base onde ensaio se registra.",
+  "trad": "This site already covers seven compounds from the growth hormone axis: CJC-1295 with and without DAC, GHRP-6, ipamorelin, sermorelin, tesamorelin, and IGF-1 LR3. Missing were the ones that come up in the same conversation and aren't a research injectable peptide — the oral secretagogue MK-677, GHRP-6's cousins (GHRP-2 and hexarelin), the whole recombinant hormone, and the two IGF formulations that have a pharmaceutical name. The contrast is what the page is about. Somatropin — recombinant GH, the product with a package insert — has 54,472 articles on PubMed, 817 registered studies, 183 of them phase 3, and 9 active registrations. GHRP-2 and hexarelin, which the community discusses as if they were alternatives, have zero registered studies on ClinicalTrials.gov. That's not scant evidence: it's none, where trials get registered."
  }
 ]
