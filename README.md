@@ -2,13 +2,13 @@
 
 Referência em português sobre peptídeos, nootrópicos, SARMs e compostos correlatos: dose, titulação, reconstituição, estrutura de ciclo e status regulatório, com o limite da evidência marcado em cada página.
 
-O repositório e a URL guardam o nome antigo, `protocolos-peptideos` — renomear quebraria todo link já publicado. O site cobre mais que peptídeos desde setembro de 2026.
+O repositório guarda o nome antigo, `protocolos-peptideos`. Desde 14 de setembro de 2026 o site mora em `peptisonar.com`; o endereço antigo `protocolos-peptideos.github.io` redireciona para ele, com o mesmo caminho, então link já publicado continua funcionando. O site cobre mais que peptídeos desde setembro de 2026.
 
 **87 compostos e combinações · 424 tabelas de dose · 90 páginas estáticas.**
 
 Contagens da última execução do gerador, em 12 de setembro de 2026. Ele as imprime a cada rodada — se divergirem daqui, o gerador é que está certo.
 
-### ▶ [protocolos-peptideos.github.io](https://protocolos-peptideos.github.io/)
+### ▶ [peptisonar.com](https://peptisonar.com/)
 
 Publicado por GitHub Pages a partir deste repositório.
 

@@ -1,7 +1,7 @@
 # Instruções para traduzir uma parte da fila
 
 Você está traduzindo trechos de um site brasileiro de referência sobre peptídeos,
-nootrópicos, SARMs e correlatos (`protocolos-peptideos.github.io`). O site separa
+nootrópicos, SARMs e correlatos (`peptisonar.com`). O site separa
 o que ensaio publicado testou do que é prática relatada por comunidade, e cada
 número dele é conferível. A tradução tem que preservar isso ao pé da letra.
 

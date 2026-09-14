@@ -192,7 +192,7 @@ def traduz_tabela(t):
 
 
 # ----------------------------------------------------------------- blocos
-BASE = 'https://protocolos-peptideos.github.io'
+BASE = 'https://peptisonar.com'
 
 _CACHE_DATA = {}   # caminho -> data de commit, para nao chamar git 79 vezes
 

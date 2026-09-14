@@ -48,7 +48,7 @@ from collections import Counter
 from html.parser import HTMLParser
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = 'https://protocolos-peptideos.github.io'
+BASE = 'https://peptisonar.com'
 PASTA = os.path.join(RAIZ, 'build', 'traducoes')
 
 # Separadores numericos por idioma. E o que a trava usa para ler "1,125 mL"
