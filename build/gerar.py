@@ -802,7 +802,6 @@ def gera_composto(item):
 
     p.append('<h2 id="limites">Limites da evidência</h2>')
     p.append('<div class="nota"><strong>O que estes números são e o que não são.</strong> Os valores acima foram preservados exatamente como aparecem na fonte, sem reinterpretação. O que a fonte descreve como prática de comunidade está marcado assim nas tabelas; o que veio de ensaio publicado também. Uma dose repetida por muita gente não vira dose validada por repetição.</div>')
-    p.append(f'<p>Fonte dos dados: <a href="{FONTE}" rel="nofollow noopener" target="_blank">peptidedosingprotocols.com</a>, acesso em {HOJE}. Tradução e organização em português são autorais. Nenhuma fonte primária (PubMed, registro de ensaio, bula) foi conferida na montagem desta página — a checagem foi contra a fonte secundária, e só.</p>')
     p.append(f'<p><a href="../index.html">&larr; Voltar para todos os compostos</a></p>')
 
     p.append('</main>\n</div>')
@@ -919,7 +918,7 @@ def gera_sobre(stats):
 <p>Compilado em {HOJE}, cobrindo {stats['n']} compostos e combinações. Protocolo de peptídeo muda rápido, e o status regulatório muda mais rápido ainda — várias datas de Categoria 2 da FDA citadas aqui têm revisão marcada para 2026. Confira antes de tratar qualquer status como atual.</p>
 
 <h2>Outros idiomas</h2>
-<p>O site existe também em inglês, espanhol, alemão, francês e japonês, pelo seletor no alto de cada página. Essas versões são traduzidas do português com auxílio de IA, trecho a trecho, e cada trecho só entra na página depois de passar por uma trava mecânica: os números têm de ser os mesmos do original, respeitado o separador decimal de cada idioma; as tags, os links e as consultas de banco de dados têm de ser idênticos. Trecho que não passa não é publicado — fica em português, marcado como tal. Nenhuma dessas versões foi revisada por tradutor humano. <strong>A versão em português é a de referência.</strong></p>
+<p>O site existe também em inglês, espanhol, alemão, francês, japonês e chinês, pelo seletor no alto de cada página. Essas versões são traduzidas do português com auxílio de IA, trecho a trecho, e cada trecho só entra na página depois de passar por uma trava mecânica: os números têm de ser os mesmos do original, respeitado o separador decimal de cada idioma; as tags, os links e as consultas de banco de dados têm de ser idênticos. Trecho que não passa não é publicado — fica em português, marcado como tal. Nenhuma dessas versões foi revisada por tradutor humano. <strong>A versão em português é a de referência.</strong></p>
 """)
     p.append('</div>\n</main>')
     p.append(rodape(""))

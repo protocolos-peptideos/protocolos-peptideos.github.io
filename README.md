@@ -58,7 +58,7 @@ build/gerar.py        gerador estático
 build/compostos.py    metadados PT-BR de cada composto (autoral)
 build/fatos.py        faixa de referência rápida por composto (autoral)
 build/dicionario*.py  dicionário EN→PT-BR das células de tabela
-build/idiomas.py      versões em en/ es/ de/ fr/ ja/, geradas do HTML em português
+build/idiomas.py      versões em en/ es/ de/ fr/ ja/ zh/, geradas do HTML em português
 build/traducoes/      memória de tradução por idioma (<idioma>.json) e o briefing dos tradutores
 build/datas.py        as duas datas do site, num lugar só
 build/trava_datas.py  trava que impede data cravada ou tirada do relógio
@@ -130,7 +130,7 @@ Ele distingue busca por condição de busca por intervenção no ClinicalTrials.
 
 ## Outros idiomas
 
-O site sai também em `/en/`, `/es/`, `/de/`, `/fr/` e `/ja/`, com a mesma estrutura da raiz e um seletor no cabeçalho. **A versão em português é a de referência**, e a página Sobre de cada idioma diz isso. As páginas traduzidas não trazem aviso de tradução no topo, por decisão de 10/09/2026.
+O site sai também em `/en/`, `/es/`, `/de/`, `/fr/`, `/ja/` e `/zh/` (chinês simplificado), com a mesma estrutura da raiz e um seletor no cabeçalho. **A versão em português é a de referência**, e a página Sobre de cada idioma diz isso. As páginas traduzidas não trazem aviso de tradução no topo, por decisão de 10/09/2026.
 
 **A ANVISA só aparece em português** (decisão de 10/09/2026). A página "O que existe no Brasil" não tem versão traduzida, nem seletor de idioma, nem alternates no sitemap. Nas outras versões, os selos e o filtro de registro do índice saem, a linha "No Brasil" de cada composto sai, e todo trecho que cita a ANVISA passa por `build/traducoes/sem-anvisa/<idioma>.json`, que o reescreve sem a agência ou o retira. Essa camada tem trava própria: a versão nova só pode **tirar** número, tag ou link da tradução que já passou na trava principal; a única troca de número aceita é a contagem do índice (76→75 compostos, 19→18 páginas aferidas), porque a página da ANVISA sai. Trecho novo em português que cite a ANVISA e ainda não tenha versão nessa camada é retirado das traduções, e o gerador avisa.
 

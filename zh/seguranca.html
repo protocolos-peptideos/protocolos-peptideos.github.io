@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>安全性与边界 — Protocolos</title>
+<meta name="description" content="本参考是什么、不是什么，以及那些不出现在剂量表里的风险。">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="安全性与边界 — Protocolos">
+<meta property="og:description" content="本参考是什么、不是什么，以及那些不出现在剂量表里的风险。">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://peptisonar.com/zh/seguranca.html">
+<link rel="alternate" hreflang="pt-BR" href="https://peptisonar.com/seguranca.html">
+<link rel="alternate" hreflang="en" href="https://peptisonar.com/en/seguranca.html">
+<link rel="alternate" hreflang="es" href="https://peptisonar.com/es/seguranca.html">
+<link rel="alternate" hreflang="de" href="https://peptisonar.com/de/seguranca.html">
+<link rel="alternate" hreflang="fr" href="https://peptisonar.com/fr/seguranca.html">
+<link rel="alternate" hreflang="ja" href="https://peptisonar.com/ja/seguranca.html">
+<link rel="alternate" hreflang="zh" href="https://peptisonar.com/zh/seguranca.html">
+<link rel="alternate" hreflang="x-default" href="https://peptisonar.com/seguranca.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "安全性与边界 — Protocolos",
+  "description": "本参考是什么、不是什么，以及那些不出现在剂量表里的风险。",
+  "url": "https://peptisonar.com/zh/seguranca.html",
+  "inLanguage": "zh",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Protocolos",
+    "url": "https://peptisonar.com"
+  },
+  "dateModified": "2026-09-14"
+}
+</script>
+<link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fontes/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face {
+font-family: 'Fraunces';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/fraunces-latin-ext.woff2) format('woff2');
+unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'Fraunces';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/fraunces-latin.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/inter-greek.woff2) format('woff2');
+unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/inter-latin-ext.woff2) format('woff2');
+unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/inter-latin.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'JetBrains Mono';
+font-style: normal;
+font-weight: 400 500;
+font-display: swap;
+src: url(../assets/fontes/jetbrains-mono-greek.woff2) format('woff2');
+unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+font-family: 'JetBrains Mono';
+font-style: normal;
+font-weight: 400 500;
+font-display: swap;
+src: url(../assets/fontes/jetbrains-mono-latin-ext.woff2) format('woff2');
+unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'JetBrains Mono';
+font-style: normal;
+font-weight: 400 500;
+font-display: swap;
+src: url(../assets/fontes/jetbrains-mono-latin.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+:root { color-scheme: dark; --tinta: #08090B; --fundo: #0B0D11; --superficie: #111419; --superficie-2: #161A21; --superficie-3: #1D222B; --linha: #232833; --linha-forte: #2F3643; --texto: #E8EAED; --texto-suave: #A8B0BC; --texto-fraco: #7D8593; --cobre: #D08A4A; --cobre-claro: #E8A972; --cobre-fundo: rgba(208, 138, 74, 0.10); --cobre-borda: rgba(208, 138, 74, 0.28); --alerta: #E5674B; --alerta-fundo: rgba(229, 103, 75, 0.10); --alerta-borda: rgba(229, 103, 75, 0.30); --ok: #4FB08A; --ok-fundo: rgba(79, 176, 138, 0.10); --ok-borda: rgba(79, 176, 138, 0.28); --atencao: #D9B44A; --atencao-fundo: rgba(217, 180, 74, 0.10); --aferido: #B8C9DC; --aferido-rasa: rgba(184, 201, 220, 0.55); --display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif; --corpo: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; --largura: 1440px; --raio: 14px; --raio-sm: 9px; }
+* { box-sizing: border-box; }
+h1, h2, h3, .display { font-optical-sizing: auto; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0px; background: var(--fundo); color: var(--texto); font-family: var(--corpo); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; }
+body::before { content: ""; position: fixed; inset: 0px 0px auto; height: 520px; background: radial-gradient(900px 380px at 18% -8%, rgba(208, 138, 74, 0.1), transparent 62%), radial-gradient(700px 320px at 88% -14%, rgba(79, 128, 176, 0.08), transparent 60%); pointer-events: none; z-index: 0; }
+.env { position: relative; z-index: 1; }
+a { color: var(--cobre-claro); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pular { position: absolute; left: -9999px; top: 0px; background: var(--cobre); color: rgb(20, 16, 12); padding: 10px 18px; border-radius: 0 0 var(--raio-sm) 0; font-weight: 600; z-index: 999; }
+.pular:focus { left: 0px; }
+.cabecalho { position: sticky; top: 0px; z-index: 50; background: rgba(11, 13, 17, 0.86); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--linha); }
+.cabecalho-in { max-width: var(--largura); margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; gap: 28px; }
+.marca { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-size: 19px; font-weight: 600; color: var(--texto); letter-spacing: -0.01em; white-space: nowrap; }
+.marca:hover { text-decoration: none; }
+.marca-icone { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(140deg, var(--cobre), #8E5A2E); display: grid; place-items: center; font-family: var(--corpo); font-size: 14px; font-weight: 700; color: rgb(22, 16, 10); box-shadow: 0 0 0 1px var(--cobre-borda), 0 4px 14px rgba(208, 138, 74, 0.18); }
+.nav { display: flex; gap: 22px; margin-left: auto; font-size: 14.5px; }
+.nav a { color: var(--texto-suave); font-weight: 500; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--cobre-claro); text-decoration: none; }
+.idiomas { display: flex; gap: 9px; font-size: 12px; letter-spacing: 0.06em; font-weight: 600; }
+.idiomas a { color: var(--texto-fraco); padding: 3px 5px; border-radius: 6px; border: 1px solid transparent; line-height: 1; }
+.idiomas a:hover { color: var(--texto); text-decoration: none; }
+.idiomas a[aria-current="true"] { color: var(--cobre-claro); border-color: var(--cobre-borda); background: var(--cobre-fundo); }
+:lang(ja) { --display: 'Fraunces', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; --corpo: 'Inter', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; }
+.env-largo { max-width: var(--largura); margin: 0px auto; padding: 0px 24px; }
+.hero { padding: 76px 0px 52px; }
+.hero-sobre { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cobre-claro); border: 1px solid var(--cobre-borda); background: var(--cobre-fundo); padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; }
+.hero h1 { font-family: var(--display); font-weight: 600; font-size: clamp(38px, 6.2vw, 68px); line-height: 1.03; letter-spacing: -0.028em; margin: 0px 0px 22px; max-width: 17ch; }
+.hero h1 em { font-style: italic; color: var(--cobre-claro); }
+.hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
+.hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
+.hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
+.procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
+.proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
+.procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
+.proc-lado b { display: block; font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; margin-bottom: 10px; }
+.procedencia-resumo .proc-aferida b { color: var(--aferido); }
+.procedencia-resumo .proc-transportada b { font-family: var(--mono); font-size: 31px; color: var(--texto-suave); }
+.proc-lado span { display: block; font-size: 14px; line-height: 1.6; color: var(--texto-suave); }
+.proc-lado strong { color: var(--texto); font-weight: 600; }
+table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabular-nums; }
+.pagina { max-width: var(--largura); margin: 0px auto; padding: 0px 24px; display: grid; grid-template-columns: 232px minmax(0px, 1fr); gap: 52px; align-items: start; }
+.trilha { position: sticky; top: 92px; padding: 42px 0px; }
+.trilha-titulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.13em; color: var(--texto-fraco); font-weight: 700; margin: 0px 0px 14px; }
+.trilha ol { list-style: none; margin: 0px; padding: 0px; }
+.trilha li { margin: 0px 0px 2px; }
+.trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
+.trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
+.conteudo { padding: 42px 0px 96px; min-width: 0px; }
+.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
+.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
+.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
+.aviso p:last-child { margin-bottom: 0px; }
+.aviso-linha { border-top-color: ; border-top-style: ; border-top-width: ; border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: var(--atencao-fundo); border-left: 3px solid var(--atencao); border-radius: 0 var(--raio-sm) var(--raio-sm) 0; padding: 13px 18px; margin: 22px 0px; font-size: 14.5px; color: var(--texto-suave); }
+.aviso-linha strong { color: var(--atencao); }
+.selo { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; white-space: nowrap; border: 1px solid transparent; }
+.selo-nao { background: var(--alerta-fundo); color: rgb(238, 143, 121); border-color: var(--alerta-borda); }
+.selo-cat { background: var(--superficie-3); color: var(--texto-suave); border-color: var(--linha-forte); }
+.artigo-cabeca { margin-bottom: 34px; }
+.migalha { font-size: 13px; color: var(--texto-fraco); margin-bottom: 16px; }
+.migalha a { color: var(--texto-fraco); }
+.migalha a:hover { color: var(--cobre-claro); }
+.artigo-cabeca h1 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.026em; margin: 0px 0px 14px; }
+.artigo-sub { font-size: 17.5px; color: var(--texto-suave); margin: 0px 0px 20px; max-width: 66ch; line-height: 1.6; }
+.artigo-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+.conteudo h2 { font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: -0.018em; margin: 52px 0px 16px; padding-top: 26px; border-top: 1px solid var(--linha); }
+.conteudo h2:first-of-type { border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
+.conteudo strong { color: var(--texto); font-weight: 600; }
+.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
+.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
+.conteudo > p:first-of-type { font-size: 17px; color: var(--texto); }
+.tabela-env { margin: 24px 0px 32px; border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; background: var(--superficie); }
+.tabela-rolagem { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+thead th { text-align: left; padding: 12px 20px; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--texto-fraco); font-weight: 700; border-bottom: 1px solid var(--linha-forte); white-space: normal; hyphens: none; }
+tbody td { padding: 13px 20px; border-bottom: 1px solid var(--linha); color: var(--texto-suave); vertical-align: top; line-height: 1.5; }
+tbody tr:hover td { background: rgba(255, 255, 255, 0.016); }
+tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowrap; }
+.tabela-env { position: relative; }
+.proc-aferida .tabela-env { border-left: 3px solid var(--aferido-rasa); }
+.proc-aferida tbody td strong { font-family: var(--display); font-weight: 600; font-size: 1.06em; letter-spacing: -0.005em; color: var(--aferido); }
+.proc-aferida thead th { border-bottom-color: var(--aferido-rasa); }
+.proc-aferida tbody td { padding: 15px 20px; }
+.tabela-rolagem { overflow-x: auto; background: linear-gradient(to right, var(--superficie) 30%, rgba(17, 20, 25, 0)) left center / 34px 100% no-repeat local,
+linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
+radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
+radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+.conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
+.conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
+.conteudo li { margin-bottom: 7px; }
+.nota-traducao { margin: 0px; padding: 9px 24px; font-size: 13px; line-height: 1.5; text-align: center; color: var(--texto-suave); background: var(--superficie); border-bottom: 1px solid var(--linha); }
+.nota-traducao a { color: var(--cobre-claro); }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.hero { padding: 48px 0px 34px; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.conteudo h2 { font-size: 23px; margin-top: 42px; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.env-largo, .pagina { padding: 0px 18px; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.nota-traducao { padding: 8px 16px; font-size: 12px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.hero { padding: 48px 0px 34px; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.nota-traducao { padding: 8px 16px; font-size: 12px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.conteudo h2 { font-size: 23px; margin-top: 42px; }
+}</style>
+<link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
+</head>
+<body class="">
+<a class="pular" href="#principal">跳至正文</a>
+<header class="cabecalho">
+  <div class="cabecalho-in">
+    <a class="marca" href="index.html">
+      <span class="marca-icone" aria-hidden="true">P</span>
+      <span>Protocolos</span>
+    </a>
+    <nav class="nav" aria-label="主要">
+      <a href="index.html">化合物</a>
+      <a href="evidencia.html">证据</a>
+      <a href="seguranca.html" aria-current="page">安全性</a>
+      <a href="sobre.html">关于本站</a>
+    </nav>
+    <nav class="idiomas" aria-label="语言">
+      <a href="/seguranca.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+      <a href="/en/seguranca.html" hreflang="en" lang="en">EN</a>
+      <a href="/es/seguranca.html" hreflang="es" lang="es">ES</a>
+      <a href="/de/seguranca.html" hreflang="de" lang="de">DE</a>
+      <a href="/fr/seguranca.html" hreflang="fr" lang="fr">FR</a>
+      <a href="/ja/seguranca.html" hreflang="ja" lang="ja">JA</a>
+      <a href="/zh/seguranca.html" hreflang="zh" lang="zh" aria-current="true">ZH</a>
+    </nav>
+  </div>
+</header>
+<div class="env">
+
+<main id="principal" tabindex="-1" class="env-largo" style="max-width:800px;padding-top:52px;padding-bottom:80px">
+<h1 style="font-family:var(--display);font-size:clamp(32px,4.6vw,44px);font-weight:600;letter-spacing:-.026em;margin:0 0 22px">安全性与边界</h1>
+<div class="aviso" role="note">
+  <div class="aviso-icone" aria-hidden="true">!</div>
+  <div>
+    <h2>实验性材料。在使用这里的任何东西之前请先阅读。</h2>
+    <p><strong>本页没有任何内容属于医疗建议、处方或治疗方案。</strong>这是对研究社群中流传的方案的整理翻译，以及在存在的情况下，已发表试验所测试过的内容。两者的标记方式不同 — 它们并不等价。</p>
+    <p>这里的大部分化合物<strong>没有获得 FDA 批准用于人体</strong>。其中不少以“仅供研究使用”的标签出售，这意味着它们没有经过供人摄入的纯度、无菌或含量管控。社群描述的剂量不是被验证过的剂量：它只是某个人报告自己那样做了。</p>
+    <p>在考虑使用其中任何一种化合物之前，请先与有资质的医疗专业人员谈一谈。如果你已经在用某一种，并且感到有预期之外的情况，请去就医 — 不要等下一次常规体检。</p>
+  </div>
+</div>
+<div class="conteudo" style="padding:0">
+
+<h2>不出现在剂量表里的那个风险</h2>
+<p>本参考的每一张表回答的都是“多少”这个问题。没有一张回答那三个通常会更早伤到人的问题：</p>
+<h3>1. 瓶子里装的是什么</h3>
+<p>带“仅供研究使用”标签的产品，没有针对人用的身份、纯度、无菌或内毒素管控。标签写着 10 mg；没有人保证它就是 10 mg，也没有人保证它是正确的化合物，更没有人保证它是无菌的。供应商的检测报告（COA）比什么都没有要好，但那是一份由卖方开具的文件。</p>
+<h3>2. 社群反复说的那个剂量</h3>
+<p>这里很大一部分数字来自社群报告。一个被一千个人引用过的剂量，仍然只是一个被重复了一千次的报告 — 它不会因为累积而变成证据。凡是有已发表试验的地方，本页会说明。凡是没有的地方，也会说明。</p>
+<h3>3. 与你已经在吃的东西的相互作用</h3>
+<p>这份清单上的多个化合物会动到血糖、血压、凝血或血清素信号。亚甲蓝配 SSRI 抗抑郁药是最直接的例子：那是血清素综合征的风险，不是不舒服。让一位能看到你完整用药清单的专业人员来处理，是唯一认真的办法。</p>
+
+<h2>需要停下并就医的情况</h2>
+<ul>
+  <li>持续的腹痛，尤其伴恶心或呕吐 — 用肠促胰素激动剂和 VIP 时要格外注意。</li>
+  <li>痣的任何变化：颜色、边缘、大小或出血。这尤其适用于 Melanotan II。</li>
+  <li>气短、单侧小腿肿胀、胸痛。</li>
+  <li>视觉改变、新出现且持续的头痛、意识模糊。</li>
+  <li>注射部位反应扩散、发热，或伴有发烧。</li>
+  <li>低血糖 — 震颤、冷汗、意识模糊。用 IGF-1 LR3 时尤其需要注意。</li>
+</ul>
+
+<h2>风险性质不同的人群</h2>
+<p>妊娠、哺乳、活动性癌症或肿瘤病史、肾病或肝病、正在使用抗凝药、正在治疗的精神科疾病，以及未成年人。本参考中的化合物没有一个有能支持在这些情况下使用的安全性数据，而其中数个在机制上就有令人担忧的理由 — 全身性生长信号是最清楚的例子。</p>
+
+<h2>在巴西的监管状况</h2>
+<p>本参考中被标为“未批准”的化合物，没有一个就所述用途有注册。司美格鲁肽、替尔泊肽和替莫瑞林在特定适应症上有注册，并且需要处方。把研究用产品进口供个人使用，并不会把它们变成药品 — 改变的只是谁承担风险。</p>
+
+<h2>本参考不做什么</h2>
+<ul>
+  <li>不指定供应商、商店或品牌。原始来源有商业链接；它们已被移除。</li>
+  <li>不为任何人推荐剂量、周期或组合。</li>
+  <li>没有核对过任何一手资料。核对只针对那份二手资料。</li>
+  <li>不能代替就诊、检查或处方。</li>
+</ul>
+
+</div>
+</main>
+</div>
+<footer class="rodape">
+  <div class="rodape-in">
+    <div>
+      <p class="rodape-titulo">Protocolos</p>
+      <p>关于肽、益智药、SARM 及相关化合物的中文参考：剂量、周期、监管状态，以及每一项证据的边界。教育性和实验性材料 — 不能代替医疗评估。</p>
+      <p style="margin-top:14px">编制于 2026 年 9 月 3 日。</p>
+    </div>
+    <nav aria-label="导航">
+      <p class="rodape-titulo">导航</p>
+      <ul>
+        <li><a href="index.html">全部化合物</a></li>
+        <li><a href="seguranca.html">安全性与边界</a></li>
+        <li><a href="sobre.html">关于本站、资料来源与方法</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="rodape-titulo">警示</p>
+      <ul>
+        <li>不构成医疗建议</li>
+        <li>未注册</li>
+        <li>实验性使用</li>
+        <li>社群报告的剂量 ≠ 已验证的剂量</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

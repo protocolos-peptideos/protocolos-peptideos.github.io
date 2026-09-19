@@ -80,6 +80,13 @@ IDIOMAS = {
                aviso='ポルトガル語の原文からAIの支援で翻訳しました。数値・用量・日付・参考文献は機械的に照合しましたが、'
                      '人間の翻訳者による校閲は行っていません。<a href="{pt}" hreflang="pt-BR" lang="pt-BR">'
                      'ポルトガル語版が正となります。</a>'),
+    # Chines simplificado (zh-Hans), a variante do continente e de Singapura,
+    # escolhida pelo Fernando em 18/09/2026. Separadores iguais aos do ingles e
+    # do japones: ponto decimal, virgula de milhar.
+    'zh': dict(nome='中文',       decimal='.', milhar=',',
+               aviso='在 AI 辅助下由葡萄牙语原文翻译。数字、剂量、日期和参考文献均经过机械校验，'
+                     '但文本未经人工译者审校。<a href="{pt}" hreflang="pt-BR" lang="pt-BR">'
+                     '以葡萄牙语版本为准。</a>'),
 }
 PT = dict(nome='Português', decimal=',', milhar='.')
 ORDEM = ['pt-BR'] + list(IDIOMAS)
@@ -165,6 +172,7 @@ MESES = {
     'de': 'januar februar märz april mai juni juli august september oktober november dezember'.split(),
     'fr': 'janvier février mars avril mai juin juillet août septembre octobre novembre décembre'.split(),
     'ja': [],
+    'zh': [],
 }
 MESES_PT = ('janeiro fevereiro março abril maio junho julho agosto setembro outubro novembro dezembro '
             'jan fev mar abr mai jun jul ago set out nov dez '
@@ -235,12 +243,12 @@ def valida(chave, trad, idioma):
         so_mes = (not sobra and falta
                   and all(v == int(v) and 1 <= v <= 12 for v in falta)
                   and meses >= len(falta))
-        # O caminho inverso, do japones: "14 de marco de 2024" vira
-        # "2024年3月14日", e o mes que era nome vira numero. Aceito so quando
+        # O caminho inverso, do japones e do chines: "14 de marco de 2024"
+        # vira "2024年3月14日", e o mes que era nome vira numero. Aceito so quando
         # o que sobrou sao inteiros de 1 a 12, em quantidade coberta pelos
         # nomes de mes do original em portugues.
         meses_pt = sum(len(re.findall(chr(92) + 'b' + m + chr(92) + 'b', chave, re.I)) for m in MESES_PT)
-        so_mes_ja = (idioma == 'ja' and not falta and sobra
+        so_mes_ja = (idioma in ('ja', 'zh') and not falta and sobra
                      and all(v == int(v) and 1 <= v <= 12 for v in sobra)
                      and meses_pt >= len(sobra))
         if not (so_mes or so_mes_ja):
@@ -279,13 +287,14 @@ def valida_sem(chave, orig, nova, idioma, ajuste=None):
             a[vf] += a[kf]
             del a[kf]
     sobra = numeros(nova, IDIOMAS[idioma]) - a
-    # Mesma tolerancia que a trava principal (valida) ja da ao japones, e por
+    # Mesma tolerancia que a trava principal (valida) ja da ao japones e ao chines, e por
     # engano faltava aqui: "12 de setembro de 2026" vira "2026年9月12日", e o
     # mes, que em portugues era nome, vira algarismo. Sem isto, 10 dos 46
     # trechos da camada sem ANVISA caiam em 12/09/2026 por causa de um "9" que
     # e o mes. Continua estreita: so passa se o que sobrou sao inteiros de 1 a
-    # 12, em quantidade coberta pelos nomes de mes do portugues de origem.
-    if sobra and idioma == 'ja':
+    # 12, em quantidade coberta pelos nomes de mes do portugues de origem. O
+    # chines entrou junto em 18/09/2026: escreve a data igual, "2026年9月12日".
+    if sobra and idioma in ('ja', 'zh'):
         meses_pt = sum(len(re.findall(chr(92) + 'b' + m + chr(92) + 'b', chave, re.I))
                        for m in MESES_PT)
         if (all(v == int(v) and 1 <= v <= 12 for v in sobra.elements())
