@@ -702,7 +702,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
    ela come o padding de cima e dos lados, e o aspect-ratio fixo reserva o
    espaço antes de a imagem chegar -- sem salto de layout no carregamento
    preguiçoso. O cartão aferido tem 20px de padding à esquerda, por causa da
-   borda de 3px, e a margem acompanha. */
+   borda de 3px, e a margem acompanha.
+   No topo do artigo, a figura tem teto de altura: em 3:2 na coluna larga ela
+   chegava a 622px e empurrava o aviso de segurança para fora da primeira
+   tela. Acima do teto, o object-fit corta em cima e embaixo. O teto acompanha
+   a janela (40vh) entre 240px e 360px; abaixo de 360px de largura útil a
+   figura nem chega nele, e o celular segue em 3:2 inteiro. */
 .card-com-fig { padding-top: 0; overflow: hidden; }
 .card-fig {
   display: block; width: calc(100% + 44px); max-width: none; height: auto;
@@ -713,6 +718,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .artigo-fig { margin: 0 0 30px; }
 .artigo-fig img {
   display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover;
+  max-height: clamp(240px, 40vh, 360px);
   border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta);
 }
 .artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
