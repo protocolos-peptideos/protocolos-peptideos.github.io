@@ -19,7 +19,7 @@
    build se sairem de sincronia. Sem essa trava o erro seria silencioso: a
    pagina pronta fica certa, so a primeira pintura fica errada.
 
-   estilo.css sha256[:16] = 89befefbb1b01e14 */
+   estilo.css sha256[:16] = 604322e7376616f8 */
 
 :root { color-scheme: dark; --tinta: #08090B; --fundo: #0B0D11; --superficie: #111419; --superficie-2: #161A21; --superficie-3: #1D222B; --linha: #232833; --linha-forte: #2F3643; --texto: #E8EAED; --texto-suave: #A8B0BC; --texto-fraco: #7D8593; --cobre: #D08A4A; --cobre-claro: #E8A972; --cobre-fundo: rgba(208, 138, 74, 0.10); --cobre-borda: rgba(208, 138, 74, 0.28); --alerta: #E5674B; --alerta-fundo: rgba(229, 103, 75, 0.10); --alerta-borda: rgba(229, 103, 75, 0.30); --ok: #4FB08A; --ok-fundo: rgba(79, 176, 138, 0.10); --ok-borda: rgba(79, 176, 138, 0.28); --atencao: #D9B44A; --atencao-fundo: rgba(217, 180, 74, 0.10); --aferido: #B8C9DC; --aferido-rasa: rgba(184, 201, 220, 0.55); --display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif; --corpo: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; --largura: 1440px; --raio: 14px; --raio-sm: 9px; }
 * { box-sizing: border-box; }
@@ -34,10 +34,10 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .pular:focus { left: 0px; }
 .cabecalho { position: sticky; top: 0px; z-index: 50; background: rgba(11, 13, 17, 0.86); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--linha); }
 .cabecalho-in { max-width: var(--largura); margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; gap: 6px 28px; flex-wrap: wrap; justify-content: flex-end; }
-.marca { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-size: 19px; font-weight: 600; color: var(--texto); letter-spacing: -0.01em; white-space: nowrap; }
+.marca { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-size: 19px; font-weight: 600; color: var(--texto); letter-spacing: -0.01em; white-space: nowrap; margin-right: auto; }
 .marca:hover { text-decoration: none; }
 .marca-icone { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(140deg, var(--cobre), #8E5A2E); display: grid; place-items: center; font-family: var(--corpo); font-size: 14px; font-weight: 700; color: rgb(22, 16, 10); box-shadow: 0 0 0 1px var(--cobre-borda), 0 4px 14px rgba(208, 138, 74, 0.18); }
-.nav { display: flex; gap: 22px; margin-left: auto; font-size: 14.5px; }
+.nav { display: flex; gap: 22px; font-size: 14.5px; }
 .nav a { color: var(--texto-suave); font-weight: 500; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--cobre-claro); text-decoration: none; }
 .idiomas { display: flex; gap: 9px; font-size: 12px; letter-spacing: 0.06em; font-weight: 600; }
@@ -70,7 +70,7 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .trilha li { margin: 0px 0px 2px; }
 .trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
 .trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
-.conteudo { padding: 42px 0px 96px; min-width: 0px; }
+.conteudo { padding: 42px 0px 96px; min-width: 0px; overflow-wrap: break-word; }
 .aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
 .aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
 .aviso p:first-of-type strong { color: rgb(242, 163, 141); }

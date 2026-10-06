@@ -141,8 +141,11 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* Marca, navegação e idiomas numa linha só precisam de 742px (chinês) a
    864px (espanhol). Abaixo disso o seletor vazava e criava rolagem lateral
    no tablet. Com wrap, ele desce para uma segunda linha só quando não cabe,
-   e o flex-end o alinha à direita, como no celular. Na primeira linha nada
-   muda: a margem automática da .nav absorve a sobra antes do flex-end. */
+   e o flex-end o alinha à direita, como no celular. A margem automática fica
+   na .marca, não na .nav: na linha da marca ela absorve a sobra (marca à
+   esquerda, resto à direita), e quando a marca fica sozinha na linha -- no
+   celular estreito, em que a navegação desce -- ela continua à esquerda. Com
+   a margem na .nav, o flex-end empurrava a marca sozinha para a direita. */
 .cabecalho-in {
   max-width: var(--largura); margin: 0 auto;
   padding: 14px 24px;
@@ -153,6 +156,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   display: flex; align-items: center; gap: 11px;
   font-family: var(--display); font-size: 19px; font-weight: 600;
   color: var(--texto); letter-spacing: -0.01em; white-space: nowrap;
+  margin-right: auto;
 }
 .marca:hover { text-decoration: none; }
 .marca-icone {
@@ -162,7 +166,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-family: var(--corpo); font-size: 14px; font-weight: 700; color: #16100A;
   box-shadow: 0 0 0 1px var(--cobre-borda), 0 4px 14px rgba(208, 138, 74, 0.18);
 }
-.nav { display: flex; gap: 22px; margin-left: auto; font-size: 14.5px; }
+.nav { display: flex; gap: 22px; font-size: 14.5px; }
 .nav a { color: var(--texto-suave); font-weight: 500; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--cobre-claro); text-decoration: none; }
 
@@ -209,7 +213,14 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
 
-.conteudo { padding: 42px 0 96px; min-width: 0; }
+/* overflow-wrap: sequência sem ponto de quebra que sozinha não cabe na
+   linha -- nome de arquivo, endereço, código -- quebra dentro da coluna em
+   vez de vazar. "DADOS_ABERTOS_MEDICAMENTOS.csv" nas referências criava
+   rolagem lateral a 320-340px; uma referência e um <code> de endereço já
+   invadiam a margem sem chegar a vazar. Palavra que cabe não muda: a regra
+   só age quando a sequência é maior que a linha inteira, e não mexe na
+   largura das colunas de tabela. */
+.conteudo { padding: 42px 0 96px; min-width: 0; overflow-wrap: break-word; }
 
 /* ------------------------------------------------------------------ aviso */
 .aviso {
