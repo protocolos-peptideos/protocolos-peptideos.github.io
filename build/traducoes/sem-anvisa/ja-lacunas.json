@@ -1,0 +1,78 @@
+[
+ {
+  "pt": "96 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 39 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "95の化合物と組み合わせ ― ペプチドから<a href=\"p/proprio_nootropicos.html\">ノートロピック</a>、SARM、そしてブラジルで登録されているものまで ― を、用量、溶解、サイクル構成、規制上のステータスとともに扱っています。各ページは、公表された試験が検証したことと、コミュニティ報告の実践にすぎないこととを分けています。この二つの違いこそが主題のすべてだからです。うち38ページでは、数字は二次資料からではなく、<a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>、<a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>、添付文書で確認したものです ― 各ページに検索式を明記しているので、あなたが再現して私に反論できます。",
+  "ajuste": {
+   "96": "95",
+   "39": "38"
+  }
+ },
+ {
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 96 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "このページの化合物リストをテキストとカテゴリで絞り込みます。何も変更しません ― どのカードが表示されるかが変わるだけで、残った件数を返します。フィルターを使わなくても、95の化合物はこのページに一覧・リンクされたままです。",
+  "ajuste": {
+   "96": "95"
+  }
+ },
+ {
+  "pt": "<strong>O filtro é atalho, não porta.</strong> Os 96 compostos estão listados e linkados abaixo, agrupados por seção — dá para chegar em qualquer um rolando a página, sem buscar.",
+  "trad": "<strong>フィルターは近道であって、入口ではありません。</strong> 95の化合物はすべて下にセクション別に一覧とリンクがあり、検索しなくてもページをスクロールするだけでどれにでも辿り着けます。",
+  "ajuste": {
+   "96": "95"
+  }
+ },
+ {
+  "pt": "A exenatida tem 93 ensaios de fase 3 e zero registro ativo na ANVISA. A oxintomodulina, zero de fase 3. O CBL-514 tem 7 artigos e 16 estudos registrados, todos da mesma empresa",
+  "trad": "エキセナチドは第3相試験が93件あるが、ブラジルでの有効な登録はゼロ。オキシントモジュリンは第3相がゼロ。CBL-514は論文7本、登録された試験16件で、すべて同じ企業によるもの"
+ },
+ {
+  "pt": "As 39 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
+  "trad": "各数字が一次資料 ― PubMed、ClinicalTrials.gov、添付文書、WADA ― から得られた38ページ。それぞれに検索式を明記しています。",
+  "ajuste": {
+   "39": "38"
+  }
+ },
+ {
+  "pt": "Compilado em 3 de setembro de 2026, cobrindo 96 compostos e combinações. Protocolo de peptídeo muda rápido, e o status regulatório muda mais rápido ainda — várias datas de Categoria 2 da FDA citadas aqui têm revisão marcada para 2026. Confira antes de tratar qualquer status como atual.",
+  "trad": "編集日は2026年9月3日、95の化合物および組み合わせを対象とする。ペプチドのプロトコルは変化が速く、規制上のステータスはさらに速く変わる — ここで挙げたFDAカテゴリー2の日付の多くは、2026年に見直しが予定されている。ステータスを現在のものとして扱う前に確認すること。",
+  "ajuste": {
+   "96": "95"
+  }
+ },
+ {
+  "pt": "Duas ressalvas de método. <strong>Uma:</strong> busquei pelo nome INCI e pelo comercial juntos, porque a literatura usa os dois. <strong>Duas:</strong> cosmético não passa pela base de medicamentos da ANVISA, e por isso esta página não tem a seção \"No Brasil\". Não consultei a base de cosméticos — fica declarado como lacuna, não como ausência.",
+  "trad": "方法上の留保を二つ。<strong>一つ目：</strong>文献は両方を使うため、INCI名と商品名を一緒に検索した。<strong>二つ目：</strong>化粧品は医薬品データベースの対象外であり、そのためこのページには「ブラジルでは」の節がない。化粧品のデータベースは調べていない — これは不在ではなく、調査の空白として明記しておく。"
+ },
+ {
+  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 5 de outubro de 2026 — 43.596 linhas, contando apenas situação <strong>Ativo</strong>, no princípio ativo e no nome do produto, sem acento e sem diferença de caixa. A classe terapêutica é a que a própria base declara.",
+  "trad": "各有効成分を<strong>ブラジルの登録医薬品オープンデータ</strong>で調べた。2026年10月5日にダウンロードした43,596行で、状況が<strong>有効</strong>のものだけを、有効成分名と製品名の両方で、アクセント記号と大文字・小文字の違いを無視して数えた。治療分類はデータベース自体が申告しているものである。"
+ },
+ {
+  "pt": "<strong>A histrelina é a única das cinco sem registro ativo na ANVISA</strong> — 0 registros. Nos Estados Unidos, a única aplicação que a busca devolve é um implante subcutâneo para puberdade precoce central.",
+  "trad": "<strong>五つのうち、ブラジルで有効な登録がないのはヒストレリンだけである</strong> — 登録は0件。米国では、検索が返す唯一の申請は中枢性思春期早発症のための皮下インプラントである。"
+ },
+ {
+  "pt": "4 dos 5 têm produto registrado. Registro não transforma o frasco vendido como peptídeo de pesquisa em medicamento: o que a ANVISA registrou é o produto daquele fabricante, com aquela apresentação e aquela indicação.",
+  "trad": "5つのうち4つには登録製品がある。登録があっても、研究用ペプチドとして売られるバイアルが医薬品になるわけではない。登録されたのは、その製造業者の、その剤形と適応の製品である。"
+ },
+ {
+  "pt": "<strong>Glepaglutida e apraglutida não têm registro ativo na ANVISA.</strong> Não as procurei na openFDA, e por isso esta página não afirma nada sobre a situação delas nos Estados Unidos.",
+  "trad": "<strong>グレパグルチドとアプラグルチドには、ブラジルで有効な登録がない。</strong>openFDAでは検索していないため、このページは米国での状況について何も主張しない。"
+ },
+ {
+  "pt": "<strong>A exenatida tem 93 ensaios de fase 3 e nenhum registro ativo na ANVISA.</strong> O maior é o EXSCEL, de desfecho cardiovascular, com 14.752 participantes. Nos Estados Unidos, a busca devolve o BYETTA como descontinuado e um genérico sintético aprovado em 2024. É a que tem mais ensaio de fase 3 nesta página — e não tem produto registrado no Brasil.",
+  "trad": "<strong>エキセナチドには第3相試験が93件あるが、ブラジルで有効な登録は一つもない。</strong>最大のものは心血管転帰試験EXSCELで、参加者14,752人。米国では、検索はBYETTAを販売中止として返し、ほかに2024年に承認された合成ジェネリックを返す。このページで第3相試験が最も多いのはこれだ — そしてブラジルで登録された製品はない。"
+ },
+ {
+  "pt": "<strong>A L-carnitina tem bula, para outra coisa.</strong> Nos Estados Unidos, a levocarnitina é aprovada para deficiência sistêmica primária de carnitina. Na base de medicamentos da ANVISA, a busca não encontra registro ativo com o princípio ativo.",
+  "trad": "<strong>L-カルニチンには添付文書がある。ただし別の目的のものだ。</strong>米国では、レボカルニチンは原発性全身性カルニチン欠乏症に承認されている。ブラジルの医薬品データベースでは、この有効成分で有効な登録は見つからない。"
+ },
+ {
+  "pt": "<strong>Atenção específica deste composto:</strong> Nenhum destes compostos tem produto registrado no Brasil. O registro que a busca encontra na ANVISA é de timostimulina, outro extrato. O que se compra com esses nomes é vendido como insumo de pesquisa, sem controle de pureza, esterilidade ou dose.",
+  "trad": "<strong>この化合物に特有の注意点：</strong>これらの化合物はいずれも、ブラジルで登録された製品がない。検索で見つかる登録は、別の抽出物であるチモスチムリンのものだ。これらの名称で買えるものは研究用試薬として売られており、純度、無菌性、用量の管理はない。"
+ },
+ {
+  "pt": "Duas ressalvas de método. <strong>Uma:</strong> <code>cardiogen</code> sozinho no PubMed e no ClinicalTrials.gov devolve o CardioGen-82, um gerador de rubídio-82 usado em exame de imagem do coração, que não tem nada a ver com o peptídeo. Restringi a busca com <code>AND (peptide OR Khavinson)</code>; o único registro da busca sem filtro no ClinicalTrials.gov é de exame de PET com CardioGen-82. <strong>Duas:</strong> na ANVISA, o padrão <code>TIMULIN</code> encontra um registro — mas de <strong>timostimulina</strong>, outro extrato do timo, cujo nome contém as mesmas letras. Publico o achado com a ressalva: não há registro de timulina.",
+  "trad": "方法上の留保を二つ。<strong>一つ目：</strong>PubMedとClinicalTrials.govで<code>cardiogen</code>だけを検索すると、心臓の画像検査に使われるルビジウム82ジェネレーターCardioGen-82が返ってくるが、これはペプチドとは何の関係もない。そこで検索を<code>AND (peptide OR Khavinson)</code>で絞った。ClinicalTrials.govでフィルターなしの検索が返す唯一の登録は、CardioGen-82を使ったPET検査のものである。<strong>二つ目：</strong>ブラジルの医薬品データベースでは、パターン<code>TIMULIN</code>が登録を一件見つける — ただしそれは<strong>チモスチムリン</strong>のもので、胸腺の別の抽出物であり、名前に同じ文字列を含んでいるだけだ。この結果は留保付きで公開する：チムリンの登録はない。"
+ }
+]

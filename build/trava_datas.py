@@ -46,7 +46,7 @@ RELOGIO = {
 # conteudo (ensaio, bula, norma) nao entra aqui: e fato reportado.
 sys.path.insert(0, AQUI)
 from datas import (DATA_FONTE, DATA_APURACAO, DATA_MAZDUTIDA,  # noqa: E402
-                   DATA_MABS, DATA_EXOSSOMOS)
+                   DATA_MABS, DATA_EXOSSOMOS, DATA_LACUNAS)
 
 DATAS_DA_CASA = {
     "DATA_FONTE": DATA_FONTE,
@@ -54,6 +54,7 @@ DATAS_DA_CASA = {
     "DATA_MAZDUTIDA": DATA_MAZDUTIDA,
     "DATA_MABS": DATA_MABS,
     "DATA_EXOSSOMOS": DATA_EXOSSOMOS,
+    "DATA_LACUNAS": DATA_LACUNAS,
 }
 
 

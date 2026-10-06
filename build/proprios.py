@@ -274,3 +274,6 @@ PROPRIOS.update(_MUS)
 
 from proprios_procedimentos import PROCEDIMENTOS as _PROC
 PROPRIOS.update(_PROC)
+
+from proprios_lacunas import LACUNAS as _LAC
+PROPRIOS.update(_LAC)

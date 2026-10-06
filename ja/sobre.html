@@ -32,7 +32,7 @@
     "name": "Protocolos",
     "url": "https://peptisonar.com"
   },
-  "dateModified": "2026-09-14"
+  "dateModified": "2026-09-19"
 }
 </script>
 <link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -151,14 +151,6 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
 .trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
 .conteudo { padding: 42px 0px 96px; min-width: 0px; }
-.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
-.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
-.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
-.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
-.aviso p:last-child { margin-bottom: 0px; }
-.aviso-linha { border-top-color: ; border-top-style: ; border-top-width: ; border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: var(--atencao-fundo); border-left: 3px solid var(--atencao); border-radius: 0 var(--raio-sm) var(--raio-sm) 0; padding: 13px 18px; margin: 22px 0px; font-size: 14.5px; color: var(--texto-suave); }
-.aviso-linha strong { color: var(--atencao); }
 .selo { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; white-space: nowrap; border: 1px solid transparent; }
 .selo-nao { background: var(--alerta-fundo); color: rgb(238, 143, 121); border-color: var(--alerta-borda); }
 .selo-cat { background: var(--superficie-3); color: var(--texto-suave); border-color: var(--linha-forte); }
@@ -169,13 +161,15 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .artigo-cabeca h1 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.026em; margin: 0px 0px 14px; }
 .artigo-sub { font-size: 17.5px; color: var(--texto-suave); margin: 0px 0px 20px; max-width: 66ch; line-height: 1.6; }
 .artigo-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
+.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
+.artigo-fig { margin: 0px 0px 30px; }
+.artigo-fig img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta); }
+.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo h2 { font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: -0.018em; margin: 52px 0px 16px; padding-top: 26px; border-top: 1px solid var(--linha); }
 .conteudo h2:first-of-type { border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
-.conteudo strong { color: var(--texto); font-weight: 600; }
-.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
-.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo > p:first-of-type { font-size: 17px; color: var(--texto); }
+.conteudo strong { color: var(--texto); font-weight: 600; }
 .tabela-env { margin: 24px 0px 32px; border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; background: var(--superficie); }
 .tabela-rolagem { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
@@ -192,16 +186,21 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
 linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
 radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
 radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
+.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
+.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
+.aviso p:last-child { margin-bottom: 0px; }
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
-.nota-traducao { margin: 0px; padding: 9px 24px; font-size: 13px; line-height: 1.5; text-align: center; color: var(--texto-suave); background: var(--superficie); border-bottom: 1px solid var(--linha); }
-.nota-traducao a { color: var(--cobre-claro); }
 .procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
 @media (max-width: 940px) {
 .pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
 .trilha { display: none; }
 }
+.artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -230,28 +229,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.conteudo h2 { font-size: 23px; margin-top: 42px; }
 }</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
@@ -298,7 +275,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <ul>
   <li><strong>数値は手入力し直していない。</strong>用量、容量、濃度、期間のすべての値は、スクリプトによってセルごとに転記された。変わったのは小数点の区切り記号（ピリオドからカンマへ）と、単位の書き方だけである。これは意図的な選択である：用量を手で打ち直すことは、用量を間違える原因になる。</li>
   <li><strong>ポルトガル語の本文は書き下ろしである。</strong>要約、注意喚起、安全性セクションの各節は、原文を読んだうえでゼロから書かれており、逐行的に翻訳されたものではない。原文より短い。</li>
-  <li><strong>翻訳の関門を通らなかった表は破棄されました</strong>。中途半端な形で公開されることはありません。抽出された424の表のうち、424が公開され、基準を満たさなかったために破棄されたのは0でした。</li>
+  <li><strong>翻訳ゲートを通らなかった表は破棄した</strong>。中途半端な形で公開することはしていない。抽出した447件の表のうち、447件を公開し、基準に達せず破棄したのは0件である。</li>
   <li><strong>商業的な内容はすべて削除した：</strong>供給元へのリンク、クーポン、「どこで買うか」のセクション、店舗の推奨。</li>
 </ul>
 
@@ -313,7 +290,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>プロトコルの数値は事実であり、著作権の対象ではない。構成、ポルトガル語の本文、そしてこのリファレンスの視覚的なデザインは独自制作である。出典はすべてのページでリンク付きのクレジットとして示されている。これは個人のサイトであり、広告も、アフィリエイトも、商業目的もない。出典の権利者から正当な要請があれば、この資料は公開を停止する。</p>
 
 <h2>この編集版の状態</h2>
-<p>2026年9月3日にコンパイルされ、87の化合物と組み合わせを対象としています。ペプチドプロトコルは急速に変化し、規制上のステータスはさらに速く変化します——ここで引用されているFDAカテゴリー2の日付のいくつかは、2026年に見直しが予定されています。どのステータスも現在のものとして扱う前に確認してください。</p>
+<p>編集日は2026年9月3日、95の化合物および組み合わせを対象とする。ペプチドのプロトコルは変化が速く、規制上のステータスはさらに速く変わる — ここで挙げたFDAカテゴリー2の日付の多くは、2026年に見直しが予定されている。ステータスを現在のものとして扱う前に確認すること。</p>
 
 <h2>他の言語</h2>
 <p>このサイトは英語、スペイン語、ドイツ語、フランス語、日本語、中国語でも存在し、各ページ上部のセレクターから切り替えられる。これらのバージョンはAIの助けを借りて、断片ごとにポルトガル語から翻訳されており、各断片は機械的なチェックを通過して初めてページに反映される：数値は各言語の小数点区切りを守ったうえで原文と同じでなければならず、タグ、リンク、データベースの検索式は完全に一致していなければならない。通過しなかった断片は公開されない — ポルトガル語のまま残り、その旨が示される。これらのバージョンはいずれも人間の翻訳者によるレビューを受けていない。<strong>ポルトガル語版が基準となるバージョンである。</strong></p>

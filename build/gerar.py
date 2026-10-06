@@ -499,6 +499,18 @@ def linha_anvisa(slug):
             'A varredura completa está em <a href="proprio_anvisa.html">O que existe no Brasil</a>.</div>')
 
 
+def figura(slug):
+    """Caminhos da figura da pagina, se ela existir em assets/figuras/.
+
+    A figura e ilustracao gerada por IA, sem valor de dado: entra no cartao e
+    no topo da pagina so quando o arquivo existe, e a pagina diz o que ela e.
+    Duas larguras: <slug>.webp (pagina) e <slug>-cartao.webp (indice)."""
+    base = os.path.join(RAIZ, 'assets', 'figuras', slug)
+    if os.path.exists(base + '.webp') and os.path.exists(base + '-cartao.webp'):
+        return (f'assets/figuras/{slug}.webp', f'assets/figuras/{slug}-cartao.webp')
+    return None
+
+
 def selo_aprovacao(v):
     return {
         "nao":     ('selo-nao', 'Não aprovado'),
@@ -622,7 +634,10 @@ def gera_index(itens, stats):
             # cartao que leva a pagina aferida traz a mesma borda que a tabela
             # de la vai trazer. E a mesma notacao, aprendida no hero.
             proc_card = ' card-aferido' if cat == 'primaria' else ''
-            partes.append(f"""    <a class="card{proc_card}" href="p/{i['slug']}.html" data-cat="{cat}" data-anv="{estado_anv}" data-busca="{esc(busca)}">
+            fig = figura(i['slug'])
+            fig_html = (f'\n      <img class="card-fig" src="{fig[1]}" width="480" height="320" alt="" loading="lazy" decoding="async">'
+                        if fig else '')
+            partes.append(f"""    <a class="card{proc_card}{' card-com-fig' if fig else ''}" href="p/{i['slug']}.html" data-cat="{cat}" data-anv="{estado_anv}" data-busca="{esc(busca)}">{fig_html}
       <div class="card-topo"><h3>{esc(m['nome'])}</h3><span class="selo {cls}">{rot}</span></div>
       <p>{esc(m['tagline'])}</p>
       <div class="card-rodape"><span class="selo selo-cat">{esc(nome)}</span>{selo_anv}<span>{i['n_tabelas']} tabela(s)</span></div>
@@ -705,6 +720,10 @@ def gera_composto(item):
     p.append(f'  <p class="artigo-sub">{esc(m["tagline"])}</p>')
     p.append(f'  <div class="artigo-selos"><span class="selo {cls}">{rot}</span><span class="selo selo-cat">{esc(cat_nome)}</span></div>')
     p.append('</div>')
+    fig = figura(slug)
+    if fig:
+        p.append(f'<figure class="artigo-fig"><img src="../{fig[0]}" width="1200" height="800" alt="" decoding="async">'
+                 '<figcaption>Ilustração gerada por IA. Não é dado, nem imagem de estudo.</figcaption></figure>')
 
     p.append(AVISO)
 

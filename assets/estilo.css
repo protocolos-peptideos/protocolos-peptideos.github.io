@@ -697,6 +697,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 }
 .card-aferido:hover { border-left-color: var(--aferido); }
 
+/* Figura do cartão e do topo da página: ilustração gerada por IA, decorativa
+   (alt vazio), entra só quando o arquivo existe em assets/figuras/. No cartão
+   ela come o padding de cima e dos lados, e o aspect-ratio fixo reserva o
+   espaço antes de a imagem chegar -- sem salto de layout no carregamento
+   preguiçoso. O cartão aferido tem 20px de padding à esquerda, por causa da
+   borda de 3px, e a margem acompanha. */
+.card-com-fig { padding-top: 0; overflow: hidden; }
+.card-fig {
+  display: block; width: calc(100% + 44px); max-width: none; height: auto;
+  aspect-ratio: 3 / 2; object-fit: cover; margin: 0 -22px 18px;
+  border-bottom: 1px solid var(--linha); background: var(--tinta);
+}
+.card-aferido .card-fig { width: calc(100% + 42px); margin-left: -20px; }
+.artigo-fig { margin: 0 0 30px; }
+.artigo-fig img {
+  display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover;
+  border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta);
+}
+.artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
+
 /* O caminho manual, dito em voz alta. Estava só num <noscript>, que não
    aparece para quem tem JavaScript — ou seja, para quase todo mundo. Se o
    filtro esconde cartões, a página tem que dizer que nada ficou trancado

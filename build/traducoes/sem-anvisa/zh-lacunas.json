@@ -1,0 +1,78 @@
+[
+ {
+  "pt": "96 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 39 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "95 个化合物和组合 — 从肽到<a href=\"p/proprio_nootropicos.html\">益智药</a>、SARM，以及在巴西有注册的东西 —，附剂量、复溶、周期结构和监管状态。每个页面都把已发表试验测试过的内容与仅仅是社群报告的做法分开，因为这两者之间的差别就是全部的主题。其中 38 个页面的数字不是来自二手资料：它们是在 <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>、<a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>、巴西药品公开数据和说明书中核对过的 — 每个页面都写明了检索式，好让你重复一遍并反驳我。",
+  "ajuste": {
+   "96": "95",
+   "39": "38"
+  }
+ },
+ {
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 96 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "按文字和类别筛选本页的化合物列表。它不改变任何东西：只改变哪些卡片可见，并返回剩下的数量。即使不用筛选，95 个化合物也仍然在页面上列出并带链接。",
+  "ajuste": {
+   "96": "95"
+  }
+ },
+ {
+  "pt": "<strong>O filtro é atalho, não porta.</strong> Os 96 compostos estão listados e linkados abaixo, agrupados por seção — dá para chegar em qualquer um rolando a página, sem buscar.",
+  "trad": "<strong>筛选是捷径，不是入口。</strong>95 个化合物都在下面列出并带链接，按板块分组 — 不用搜索，滚动页面就能找到任何一个。",
+  "ajuste": {
+   "96": "95"
+  }
+ },
+ {
+  "pt": "A exenatida tem 93 ensaios de fase 3 e zero registro ativo na ANVISA. A oxintomodulina, zero de fase 3. O CBL-514 tem 7 artigos e 16 estudos registrados, todos da mesma empresa",
+  "trad": "艾塞那肽有 93 项 3 期试验，零个有效注册。胃泌酸调节素，零项 3 期。CBL-514 有 7 篇文章和 16 项已登记研究，全部来自同一家公司"
+ },
+ {
+  "pt": "As 39 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
+  "trad": "每个数字都来自一手资料的那 38 个页面 — PubMed、ClinicalTrials.gov、说明书和 WADA — 每一页都写明了检索式。",
+  "ajuste": {
+   "39": "38"
+  }
+ },
+ {
+  "pt": "Compilado em 3 de setembro de 2026, cobrindo 96 compostos e combinações. Protocolo de peptídeo muda rápido, e o status regulatório muda mais rápido ainda — várias datas de Categoria 2 da FDA citadas aqui têm revisão marcada para 2026. Confira antes de tratar qualquer status como atual.",
+  "trad": "编制于2026 年 9 月 3 日，覆盖 95 个化合物和组合。肽类方案变化很快，而监管状态变得更快 — 这里引用的多个 FDA 第 2 类日期都已安排在2026年复审。在把任何状态当作现状之前，请自行核对。",
+  "ajuste": {
+   "96": "95"
+  }
+ },
+ {
+  "pt": "Duas ressalvas de método. <strong>Uma:</strong> busquei pelo nome INCI e pelo comercial juntos, porque a literatura usa os dois. <strong>Duas:</strong> cosmético não passa pela base de medicamentos da ANVISA, e por isso esta página não tem a seção \"No Brasil\". Não consultei a base de cosméticos — fica declarado como lacuna, não como ausência.",
+  "trad": "两条方法上的保留。<strong>第一条：</strong>我把 INCI 名称和商品名放在一起检索，因为文献两者都用。<strong>第二条：</strong>化妆品不经过药品注册数据库，因此本页没有“在巴西”一节。我没有查化妆品数据库 — 这被声明为空白，而不是不存在。"
+ },
+ {
+  "pt": "Busquei cada princípio ativo no <strong>dado aberto de medicamentos registrados da ANVISA</strong>, baixado em 5 de outubro de 2026 — 43.596 linhas, contando apenas situação <strong>Ativo</strong>, no princípio ativo e no nome do produto, sem acento e sem diferença de caixa. A classe terapêutica é a que a própria base declara.",
+  "trad": "我在<strong>巴西已注册药品公开数据</strong>中检索了每个活性成分，该数据于2026 年 10 月 5 日下载 — 43,596 行，只计状态为 <strong>Ativo</strong> 的，在活性成分和产品名称中检索，不带重音、不区分大小写。治疗学类别是数据库本身标示的。"
+ },
+ {
+  "pt": "<strong>A histrelina é a única das cinco sem registro ativo na ANVISA</strong> — 0 registros. Nos Estados Unidos, a única aplicação que a busca devolve é um implante subcutâneo para puberdade precoce central.",
+  "trad": "<strong>组氨瑞林是五种中唯一没有有效注册的</strong> — 0 项注册。在美国，检索返回的唯一一项申请是用于中枢性性早熟的皮下植入剂。"
+ },
+ {
+  "pt": "4 dos 5 têm produto registrado. Registro não transforma o frasco vendido como peptídeo de pesquisa em medicamento: o que a ANVISA registrou é o produto daquele fabricante, com aquela apresentação e aquela indicação.",
+  "trad": "5 种中有 4 种有注册产品。注册并不会把作为研究用肽出售的西林瓶变成药品：被注册的是那个生产商的产品，带着那个剂型和那个适应症。"
+ },
+ {
+  "pt": "<strong>Glepaglutida e apraglutida não têm registro ativo na ANVISA.</strong> Não as procurei na openFDA, e por isso esta página não afirma nada sobre a situação delas nos Estados Unidos.",
+  "trad": "<strong>glepaglutide 和 apraglutide 没有有效注册。</strong>我没有在 openFDA 上检索它们，因此本页对它们在美国的状况不作任何断言。"
+ },
+ {
+  "pt": "<strong>A exenatida tem 93 ensaios de fase 3 e nenhum registro ativo na ANVISA.</strong> O maior é o EXSCEL, de desfecho cardiovascular, com 14.752 participantes. Nos Estados Unidos, a busca devolve o BYETTA como descontinuado e um genérico sintético aprovado em 2024. É a que tem mais ensaio de fase 3 nesta página — e não tem produto registrado no Brasil.",
+  "trad": "<strong>艾塞那肽有 93 项 3 期试验，没有任何有效注册。</strong>最大的是心血管终点试验 EXSCEL，有 14,752 名受试者。在美国，检索返回 BYETTA 已停产，以及一个2024年获批的合成仿制药。它是本页 3 期试验最多的 — 却在巴西没有注册产品。"
+ },
+ {
+  "pt": "<strong>A L-carnitina tem bula, para outra coisa.</strong> Nos Estados Unidos, a levocarnitina é aprovada para deficiência sistêmica primária de carnitina. Na base de medicamentos da ANVISA, a busca não encontra registro ativo com o princípio ativo.",
+  "trad": "<strong>左旋肉碱有说明书，但用于别的事。</strong>在美国，左卡尼汀获批用于原发性系统性肉碱缺乏症。在巴西的药品数据库中，检索找不到含该活性成分的有效注册。"
+ },
+ {
+  "pt": "<strong>Atenção específica deste composto:</strong> Nenhum destes compostos tem produto registrado no Brasil. O registro que a busca encontra na ANVISA é de timostimulina, outro extrato. O que se compra com esses nomes é vendido como insumo de pesquisa, sem controle de pureza, esterilidade ou dose.",
+  "trad": "<strong>这个化合物需要特别注意：</strong>这些化合物没有一个在巴西有注册产品。检索找到的那项注册是 thymostimulin 的，另一种提取物。用这些名字买到的东西是作为研究原料出售的，没有纯度、无菌或剂量的管控。"
+ },
+ {
+  "pt": "Duas ressalvas de método. <strong>Uma:</strong> <code>cardiogen</code> sozinho no PubMed e no ClinicalTrials.gov devolve o CardioGen-82, um gerador de rubídio-82 usado em exame de imagem do coração, que não tem nada a ver com o peptídeo. Restringi a busca com <code>AND (peptide OR Khavinson)</code>; o único registro da busca sem filtro no ClinicalTrials.gov é de exame de PET com CardioGen-82. <strong>Duas:</strong> na ANVISA, o padrão <code>TIMULIN</code> encontra um registro — mas de <strong>timostimulina</strong>, outro extrato do timo, cujo nome contém as mesmas letras. Publico o achado com a ressalva: não há registro de timulina.",
+  "trad": "两条方法上的保留。<strong>第一条：</strong>在 PubMed 和 ClinicalTrials.gov 上单独检索 <code>cardiogen</code>，会返回 CardioGen-82 — 一种用于心脏影像检查的铷-82 发生器，与这个肽毫无关系。我用 <code>AND (peptide OR Khavinson)</code> 限定了检索；ClinicalTrials.gov 上不加过滤的检索返回的唯一一项登记，是用 CardioGen-82 做的 PET 检查。<strong>第二条：</strong>在巴西的药品注册数据中，模式 <code>TIMULIN</code> 能找到一项注册 — 但那是 <strong>thymostimulin</strong> 的，另一种胸腺提取物，它的名字里包含同样的字母。我连同这条保留一起公布这个发现：thymulin 没有注册。"
+ }
+]

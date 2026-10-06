@@ -32,7 +32,7 @@
     "name": "Protocolos",
     "url": "https://peptisonar.com"
   },
-  "dateModified": "2026-09-14"
+  "dateModified": "2026-09-19"
 }
 </script>
 <link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -151,14 +151,6 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
 .trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
 .conteudo { padding: 42px 0px 96px; min-width: 0px; }
-.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
-.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
-.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
-.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
-.aviso p:last-child { margin-bottom: 0px; }
-.aviso-linha { border-top-color: ; border-top-style: ; border-top-width: ; border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: var(--atencao-fundo); border-left: 3px solid var(--atencao); border-radius: 0 var(--raio-sm) var(--raio-sm) 0; padding: 13px 18px; margin: 22px 0px; font-size: 14.5px; color: var(--texto-suave); }
-.aviso-linha strong { color: var(--atencao); }
 .selo { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; white-space: nowrap; border: 1px solid transparent; }
 .selo-nao { background: var(--alerta-fundo); color: rgb(238, 143, 121); border-color: var(--alerta-borda); }
 .selo-cat { background: var(--superficie-3); color: var(--texto-suave); border-color: var(--linha-forte); }
@@ -169,13 +161,15 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .artigo-cabeca h1 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.026em; margin: 0px 0px 14px; }
 .artigo-sub { font-size: 17.5px; color: var(--texto-suave); margin: 0px 0px 20px; max-width: 66ch; line-height: 1.6; }
 .artigo-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
+.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
+.artigo-fig { margin: 0px 0px 30px; }
+.artigo-fig img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta); }
+.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo h2 { font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: -0.018em; margin: 52px 0px 16px; padding-top: 26px; border-top: 1px solid var(--linha); }
 .conteudo h2:first-of-type { border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
-.conteudo strong { color: var(--texto); font-weight: 600; }
-.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
-.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo > p:first-of-type { font-size: 17px; color: var(--texto); }
+.conteudo strong { color: var(--texto); font-weight: 600; }
 .tabela-env { margin: 24px 0px 32px; border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; background: var(--superficie); }
 .tabela-rolagem { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
@@ -192,16 +186,21 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
 linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
 radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
 radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
+.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
+.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
+.aviso p:last-child { margin-bottom: 0px; }
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
-.nota-traducao { margin: 0px; padding: 9px 24px; font-size: 13px; line-height: 1.5; text-align: center; color: var(--texto-suave); background: var(--superficie); border-bottom: 1px solid var(--linha); }
-.nota-traducao a { color: var(--cobre-claro); }
 .procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
 @media (max-width: 940px) {
 .pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
 .trilha { display: none; }
 }
+.artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -230,28 +229,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.conteudo h2 { font-size: 23px; margin-top: 42px; }
 }</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
@@ -298,7 +275,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <ul>
   <li><strong>数字没有被手工重打。</strong>每一个剂量、体积、浓度和时长的数值，都是由脚本逐格搬过来的。变的是小数分隔符（点变成逗号）和写成全称的单位。这是刻意的：手工重打剂量，正是剂量出错的方式。</li>
   <li><strong>葡萄牙语文本是原创的。</strong>摘要、提示和安全性各节都是在阅读来源之后从零写起的，不是逐行翻译的。它们比原文更短。</li>
-  <li><strong>没有通过翻译门槛的表格会被丢弃</strong>，而不是发布一半。在提取出的 424 张表中，424 张被发布，0 张因未达到标准而被丢弃。</li>
+  <li><strong>没有通过翻译门槛的表格会被丢弃</strong>，而不是发布一半。在提取出的 447 张表中，447 张被发布，0 张因未达到标准而被丢弃。</li>
   <li><strong>所有商业内容都已移除：</strong>供应商链接、优惠券、“在哪里购买”的板块，以及商店推荐。</li>
 </ul>
 
@@ -313,7 +290,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <p>方案中的数值是事实，不构成著作权的客体。本参考的组织方式、葡萄牙语文本和视觉设计是原创的。每个页面都以链接标注了来源。这是一个个人网站，没有广告，没有联属关系，也没有商业目的。若来源权利人提出有正当理由的要求，本材料将下线。</p>
 
 <h2>本次编制的状态</h2>
-<p>编制于 2026 年 9 月 3 日，覆盖 87 个化合物和组合。肽类方案变化很快，而监管状态变得更快 — 这里引用的多个 FDA 第 2 类日期都已安排在 2026 年复审。在把任何状态当作现状之前，请自行核对。</p>
+<p>编制于2026 年 9 月 3 日，覆盖 95 个化合物和组合。肽类方案变化很快，而监管状态变得更快 — 这里引用的多个 FDA 第 2 类日期都已安排在2026年复审。在把任何状态当作现状之前，请自行核对。</p>
 
 <h2>其他语言</h2>
 <p>本站也有英语、西班牙语、德语、法语、日语和中文版本，可通过每页顶部的选择器切换。这些版本是在 AI 辅助下从葡萄牙语逐段翻译的，而每一段都要通过一道机械的检查才会进入页面：数字必须与原文相同，并遵守各语言的小数分隔符；标签、链接和数据库检索式必须完全一致。没有通过的段落不会发布 — 它保持葡萄牙语原样，并标注为如此。这些版本没有一个经过人工译者审校。<strong>以葡萄牙语版本为准。</strong></p>

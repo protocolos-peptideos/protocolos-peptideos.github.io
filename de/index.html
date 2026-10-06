@@ -32,7 +32,7 @@
     "name": "Protocolos",
     "url": "https://peptisonar.com"
   },
-  "dateModified": "2026-09-14"
+  "dateModified": "2026-09-19"
 }
 </script>
 <link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -151,14 +151,6 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
 .trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
 .conteudo { padding: 42px 0px 96px; min-width: 0px; }
-.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
-.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
-.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
-.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
-.aviso p:last-child { margin-bottom: 0px; }
-.aviso-linha { border-top-color: ; border-top-style: ; border-top-width: ; border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: var(--atencao-fundo); border-left: 3px solid var(--atencao); border-radius: 0 var(--raio-sm) var(--raio-sm) 0; padding: 13px 18px; margin: 22px 0px; font-size: 14.5px; color: var(--texto-suave); }
-.aviso-linha strong { color: var(--atencao); }
 .selo { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; white-space: nowrap; border: 1px solid transparent; }
 .selo-nao { background: var(--alerta-fundo); color: rgb(238, 143, 121); border-color: var(--alerta-borda); }
 .selo-cat { background: var(--superficie-3); color: var(--texto-suave); border-color: var(--linha-forte); }
@@ -169,13 +161,15 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .artigo-cabeca h1 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.026em; margin: 0px 0px 14px; }
 .artigo-sub { font-size: 17.5px; color: var(--texto-suave); margin: 0px 0px 20px; max-width: 66ch; line-height: 1.6; }
 .artigo-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
+.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
+.artigo-fig { margin: 0px 0px 30px; }
+.artigo-fig img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta); }
+.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo h2 { font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: -0.018em; margin: 52px 0px 16px; padding-top: 26px; border-top: 1px solid var(--linha); }
 .conteudo h2:first-of-type { border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
-.conteudo strong { color: var(--texto); font-weight: 600; }
-.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
-.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo > p:first-of-type { font-size: 17px; color: var(--texto); }
+.conteudo strong { color: var(--texto); font-weight: 600; }
 .tabela-env { margin: 24px 0px 32px; border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; background: var(--superficie); }
 .tabela-rolagem { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
@@ -192,16 +186,21 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
 linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
 radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
 radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
+.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
+.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
+.aviso p:last-child { margin-bottom: 0px; }
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
-.nota-traducao { margin: 0px; padding: 9px 24px; font-size: 13px; line-height: 1.5; text-align: center; color: var(--texto-suave); background: var(--superficie); border-bottom: 1px solid var(--linha); }
-.nota-traducao a { color: var(--cobre-claro); }
 .procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
 @media (max-width: 940px) {
 .pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
 .trilha { display: none; }
 }
+.artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -230,28 +229,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.conteudo h2 { font-size: 23px; margin-top: 42px; }
 }</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
@@ -288,10 +265,10 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="hero">
   <span class="hero-sobre">Experimentelle Referenz</span>
   <h1>Peptide, Nootropika und Verwandtes — <em>auf Deutsch</em>, mit sichtbarer Grenze der Evidenz.</h1>
-  <p class="hero-sub">86 Verbindungen und Kombinationen — von Peptiden bis zu <a href="p/proprio_nootropicos.html">Nootropika</a>, SARMs und dem, was in Brasilien registriert ist —, mit Dosis, Rekonstitution, Zyklusstruktur und Zulassungsstatus. Jede Seite trennt, was eine veröffentlichte Studie getestet hat, von dem, was nur eine von der Community berichtete Praxis ist, weil der Unterschied zwischen den beiden Dingen das ganze Thema ist. Bei 29 von ihnen stammen die Zahlen nicht aus der Sekundärquelle: Sie wurden bei <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">PubMed</a>, bei <a href="https://clinicaltrials.gov/" rel="noopener">ClinicalTrials.gov</a> und in der Fachinformation überprüft — mit der auf jeder Seite angegebenen Suchanfrage, damit Sie es wiederholen und mir widersprechen können.</p>
+  <p class="hero-sub">95 Wirkstoffe und Kombinationen — von Peptiden über <a href="p/proprio_nootropicos.html">Nootropika</a> und SARMs bis zu dem, was in Brasilien registriert ist —, mit Dosis, Rekonstitution, Zyklusstruktur und regulatorischem Status. Jede Seite trennt, was eine publizierte Studie getestet hat, von dem, was nur von der Community berichtete Praxis ist, denn der Unterschied zwischen beidem ist das ganze Thema. Auf 38 davon stammen die Zahlen nicht aus einer Sekundärquelle: Sie wurden auf <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">PubMed</a>, auf <a href="https://clinicaltrials.gov/" rel="noopener">ClinicalTrials.gov</a> und in der Fachinformation geprüft — mit der auf jeder Seite angegebenen Suchanfrage, damit Sie sie wiederholen und mir widersprechen können.</p>
   <div class="procedencia-resumo">
     <div class="proc-lado proc-aferida">
-      <b>29</b>
+      <b>38</b>
       <span>Seiten mit der Zahl, von mir <strong>geprüft</strong> auf PubMed, in der Fachinformation und auf ClinicalTrials.gov — mit der auf jeder einzelnen genannten Suchanfrage</span>
     </div>
     <div class="proc-lado proc-transportada">
@@ -320,7 +297,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </section>
 <form class="busca-caixa" id="ferramenta-filtro" action="index.html" method="get"
       toolname="filtrar_compostos"
-      tooldescription="Filtert die Liste der Verbindungen auf dieser Seite nach Text und nach Kategorie. Ändert nichts: Es ändert nur, welche Karten sichtbar sind, und gibt die Anzahl der übrig gebliebenen zurück. Die 86 Verbindungen bleiben auch ohne Verwendung des Filters auf der Seite aufgelistet und verlinkt.">
+      tooldescription="Filtert die Liste der Wirkstoffe auf dieser Seite nach Text und nach Kategorie. Ändert nichts: Es ändert nur, welche Karten sichtbar sind, und gibt die Anzahl der übrig gebliebenen zurück. Die 95 Wirkstoffe bleiben auch ohne Verwendung des Filters auf der Seite aufgelistet und verlinkt.">
   <div class="busca-campo">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
     <label for="busca" class="pular">Wirkstoff suchen</label>
@@ -343,7 +320,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <button type="button" class="filtro" data-cat="primaria" aria-pressed="false">An Primärquellen geprüft</button>
     <button type="button" class="filtro" data-cat="suplemento" aria-pressed="false">Nahrungsergänzungsmittel und Verwandtes</button>
   </div>
-  <p class="nota-filtro nota-fallback"><strong>Der Filter ist eine Abkürzung, keine Tür.</strong> Die 87 Wirkstoffe sind unten aufgelistet und verlinkt, gruppiert nach Abschnitt – man erreicht jeden davon, indem man die Seite durchscrollt, ohne zu suchen.</p>
+  <p class="nota-filtro nota-fallback"><strong>Der Filter ist eine Abkürzung, keine Tür.</strong> Die 95 Wirkstoffe sind unten aufgelistet und verlinkt, nach Abschnitt gruppiert — jeder ist durch Scrollen erreichbar, ohne zu suchen.</p>
   <noscript><p class="nota-filtro nota-fallback">Ohne JavaScript läuft der Filter nicht, und nichts geht verloren: Die Liste unten ist bereits vollständig.</p></noscript>
 </form>
 <p class="nota-filtro">Das Zulassungssiegel stammt aus der <a href="evidencia.html">Durchsuchung der offenen Daten</a> vom 4. September 2026 und erscheint nur bei den 44 Wirkstoffen, die einzeln gemessen wurden. Kombinationen und Methodenseiten haben kein Siegel.</p>
@@ -352,37 +329,44 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="reparo">
   <div class="secao-cabeca"><h2>Reparatur und Gewebe</h2><p class="secao-desc">Wirkstoffe, untersucht bei Wundheilung, Sehne, Haut und lokaler Entzündung.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_ara-290.html" data-cat="reparo" data-busca="ara-290 (cibinetida) fragmento da epo sem o efeito sobre hemácias reparo e tecido protocol_ara-290 ara-290 (cibinetid) epo-fragment ohne die wirkung auf erythrozyten reparatur und gewebe">
+    <a class="card card-com-fig" href="p/protocol_ara-290.html" data-cat="reparo" data-busca="ara-290 (cibinetida) fragmento da epo sem o efeito sobre hemácias reparo e tecido protocol_ara-290 ara-290 (cibinetid) epo-fragment ohne die wirkung auf erythrozyten reparatur und gewebe">
+      <img class="card-fig" src="../assets/figuras/protocol_ara-290-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>ARA-290 (Cibinetid)</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>EPO-Fragment ohne die Wirkung auf Erythrozyten</p>
       <div class="card-rodape"><span class="selo selo-cat">Reparatur und Gewebe</span><span>4 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_bpc-157.html" data-cat="reparo" data-busca="bpc-157 o peptídeo de reparo mais discutido — e quase só em modelo animal reparo e tecido protocol_bpc-157 bpc-157 das meistdiskutierte reparaturpeptid — und fast nur im tiermodell reparatur und gewebe">
+    <a class="card card-com-fig" href="p/protocol_bpc-157.html" data-cat="reparo" data-busca="bpc-157 o peptídeo de reparo mais discutido — e quase só em modelo animal reparo e tecido protocol_bpc-157 bpc-157 das meistdiskutierte reparaturpeptid — und fast nur im tiermodell reparatur und gewebe">
+      <img class="card-fig" src="../assets/figuras/protocol_bpc-157-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>BPC-157</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Das meistdiskutierte Reparaturpeptid — und fast nur im Tiermodell</p>
       <div class="card-rodape"><span class="selo selo-cat">Reparatur und Gewebe</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_cartalax.html" data-cat="reparo" data-busca="cartalax bioregulador curto estudado em cartilagem reparo e tecido protocol_cartalax cartalax kurzer bioregulator, untersucht an knorpel reparatur und gewebe">
+    <a class="card card-com-fig" href="p/protocol_cartalax.html" data-cat="reparo" data-busca="cartalax bioregulador curto estudado em cartilagem reparo e tecido protocol_cartalax cartalax kurzer bioregulator, untersucht an knorpel reparatur und gewebe">
+      <img class="card-fig" src="../assets/figuras/protocol_cartalax-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cartalax</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Kurzer Bioregulator, untersucht an Knorpel</p>
       <div class="card-rodape"><span class="selo selo-cat">Reparatur und Gewebe</span><span>16 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_ghk-cu.html" data-cat="reparo" data-busca="ghk-cu peptídeo de cobre — o acúmulo é a variável que manda no ciclo reparo e tecido protocol_ghk-cu ghk-cu kupferpeptid — die akkumulation ist die variable, die den zyklus bestimmt reparatur und gewebe">
+    <a class="card card-com-fig" href="p/protocol_ghk-cu.html" data-cat="reparo" data-busca="ghk-cu peptídeo de cobre — o acúmulo é a variável que manda no ciclo reparo e tecido protocol_ghk-cu ghk-cu kupferpeptid — die akkumulation ist die variable, die den zyklus bestimmt reparatur und gewebe">
+      <img class="card-fig" src="../assets/figuras/protocol_ghk-cu-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>GHK-Cu</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Kupferpeptid — die Akkumulation ist die Variable, die den Zyklus bestimmt</p>
       <div class="card-rodape"><span class="selo selo-cat">Reparatur und Gewebe</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_kpv.html" data-cat="reparo" data-busca="kpv tripeptídeo anti-inflamatório, fragmento do α-msh reparo e tecido protocol_kpv kpv entzündungshemmendes tripeptid, fragment des α-msh reparatur und gewebe">
+    <a class="card card-com-fig" href="p/protocol_kpv.html" data-cat="reparo" data-busca="kpv tripeptídeo anti-inflamatório, fragmento do α-msh reparo e tecido protocol_kpv kpv entzündungshemmendes tripeptid, fragment des α-msh reparatur und gewebe">
+      <img class="card-fig" src="../assets/figuras/protocol_kpv-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>KPV</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Entzündungshemmendes Tripeptid, Fragment des α-MSH</p>
       <div class="card-rodape"><span class="selo selo-cat">Reparatur und Gewebe</span><span>11 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_ll-37.html" data-cat="reparo" data-busca="ll-37 o único peptídeo antimicrobiano catelicidina humano reparo e tecido protocol_ll-37 ll-37 das einzige humane antimikrobielle cathelicidin-peptid reparatur und gewebe">
+    <a class="card card-com-fig" href="p/protocol_ll-37.html" data-cat="reparo" data-busca="ll-37 o único peptídeo antimicrobiano catelicidina humano reparo e tecido protocol_ll-37 ll-37 das einzige humane antimikrobielle cathelicidin-peptid reparatur und gewebe">
+      <img class="card-fig" src="../assets/figuras/protocol_ll-37-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>LL-37</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Das einzige humane antimikrobielle Cathelicidin-Peptid</p>
       <div class="card-rodape"><span class="selo selo-cat">Reparatur und Gewebe</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_tb-500.html" data-cat="reparo" data-busca="tb-500 fragmento da timosina beta-4 — migração celular reparo e tecido protocol_tb-500 tb-500 fragment des thymosin beta-4 — zellmigration reparatur und gewebe">
+    <a class="card card-com-fig" href="p/protocol_tb-500.html" data-cat="reparo" data-busca="tb-500 fragmento da timosina beta-4 — migração celular reparo e tecido protocol_tb-500 tb-500 fragment des thymosin beta-4 — zellmigration reparatur und gewebe">
+      <img class="card-fig" src="../assets/figuras/protocol_tb-500-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>TB-500</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Fragment des Thymosin beta-4 — Zellmigration</p>
       <div class="card-rodape"><span class="selo selo-cat">Reparatur und Gewebe</span><span>5 Tabelle(n)</span></div>
@@ -392,52 +376,62 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="metabolico">
   <div class="secao-cabeca"><h2>Stoffwechsel und Gewicht</h2><p class="secao-desc">Inkretin-Agonisten und Verwandtes, untersucht bei Gewicht und Blutzucker.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_5-amino-1mq.html" data-cat="metabolico" data-busca="5-amino-1mq molécula pequena, não é peptídeo, estudada em gordura e nnmt metabólico e peso protocol_5-amino-1mq 5-amino-1mq kleines molekül, kein peptid, untersucht bei fett und nnmt stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_5-amino-1mq.html" data-cat="metabolico" data-busca="5-amino-1mq molécula pequena, não é peptídeo, estudada em gordura e nnmt metabólico e peso protocol_5-amino-1mq 5-amino-1mq kleines molekül, kein peptid, untersucht bei fett und nnmt stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_5-amino-1mq-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>5-Amino-1MQ</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Kleines Molekül, kein Peptid, untersucht bei Fett und NNMT</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>10 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_aod-9604.html" data-cat="metabolico" data-busca="aod-9604 fragmento do gh estudado em lipólise metabólico e peso protocol_aod-9604 aod-9604 gh-fragment, untersucht bei lipolyse stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_aod-9604.html" data-cat="metabolico" data-busca="aod-9604 fragmento do gh estudado em lipólise metabólico e peso protocol_aod-9604 aod-9604 gh-fragment, untersucht bei lipolyse stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_aod-9604-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>AOD-9604</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>GH-Fragment, untersucht bei Lipolyse</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>10 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_cagrilintide.html" data-cat="metabolico" data-busca="cagrilintida análogo de amilina semanal, em investigação metabólico e peso protocol_cagrilintide cagrilintid wöchentliches amylin-analogon, in erprobung stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_cagrilintide.html" data-cat="metabolico" data-busca="cagrilintida análogo de amilina semanal, em investigação metabólico e peso protocol_cagrilintide cagrilintid wöchentliches amylin-analogon, in erprobung stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_cagrilintide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cagrilintid</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Wöchentliches Amylin-Analogon, in Erprobung</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_lipo-c.html" data-cat="metabolico" data-busca="lipo-c injeção lipotrópica manipulada — não é um peptídeo metabólico e peso protocol_lipo-c lipo-c lipotrope injektion aus der rezeptur — kein peptid stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_lipo-c.html" data-cat="metabolico" data-busca="lipo-c injeção lipotrópica manipulada — não é um peptídeo metabólico e peso protocol_lipo-c lipo-c lipotrope injektion aus der rezeptur — kein peptid stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_lipo-c-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Lipo-C</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Lipotrope Injektion aus der Rezeptur — kein Peptid</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_retatrutide.html" data-cat="metabolico" data-busca="retatrutida agonista triplo em fase 3 — gip, glp-1 e glucagon metabólico e peso protocol_retatrutide retatrutid triple-agonist in phase 3 — gip, glp-1 und glucagon stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_retatrutide.html" data-cat="metabolico" data-busca="retatrutida agonista triplo em fase 3 — gip, glp-1 e glucagon metabólico e peso protocol_retatrutide retatrutid triple-agonist in phase 3 — gip, glp-1 und glucagon stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_retatrutide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Retatrutid</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Triple-Agonist in Phase 3 — GIP, GLP-1 und Glucagon</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>8 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_slu-pp-332.html" data-cat="metabolico" data-busca="slu-pp-332 agonista pan-err vendido como &#x27;mimético de exercício&#x27; metabólico e peso protocol_slu-pp-332 slu-pp-332 pan-err-agonist, verkauft als &#x27;exercise-mimetikum&#x27; stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_slu-pp-332.html" data-cat="metabolico" data-busca="slu-pp-332 agonista pan-err vendido como &#x27;mimético de exercício&#x27; metabólico e peso protocol_slu-pp-332 slu-pp-332 pan-err-agonist, verkauft als &#x27;exercise-mimetikum&#x27; stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_slu-pp-332-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>SLU-PP-332</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Pan-ERR-Agonist, verkauft als &#x27;Exercise-Mimetikum&#x27;</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_semaglutide.html" data-cat="metabolico" data-busca="semaglutida ozempic, wegovy e rybelsus — a mesma molécula metabólico e peso protocol_semaglutide semaglutid ozempic, wegovy und rybelsus — dasselbe molekül stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_semaglutide.html" data-cat="metabolico" data-busca="semaglutida ozempic, wegovy e rybelsus — a mesma molécula metabólico e peso protocol_semaglutide semaglutid ozempic, wegovy und rybelsus — dasselbe molekül stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_semaglutide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Semaglutid</h3><span class="selo selo-sim">Zugelassen</span></div>
       <p>Ozempic, Wegovy und Rybelsus — dasselbe Molekül</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>9 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_survodutide.html" data-cat="metabolico" data-busca="survodutida agonista duplo glp-1/glucagon, código bi 456906 metabólico e peso protocol_survodutide survodutid dualer glp-1/glucagon-agonist, code bi 456906 stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_survodutide.html" data-cat="metabolico" data-busca="survodutida agonista duplo glp-1/glucagon, código bi 456906 metabólico e peso protocol_survodutide survodutid dualer glp-1/glucagon-agonist, code bi 456906 stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_survodutide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Survodutid</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Dualer GLP-1/Glucagon-Agonist, Code BI 456906</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_tesofensine.html" data-cat="metabolico" data-busca="tesofensina inibidor triplo de recaptação, em comprimido oral metabólico e peso protocol_tesofensine tesofensin dreifacher wiederaufnahmehemmer, als orale tablette stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_tesofensine.html" data-cat="metabolico" data-busca="tesofensina inibidor triplo de recaptação, em comprimido oral metabólico e peso protocol_tesofensine tesofensin dreifacher wiederaufnahmehemmer, als orale tablette stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_tesofensine-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Tesofensin</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Dreifacher Wiederaufnahmehemmer, als orale Tablette</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_tirzepatide.html" data-cat="metabolico" data-busca="tirzepatida agonista duplo glp-1/gip — mounjaro e zepbound metabólico e peso protocol_tirzepatide tirzepatid dualer glp-1/gip-agonist — mounjaro und zepbound stoffwechsel und gewicht">
+    <a class="card card-com-fig" href="p/protocol_tirzepatide.html" data-cat="metabolico" data-busca="tirzepatida agonista duplo glp-1/gip — mounjaro e zepbound metabólico e peso protocol_tirzepatide tirzepatid dualer glp-1/gip-agonist — mounjaro und zepbound stoffwechsel und gewicht">
+      <img class="card-fig" src="../assets/figuras/protocol_tirzepatide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Tirzepatid</h3><span class="selo selo-sim">Zugelassen</span></div>
       <p>Dualer GLP-1/GIP-Agonist — Mounjaro und Zepbound</p>
       <div class="card-rodape"><span class="selo selo-cat">Stoffwechsel und Gewicht</span><span>4 Tabelle(n)</span></div>
@@ -447,37 +441,44 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="gh">
   <div class="secao-cabeca"><h2>Wachstumshormon-Achse</h2><p class="secao-desc">GHRH-Analoga und Sekretagoga, die den eigenen Körper auffordern, GH freizusetzen.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_cjc-1295-dac.html" data-cat="gh" data-busca="cjc-1295 com dac análogo de ghrh de ação longa, ligado à albumina eixo do hormônio do crescimento protocol_cjc-1295-dac cjc-1295 mit dac langwirksames ghrh-analogon, an albumin gebunden wachstumshormon-achse">
+    <a class="card card-com-fig" href="p/protocol_cjc-1295-dac.html" data-cat="gh" data-busca="cjc-1295 com dac análogo de ghrh de ação longa, ligado à albumina eixo do hormônio do crescimento protocol_cjc-1295-dac cjc-1295 mit dac langwirksames ghrh-analogon, an albumin gebunden wachstumshormon-achse">
+      <img class="card-fig" src="../assets/figuras/protocol_cjc-1295-dac-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CJC-1295 mit DAC</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Langwirksames GHRH-Analogon, an Albumin gebunden</p>
       <div class="card-rodape"><span class="selo selo-cat">Wachstumshormon-Achse</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_cjc-1295-no-dac.html" data-cat="gh" data-busca="cjc-1295 sem dac (mod grf 1-29) pulso curto de ghrh, sem acúmulo eixo do hormônio do crescimento protocol_cjc-1295-no-dac cjc-1295 ohne dac (mod grf 1-29) kurzer ghrh-puls, ohne akkumulation wachstumshormon-achse">
+    <a class="card card-com-fig" href="p/protocol_cjc-1295-no-dac.html" data-cat="gh" data-busca="cjc-1295 sem dac (mod grf 1-29) pulso curto de ghrh, sem acúmulo eixo do hormônio do crescimento protocol_cjc-1295-no-dac cjc-1295 ohne dac (mod grf 1-29) kurzer ghrh-puls, ohne akkumulation wachstumshormon-achse">
+      <img class="card-fig" src="../assets/figuras/protocol_cjc-1295-no-dac-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CJC-1295 ohne DAC (Mod GRF 1-29)</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Kurzer GHRH-Puls, ohne Akkumulation</p>
       <div class="card-rodape"><span class="selo selo-cat">Wachstumshormon-Achse</span><span>4 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_ghrp-6.html" data-cat="gh" data-busca="ghrp-6 secretagogo que imita a grelina — e abre a fome junto eixo do hormônio do crescimento protocol_ghrp-6 ghrp-6 sekretagogum, das ghrelin imitiert — und den hunger gleich mit öffnet wachstumshormon-achse">
+    <a class="card card-com-fig" href="p/protocol_ghrp-6.html" data-cat="gh" data-busca="ghrp-6 secretagogo que imita a grelina — e abre a fome junto eixo do hormônio do crescimento protocol_ghrp-6 ghrp-6 sekretagogum, das ghrelin imitiert — und den hunger gleich mit öffnet wachstumshormon-achse">
+      <img class="card-fig" src="../assets/figuras/protocol_ghrp-6-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>GHRP-6</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Sekretagogum, das Ghrelin imitiert — und den Hunger gleich mit öffnet</p>
       <div class="card-rodape"><span class="selo selo-cat">Wachstumshormon-Achse</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_igf-1-lr3.html" data-cat="gh" data-busca="igf-1 lr3 análogo de igf-1 de ação longa — o de maior risco do grupo do gh eixo do hormônio do crescimento protocol_igf-1-lr3 igf-1 lr3 langwirksames igf-1-analogon — das riskanteste der gh-gruppe wachstumshormon-achse">
+    <a class="card card-com-fig" href="p/protocol_igf-1-lr3.html" data-cat="gh" data-busca="igf-1 lr3 análogo de igf-1 de ação longa — o de maior risco do grupo do gh eixo do hormônio do crescimento protocol_igf-1-lr3 igf-1 lr3 langwirksames igf-1-analogon — das riskanteste der gh-gruppe wachstumshormon-achse">
+      <img class="card-fig" src="../assets/figuras/protocol_igf-1-lr3-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>IGF-1 LR3</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Langwirksames IGF-1-Analogon — das riskanteste der GH-Gruppe</p>
       <div class="card-rodape"><span class="selo selo-cat">Wachstumshormon-Achse</span><span>7 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_ipamorelin.html" data-cat="gh" data-busca="ipamorelina secretagogo seletivo, sem o disparo de fome do ghrp-6 eixo do hormônio do crescimento protocol_ipamorelin ipamorelin selektives sekretagogum, ohne den hungerschub des ghrp-6 wachstumshormon-achse">
+    <a class="card card-com-fig" href="p/protocol_ipamorelin.html" data-cat="gh" data-busca="ipamorelina secretagogo seletivo, sem o disparo de fome do ghrp-6 eixo do hormônio do crescimento protocol_ipamorelin ipamorelin selektives sekretagogum, ohne den hungerschub des ghrp-6 wachstumshormon-achse">
+      <img class="card-fig" src="../assets/figuras/protocol_ipamorelin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Ipamorelin</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Selektives Sekretagogum, ohne den Hungerschub des GHRP-6</p>
       <div class="card-rodape"><span class="selo selo-cat">Wachstumshormon-Achse</span><span>10 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_sermorelin.html" data-cat="gh" data-busca="sermorelina (grf 1-29) cópia dos 29 primeiros aminoácidos do ghrh eixo do hormônio do crescimento protocol_sermorelin sermorelin (grf 1-29) kopie der ersten 29 aminosäuren des ghrh wachstumshormon-achse">
+    <a class="card card-com-fig" href="p/protocol_sermorelin.html" data-cat="gh" data-busca="sermorelina (grf 1-29) cópia dos 29 primeiros aminoácidos do ghrh eixo do hormônio do crescimento protocol_sermorelin sermorelin (grf 1-29) kopie der ersten 29 aminosäuren des ghrh wachstumshormon-achse">
+      <img class="card-fig" src="../assets/figuras/protocol_sermorelin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Sermorelin (GRF 1-29)</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Kopie der ersten 29 Aminosäuren des GHRH</p>
       <div class="card-rodape"><span class="selo selo-cat">Wachstumshormon-Achse</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_tesamorelin.html" data-cat="gh" data-busca="tesamorelina o único análogo de ghrh aprovado pela fda eixo do hormônio do crescimento protocol_tesamorelin tesamorelin das einzige von der fda zugelassene ghrh-analogon wachstumshormon-achse">
+    <a class="card card-com-fig" href="p/protocol_tesamorelin.html" data-cat="gh" data-busca="tesamorelina o único análogo de ghrh aprovado pela fda eixo do hormônio do crescimento protocol_tesamorelin tesamorelin das einzige von der fda zugelassene ghrh-analogon wachstumshormon-achse">
+      <img class="card-fig" src="../assets/figuras/protocol_tesamorelin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Tesamorelin</h3><span class="selo selo-sim">Zugelassen</span></div>
       <p>Das einzige von der FDA zugelassene GHRH-Analogon</p>
       <div class="card-rodape"><span class="selo selo-cat">Wachstumshormon-Achse</span><span>7 Tabelle(n)</span></div>
@@ -487,37 +488,44 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="neuro">
   <div class="secao-cabeca"><h2>Neuro und Kognition</h2><p class="secao-desc">Wirkstoffe, untersucht bei Aufmerksamkeit, Gedächtnis, Angst und Schlaf.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_adamax.html" data-cat="neuro" data-busca="adamax parente experimental do semax, quase sem pesquisa publicada neuro e cognição protocol_adamax adamax experimenteller verwandter des semax, fast ohne publizierte forschung neuro und kognition">
+    <a class="card card-com-fig" href="p/protocol_adamax.html" data-cat="neuro" data-busca="adamax parente experimental do semax, quase sem pesquisa publicada neuro e cognição protocol_adamax adamax experimenteller verwandter des semax, fast ohne publizierte forschung neuro und kognition">
+      <img class="card-fig" src="../assets/figuras/protocol_adamax-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Adamax</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Experimenteller Verwandter des Semax, fast ohne publizierte Forschung</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro und Kognition</span><span>4 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_methylene-blue.html" data-cat="neuro" data-busca="azul de metileno corante de 1876 que virou medicamento hospitalar neuro e cognição protocol_methylene-blue methylenblau farbstoff von 1876, der zum krankenhausmedikament wurde neuro und kognition">
+    <a class="card card-com-fig" href="p/protocol_methylene-blue.html" data-cat="neuro" data-busca="azul de metileno corante de 1876 que virou medicamento hospitalar neuro e cognição protocol_methylene-blue methylenblau farbstoff von 1876, der zum krankenhausmedikament wurde neuro und kognition">
+      <img class="card-fig" src="../assets/figuras/protocol_methylene-blue-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Methylenblau</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Farbstoff von 1876, der zum Krankenhausmedikament wurde</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro und Kognition</span><span>1 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_cerebrolysin.html" data-cat="neuro" data-busca="cerebrolisina mistura injetável de peptídeos de origem suína neuro e cognição protocol_cerebrolysin cerebrolysin injizierbare mischung von peptiden porcinen ursprungs neuro und kognition">
+    <a class="card card-com-fig" href="p/protocol_cerebrolysin.html" data-cat="neuro" data-busca="cerebrolisina mistura injetável de peptídeos de origem suína neuro e cognição protocol_cerebrolysin cerebrolysin injizierbare mischung von peptiden porcinen ursprungs neuro und kognition">
+      <img class="card-fig" src="../assets/figuras/protocol_cerebrolysin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cerebrolysin</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Injizierbare Mischung von Peptiden porcinen Ursprungs</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro und Kognition</span><span>1 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_dsip.html" data-cat="neuro" data-busca="dsip peptídeo indutor de sono delta — nome maior que a evidência neuro e cognição protocol_dsip dsip delta-schlaf-induzierendes peptid — ein name, der größer ist als die evidenz neuro und kognition">
+    <a class="card card-com-fig" href="p/protocol_dsip.html" data-cat="neuro" data-busca="dsip peptídeo indutor de sono delta — nome maior que a evidência neuro e cognição protocol_dsip dsip delta-schlaf-induzierendes peptid — ein name, der größer ist als die evidenz neuro und kognition">
+      <img class="card-fig" src="../assets/figuras/protocol_dsip-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>DSIP</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Delta-Schlaf-induzierendes Peptid — ein Name, der größer ist als die Evidenz</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro und Kognition</span><span>4 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_pinealon.html" data-cat="neuro" data-busca="pinealon (edr) bioregulador curto da escola de khavinson neuro e cognição protocol_pinealon pinealon (edr) kurzer bioregulator der khavinson-schule neuro und kognition">
+    <a class="card card-com-fig" href="p/protocol_pinealon.html" data-cat="neuro" data-busca="pinealon (edr) bioregulador curto da escola de khavinson neuro e cognição protocol_pinealon pinealon (edr) kurzer bioregulator der khavinson-schule neuro und kognition">
+      <img class="card-fig" src="../assets/figuras/protocol_pinealon-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Pinealon (EDR)</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Kurzer Bioregulator der Khavinson-Schule</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro und Kognition</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_selank.html" data-cat="neuro" data-busca="selank (tp-7) ansiolítico peptídico russo, par do semax neuro e cognição protocol_selank selank (tp-7) russisches peptid-anxiolytikum, partner des semax neuro und kognition">
+    <a class="card card-com-fig" href="p/protocol_selank.html" data-cat="neuro" data-busca="selank (tp-7) ansiolítico peptídico russo, par do semax neuro e cognição protocol_selank selank (tp-7) russisches peptid-anxiolytikum, partner des semax neuro und kognition">
+      <img class="card-fig" src="../assets/figuras/protocol_selank-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Selank (TP-7)</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Russisches Peptid-Anxiolytikum, Partner des Semax</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro und Kognition</span><span>10 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_semax.html" data-cat="neuro" data-busca="semax heptapeptídeo russo derivado do acth, ligado a bdnf neuro e cognição protocol_semax semax russisches heptapeptid, vom acth abgeleitet, mit bdnf verknüpft neuro und kognition">
+    <a class="card card-com-fig" href="p/protocol_semax.html" data-cat="neuro" data-busca="semax heptapeptídeo russo derivado do acth, ligado a bdnf neuro e cognição protocol_semax semax russisches heptapeptid, vom acth abgeleitet, mit bdnf verknüpft neuro und kognition">
+      <img class="card-fig" src="../assets/figuras/protocol_semax-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Semax</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Russisches Heptapeptid, vom ACTH abgeleitet, mit BDNF verknüpft</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro und Kognition</span><span>4 Tabelle(n)</span></div>
@@ -527,37 +535,44 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="longevidade">
   <div class="secao-cabeca"><h2>Langlebigkeit und Mitochondrien</h2><p class="secao-desc">Ziele im Zusammenhang mit Seneszenz, NAD+ und mitochondrialer Funktion.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_epitalon.html" data-cat="longevidade" data-busca="epitalon (epithalon, aedg) tetrapeptídeo russo associado a telomerase longevidade e mitocôndria protocol_epitalon epitalon (epithalon, aedg) russisches tetrapeptid, mit telomerase in verbindung gebracht langlebigkeit und mitochondrien">
+    <a class="card card-com-fig" href="p/protocol_epitalon.html" data-cat="longevidade" data-busca="epitalon (epithalon, aedg) tetrapeptídeo russo associado a telomerase longevidade e mitocôndria protocol_epitalon epitalon (epithalon, aedg) russisches tetrapeptid, mit telomerase in verbindung gebracht langlebigkeit und mitochondrien">
+      <img class="card-fig" src="../assets/figuras/protocol_epitalon-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Epitalon (Epithalon, AEDG)</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Russisches Tetrapeptid, mit Telomerase in Verbindung gebracht</p>
       <div class="card-rodape"><span class="selo selo-cat">Langlebigkeit und Mitochondrien</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_foxo4-dri.html" data-cat="longevidade" data-busca="foxo4-dri senolítico experimental — o de menor margem desta lista longevidade e mitocôndria protocol_foxo4-dri foxo4-dri experimentelles senolytikum — das mit der geringsten sicherheitsmarge dieser liste langlebigkeit und mitochondrien">
+    <a class="card card-com-fig" href="p/protocol_foxo4-dri.html" data-cat="longevidade" data-busca="foxo4-dri senolítico experimental — o de menor margem desta lista longevidade e mitocôndria protocol_foxo4-dri foxo4-dri experimentelles senolytikum — das mit der geringsten sicherheitsmarge dieser liste langlebigkeit und mitochondrien">
+      <img class="card-fig" src="../assets/figuras/protocol_foxo4-dri-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>FOXO4-DRI</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Experimentelles Senolytikum — das mit der geringsten Sicherheitsmarge dieser Liste</p>
       <div class="card-rodape"><span class="selo selo-cat">Langlebigkeit und Mitochondrien</span><span>4 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_glutathione.html" data-cat="longevidade" data-busca="glutationa o antioxidante que o corpo já fabrica longevidade e mitocôndria protocol_glutathione glutathion das antioxidans, das der körper schon selbst herstellt langlebigkeit und mitochondrien">
+    <a class="card card-com-fig" href="p/protocol_glutathione.html" data-cat="longevidade" data-busca="glutationa o antioxidante que o corpo já fabrica longevidade e mitocôndria protocol_glutathione glutathion das antioxidans, das der körper schon selbst herstellt langlebigkeit und mitochondrien">
+      <img class="card-fig" src="../assets/figuras/protocol_glutathione-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Glutathion</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Das Antioxidans, das der Körper schon selbst herstellt</p>
       <div class="card-rodape"><span class="selo selo-cat">Langlebigkeit und Mitochondrien</span><span>1 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_humanin.html" data-cat="longevidade" data-busca="humanina (hng) peptídeo codificado na mitocôndria, não no núcleo longevidade e mitocôndria protocol_humanin humanin (hng) in den mitochondrien kodiertes peptid, nicht im zellkern langlebigkeit und mitochondrien">
+    <a class="card card-com-fig" href="p/protocol_humanin.html" data-cat="longevidade" data-busca="humanina (hng) peptídeo codificado na mitocôndria, não no núcleo longevidade e mitocôndria protocol_humanin humanin (hng) in den mitochondrien kodiertes peptid, nicht im zellkern langlebigkeit und mitochondrien">
+      <img class="card-fig" src="../assets/figuras/protocol_humanin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Humanin (HNG)</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>In den Mitochondrien kodiertes Peptid, nicht im Zellkern</p>
       <div class="card-rodape"><span class="selo selo-cat">Langlebigkeit und Mitochondrien</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_mots-c.html" data-cat="longevidade" data-busca="mots-c peptídeo mitocondrial ligado à via ampk longevidade e mitocôndria protocol_mots-c mots-c mitochondriales peptid, mit dem ampk-weg verknüpft langlebigkeit und mitochondrien">
+    <a class="card card-com-fig" href="p/protocol_mots-c.html" data-cat="longevidade" data-busca="mots-c peptídeo mitocondrial ligado à via ampk longevidade e mitocôndria protocol_mots-c mots-c mitochondriales peptid, mit dem ampk-weg verknüpft langlebigkeit und mitochondrien">
+      <img class="card-fig" src="../assets/figuras/protocol_mots-c-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>MOTS-c</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Mitochondriales Peptid, mit dem AMPK-Weg verknüpft</p>
       <div class="card-rodape"><span class="selo selo-cat">Langlebigkeit und Mitochondrien</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_nad-plus.html" data-cat="longevidade" data-busca="nad+ coenzima central — a via de administração muda tudo longevidade e mitocôndria protocol_nad-plus nad+ zentrales coenzym — der applikationsweg ändert alles langlebigkeit und mitochondrien">
+    <a class="card card-com-fig" href="p/protocol_nad-plus.html" data-cat="longevidade" data-busca="nad+ coenzima central — a via de administração muda tudo longevidade e mitocôndria protocol_nad-plus nad+ zentrales coenzym — der applikationsweg ändert alles langlebigkeit und mitochondrien">
+      <img class="card-fig" src="../assets/figuras/protocol_nad-plus-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>NAD+</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Zentrales Coenzym — der Applikationsweg ändert alles</p>
       <div class="card-rodape"><span class="selo selo-cat">Langlebigkeit und Mitochondrien</span><span>14 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_ss-31.html" data-cat="longevidade" data-busca="ss-31 (elamipretida) peptídeo que se liga à cardiolipina mitocondrial longevidade e mitocôndria protocol_ss-31 ss-31 (elamipretid) peptid, das an mitochondriales cardiolipin bindet langlebigkeit und mitochondrien">
+    <a class="card card-com-fig" href="p/protocol_ss-31.html" data-cat="longevidade" data-busca="ss-31 (elamipretida) peptídeo que se liga à cardiolipina mitocondrial longevidade e mitocôndria protocol_ss-31 ss-31 (elamipretid) peptid, das an mitochondriales cardiolipin bindet langlebigkeit und mitochondrien">
+      <img class="card-fig" src="../assets/figuras/protocol_ss-31-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>SS-31 (Elamipretid)</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Peptid, das an mitochondriales Cardiolipin bindet</p>
       <div class="card-rodape"><span class="selo selo-cat">Langlebigkeit und Mitochondrien</span><span>4 Tabelle(n)</span></div>
@@ -567,27 +582,32 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="hormonal">
   <div class="secao-cabeca"><h2>Hormonell und sexuell</h2><p class="secao-desc">Reproduktive Achse, Libido, Pigmentierung und Vasodilatation.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_kisspeptin.html" data-cat="hormonal" data-busca="kisspeptina a chave a montante do eixo reprodutivo hormonal e sexual protocol_kisspeptin kisspeptin der vorgeschaltete schalter der reproduktiven achse hormonell und sexuell">
+    <a class="card card-com-fig" href="p/protocol_kisspeptin.html" data-cat="hormonal" data-busca="kisspeptina a chave a montante do eixo reprodutivo hormonal e sexual protocol_kisspeptin kisspeptin der vorgeschaltete schalter der reproduktiven achse hormonell und sexuell">
+      <img class="card-fig" src="../assets/figuras/protocol_kisspeptin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Kisspeptin</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Der vorgeschaltete Schalter der reproduktiven Achse</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonell und sexuell</span><span>6 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_melanotan-ii.html" data-cat="hormonal" data-busca="melanotan ii (mt-2) bronzeamento por via de melanocortina — e uma lista de efeitos hormonal e sexual protocol_melanotan-ii melanotan ii (mt-2) bräunung über den melanocortin-weg — und eine liste von wirkungen hormonell und sexuell">
+    <a class="card card-com-fig" href="p/protocol_melanotan-ii.html" data-cat="hormonal" data-busca="melanotan ii (mt-2) bronzeamento por via de melanocortina — e uma lista de efeitos hormonal e sexual protocol_melanotan-ii melanotan ii (mt-2) bräunung über den melanocortin-weg — und eine liste von wirkungen hormonell und sexuell">
+      <img class="card-fig" src="../assets/figuras/protocol_melanotan-ii-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Melanotan II (MT-2)</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Bräunung über den Melanocortin-Weg — und eine Liste von Wirkungen</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonell und sexuell</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_oxytocin.html" data-cat="hormonal" data-busca="ocitocina hormônio aprovado em obstetrícia, usado off-label em cognição social hormonal e sexual protocol_oxytocin oxytocin in der geburtshilfe zugelassenes hormon, off-label bei sozialer kognition verwendet hormonell und sexuell">
+    <a class="card card-com-fig" href="p/protocol_oxytocin.html" data-cat="hormonal" data-busca="ocitocina hormônio aprovado em obstetrícia, usado off-label em cognição social hormonal e sexual protocol_oxytocin oxytocin in der geburtshilfe zugelassenes hormon, off-label bei sozialer kognition verwendet hormonell und sexuell">
+      <img class="card-fig" src="../assets/figuras/protocol_oxytocin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Oxytocin</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>In der Geburtshilfe zugelassenes Hormon, off-label bei sozialer Kognition verwendet</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonell und sexuell</span><span>4 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_bremelanotide-pt-141.html" data-cat="hormonal" data-busca="pt-141 (bremelanotida) agonista mc3r/mc4r — aprovado nos eua como vyleesi hormonal e sexual protocol_bremelanotide-pt-141 pt-141 (bremelanotid) mc3r/mc4r-agonist — in den usa als vyleesi zugelassen hormonell und sexuell">
+    <a class="card card-com-fig" href="p/protocol_bremelanotide-pt-141.html" data-cat="hormonal" data-busca="pt-141 (bremelanotida) agonista mc3r/mc4r — aprovado nos eua como vyleesi hormonal e sexual protocol_bremelanotide-pt-141 pt-141 (bremelanotid) mc3r/mc4r-agonist — in den usa als vyleesi zugelassen hormonell und sexuell">
+      <img class="card-fig" src="../assets/figuras/protocol_bremelanotide-pt-141-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>PT-141 (Bremelanotid)</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>MC3R/MC4R-Agonist — in den USA als Vyleesi zugelassen</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonell und sexuell</span><span>4 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/protocol_vip.html" data-cat="hormonal" data-busca="vip (peptídeo intestinal vasoativo) neuropeptídeo de 28 aminoácidos, meia-vida muito curta hormonal e sexual protocol_vip vip (vasoaktives intestinales peptid) neuropeptid aus 28 aminosäuren, sehr kurze halbwertszeit hormonell und sexuell">
+    <a class="card card-com-fig" href="p/protocol_vip.html" data-cat="hormonal" data-busca="vip (peptídeo intestinal vasoativo) neuropeptídeo de 28 aminoácidos, meia-vida muito curta hormonal e sexual protocol_vip vip (vasoaktives intestinales peptid) neuropeptid aus 28 aminosäuren, sehr kurze halbwertszeit hormonell und sexuell">
+      <img class="card-fig" src="../assets/figuras/protocol_vip-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>VIP (vasoaktives intestinales Peptid)</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Neuropeptid aus 28 Aminosäuren, sehr kurze Halbwertszeit</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonell und sexuell</span><span>4 Tabelle(n)</span></div>
@@ -597,7 +617,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="imune">
   <div class="secao-cabeca"><h2>Immun</h2><p class="secao-desc">Modulation der Immunantwort.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_thymosin-alpha-1.html" data-cat="imune" data-busca="timosina alfa-1 (ta1) modulador imune com registro fora dos eua imune protocol_thymosin-alpha-1 thymosin alpha-1 (ta1) immunmodulator mit zulassung außerhalb der usa immun">
+    <a class="card card-com-fig" href="p/protocol_thymosin-alpha-1.html" data-cat="imune" data-busca="timosina alfa-1 (ta1) modulador imune com registro fora dos eua imune protocol_thymosin-alpha-1 thymosin alpha-1 (ta1) immunmodulator mit zulassung außerhalb der usa immun">
+      <img class="card-fig" src="../assets/figuras/protocol_thymosin-alpha-1-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Thymosin alpha-1 (TA1)</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Immunmodulator mit Zulassung außerhalb der USA</p>
       <div class="card-rodape"><span class="selo selo-cat">Immun</span><span>6 Tabelle(n)</span></div>
@@ -607,57 +628,68 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="combinacao">
   <div class="secao-cabeca"><h2>Kombinationen</h2><p class="secao-desc">Protokolle, die zwei oder mehr Wirkstoffe im selben Zyklus kombinieren.</p></div>
   <div class="grade">
-    <a class="card" href="p/stacks_advanced-recomp-stack.html" data-cat="combinacao" data-busca="advanced recomp retatrutida + cjc-1295 sem dac + ipamorelina combinações stacks_advanced-recomp-stack advanced recomp retatrutid + cjc-1295 ohne dac + ipamorelin kombinationen">
+    <a class="card card-com-fig" href="p/stacks_advanced-recomp-stack.html" data-cat="combinacao" data-busca="advanced recomp retatrutida + cjc-1295 sem dac + ipamorelina combinações stacks_advanced-recomp-stack advanced recomp retatrutid + cjc-1295 ohne dac + ipamorelin kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_advanced-recomp-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Advanced Recomp</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Retatrutid + CJC-1295 ohne DAC + Ipamorelin</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>8 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_cjc-1295-ipamorelin-gh-pulse-stack.html" data-cat="combinacao" data-busca="cjc-1295 sem dac + ipamorelina a dupla de gh mais planejada da comunidade combinações stacks_cjc-1295-ipamorelin-gh-pulse-stack cjc-1295 ohne dac + ipamorelin das am sorgfältigsten geplante gh-duo der community kombinationen">
+    <a class="card card-com-fig" href="p/stacks_cjc-1295-ipamorelin-gh-pulse-stack.html" data-cat="combinacao" data-busca="cjc-1295 sem dac + ipamorelina a dupla de gh mais planejada da comunidade combinações stacks_cjc-1295-ipamorelin-gh-pulse-stack cjc-1295 ohne dac + ipamorelin das am sorgfältigsten geplante gh-duo der community kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_cjc-1295-ipamorelin-gh-pulse-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CJC-1295 ohne DAC + Ipamorelin</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Das am sorgfältigsten geplante GH-Duo der Community</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>6 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_cagrisema.html" data-cat="combinacao" data-busca="cagrisema cagrilintida 2,4 mg + semaglutida 2,4 mg, dose fixa combinações stacks_cagrisema cagrisema cagrilintid 2,4 mg + semaglutid 2,4 mg, feste dosis kombinationen">
+    <a class="card card-com-fig" href="p/stacks_cagrisema.html" data-cat="combinacao" data-busca="cagrisema cagrilintida 2,4 mg + semaglutida 2,4 mg, dose fixa combinações stacks_cagrisema cagrisema cagrilintid 2,4 mg + semaglutid 2,4 mg, feste dosis kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_cagrisema-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CagriSema</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Cagrilintid 2,4 mg + Semaglutid 2,4 mg, feste Dosis</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>6 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_cagrilintide-retatrutide.html" data-cat="combinacao" data-busca="cagrilintida + retatrutida agonista triplo somado a análogo de amilina combinações stacks_cagrilintide-retatrutide cagrilintid + retatrutid triple-agonist plus amylin-analogon kombinationen">
+    <a class="card card-com-fig" href="p/stacks_cagrilintide-retatrutide.html" data-cat="combinacao" data-busca="cagrilintida + retatrutida agonista triplo somado a análogo de amilina combinações stacks_cagrilintide-retatrutide cagrilintid + retatrutid triple-agonist plus amylin-analogon kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_cagrilintide-retatrutide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cagrilintid + Retatrutid</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Triple-Agonist plus Amylin-Analogon</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>8 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_cagrilintide-tirzepatide.html" data-cat="combinacao" data-busca="cagrilintida + tirzepatida dupla semanal de apetite combinações stacks_cagrilintide-tirzepatide cagrilintid + tirzepatid wöchentliches appetit-duo kombinationen">
+    <a class="card card-com-fig" href="p/stacks_cagrilintide-tirzepatide.html" data-cat="combinacao" data-busca="cagrilintida + tirzepatida dupla semanal de apetite combinações stacks_cagrilintide-tirzepatide cagrilintid + tirzepatid wöchentliches appetit-duo kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_cagrilintide-tirzepatide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cagrilintid + Tirzepatid</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Wöchentliches Appetit-Duo</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_russian-nootropic-stack.html" data-cat="combinacao" data-busca="dupla nootrópica russa semax + selank combinações stacks_russian-nootropic-stack russisches nootropika-duo semax + selank kombinationen">
+    <a class="card card-com-fig" href="p/stacks_russian-nootropic-stack.html" data-cat="combinacao" data-busca="dupla nootrópica russa semax + selank combinações stacks_russian-nootropic-stack russisches nootropika-duo semax + selank kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_russian-nootropic-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Russisches Nootropika-Duo</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Semax + Selank</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>6 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_glow-stack.html" data-cat="combinacao" data-busca="glow bpc-157 + tb-500 + ghk-cu num frasco combinações stacks_glow-stack glow bpc-157 + tb-500 + ghk-cu in einem vial kombinationen">
+    <a class="card card-com-fig" href="p/stacks_glow-stack.html" data-cat="combinacao" data-busca="glow bpc-157 + tb-500 + ghk-cu num frasco combinações stacks_glow-stack glow bpc-157 + tb-500 + ghk-cu in einem vial kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_glow-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>GLOW</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>BPC-157 + TB-500 + GHK-Cu in einem Vial</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>8 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_klow-stack.html" data-cat="combinacao" data-busca="klow ghk-cu + kpv + bpc-157 + tb-500, frasco de 80 mg combinações stacks_klow-stack klow ghk-cu + kpv + bpc-157 + tb-500, 80-mg-vial kombinationen">
+    <a class="card card-com-fig" href="p/stacks_klow-stack.html" data-cat="combinacao" data-busca="klow ghk-cu + kpv + bpc-157 + tb-500, frasco de 80 mg combinações stacks_klow-stack klow ghk-cu + kpv + bpc-157 + tb-500, 80-mg-vial kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_klow-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>KLOW</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>GHK-Cu + KPV + BPC-157 + TB-500, 80-mg-Vial</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>6 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_retatrutide-mots-c.html" data-cat="combinacao" data-busca="retatrutida + mots-c apetite por uma via, mitocôndria por outra combinações stacks_retatrutide-mots-c retatrutid + mots-c appetit über einen weg, mitochondrien über einen anderen kombinationen">
+    <a class="card card-com-fig" href="p/stacks_retatrutide-mots-c.html" data-cat="combinacao" data-busca="retatrutida + mots-c apetite por uma via, mitocôndria por outra combinações stacks_retatrutide-mots-c retatrutid + mots-c appetit über einen weg, mitochondrien über einen anderen kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_retatrutide-mots-c-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Retatrutid + MOTS-c</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Appetit über einen Weg, Mitochondrien über einen anderen</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_tesamorelin-ipamorelin.html" data-cat="combinacao" data-busca="tesamorelina + ipamorelina duas portas diferentes para o mesmo pulso de gh combinações stacks_tesamorelin-ipamorelin tesamorelin + ipamorelin zwei verschiedene türen für denselben gh-puls kombinationen">
+    <a class="card card-com-fig" href="p/stacks_tesamorelin-ipamorelin.html" data-cat="combinacao" data-busca="tesamorelina + ipamorelina duas portas diferentes para o mesmo pulso de gh combinações stacks_tesamorelin-ipamorelin tesamorelin + ipamorelin zwei verschiedene türen für denselben gh-puls kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_tesamorelin-ipamorelin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Tesamorelin + Ipamorelin</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Zwei verschiedene Türen für denselben GH-Puls</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/stacks_wolverine-stack.html" data-cat="combinacao" data-busca="wolverine bpc-157 + tb-500, a base de reparo combinações stacks_wolverine-stack wolverine bpc-157 + tb-500, die reparaturbasis kombinationen">
+    <a class="card card-com-fig" href="p/stacks_wolverine-stack.html" data-cat="combinacao" data-busca="wolverine bpc-157 + tb-500, a base de reparo combinações stacks_wolverine-stack wolverine bpc-157 + tb-500, die reparaturbasis kombinationen">
+      <img class="card-fig" src="../assets/figuras/stacks_wolverine-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Wolverine</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>BPC-157 + TB-500, die Reparaturbasis</p>
       <div class="card-rodape"><span class="selo selo-cat">Kombinationen</span><span>9 Tabelle(n)</span></div>
@@ -667,147 +699,230 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="primaria">
   <div class="secao-cabeca"><h2>An Primärquellen geprüft</h2><p class="secao-desc">Seiten, direkt aus PubMed und ClinicalTrials.gov erstellt, nicht aus der Sekundärquelle. Sie bringen die Evidenzzählung und die verwendete Suchanfrage.</p></div>
   <div class="grade">
-    <a class="card card-aferido" href="p/proprio_dose_hepatica.html" data-cat="primaria" data-busca="ajuste de dose por função hepática aqui não é só lacuna: há dano documentado, com número e desfecho — e ele atinge exatamente quem este site atrai verificado em fonte primária proprio_dose_hepatica dosisanpassung nach leberfunktion hier ist es nicht nur eine lücke: es gibt dokumentierten schaden, mit zahl und ausgang — und er trifft genau die, die diese website anzieht an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_dose_hepatica.html" data-cat="primaria" data-busca="ajuste de dose por função hepática aqui não é só lacuna: há dano documentado, com número e desfecho — e ele atinge exatamente quem este site atrai verificado em fonte primária proprio_dose_hepatica dosisanpassung nach leberfunktion hier ist es nicht nur eine lücke: es gibt dokumentierten schaden, mit zahl und ausgang — und er trifft genau die, die diese website anzieht an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_dose_hepatica-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Dosisanpassung nach Leberfunktion</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Hier ist es nicht nur eine Lücke: Es gibt dokumentierten Schaden, mit Zahl und Ausgang — und er trifft genau die, die diese Website anzieht</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_dose_renal.html" data-cat="primaria" data-busca="ajuste de dose por função renal onde o dado existe, a bula manda não ajustar nada — e o risco de verdade está três seções acima, num item que quase ninguém lê verificado em fonte primária proprio_dose_renal dosisanpassung nach nierenfunktion wo die daten existieren, sagt die fachinformation, nichts anzupassen — und das eigentliche risiko steht drei abschnitte weiter oben, in einem punkt, den fast niemand liest an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_dose_renal.html" data-cat="primaria" data-busca="ajuste de dose por função renal onde o dado existe, a bula manda não ajustar nada — e o risco de verdade está três seções acima, num item que quase ninguém lê verificado em fonte primária proprio_dose_renal dosisanpassung nach nierenfunktion wo die daten existieren, sagt die fachinformation, nichts anzupassen — und das eigentliche risiko steht drei abschnitte weiter oben, in einem punkt, den fast niemand liest an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_dose_renal-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Dosisanpassung nach Nierenfunktion</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Wo die Daten existieren, sagt die Fachinformation, nichts anzupassen — und das eigentliche Risiko steht drei Abschnitte weiter oben, in einem Punkt, den fast niemand liest</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_anticorpos.html" data-cat="primaria" data-busca="anticorpos monoclonais trinta e cinco vezes maior que um peptídeo, feito por célula viva e dado em infusão venosa — dos três que aparecem na conversa de composição corporal, um único tem bula verificado em fonte primária proprio_anticorpos monoklonale antikörper fünfunddreißigmal größer als ein peptid, von einer lebenden zelle hergestellt und per venöser infusion verabreicht – von den dreien, die in der diskussion über körperzusammensetzung auftauchen, hat nur einer eine fachinformation an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_anticorpos.html" data-cat="primaria" data-busca="anticorpos monoclonais trinta e cinco vezes maior que um peptídeo, feito por célula viva e dado em infusão venosa — dos três que aparecem na conversa de composição corporal, um único tem bula verificado em fonte primária proprio_anticorpos monoklonale antikörper fünfunddreißigmal größer als ein peptid, von einer lebenden zelle hergestellt und per venöser infusion verabreicht – von den dreien, die in der diskussion über körperzusammensetzung auftauchen, hat nur einer eine fachinformation an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_anticorpos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Monoklonale Antikörper</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Fünfunddreißigmal größer als ein Peptid, von einer lebenden Zelle hergestellt und per venöser Infusion verabreicht – von den dreien, die in der Diskussion über Körperzusammensetzung auftauchen, hat nur einer eine Fachinformation</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>4 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_bioreguladores.html" data-cat="primaria" data-busca="bioreguladores curtos de khavinson onze peptídeos, cinco estudos clínicos, zero ensaios registrados verificado em fonte primária proprio_bioreguladores kurze khavinson-bioregulatoren elf peptide, fünf klinische studien, null registrierte studien an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_bioreguladores.html" data-cat="primaria" data-busca="bioreguladores curtos de khavinson onze peptídeos, cinco estudos clínicos, zero ensaios registrados verificado em fonte primária proprio_bioreguladores kurze khavinson-bioregulatoren elf peptide, fünf klinische studien, null registrierte studien an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_bioreguladores-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Kurze Khavinson-Bioregulatoren</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Elf Peptide, fünf klinische Studien, null registrierte Studien</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_crispr.html" data-cat="primaria" data-busca="crispr de 64.641 artigos, 67 são ensaios clínicos e 1 virou medicamento — e o que limita esse medicamento não é a edição do gene, é a quimioterapia em volta dela verificado em fonte primária proprio_crispr crispr von 64.641 artikeln sind 67 klinische studien, und 1 wurde zum arzneimittel — und was dieses arzneimittel begrenzt, ist nicht die genbearbeitung, sondern die chemotherapie darum herum an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_blends.html" data-cat="primaria" data-busca="blends prontos — o que a combinação tem de estudo 32 dos 33 blends vendidos prontos têm zero estudo registrado. 11 não têm nem um artigo que cite os componentes juntos verificado em fonte primária proprio_blends fertige blends — was die kombination an studien hat 32 der 33 fertig verkauften blends haben null registrierte studien. 11 haben nicht einmal einen artikel, der die komponenten zusammen nennt an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_blends-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Fertige Blends — was die Kombination an Studien hat</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
+      <p>32 der 33 fertig verkauften Blends haben null registrierte Studien. 11 haben nicht einmal einen Artikel, der die Komponenten zusammen nennt</p>
+      <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>1 Tabelle(n)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_crispr.html" data-cat="primaria" data-busca="crispr de 64.641 artigos, 67 são ensaios clínicos e 1 virou medicamento — e o que limita esse medicamento não é a edição do gene, é a quimioterapia em volta dela verificado em fonte primária proprio_crispr crispr von 64.641 artikeln sind 67 klinische studien, und 1 wurde zum arzneimittel — und was dieses arzneimittel begrenzt, ist nicht die genbearbeitung, sondern die chemotherapie darum herum an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_crispr-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CRISPR</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Von 64.641 Artikeln sind 67 klinische Studien, und 1 wurde zum Arzneimittel — und was dieses Arzneimittel begrenzt, ist nicht die Genbearbeitung, sondern die Chemotherapie darum herum</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>11 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_calvicie.html" data-cat="primaria" data-busca="calvície — o antigo e o que está chegando dezoito tratamentos medidos na mesma régua: o minoxidil tem 23 registros ativos como antialopecia, e o pp405, que circula como pó de pesquisa, tem 1 artigo no pubmed verificado em fonte primária proprio_calvicie haarausfall — das altbekannte und das, was kommt achtzehn behandlungen, gemessen an derselben messlatte: pp405, das als forschungspulver kursiert, hat 1 artikel bei pubmed an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_calvicie.html" data-cat="primaria" data-busca="calvície — o antigo e o que está chegando dezoito tratamentos medidos na mesma régua: o minoxidil tem 23 registros ativos como antialopecia, e o pp405, que circula como pó de pesquisa, tem 1 artigo no pubmed verificado em fonte primária proprio_calvicie haarausfall — das altbekannte und das, was kommt achtzehn behandlungen, gemessen an derselben messlatte: pp405, das als forschungspulver kursiert, hat 1 artikel bei pubmed an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_calvicie-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Haarausfall — das Altbekannte und das, was kommt</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Achtzehn Behandlungen, gemessen an derselben Messlatte: PP405, das als Forschungspulver kursiert, hat 1 Artikel bei PubMed</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_casgevy.html" data-cat="primaria" data-busca="casgevy o gargalo declarado não é o preço — na inglaterra são 1.794 elegíveis e 23 tratamentos no primeiro ano, e o motivo que o avaliador escreve é a internação, não o custo verificado em fonte primária proprio_casgevy casgevy der erklärte engpass ist nicht der preis — in england sind es 1.794 berechtigte und 23 behandlungen im ersten jahr, und der grund, den der gutachter nennt, ist der krankenhausaufenthalt, nicht die kosten an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_casgevy.html" data-cat="primaria" data-busca="casgevy o gargalo declarado não é o preço — na inglaterra são 1.794 elegíveis e 23 tratamentos no primeiro ano, e o motivo que o avaliador escreve é a internação, não o custo verificado em fonte primária proprio_casgevy casgevy der erklärte engpass ist nicht der preis — in england sind es 1.794 berechtigte und 23 behandlungen im ersten jahr, und der grund, den der gutachter nennt, ist der krankenhausaufenthalt, nicht die kosten an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_casgevy-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Casgevy</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Der erklärte Engpass ist nicht der Preis — in England sind es 1.794 Berechtigte und 23 Behandlungen im ersten Jahr, und der Grund, den der Gutachter nennt, ist der Krankenhausaufenthalt, nicht die Kosten</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>9 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_rim.html" data-cat="primaria" data-busca="doença renal de zero a seis medicamentos em quatro anos e meio — e cinco deles foram aprovados sobre um número que não é o que interessa ao paciente verificado em fonte primária proprio_rim nierenerkrankung von null auf sechs arzneimittel in viereinhalb jahren — und fünf davon wurden auf basis einer zahl zugelassen, die nicht die ist, die den patienten interessiert an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_rim.html" data-cat="primaria" data-busca="doença renal de zero a seis medicamentos em quatro anos e meio — e cinco deles foram aprovados sobre um número que não é o que interessa ao paciente verificado em fonte primária proprio_rim nierenerkrankung von null auf sechs arzneimittel in viereinhalb jahren — und fünf davon wurden auf basis einer zahl zugelassen, die nicht die ist, die den patienten interessiert an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_rim-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Nierenerkrankung</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Von null auf sechs Arzneimittel in viereinhalb Jahren — und fünf davon wurden auf Basis einer Zahl zugelassen, die nicht die ist, die den Patienten interessiert</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>5 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_exossomos.html" data-cat="primaria" data-busca="exossomos 45.674 artigos, 83 ensaios randomizados e nenhum produto aprovado em agência nenhuma verificado em fonte primária proprio_exossomos exosomen 45.674 artikel, 83 randomisierte studien und kein von irgendeiner behörde zugelassenes produkt an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_exossomos.html" data-cat="primaria" data-busca="exossomos 45.674 artigos, 83 ensaios randomizados e nenhum produto aprovado em agência nenhuma verificado em fonte primária proprio_exossomos exosomen 45.674 artikel, 83 randomisierte studien und kein von irgendeiner behörde zugelassenes produkt an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_exossomos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Exosomen</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>45.674 Artikel, 83 randomisierte Studien und kein von irgendeiner Behörde zugelassenes Produkt</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_figado_lipidio.html" data-cat="primaria" data-busca="fígado e lipídio treze moléculas com dois dígitos de artigo no pubmed e ensaios de desfecho de até 17.300 participantes — e uma só delas, a inclisirana, tem registro ativo verificado em fonte primária proprio_figado_lipidio leber und lipide dreizehn moleküle mit zweistelliger artikelzahl in pubmed und endpunktstudien mit bis zu 17.300 teilnehmern an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_figado_lipidio.html" data-cat="primaria" data-busca="fígado e lipídio treze moléculas com dois dígitos de artigo no pubmed e ensaios de desfecho de até 17.300 participantes — e uma só delas, a inclisirana, tem registro ativo verificado em fonte primária proprio_figado_lipidio leber und lipide dreizehn moleküle mit zweistelliger artikelzahl in pubmed und endpunktstudien mit bis zu 17.300 teilnehmern an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_figado_lipidio-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Leber und Lipide</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Dreizehn Moleküle mit zweistelliger Artikelzahl in PubMed und Endpunktstudien mit bis zu 17.300 Teilnehmern</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_geroprotetores.html" data-cat="primaria" data-busca="geroprotetores dezessete candidatos a retardar o envelhecimento: 6 não têm um único ensaio de fase 3 registrado, e 8 dos 13 princípios ativos buscados não têm registro ativo verificado em fonte primária proprio_geroprotetores geroprotektoren siebzehn kandidaten, um die alterung zu verzögern: 6 haben nicht eine einzige registrierte phase-3-studie an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_gh_miostatina.html" data-cat="primaria" data-busca="gh e miostatina — o que ainda faltava o peg-mgf tem 5 artigos e 0 estudos. a folistatina vendida em frasco nunca foi testada em gente — o que existe em registro é terapia gênica. o ace-031 parou por segurança verificado em fonte primária proprio_gh_miostatina gh und myostatin — was noch fehlte peg-mgf hat 5 artikel und 0 studien. das im fläschchen verkaufte follistatin wurde nie am menschen getestet — was es im register gibt, ist gentherapie. ace-031 wurde aus sicherheitsgründen gestoppt an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_gh_miostatina-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>GH und Myostatin — was noch fehlte</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
+      <p>PEG-MGF hat 5 Artikel und 0 Studien. Das im Fläschchen verkaufte Follistatin wurde nie am Menschen getestet — was es im Register gibt, ist Gentherapie. ACE-031 wurde aus Sicherheitsgründen gestoppt</p>
+      <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_geroprotetores.html" data-cat="primaria" data-busca="geroprotetores dezessete candidatos a retardar o envelhecimento: 6 não têm um único ensaio de fase 3 registrado, e 8 dos 13 princípios ativos buscados não têm registro ativo verificado em fonte primária proprio_geroprotetores geroprotektoren siebzehn kandidaten, um die alterung zu verzögern: 6 haben nicht eine einzige registrierte phase-3-studie an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_geroprotetores-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Geroprotektoren</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Siebzehn Kandidaten, um die Alterung zu verzögern: 6 haben nicht eine einzige registrierte Phase-3-Studie</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_incretinas.html" data-cat="primaria" data-busca="incretinas e amilinas de nova geração treze moléculas que disputam o lugar da semaglutida — 11 já têm fase 3 registrada e 9 das 11 com dci publicada não têm um único registro ativo verificado em fonte primária proprio_incretinas inkretine und amyline der neuen generation dreizehn moleküle, die um den platz von semaglutid konkurrieren — 11 haben bereits eine registrierte phase 3 an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_gnrh.html" data-cat="primaria" data-busca="gnrh e gonadotrofinas — os análogos que têm bula triptorrelina, leuprorrelina e gosserrelina têm 86, 124 e 125 ensaios de fase 3 registrados, em câncer e fertilidade. nos registros das cinco buscas, nenhum é sobre recuperação depois de anabolizante verificado em fonte primária proprio_gnrh gnrh und gonadotropine — die analoga mit fachinformation triptorelin, leuprorelin und goserelin haben 86, 124 und 125 registrierte phase-3-studien, bei krebs und fertilität. in den registrierungen der fünf suchen betrifft keine die erholung nach anabolika an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_gnrh-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>GnRH und Gonadotropine — die Analoga mit Fachinformation</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
+      <p>Triptorelin, Leuprorelin und Goserelin haben 86, 124 und 125 registrierte Phase-3-Studien, bei Krebs und Fertilität. In den Registrierungen der fünf Suchen betrifft keine die Erholung nach Anabolika</p>
+      <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>4 Tabelle(n)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_incretinas.html" data-cat="primaria" data-busca="incretinas e amilinas de nova geração treze moléculas que disputam o lugar da semaglutida — 11 já têm fase 3 registrada e 9 das 11 com dci publicada não têm um único registro ativo verificado em fonte primária proprio_incretinas inkretine und amyline der neuen generation dreizehn moleküle, die um den platz von semaglutid konkurrieren — 11 haben bereits eine registrierte phase 3 an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_incretinas-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Inkretine und Amyline der neuen Generation</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Dreizehn Moleküle, die um den Platz von Semaglutid konkurrieren — 11 haben bereits eine registrierte Phase 3</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_tarja.html" data-cat="primaria" data-busca="itens de tarja da lista 13 medicamentos que apareciam misturados com suplemento verificado em fonte primária proprio_tarja rezeptpflichtige präparate der liste 13 arzneimittel, die vermischt mit nahrungsergänzungsmitteln auftauchten an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_intestino.html" data-cat="primaria" data-busca="intestino — os análogos de glp-2 e a larazotida a fase 3 dos análogos de glp-2 é de síndrome do intestino curto, não de intestino permeável. o único ensaio de fase 3 da larazotida foi encerrado pelo patrocinador — e a busca por ela devolve registros de um remédio de doença de fabry verificado em fonte primária proprio_intestino darm — die glp-2-analoga und larazotid die phase 3 der glp-2-analoga betrifft das kurzdarmsyndrom, nicht den leaky gut. die einzige phase-3-studie zu larazotid wurde vom sponsor beendet — und die suche danach liefert registrierungen eines medikaments gegen morbus fabry an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_intestino-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Darm — die GLP-2-Analoga und Larazotid</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
+      <p>Die Phase 3 der GLP-2-Analoga betrifft das Kurzdarmsyndrom, nicht den Leaky Gut. Die einzige Phase-3-Studie zu Larazotid wurde vom Sponsor beendet — und die Suche danach liefert Registrierungen eines Medikaments gegen Morbus Fabry</p>
+      <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_tarja.html" data-cat="primaria" data-busca="itens de tarja da lista 13 medicamentos que apareciam misturados com suplemento verificado em fonte primária proprio_tarja rezeptpflichtige präparate der liste 13 arzneimittel, die vermischt mit nahrungsergänzungsmitteln auftauchten an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_tarja-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Rezeptpflichtige Präparate der Liste</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>13 Arzneimittel, die vermischt mit Nahrungsergänzungsmitteln auftauchten</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_klow_evidencia.html" data-cat="primaria" data-busca="klow — a evidência a blend segue sem ensaio, mas três componentes entraram em fase clínica em 2026 verificado em fonte primária proprio_klow_evidencia klow — die evidenz die blend bleibt ohne studie, aber drei komponenten sind 2026 in die klinische phase eingetreten an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_klow_evidencia.html" data-cat="primaria" data-busca="klow — a evidência a blend segue sem ensaio, mas três componentes entraram em fase clínica em 2026 verificado em fonte primária proprio_klow_evidencia klow — die evidenz die blend bleibt ohne studie, aber drei komponenten sind 2026 in die klinische phase eingetreten an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_klow_evidencia-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>KLOW — die Evidenz</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Die Blend bleibt ohne Studie, aber drei Komponenten sind 2026 in die klinische Phase eingetreten</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_mazdutida.html" data-cat="primaria" data-busca="mazdutida 12 ensaios de fase 3, publicação em nejm, jama e nature — e nenhuma bula verificado em fonte primária proprio_mazdutida mazdutid 12 phase-3-studien, publikationen in nejm, jama und nature — und keine fachinformation an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_mazdutida.html" data-cat="primaria" data-busca="mazdutida 12 ensaios de fase 3, publicação em nejm, jama e nature — e nenhuma bula verificado em fonte primária proprio_mazdutida mazdutid 12 phase-3-studien, publikationen in nejm, jama und nature — und keine fachinformation an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_mazdutida-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Mazdutid</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>12 Phase-3-Studien, Publikationen in NEJM, JAMA und Nature — und keine Fachinformation</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_leste.html" data-cat="primaria" data-busca="medicamentos do leste europeu 18 importados, 29 ensaios registrados — e um histórico de mortes esquecido verificado em fonte primária proprio_leste arzneimittel aus osteuropa 18 importiert, 29 registrierte studien — und eine vergessene geschichte von todesfällen an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_leste.html" data-cat="primaria" data-busca="medicamentos do leste europeu 18 importados, 29 ensaios registrados — e um histórico de mortes esquecido verificado em fonte primária proprio_leste arzneimittel aus osteuropa 18 importiert, 29 registrierte studien — und eine vergessene geschichte von todesfällen an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_leste-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Arzneimittel aus Osteuropa</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>18 importiert, 29 registrierte Studien — und eine vergessene Geschichte von Todesfällen</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_meldonium.html" data-cat="primaria" data-busca="meldonium (mildronato) 357 artigos, 7 ensaios registrados — e uma janela de detecção de meses verificado em fonte primária proprio_meldonium meldonium (mildronat) 357 artikel, 7 registrierte studien — und ein nachweisfenster von monaten an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_meldonium.html" data-cat="primaria" data-busca="meldonium (mildronato) 357 artigos, 7 ensaios registrados — e uma janela de detecção de meses verificado em fonte primária proprio_meldonium meldonium (mildronat) 357 artikel, 7 registrierte studien — und ein nachweisfenster von monaten an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_meldonium-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Meldonium (Mildronat)</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>357 Artikel, 7 registrierte Studien — und ein Nachweisfenster von Monaten</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>4 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_musculo_hpg.html" data-cat="primaria" data-busca="músculo, osso, eixo hpg e imune quinze moléculas que a conversa de peptídeo cita como se fossem equivalentes aos frascos de pesquisa — 6 das 14 buscadas têm registro ativo , com nome comercial e classe terapêutica declarada verificado em fonte primária proprio_musculo_hpg muskel, knochen, hpg-achse und immunsystem fünfzehn moleküle, die in der peptid-community als gleichwertig mit forschungsfläschchen bezeichnet werden an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_metabolismo.html" data-cat="primaria" data-busca="metabolismo e gordura — exenatida, aicar, cbl-514 e outros a exenatida tem 93 ensaios de fase 3 e zero registro ativo . a oxintomodulina, zero de fase 3. o cbl-514 tem 7 artigos e 16 estudos registrados, todos da mesma empresa verificado em fonte primária proprio_metabolismo stoffwechsel und fett — exenatid, aicar, cbl-514 und andere exenatid hat 93 phase-3-studien und keine aktive zulassung in brasilien. oxyntomodulin hat null in phase 3. cbl-514 hat 7 artikel und 16 registrierte studien, alle von derselben firma an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_metabolismo-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Stoffwechsel und Fett — Exenatid, AICAR, CBL-514 und andere</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
+      <p>Exenatid hat 93 Phase-3-Studien und keine aktive Zulassung in Brasilien. Oxyntomodulin hat null in Phase 3. CBL-514 hat 7 Artikel und 16 registrierte Studien, alle von derselben Firma</p>
+      <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>4 Tabelle(n)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_musculo_hpg.html" data-cat="primaria" data-busca="músculo, osso, eixo hpg e imune quinze moléculas que a conversa de peptídeo cita como se fossem equivalentes aos frascos de pesquisa — 6 das 14 buscadas têm registro ativo , com nome comercial e classe terapêutica declarada verificado em fonte primária proprio_musculo_hpg muskel, knochen, hpg-achse und immunsystem fünfzehn moleküle, die in der peptid-community als gleichwertig mit forschungsfläschchen bezeichnet werden an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_musculo_hpg-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Muskel, Knochen, HPG-Achse und Immunsystem</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Fünfzehn Moleküle, die in der Peptid-Community als gleichwertig mit Forschungsfläschchen bezeichnet werden</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_neuro_novos.html" data-cat="primaria" data-busca="neuro e cognição — o bloco russo e o que tem bula noopept, fenilpiracetam, bromantano e cortexina somam 0 estudos registrados no clinicaltrials.gov; lecanemabe e donanemabe já têm registro ativo verificado em fonte primária proprio_neuro_novos neuro und kognition — der russische block und das, was eine fachinformation hat noopept, phenylpiracetam, bromantan und cortexin kommen zusammen auf 0 registrierte studien im clinicaltrials.gov. an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_neuro_novos.html" data-cat="primaria" data-busca="neuro e cognição — o bloco russo e o que tem bula noopept, fenilpiracetam, bromantano e cortexina somam 0 estudos registrados no clinicaltrials.gov; lecanemabe e donanemabe já têm registro ativo verificado em fonte primária proprio_neuro_novos neuro und kognition — der russische block und das, was eine fachinformation hat noopept, phenylpiracetam, bromantan und cortexin kommen zusammen auf 0 registrierte studien im clinicaltrials.gov. an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_neuro_novos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Neuro und Kognition — der russische Block und das, was eine Fachinformation hat</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Noopept, Phenylpiracetam, Bromantan und Cortexin kommen zusammen auf 0 registrierte Studien im ClinicalTrials.gov.</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_nootropicos.html" data-cat="primaria" data-busca="nootrópicos 32 com evidência humana, 12 sem ensaio nenhum — e quatro contagens que estavam infladas verificado em fonte primária proprio_nootropicos nootropika 32 mit evidenz am menschen, 12 ohne jede studie — und vier zählungen, die aufgebläht waren an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_neuro_faltavam.html" data-cat="primaria" data-busca="neuro — as formas acetiladas e os que pararam na fase 3 o semax e o selank &quot;n-acetil amidato&quot; têm 6 e 2 artigos e zero estudo registrado. o rapastinel teve 10 ensaios de fase 3 e foi abandonado; a davunetida não superou o placebo verificado em fonte primária proprio_neuro_faltavam neuro — die acetylierten formen und die, die in phase 3 stehen geblieben sind semax und selank &quot;n-acetyl-amidat&quot; haben 6 und 2 artikel und null registrierte studien. rapastinel hatte 10 phase-3-studien und wurde aufgegeben; davunetid war placebo nicht überlegen an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_neuro_faltavam-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Neuro — die acetylierten Formen und die, die in Phase 3 stehen geblieben sind</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
+      <p>Semax und Selank &quot;N-Acetyl-Amidat&quot; haben 6 und 2 Artikel und null registrierte Studien. Rapastinel hatte 10 Phase-3-Studien und wurde aufgegeben; Davunetid war Placebo nicht überlegen</p>
+      <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_nootropicos.html" data-cat="primaria" data-busca="nootrópicos 32 com evidência humana, 12 sem ensaio nenhum — e quatro contagens que estavam infladas verificado em fonte primária proprio_nootropicos nootropika 32 mit evidenz am menschen, 12 ohne jede studie — und vier zählungen, die aufgebläht waren an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_nootropicos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Nootropika</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>32 mit Evidenz am Menschen, 12 ohne jede Studie — und vier Zählungen, die aufgebläht waren</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_eixo_gh.html" data-cat="primaria" data-busca="o eixo do gh fora do frasco de peptídeo o hormônio recombinante tem 54.472 artigos, 183 ensaios de fase 3 e 9 registros ativos ; os secretagogos que a comunidade usa no lugar dele têm zero registros ativos verificado em fonte primária proprio_eixo_gh die gh-achse außerhalb des peptidfläschchens das rekombinante hormon hat 54.472 artikel und 183 phase-3-studien. an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_eixo_gh.html" data-cat="primaria" data-busca="o eixo do gh fora do frasco de peptídeo o hormônio recombinante tem 54.472 artigos, 183 ensaios de fase 3 e 9 registros ativos ; os secretagogos que a comunidade usa no lugar dele têm zero registros ativos verificado em fonte primária proprio_eixo_gh die gh-achse außerhalb des peptidfläschchens das rekombinante hormon hat 54.472 artikel und 183 phase-3-studien. an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_eixo_gh-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Die GH-Achse außerhalb des Peptidfläschchens</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Das rekombinante Hormon hat 54.472 Artikel und 183 Phase-3-Studien.</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_glp1_bula.html" data-cat="primaria" data-busca="os glp-1 contra a bula as doses estavam certas. a tarja preta estava faltando verificado em fonte primária proprio_glp1_bula die glp-1 gegen die fachinformation die dosen stimmten. die black-box-warnung fehlte an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_glp1_bula.html" data-cat="primaria" data-busca="os glp-1 contra a bula as doses estavam certas. a tarja preta estava faltando verificado em fonte primária proprio_glp1_bula die glp-1 gegen die fachinformation die dosen stimmten. die black-box-warnung fehlte an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_glp1_bula-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Die GLP-1 gegen die Fachinformation</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Die Dosen stimmten. Die Black-Box-Warnung fehlte</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>6 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_reparo_novos.html" data-cat="primaria" data-busca="reparo além do bpc e do tb-500 a timosina β-4 tem 4 ensaios de fase 3 — e são de colírio para olho seco, não de reparo muscular; o ahk-cu tem 1 artigo no pubmed verificado em fonte primária proprio_reparo_novos reparatur jenseits von bpc und tb-500 die timosina β-4 hat 4 phase-3-studien – und die betreffen augentropfen gegen trockenes auge, nicht die muskelreparatur; das ahk-cu hat 1 artikel bei pubmed an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_cosmeticos.html" data-cat="primaria" data-busca="peptídeos cosméticos — argirelina, matrixyl e companhia a argirelina, a mais estudada, tem 50 artigos e 6 estudos — os que dizem a via no título são de creme e sérum. 6 dos 10 nomes têm 4 artigos ou menos no pubmed verificado em fonte primária proprio_cosmeticos kosmetische peptide — argirelin, matrixyl und co. argirelin, das am besten untersuchte, hat 50 artikel und 6 studien — die, die den applikationsweg im titel nennen, betreffen creme und serum. 6 der 10 namen haben 4 artikel oder weniger in pubmed an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_cosmeticos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Kosmetische Peptide — Argirelin, Matrixyl und Co.</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
+      <p>Argirelin, das am besten untersuchte, hat 50 Artikel und 6 Studien — die, die den Applikationsweg im Titel nennen, betreffen Creme und Serum. 6 der 10 Namen haben 4 Artikel oder weniger in PubMed</p>
+      <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>1 Tabelle(n)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_bancada.html" data-cat="primaria" data-busca="peptídeos de bancada — ss-20, shlp-2, shlp-3 e pnc-27 os quatro somam 77 artigos e zero estudo registrado no clinicaltrials.gov. o pnc-27 aparece em loja descrito como antitumoral, sem um único ensaio em gente verificado em fonte primária proprio_bancada laborpeptide — ss-20, shlp-2, shlp-3 und pnc-27 die vier kommen zusammen auf 77 artikel und null registrierte studien auf clinicaltrials.gov. pnc-27 wird in einem shop als antitumormittel beschrieben, ohne eine einzige studie am menschen an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_bancada-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Laborpeptide — SS-20, SHLP-2, SHLP-3 und PNC-27</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
+      <p>Die vier kommen zusammen auf 77 Artikel und null registrierte Studien auf ClinicalTrials.gov. PNC-27 wird in einem Shop als Antitumormittel beschrieben, ohne eine einzige Studie am Menschen</p>
+      <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>1 Tabelle(n)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_reparo_novos.html" data-cat="primaria" data-busca="reparo além do bpc e do tb-500 a timosina β-4 tem 4 ensaios de fase 3 — e são de colírio para olho seco, não de reparo muscular; o ahk-cu tem 1 artigo no pubmed verificado em fonte primária proprio_reparo_novos reparatur jenseits von bpc und tb-500 die timosina β-4 hat 4 phase-3-studien – und die betreffen augentropfen gegen trockenes auge, nicht die muskelreparatur; das ahk-cu hat 1 artikel bei pubmed an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_reparo_novos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Reparatur jenseits von BPC und TB-500</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Die timosina β-4 hat 4 Phase-3-Studien – und die betreffen Augentropfen gegen trockenes Auge, nicht die Muskelreparatur; das AHK-Cu hat 1 Artikel bei PubMed</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_sarms.html" data-cat="primaria" data-busca="sarms metade dos produtos vendidos como sarm não contém o sarm do rótulo — e quatro dos mais populares nunca tiveram um ensaio clínico verificado em fonte primária proprio_sarms sarms die hälfte der als sarm verkauften produkte enthält nicht das sarm auf dem etikett — und vier der beliebtesten hatten nie eine klinische studie an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_sarms.html" data-cat="primaria" data-busca="sarms metade dos produtos vendidos como sarm não contém o sarm do rótulo — e quatro dos mais populares nunca tiveram um ensaio clínico verificado em fonte primária proprio_sarms sarms die hälfte der als sarm verkauften produkte enthält nicht das sarm auf dem etikett — und vier der beliebtesten hatten nie eine klinische studie an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_sarms-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>SARMs</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>Die Hälfte der als SARM verkauften Produkte enthält nicht das SARM auf dem Etikett — und vier der beliebtesten hatten nie eine klinische Studie</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>8 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_semax_evidencia.html" data-cat="primaria" data-busca="semax — a evidência a dose dos ensaios russos é de 12 a 72 vezes a da comunidade verificado em fonte primária proprio_semax_evidencia semax — die evidenz die dosis der russischen studien ist das 12- bis 72-fache der community-dosis an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_semax_evidencia.html" data-cat="primaria" data-busca="semax — a evidência a dose dos ensaios russos é de 12 a 72 vezes a da comunidade verificado em fonte primária proprio_semax_evidencia semax — die evidenz die dosis der russischen studien ist das 12- bis 72-fache der community-dosis an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_semax_evidencia-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Semax — die Evidenz</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Die Dosis der russischen Studien ist das 12- bis 72-Fache der Community-Dosis</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_efeito.html" data-cat="primaria" data-busca="tamanho de efeito quantos ensaios existem é uma pergunta; o que eles acharam é outra — 34 metanálises abertas verificado em fonte primária proprio_efeito effektstärke wie viele studien es gibt, ist eine frage; was sie gefunden haben, eine andere — 34 metaanalysen aufgeschlagen an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_efeito.html" data-cat="primaria" data-busca="tamanho de efeito quantos ensaios existem é uma pergunta; o que eles acharam é outra — 34 metanálises abertas verificado em fonte primária proprio_efeito effektstärke wie viele studien es gibt, ist eine frage; was sie gefunden haben, eine andere — 34 metaanalysen aufgeschlagen an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_efeito-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Effektstärke</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Wie viele Studien es gibt, ist eine Frage; was sie gefunden haben, eine andere — 34 Metaanalysen aufgeschlagen</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_thymalin.html" data-cat="primaria" data-busca="thymalin extrato tímico russo — 293 artigos, 13 ensaios, zero registros verificado em fonte primária proprio_thymalin thymalin russischer thymusextrakt — 293 artikel, 13 studien, null registrierungen an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_thymalin.html" data-cat="primaria" data-busca="thymalin extrato tímico russo — 293 artigos, 13 ensaios, zero registros verificado em fonte primária proprio_thymalin thymalin russischer thymusextrakt — 293 artikel, 13 studien, null registrierungen an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_thymalin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Thymalin</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Russischer Thymusextrakt — 293 Artikel, 13 Studien, null Registrierungen</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_procedimentos.html" data-cat="primaria" data-busca="tratamentos que não são substância cinco procedimentos que competem com os frascos deste site e somam 69.593 artigos no pubmed e 5.349 estudos registrados verificado em fonte primária proprio_procedimentos behandlungen, die keine substanz sind fünf verfahren, die mit den fläschchen dieser website konkurrieren und zusammen 69.593 artikel bei pubmed und 5.349 registrierte studien ausmachen an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_timo.html" data-cat="primaria" data-busca="timo e cardiogen — timulina, timopentina e o bioregulador do coração a timulina tem 886 artigos e zero estudo registrado. a timopentina tem registros de hiv com o nome comercial timunox. o cardiogen divide o nome com um gerador de rubídio usado em exame do coração verificado em fonte primária proprio_timo thymus und cardiogen — thymulin, thymopentin und der bioregulator des herzens thymulin hat 886 artikel und null registrierte studien. zu thymopentin gibt es hiv-registrierungen unter dem handelsnamen timunox. cardiogen teilt den namen mit einem rubidium-generator, der bei einer herzuntersuchung verwendet wird an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_timo-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Thymus und Cardiogen — Thymulin, Thymopentin und der Bioregulator des Herzens</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
+      <p>Thymulin hat 886 Artikel und null registrierte Studien. Zu Thymopentin gibt es HIV-Registrierungen unter dem Handelsnamen Timunox. Cardiogen teilt den Namen mit einem Rubidium-Generator, der bei einer Herzuntersuchung verwendet wird</p>
+      <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>3 Tabelle(n)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_procedimentos.html" data-cat="primaria" data-busca="tratamentos que não são substância cinco procedimentos que competem com os frascos deste site e somam 69.593 artigos no pubmed e 5.349 estudos registrados verificado em fonte primária proprio_procedimentos behandlungen, die keine substanz sind fünf verfahren, die mit den fläschchen dieser website konkurrieren und zusammen 69.593 artikel bei pubmed und 5.349 registrierte studien ausmachen an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_procedimentos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Behandlungen, die keine Substanz sind</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Fünf Verfahren, die mit den Fläschchen dieser Website konkurrieren und zusammen 69.593 Artikel bei PubMed und 5.349 registrierte Studien ausmachen</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>2 Tabelle(n)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_alcool_esteatose.html" data-cat="primaria" data-busca="álcool e esteatose a causa de base que nenhum hepatograma enxerga — e que multiplica, não soma, o risco de tudo o mais que se toma verificado em fonte primária proprio_alcool_esteatose alkohol und steatose die grundursache, die kein leberpanel sieht — und die das risiko von allem anderen, was man nimmt, multipliziert, nicht addiert an primärquellen geprüft">
+    <a class="card card-aferido card-com-fig" href="p/proprio_alcool_esteatose.html" data-cat="primaria" data-busca="álcool e esteatose a causa de base que nenhum hepatograma enxerga — e que multiplica, não soma, o risco de tudo o mais que se toma verificado em fonte primária proprio_alcool_esteatose alkohol und steatose die grundursache, die kein leberpanel sieht — und die das risiko von allem anderen, was man nimmt, multipliziert, nicht addiert an primärquellen geprüft">
+      <img class="card-fig" src="../assets/figuras/proprio_alcool_esteatose-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Alkohol und Steatose</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>Die Grundursache, die kein Leberpanel sieht — und die das Risiko von allem anderen, was man nimmt, multipliziert, nicht addiert</p>
       <div class="card-rodape"><span class="selo selo-cat">An Primärquellen geprüft</span><span>6 Tabelle(n)</span></div>
@@ -817,12 +932,14 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="suplemento">
   <div class="secao-cabeca"><h2>Nahrungsergänzungsmittel und Verwandtes</h2><p class="secao-desc">Frei verkäufliche Posten, mit dem in Studien verwendeten Dosisbereich. Getrennt von denen, die ein Rezept erfordern.</p></div>
   <div class="grade">
-    <a class="card" href="p/proprio_fitoterapicos.html" data-cat="suplemento" data-busca="fitoterápicos e nootrópicos 18 itens onde o marketing costuma correr à frente do dado suplementos e correlatos proprio_fitoterapicos phytotherapeutika und nootropika 18 posten, bei denen das marketing den daten meist vorausläuft nahrungsergänzungsmittel und verwandtes">
+    <a class="card card-com-fig" href="p/proprio_fitoterapicos.html" data-cat="suplemento" data-busca="fitoterápicos e nootrópicos 18 itens onde o marketing costuma correr à frente do dado suplementos e correlatos proprio_fitoterapicos phytotherapeutika und nootropika 18 posten, bei denen das marketing den daten meist vorausläuft nahrungsergänzungsmittel und verwandtes">
+      <img class="card-fig" src="../assets/figuras/proprio_fitoterapicos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Phytotherapeutika und Nootropika</h3><span class="selo selo-nao">Nicht zugelassen</span></div>
       <p>18 Posten, bei denen das Marketing den Daten meist vorausläuft</p>
       <div class="card-rodape"><span class="selo selo-cat">Nahrungsergänzungsmittel und Verwandtes</span><span>3 Tabelle(n)</span></div>
     </a>
-    <a class="card" href="p/proprio_suplementos.html" data-cat="suplemento" data-busca="suplementos de venda livre 43 itens com dose, do que tem evidência boa ao que só tem marketing suplementos e correlatos proprio_suplementos frei verkäufliche nahrungsergänzungsmittel 43 posten mit dosis, von dem mit guter evidenz bis zu dem mit nur marketing nahrungsergänzungsmittel und verwandtes">
+    <a class="card card-com-fig" href="p/proprio_suplementos.html" data-cat="suplemento" data-busca="suplementos de venda livre 43 itens com dose, do que tem evidência boa ao que só tem marketing suplementos e correlatos proprio_suplementos frei verkäufliche nahrungsergänzungsmittel 43 posten mit dosis, von dem mit guter evidenz bis zu dem mit nur marketing nahrungsergänzungsmittel und verwandtes">
+      <img class="card-fig" src="../assets/figuras/proprio_suplementos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Frei verkäufliche Nahrungsergänzungsmittel</h3><span class="selo selo-parcial">Teilweise zugelassen</span></div>
       <p>43 Posten mit Dosis, von dem mit guter Evidenz bis zu dem mit nur Marketing</p>
       <div class="card-rodape"><span class="selo selo-cat">Nahrungsergänzungsmittel und Verwandtes</span><span>5 Tabelle(n)</span></div>

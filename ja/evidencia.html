@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>一次資料で検証済み — Protocolos</title>
-<meta name="description" content="各数字が一次資料から得られた29ページ ― PubMed、ClinicalTrials.gov、添付文書、WADA ― それぞれに検索式を明記しています。">
+<meta name="description" content="各数字が一次資料 ― PubMed、ClinicalTrials.gov、添付文書、WADA ― から得られた38ページ。それぞれに検索式を明記しています。">
 <meta name="robots" content="index, follow">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="一次資料で検証済み — Protocolos">
-<meta property="og:description" content="各数字が一次資料から得られた29ページ ― PubMed、ClinicalTrials.gov、添付文書、WADA ― それぞれに検索式を明記しています。">
+<meta property="og:description" content="各数字が一次資料 ― PubMed、ClinicalTrials.gov、添付文書、WADA ― から得られた38ページ。それぞれに検索式を明記しています。">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://peptisonar.com/ja/evidencia.html">
 <link rel="alternate" hreflang="pt-BR" href="https://peptisonar.com/evidencia.html">
@@ -24,7 +24,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "一次資料で検証済み — Protocolos",
-  "description": "各数字が一次資料から得られた29ページ ― PubMed、ClinicalTrials.gov、添付文書、WADA ― それぞれに検索式を明記しています。",
+  "description": "各数字が一次資料 ― PubMed、ClinicalTrials.gov、添付文書、WADA ― から得られた38ページ。それぞれに検索式を明記しています。",
   "url": "https://peptisonar.com/ja/evidencia.html",
   "inLanguage": "ja",
   "isPartOf": {
@@ -32,7 +32,7 @@
     "name": "Protocolos",
     "url": "https://peptisonar.com"
   },
-  "dateModified": "2026-09-14"
+  "dateModified": "2026-09-19"
 }
 </script>
 <link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -151,14 +151,6 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
 .trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
 .conteudo { padding: 42px 0px 96px; min-width: 0px; }
-.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
-.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
-.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
-.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
-.aviso p:last-child { margin-bottom: 0px; }
-.aviso-linha { border-top-color: ; border-top-style: ; border-top-width: ; border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: var(--atencao-fundo); border-left: 3px solid var(--atencao); border-radius: 0 var(--raio-sm) var(--raio-sm) 0; padding: 13px 18px; margin: 22px 0px; font-size: 14.5px; color: var(--texto-suave); }
-.aviso-linha strong { color: var(--atencao); }
 .selo { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; white-space: nowrap; border: 1px solid transparent; }
 .selo-nao { background: var(--alerta-fundo); color: rgb(238, 143, 121); border-color: var(--alerta-borda); }
 .selo-cat { background: var(--superficie-3); color: var(--texto-suave); border-color: var(--linha-forte); }
@@ -169,13 +161,15 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .artigo-cabeca h1 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.026em; margin: 0px 0px 14px; }
 .artigo-sub { font-size: 17.5px; color: var(--texto-suave); margin: 0px 0px 20px; max-width: 66ch; line-height: 1.6; }
 .artigo-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
+.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
+.artigo-fig { margin: 0px 0px 30px; }
+.artigo-fig img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta); }
+.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo h2 { font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: -0.018em; margin: 52px 0px 16px; padding-top: 26px; border-top: 1px solid var(--linha); }
 .conteudo h2:first-of-type { border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
-.conteudo strong { color: var(--texto); font-weight: 600; }
-.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
-.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo > p:first-of-type { font-size: 17px; color: var(--texto); }
+.conteudo strong { color: var(--texto); font-weight: 600; }
 .tabela-env { margin: 24px 0px 32px; border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; background: var(--superficie); }
 .tabela-rolagem { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
@@ -192,16 +186,21 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
 linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
 radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
 radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
+.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
+.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
+.aviso p:last-child { margin-bottom: 0px; }
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
-.nota-traducao { margin: 0px; padding: 9px 24px; font-size: 13px; line-height: 1.5; text-align: center; color: var(--texto-suave); background: var(--superficie); border-bottom: 1px solid var(--linha); }
-.nota-traducao a { color: var(--cobre-claro); }
 .procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
 @media (max-width: 940px) {
 .pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
 .trilha { display: none; }
 }
+.artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -230,28 +229,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.conteudo h2 { font-size: 23px; margin-top: 42px; }
 }</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
@@ -293,7 +270,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 
 <p>本サイトの大部分は、商業的な二次資料を整理して翻訳したものです。各ページに明記してあり、それがこの資料の構造的な弱点です。資料が間違っていれば、私はその誤りを繰り返します。</p>
 
-<p><strong>下に挙げたページ</strong>は違います。そこにある数値はすべて、私自身が<strong>PubMed</strong>と<strong>ClinicalTrials.gov</strong>で直接調べたもので、使用した検索式をページ内に明記しています。誰でも再現し、私に反論できるようにするためです。<strong>179種類の化合物</strong>に加え、2026年9月12日の調査回で取り上げた<strong>106の物質と治療</strong>を、その日に公開した九ページで扱っています。</p>
+<p><strong>以下に挙げるページ</strong>は違います。そこにある各数字は、私自身が<strong>PubMed</strong>と<strong>ClinicalTrials.gov</strong>で直接調べたもので、使用した検索式はページ自体の中に明記してあります。誰でも再現して私に反論できるようにするためです。対象は<strong>179種の異なる化合物</strong>に加え、2026年9月12日の調査回でその日に公開した九つのページで調べた<strong>106の物質と治療法</strong>、さらに2026年10月5日の調査回で、まだ欠けていたものを補うために公開した9ページで調べた<strong>44の物質と33のブレンド</strong>です。</p>
 
 <p>方法論の自負で目立たせているセクションではありません。この種のサイトにできる二つのこと — 用量を列挙するか、その用量に何の価値があるかを言うか — のうち、日本語で見つけにくいのは後者だけだからです。</p>
 
@@ -366,6 +343,51 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   <td><a href="p/proprio_procedimentos.html"><strong>物質ではない治療法</strong></a></td>
   <td>5</td>
   <td>ほとんど登場しない比較対象です。肥満外科手術には論文36,916件、登録された試験2,039件があります。一方、高気圧酸素療法を老化と掛け合わせると、<strong>フェーズ3試験は1件、参加者30人</strong>です</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_gnrh.html"><strong>GnRHとゴナドトロピン — 添付文書のあるアナログ</strong></a></td>
+  <td>5</td>
+  <td>トリプトレリン、リュープロレリン、ゴセレリンには、がんと不妊治療の領域で、それぞれ86件、124件、125件の第3相試験が登録されている。五つの検索で返った登録のうち、アナボリックステロイド後の回復を扱うものは一つもない</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_gh_miostatina.html"><strong>GHとミオスタチン — まだ欠けていたもの</strong></a></td>
+  <td>7</td>
+  <td>PEG-MGFは論文5本、試験0件。バイアルで売られるフォリスタチンはヒトで試験されたことがない — 登録にあるのは遺伝子治療である。ACE-031は安全性の理由で中止された</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_intestino.html"><strong>腸 — GLP-2アナログとララゾチド</strong></a></td>
+  <td>4</td>
+  <td>GLP-2アナログの第3相試験は短腸症候群のもので、リーキーガットのものではない。ララゾチド唯一の第3相試験はスポンサーによって中止された — しかもその検索ではファブリー病の薬の登録が返ってくる</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_metabolismo.html"><strong>代謝と脂肪 — エキセナチド、AICAR、CBL-514ほか</strong></a></td>
+  <td>6</td>
+  <td>エキセナチドは第3相試験が93件あるが、ブラジルでの有効な登録はゼロ。オキシントモジュリンは第3相がゼロ。CBL-514は論文7本、登録された試験16件で、すべて同じ企業によるもの</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_neuro_faltavam.html"><strong>神経 — アセチル化型と、第3相で止まったもの</strong></a></td>
+  <td>5</td>
+  <td>「N-アセチル・アミデート」型のSemaxとSelankは、論文がそれぞれ6本と2本、登録された試験はゼロ。ラパスチネルは第3相試験が10件あったが開発中止となり、ダブネチドはプラセボを上回らなかった</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_timo.html"><strong>胸腺とCardiogen — チムリン、チモペンチン、心臓のバイオレギュレーター</strong></a></td>
+  <td>3</td>
+  <td>チムリンは論文886本、登録された試験はゼロ。チモペンチンには商品名Timunoxで登録されたHIVの試験がある。Cardiogenは、心臓の検査に使われるルビジウム・ジェネレーターと名前が同じ</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_bancada.html"><strong>研究室止まりのペプチド — SS-20、SHLP-2、SHLP-3、PNC-27</strong></a></td>
+  <td>4</td>
+  <td>四つ合わせて論文77本、ClinicalTrials.govに登録された試験はゼロ。PNC-27は店で抗腫瘍薬と説明されているが、ヒトでの試験は一件もない</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_cosmeticos.html"><strong>化粧品用ペプチド — アルジルリン、Matrixylなど</strong></a></td>
+  <td>10</td>
+  <td>最も研究されているアルジルリンでも論文50本、試験6件 — タイトルに投与経路を書いているものはクリームと美容液のもの。10の名称のうち6つは、PubMedの論文が4本以下</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_blends.html"><strong>既製ブレンド — その組み合わせにどれだけ研究があるか</strong></a></td>
+  <td>33</td>
+  <td>既製品として売られるブレンド33種のうち32種は、登録された試験がゼロ。11種は成分を併記した論文すら一本もない</td>
 </tr>
 <tr>
   <td><a href="p/proprio_sarms.html"><strong>SARM</strong></a></td>

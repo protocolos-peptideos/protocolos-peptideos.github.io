@@ -406,3 +406,6 @@ COMPOSTOS.update(_XMUS)
 
 from compostos_procedimentos import EXTRA_PROCEDIMENTOS as _XPROC
 COMPOSTOS.update(_XPROC)
+
+from compostos_lacunas import EXTRA_LACUNAS as _XLAC
+COMPOSTOS.update(_XLAC)

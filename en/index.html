@@ -32,7 +32,7 @@
     "name": "Protocolos",
     "url": "https://peptisonar.com"
   },
-  "dateModified": "2026-09-14"
+  "dateModified": "2026-09-19"
 }
 </script>
 <link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -151,14 +151,6 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
 .trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
 .conteudo { padding: 42px 0px 96px; min-width: 0px; }
-.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
-.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
-.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
-.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
-.aviso p:last-child { margin-bottom: 0px; }
-.aviso-linha { border-top-color: ; border-top-style: ; border-top-width: ; border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: var(--atencao-fundo); border-left: 3px solid var(--atencao); border-radius: 0 var(--raio-sm) var(--raio-sm) 0; padding: 13px 18px; margin: 22px 0px; font-size: 14.5px; color: var(--texto-suave); }
-.aviso-linha strong { color: var(--atencao); }
 .selo { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; white-space: nowrap; border: 1px solid transparent; }
 .selo-nao { background: var(--alerta-fundo); color: rgb(238, 143, 121); border-color: var(--alerta-borda); }
 .selo-cat { background: var(--superficie-3); color: var(--texto-suave); border-color: var(--linha-forte); }
@@ -169,13 +161,15 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .artigo-cabeca h1 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.026em; margin: 0px 0px 14px; }
 .artigo-sub { font-size: 17.5px; color: var(--texto-suave); margin: 0px 0px 20px; max-width: 66ch; line-height: 1.6; }
 .artigo-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
+.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
+.artigo-fig { margin: 0px 0px 30px; }
+.artigo-fig img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta); }
+.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo h2 { font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: -0.018em; margin: 52px 0px 16px; padding-top: 26px; border-top: 1px solid var(--linha); }
 .conteudo h2:first-of-type { border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
-.conteudo strong { color: var(--texto); font-weight: 600; }
-.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
-.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo > p:first-of-type { font-size: 17px; color: var(--texto); }
+.conteudo strong { color: var(--texto); font-weight: 600; }
 .tabela-env { margin: 24px 0px 32px; border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; background: var(--superficie); }
 .tabela-rolagem { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
@@ -192,16 +186,21 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
 linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
 radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
 radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
+.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
+.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
+.aviso p:last-child { margin-bottom: 0px; }
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
-.nota-traducao { margin: 0px; padding: 9px 24px; font-size: 13px; line-height: 1.5; text-align: center; color: var(--texto-suave); background: var(--superficie); border-bottom: 1px solid var(--linha); }
-.nota-traducao a { color: var(--cobre-claro); }
 .procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
 @media (max-width: 940px) {
 .pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
 .trilha { display: none; }
 }
+.artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -230,28 +229,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.conteudo h2 { font-size: 23px; margin-top: 42px; }
 }</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
@@ -288,10 +265,10 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="hero">
   <span class="hero-sobre">Experimental reference</span>
   <h1>Peptides, nootropics and related compounds — <em>in English</em>, with the limits of the evidence in plain view.</h1>
-  <p class="hero-sub">86 compounds and combinations — from peptides to <a href="p/proprio_nootropicos.html">nootropics</a>, SARMs, and what exists registered in Brazil —, with dose, reconstitution, cycle structure, and regulatory status. Each page separates what a published trial tested from what is merely community-reported practice, because the difference between the two is the whole subject. In 29 of them the figures did not come from a secondary source: they were checked against <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">PubMed</a>, <a href="https://clinicaltrials.gov/" rel="noopener">ClinicalTrials.gov</a>, and the package insert — with the query declared on each page, for you to repeat and contradict me.</p>
+  <p class="hero-sub">95 compounds and combinations — from peptides to <a href="p/proprio_nootropicos.html">nootropics</a>, SARMs, and what exists registered in Brazil —, with dose, reconstitution, cycle structure, and regulatory status. Each page separates what a published trial tested from what is merely community-reported practice, because the difference between the two is the whole subject. In 38 of them the figures did not come from a secondary source: they were checked against <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">PubMed</a>, <a href="https://clinicaltrials.gov/" rel="noopener">ClinicalTrials.gov</a>, open data on registered medicines in Brazil, and the package insert — with the query declared on each page, for you to repeat and contradict me.</p>
   <div class="procedencia-resumo">
     <div class="proc-lado proc-aferida">
-      <b>29</b>
+      <b>38</b>
       <span>pages with the figure <strong>verified</strong> by me in PubMed, the package insert and ClinicalTrials.gov — with the query declared in each one</span>
     </div>
     <div class="proc-lado proc-transportada">
@@ -320,7 +297,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 </section>
 <form class="busca-caixa" id="ferramenta-filtro" action="index.html" method="get"
       toolname="filtrar_compostos"
-      tooldescription="Filters the list of compounds on this page by text and by category. It changes nothing: it only changes which cards stay visible, and returns the count of what&#x27;s left. The 86 compounds stay listed and linked on the page even without using the filter.">
+      tooldescription="Filters the list of compounds on this page by text and by category. It changes nothing: it only changes which cards stay visible, and returns the count of what&#x27;s left. The 95 compounds stay listed and linked on the page even without using the filter.">
   <div class="busca-campo">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
     <label for="busca" class="pular">Search compounds</label>
@@ -343,7 +320,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
     <button type="button" class="filtro" data-cat="primaria" aria-pressed="false">Verified against primary sources</button>
     <button type="button" class="filtro" data-cat="suplemento" aria-pressed="false">Supplements and related compounds</button>
   </div>
-  <p class="nota-filtro nota-fallback"><strong>The filter is a shortcut, not a gate.</strong> The 87 compounds are listed and linked below, grouped by section — you can reach any of them by scrolling the page, without searching.</p>
+  <p class="nota-filtro nota-fallback"><strong>The filter is a shortcut, not a gate.</strong> The 95 compounds are listed and linked below, grouped by section — you can reach any of them by scrolling the page, without searching.</p>
   <noscript><p class="nota-filtro nota-fallback">Without JavaScript the filter does not run, and nothing is lost: the list below is already complete.</p></noscript>
 </form>
 <p class="nota-filtro">The registration badge comes from the <a href="evidencia.html">scan of open data</a> done on September 4, 2026, and appears only on the 44 compounds that were measured one by one. Combinations and method pages have no badge.</p>
@@ -352,37 +329,44 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="reparo">
   <div class="secao-cabeca"><h2>Repair and tissue</h2><p class="secao-desc">Compounds studied in wound healing, tendon, skin and local inflammation.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_ara-290.html" data-cat="reparo" data-busca="ara-290 (cibinetida) fragmento da epo sem o efeito sobre hemácias reparo e tecido protocol_ara-290 ara-290 (cibinetide) epo fragment without the effect on red blood cells repair and tissue">
+    <a class="card card-com-fig" href="p/protocol_ara-290.html" data-cat="reparo" data-busca="ara-290 (cibinetida) fragmento da epo sem o efeito sobre hemácias reparo e tecido protocol_ara-290 ara-290 (cibinetide) epo fragment without the effect on red blood cells repair and tissue">
+      <img class="card-fig" src="../assets/figuras/protocol_ara-290-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>ARA-290 (cibinetide)</h3><span class="selo selo-nao">Not approved</span></div>
       <p>EPO fragment without the effect on red blood cells</p>
       <div class="card-rodape"><span class="selo selo-cat">Repair and tissue</span><span>4 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_bpc-157.html" data-cat="reparo" data-busca="bpc-157 o peptídeo de reparo mais discutido — e quase só em modelo animal reparo e tecido protocol_bpc-157 bpc-157 the most discussed repair peptide — and almost only in animal models repair and tissue">
+    <a class="card card-com-fig" href="p/protocol_bpc-157.html" data-cat="reparo" data-busca="bpc-157 o peptídeo de reparo mais discutido — e quase só em modelo animal reparo e tecido protocol_bpc-157 bpc-157 the most discussed repair peptide — and almost only in animal models repair and tissue">
+      <img class="card-fig" src="../assets/figuras/protocol_bpc-157-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>BPC-157</h3><span class="selo selo-nao">Not approved</span></div>
       <p>The most discussed repair peptide — and almost only in animal models</p>
       <div class="card-rodape"><span class="selo selo-cat">Repair and tissue</span><span>5 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_cartalax.html" data-cat="reparo" data-busca="cartalax bioregulador curto estudado em cartilagem reparo e tecido protocol_cartalax cartalax short bioregulator studied in cartilage repair and tissue">
+    <a class="card card-com-fig" href="p/protocol_cartalax.html" data-cat="reparo" data-busca="cartalax bioregulador curto estudado em cartilagem reparo e tecido protocol_cartalax cartalax short bioregulator studied in cartilage repair and tissue">
+      <img class="card-fig" src="../assets/figuras/protocol_cartalax-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cartalax</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Short bioregulator studied in cartilage</p>
       <div class="card-rodape"><span class="selo selo-cat">Repair and tissue</span><span>16 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_ghk-cu.html" data-cat="reparo" data-busca="ghk-cu peptídeo de cobre — o acúmulo é a variável que manda no ciclo reparo e tecido protocol_ghk-cu ghk-cu copper peptide — accumulation is the variable that governs the cycle repair and tissue">
+    <a class="card card-com-fig" href="p/protocol_ghk-cu.html" data-cat="reparo" data-busca="ghk-cu peptídeo de cobre — o acúmulo é a variável que manda no ciclo reparo e tecido protocol_ghk-cu ghk-cu copper peptide — accumulation is the variable that governs the cycle repair and tissue">
+      <img class="card-fig" src="../assets/figuras/protocol_ghk-cu-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>GHK-Cu</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Copper peptide — accumulation is the variable that governs the cycle</p>
       <div class="card-rodape"><span class="selo selo-cat">Repair and tissue</span><span>3 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_kpv.html" data-cat="reparo" data-busca="kpv tripeptídeo anti-inflamatório, fragmento do α-msh reparo e tecido protocol_kpv kpv anti-inflammatory tripeptide, fragment of α-msh repair and tissue">
+    <a class="card card-com-fig" href="p/protocol_kpv.html" data-cat="reparo" data-busca="kpv tripeptídeo anti-inflamatório, fragmento do α-msh reparo e tecido protocol_kpv kpv anti-inflammatory tripeptide, fragment of α-msh repair and tissue">
+      <img class="card-fig" src="../assets/figuras/protocol_kpv-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>KPV</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Anti-inflammatory tripeptide, fragment of α-MSH</p>
       <div class="card-rodape"><span class="selo selo-cat">Repair and tissue</span><span>11 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_ll-37.html" data-cat="reparo" data-busca="ll-37 o único peptídeo antimicrobiano catelicidina humano reparo e tecido protocol_ll-37 ll-37 the only human cathelicidin antimicrobial peptide repair and tissue">
+    <a class="card card-com-fig" href="p/protocol_ll-37.html" data-cat="reparo" data-busca="ll-37 o único peptídeo antimicrobiano catelicidina humano reparo e tecido protocol_ll-37 ll-37 the only human cathelicidin antimicrobial peptide repair and tissue">
+      <img class="card-fig" src="../assets/figuras/protocol_ll-37-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>LL-37</h3><span class="selo selo-nao">Not approved</span></div>
       <p>The only human cathelicidin antimicrobial peptide</p>
       <div class="card-rodape"><span class="selo selo-cat">Repair and tissue</span><span>3 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_tb-500.html" data-cat="reparo" data-busca="tb-500 fragmento da timosina beta-4 — migração celular reparo e tecido protocol_tb-500 tb-500 fragment of thymosin beta-4 — cell migration repair and tissue">
+    <a class="card card-com-fig" href="p/protocol_tb-500.html" data-cat="reparo" data-busca="tb-500 fragmento da timosina beta-4 — migração celular reparo e tecido protocol_tb-500 tb-500 fragment of thymosin beta-4 — cell migration repair and tissue">
+      <img class="card-fig" src="../assets/figuras/protocol_tb-500-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>TB-500</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Fragment of thymosin beta-4 — cell migration</p>
       <div class="card-rodape"><span class="selo selo-cat">Repair and tissue</span><span>5 table(s)</span></div>
@@ -392,52 +376,62 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="metabolico">
   <div class="secao-cabeca"><h2>Metabolic and weight</h2><p class="secao-desc">Incretin agonists and related compounds studied in weight and glycemia.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_5-amino-1mq.html" data-cat="metabolico" data-busca="5-amino-1mq molécula pequena, não é peptídeo, estudada em gordura e nnmt metabólico e peso protocol_5-amino-1mq 5-amino-1mq small molecule, not a peptide, studied in fat and nnmt metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_5-amino-1mq.html" data-cat="metabolico" data-busca="5-amino-1mq molécula pequena, não é peptídeo, estudada em gordura e nnmt metabólico e peso protocol_5-amino-1mq 5-amino-1mq small molecule, not a peptide, studied in fat and nnmt metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_5-amino-1mq-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>5-Amino-1MQ</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Small molecule, not a peptide, studied in fat and NNMT</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>10 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_aod-9604.html" data-cat="metabolico" data-busca="aod-9604 fragmento do gh estudado em lipólise metabólico e peso protocol_aod-9604 aod-9604 gh fragment studied in lipolysis metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_aod-9604.html" data-cat="metabolico" data-busca="aod-9604 fragmento do gh estudado em lipólise metabólico e peso protocol_aod-9604 aod-9604 gh fragment studied in lipolysis metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_aod-9604-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>AOD-9604</h3><span class="selo selo-nao">Not approved</span></div>
       <p>GH fragment studied in lipolysis</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>10 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_cagrilintide.html" data-cat="metabolico" data-busca="cagrilintida análogo de amilina semanal, em investigação metabólico e peso protocol_cagrilintide cagrilintide weekly amylin analog, under investigation metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_cagrilintide.html" data-cat="metabolico" data-busca="cagrilintida análogo de amilina semanal, em investigação metabólico e peso protocol_cagrilintide cagrilintide weekly amylin analog, under investigation metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_cagrilintide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cagrilintide</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Weekly amylin analog, under investigation</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>5 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_lipo-c.html" data-cat="metabolico" data-busca="lipo-c injeção lipotrópica manipulada — não é um peptídeo metabólico e peso protocol_lipo-c lipo-c compounded lipotropic injection — not a peptide metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_lipo-c.html" data-cat="metabolico" data-busca="lipo-c injeção lipotrópica manipulada — não é um peptídeo metabólico e peso protocol_lipo-c lipo-c compounded lipotropic injection — not a peptide metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_lipo-c-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Lipo-C</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Compounded lipotropic injection — not a peptide</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>2 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_retatrutide.html" data-cat="metabolico" data-busca="retatrutida agonista triplo em fase 3 — gip, glp-1 e glucagon metabólico e peso protocol_retatrutide retatrutide triple agonist in phase 3 — gip, glp-1 and glucagon metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_retatrutide.html" data-cat="metabolico" data-busca="retatrutida agonista triplo em fase 3 — gip, glp-1 e glucagon metabólico e peso protocol_retatrutide retatrutide triple agonist in phase 3 — gip, glp-1 and glucagon metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_retatrutide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Retatrutide</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Triple agonist in phase 3 — GIP, GLP-1 and glucagon</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>8 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_slu-pp-332.html" data-cat="metabolico" data-busca="slu-pp-332 agonista pan-err vendido como &#x27;mimético de exercício&#x27; metabólico e peso protocol_slu-pp-332 slu-pp-332 pan-err agonist sold as an &#x27;exercise mimetic&#x27; metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_slu-pp-332.html" data-cat="metabolico" data-busca="slu-pp-332 agonista pan-err vendido como &#x27;mimético de exercício&#x27; metabólico e peso protocol_slu-pp-332 slu-pp-332 pan-err agonist sold as an &#x27;exercise mimetic&#x27; metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_slu-pp-332-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>SLU-PP-332</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Pan-ERR agonist sold as an &#x27;exercise mimetic&#x27;</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>5 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_semaglutide.html" data-cat="metabolico" data-busca="semaglutida ozempic, wegovy e rybelsus — a mesma molécula metabólico e peso protocol_semaglutide semaglutide ozempic, wegovy and rybelsus — the same molecule metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_semaglutide.html" data-cat="metabolico" data-busca="semaglutida ozempic, wegovy e rybelsus — a mesma molécula metabólico e peso protocol_semaglutide semaglutide ozempic, wegovy and rybelsus — the same molecule metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_semaglutide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Semaglutide</h3><span class="selo selo-sim">Approved</span></div>
       <p>Ozempic, Wegovy and Rybelsus — the same molecule</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>9 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_survodutide.html" data-cat="metabolico" data-busca="survodutida agonista duplo glp-1/glucagon, código bi 456906 metabólico e peso protocol_survodutide survodutide dual glp-1/glucagon agonist, code bi 456906 metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_survodutide.html" data-cat="metabolico" data-busca="survodutida agonista duplo glp-1/glucagon, código bi 456906 metabólico e peso protocol_survodutide survodutide dual glp-1/glucagon agonist, code bi 456906 metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_survodutide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Survodutide</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Dual GLP-1/glucagon agonist, code BI 456906</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>3 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_tesofensine.html" data-cat="metabolico" data-busca="tesofensina inibidor triplo de recaptação, em comprimido oral metabólico e peso protocol_tesofensine tesofensine triple reuptake inhibitor, as an oral tablet metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_tesofensine.html" data-cat="metabolico" data-busca="tesofensina inibidor triplo de recaptação, em comprimido oral metabólico e peso protocol_tesofensine tesofensine triple reuptake inhibitor, as an oral tablet metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_tesofensine-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Tesofensine</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Triple reuptake inhibitor, as an oral tablet</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>2 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_tirzepatide.html" data-cat="metabolico" data-busca="tirzepatida agonista duplo glp-1/gip — mounjaro e zepbound metabólico e peso protocol_tirzepatide tirzepatide dual glp-1/gip agonist — mounjaro and zepbound metabolic and weight">
+    <a class="card card-com-fig" href="p/protocol_tirzepatide.html" data-cat="metabolico" data-busca="tirzepatida agonista duplo glp-1/gip — mounjaro e zepbound metabólico e peso protocol_tirzepatide tirzepatide dual glp-1/gip agonist — mounjaro and zepbound metabolic and weight">
+      <img class="card-fig" src="../assets/figuras/protocol_tirzepatide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Tirzepatide</h3><span class="selo selo-sim">Approved</span></div>
       <p>Dual GLP-1/GIP agonist — Mounjaro and Zepbound</p>
       <div class="card-rodape"><span class="selo selo-cat">Metabolic and weight</span><span>4 table(s)</span></div>
@@ -447,37 +441,44 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="gh">
   <div class="secao-cabeca"><h2>Growth hormone axis</h2><p class="secao-desc">GHRH analogs and secretagogues that ask the body itself to release GH.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_cjc-1295-dac.html" data-cat="gh" data-busca="cjc-1295 com dac análogo de ghrh de ação longa, ligado à albumina eixo do hormônio do crescimento protocol_cjc-1295-dac cjc-1295 with dac long-acting ghrh analog, albumin-bound growth hormone axis">
+    <a class="card card-com-fig" href="p/protocol_cjc-1295-dac.html" data-cat="gh" data-busca="cjc-1295 com dac análogo de ghrh de ação longa, ligado à albumina eixo do hormônio do crescimento protocol_cjc-1295-dac cjc-1295 with dac long-acting ghrh analog, albumin-bound growth hormone axis">
+      <img class="card-fig" src="../assets/figuras/protocol_cjc-1295-dac-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CJC-1295 with DAC</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Long-acting GHRH analog, albumin-bound</p>
       <div class="card-rodape"><span class="selo selo-cat">Growth hormone axis</span><span>5 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_cjc-1295-no-dac.html" data-cat="gh" data-busca="cjc-1295 sem dac (mod grf 1-29) pulso curto de ghrh, sem acúmulo eixo do hormônio do crescimento protocol_cjc-1295-no-dac cjc-1295 without dac (mod grf 1-29) short ghrh pulse, no accumulation growth hormone axis">
+    <a class="card card-com-fig" href="p/protocol_cjc-1295-no-dac.html" data-cat="gh" data-busca="cjc-1295 sem dac (mod grf 1-29) pulso curto de ghrh, sem acúmulo eixo do hormônio do crescimento protocol_cjc-1295-no-dac cjc-1295 without dac (mod grf 1-29) short ghrh pulse, no accumulation growth hormone axis">
+      <img class="card-fig" src="../assets/figuras/protocol_cjc-1295-no-dac-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CJC-1295 without DAC (Mod GRF 1-29)</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Short GHRH pulse, no accumulation</p>
       <div class="card-rodape"><span class="selo selo-cat">Growth hormone axis</span><span>4 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_ghrp-6.html" data-cat="gh" data-busca="ghrp-6 secretagogo que imita a grelina — e abre a fome junto eixo do hormônio do crescimento protocol_ghrp-6 ghrp-6 secretagogue that mimics ghrelin — and opens up hunger along with it growth hormone axis">
+    <a class="card card-com-fig" href="p/protocol_ghrp-6.html" data-cat="gh" data-busca="ghrp-6 secretagogo que imita a grelina — e abre a fome junto eixo do hormônio do crescimento protocol_ghrp-6 ghrp-6 secretagogue that mimics ghrelin — and opens up hunger along with it growth hormone axis">
+      <img class="card-fig" src="../assets/figuras/protocol_ghrp-6-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>GHRP-6</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Secretagogue that mimics ghrelin — and opens up hunger along with it</p>
       <div class="card-rodape"><span class="selo selo-cat">Growth hormone axis</span><span>2 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_igf-1-lr3.html" data-cat="gh" data-busca="igf-1 lr3 análogo de igf-1 de ação longa — o de maior risco do grupo do gh eixo do hormônio do crescimento protocol_igf-1-lr3 igf-1 lr3 long-acting igf-1 analog — the highest-risk one in the gh group growth hormone axis">
+    <a class="card card-com-fig" href="p/protocol_igf-1-lr3.html" data-cat="gh" data-busca="igf-1 lr3 análogo de igf-1 de ação longa — o de maior risco do grupo do gh eixo do hormônio do crescimento protocol_igf-1-lr3 igf-1 lr3 long-acting igf-1 analog — the highest-risk one in the gh group growth hormone axis">
+      <img class="card-fig" src="../assets/figuras/protocol_igf-1-lr3-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>IGF-1 LR3</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Long-acting IGF-1 analog — the highest-risk one in the GH group</p>
       <div class="card-rodape"><span class="selo selo-cat">Growth hormone axis</span><span>7 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_ipamorelin.html" data-cat="gh" data-busca="ipamorelina secretagogo seletivo, sem o disparo de fome do ghrp-6 eixo do hormônio do crescimento protocol_ipamorelin ipamorelin selective secretagogue, without the hunger trigger of ghrp-6 growth hormone axis">
+    <a class="card card-com-fig" href="p/protocol_ipamorelin.html" data-cat="gh" data-busca="ipamorelina secretagogo seletivo, sem o disparo de fome do ghrp-6 eixo do hormônio do crescimento protocol_ipamorelin ipamorelin selective secretagogue, without the hunger trigger of ghrp-6 growth hormone axis">
+      <img class="card-fig" src="../assets/figuras/protocol_ipamorelin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Ipamorelin</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Selective secretagogue, without the hunger trigger of GHRP-6</p>
       <div class="card-rodape"><span class="selo selo-cat">Growth hormone axis</span><span>10 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_sermorelin.html" data-cat="gh" data-busca="sermorelina (grf 1-29) cópia dos 29 primeiros aminoácidos do ghrh eixo do hormônio do crescimento protocol_sermorelin sermorelin (grf 1-29) copy of the first 29 amino acids of ghrh growth hormone axis">
+    <a class="card card-com-fig" href="p/protocol_sermorelin.html" data-cat="gh" data-busca="sermorelina (grf 1-29) cópia dos 29 primeiros aminoácidos do ghrh eixo do hormônio do crescimento protocol_sermorelin sermorelin (grf 1-29) copy of the first 29 amino acids of ghrh growth hormone axis">
+      <img class="card-fig" src="../assets/figuras/protocol_sermorelin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Sermorelin (GRF 1-29)</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Copy of the first 29 amino acids of GHRH</p>
       <div class="card-rodape"><span class="selo selo-cat">Growth hormone axis</span><span>2 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_tesamorelin.html" data-cat="gh" data-busca="tesamorelina o único análogo de ghrh aprovado pela fda eixo do hormônio do crescimento protocol_tesamorelin tesamorelin the only ghrh analog approved by the fda growth hormone axis">
+    <a class="card card-com-fig" href="p/protocol_tesamorelin.html" data-cat="gh" data-busca="tesamorelina o único análogo de ghrh aprovado pela fda eixo do hormônio do crescimento protocol_tesamorelin tesamorelin the only ghrh analog approved by the fda growth hormone axis">
+      <img class="card-fig" src="../assets/figuras/protocol_tesamorelin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Tesamorelin</h3><span class="selo selo-sim">Approved</span></div>
       <p>The only GHRH analog approved by the FDA</p>
       <div class="card-rodape"><span class="selo selo-cat">Growth hormone axis</span><span>7 table(s)</span></div>
@@ -487,37 +488,44 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="neuro">
   <div class="secao-cabeca"><h2>Neuro and cognition</h2><p class="secao-desc">Compounds studied in attention, memory, anxiety and sleep.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_adamax.html" data-cat="neuro" data-busca="adamax parente experimental do semax, quase sem pesquisa publicada neuro e cognição protocol_adamax adamax experimental relative of semax, with almost no published research neuro and cognition">
+    <a class="card card-com-fig" href="p/protocol_adamax.html" data-cat="neuro" data-busca="adamax parente experimental do semax, quase sem pesquisa publicada neuro e cognição protocol_adamax adamax experimental relative of semax, with almost no published research neuro and cognition">
+      <img class="card-fig" src="../assets/figuras/protocol_adamax-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Adamax</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Experimental relative of Semax, with almost no published research</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro and cognition</span><span>4 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_methylene-blue.html" data-cat="neuro" data-busca="azul de metileno corante de 1876 que virou medicamento hospitalar neuro e cognição protocol_methylene-blue methylene blue an 1876 dye that became a hospital drug neuro and cognition">
+    <a class="card card-com-fig" href="p/protocol_methylene-blue.html" data-cat="neuro" data-busca="azul de metileno corante de 1876 que virou medicamento hospitalar neuro e cognição protocol_methylene-blue methylene blue an 1876 dye that became a hospital drug neuro and cognition">
+      <img class="card-fig" src="../assets/figuras/protocol_methylene-blue-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Methylene blue</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>An 1876 dye that became a hospital drug</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro and cognition</span><span>1 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_cerebrolysin.html" data-cat="neuro" data-busca="cerebrolisina mistura injetável de peptídeos de origem suína neuro e cognição protocol_cerebrolysin cerebrolysin injectable mixture of porcine-derived peptides neuro and cognition">
+    <a class="card card-com-fig" href="p/protocol_cerebrolysin.html" data-cat="neuro" data-busca="cerebrolisina mistura injetável de peptídeos de origem suína neuro e cognição protocol_cerebrolysin cerebrolysin injectable mixture of porcine-derived peptides neuro and cognition">
+      <img class="card-fig" src="../assets/figuras/protocol_cerebrolysin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cerebrolysin</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Injectable mixture of porcine-derived peptides</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro and cognition</span><span>1 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_dsip.html" data-cat="neuro" data-busca="dsip peptídeo indutor de sono delta — nome maior que a evidência neuro e cognição protocol_dsip dsip delta sleep-inducing peptide — a name bigger than the evidence neuro and cognition">
+    <a class="card card-com-fig" href="p/protocol_dsip.html" data-cat="neuro" data-busca="dsip peptídeo indutor de sono delta — nome maior que a evidência neuro e cognição protocol_dsip dsip delta sleep-inducing peptide — a name bigger than the evidence neuro and cognition">
+      <img class="card-fig" src="../assets/figuras/protocol_dsip-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>DSIP</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Delta sleep-inducing peptide — a name bigger than the evidence</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro and cognition</span><span>4 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_pinealon.html" data-cat="neuro" data-busca="pinealon (edr) bioregulador curto da escola de khavinson neuro e cognição protocol_pinealon pinealon (edr) short bioregulator from the khavinson school neuro and cognition">
+    <a class="card card-com-fig" href="p/protocol_pinealon.html" data-cat="neuro" data-busca="pinealon (edr) bioregulador curto da escola de khavinson neuro e cognição protocol_pinealon pinealon (edr) short bioregulator from the khavinson school neuro and cognition">
+      <img class="card-fig" src="../assets/figuras/protocol_pinealon-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Pinealon (EDR)</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Short bioregulator from the Khavinson school</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro and cognition</span><span>5 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_selank.html" data-cat="neuro" data-busca="selank (tp-7) ansiolítico peptídico russo, par do semax neuro e cognição protocol_selank selank (tp-7) russian peptide anxiolytic, semax&#x27;s counterpart neuro and cognition">
+    <a class="card card-com-fig" href="p/protocol_selank.html" data-cat="neuro" data-busca="selank (tp-7) ansiolítico peptídico russo, par do semax neuro e cognição protocol_selank selank (tp-7) russian peptide anxiolytic, semax&#x27;s counterpart neuro and cognition">
+      <img class="card-fig" src="../assets/figuras/protocol_selank-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Selank (TP-7)</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Russian peptide anxiolytic, Semax's counterpart</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro and cognition</span><span>10 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_semax.html" data-cat="neuro" data-busca="semax heptapeptídeo russo derivado do acth, ligado a bdnf neuro e cognição protocol_semax semax russian heptapeptide derived from acth, linked to bdnf neuro and cognition">
+    <a class="card card-com-fig" href="p/protocol_semax.html" data-cat="neuro" data-busca="semax heptapeptídeo russo derivado do acth, ligado a bdnf neuro e cognição protocol_semax semax russian heptapeptide derived from acth, linked to bdnf neuro and cognition">
+      <img class="card-fig" src="../assets/figuras/protocol_semax-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Semax</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Russian heptapeptide derived from ACTH, linked to BDNF</p>
       <div class="card-rodape"><span class="selo selo-cat">Neuro and cognition</span><span>4 table(s)</span></div>
@@ -527,37 +535,44 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="longevidade">
   <div class="secao-cabeca"><h2>Longevity and mitochondria</h2><p class="secao-desc">Targets linked to senescence, NAD+ and mitochondrial function.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_epitalon.html" data-cat="longevidade" data-busca="epitalon (epithalon, aedg) tetrapeptídeo russo associado a telomerase longevidade e mitocôndria protocol_epitalon epitalon (epithalon, aedg) russian tetrapeptide associated with telomerase longevity and mitochondria">
+    <a class="card card-com-fig" href="p/protocol_epitalon.html" data-cat="longevidade" data-busca="epitalon (epithalon, aedg) tetrapeptídeo russo associado a telomerase longevidade e mitocôndria protocol_epitalon epitalon (epithalon, aedg) russian tetrapeptide associated with telomerase longevity and mitochondria">
+      <img class="card-fig" src="../assets/figuras/protocol_epitalon-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Epitalon (epithalon, AEDG)</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Russian tetrapeptide associated with telomerase</p>
       <div class="card-rodape"><span class="selo selo-cat">Longevity and mitochondria</span><span>3 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_foxo4-dri.html" data-cat="longevidade" data-busca="foxo4-dri senolítico experimental — o de menor margem desta lista longevidade e mitocôndria protocol_foxo4-dri foxo4-dri experimental senolytic — the narrowest margin on this list longevity and mitochondria">
+    <a class="card card-com-fig" href="p/protocol_foxo4-dri.html" data-cat="longevidade" data-busca="foxo4-dri senolítico experimental — o de menor margem desta lista longevidade e mitocôndria protocol_foxo4-dri foxo4-dri experimental senolytic — the narrowest margin on this list longevity and mitochondria">
+      <img class="card-fig" src="../assets/figuras/protocol_foxo4-dri-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>FOXO4-DRI</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Experimental senolytic — the narrowest margin on this list</p>
       <div class="card-rodape"><span class="selo selo-cat">Longevity and mitochondria</span><span>4 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_glutathione.html" data-cat="longevidade" data-busca="glutationa o antioxidante que o corpo já fabrica longevidade e mitocôndria protocol_glutathione glutathione the antioxidant the body already makes longevity and mitochondria">
+    <a class="card card-com-fig" href="p/protocol_glutathione.html" data-cat="longevidade" data-busca="glutationa o antioxidante que o corpo já fabrica longevidade e mitocôndria protocol_glutathione glutathione the antioxidant the body already makes longevity and mitochondria">
+      <img class="card-fig" src="../assets/figuras/protocol_glutathione-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Glutathione</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>The antioxidant the body already makes</p>
       <div class="card-rodape"><span class="selo selo-cat">Longevity and mitochondria</span><span>1 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_humanin.html" data-cat="longevidade" data-busca="humanina (hng) peptídeo codificado na mitocôndria, não no núcleo longevidade e mitocôndria protocol_humanin humanin (hng) peptide encoded in the mitochondria, not in the nucleus longevity and mitochondria">
+    <a class="card card-com-fig" href="p/protocol_humanin.html" data-cat="longevidade" data-busca="humanina (hng) peptídeo codificado na mitocôndria, não no núcleo longevidade e mitocôndria protocol_humanin humanin (hng) peptide encoded in the mitochondria, not in the nucleus longevity and mitochondria">
+      <img class="card-fig" src="../assets/figuras/protocol_humanin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Humanin (HNG)</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Peptide encoded in the mitochondria, not in the nucleus</p>
       <div class="card-rodape"><span class="selo selo-cat">Longevity and mitochondria</span><span>3 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_mots-c.html" data-cat="longevidade" data-busca="mots-c peptídeo mitocondrial ligado à via ampk longevidade e mitocôndria protocol_mots-c mots-c mitochondrial peptide linked to the ampk pathway longevity and mitochondria">
+    <a class="card card-com-fig" href="p/protocol_mots-c.html" data-cat="longevidade" data-busca="mots-c peptídeo mitocondrial ligado à via ampk longevidade e mitocôndria protocol_mots-c mots-c mitochondrial peptide linked to the ampk pathway longevity and mitochondria">
+      <img class="card-fig" src="../assets/figuras/protocol_mots-c-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>MOTS-c</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Mitochondrial peptide linked to the AMPK pathway</p>
       <div class="card-rodape"><span class="selo selo-cat">Longevity and mitochondria</span><span>5 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_nad-plus.html" data-cat="longevidade" data-busca="nad+ coenzima central — a via de administração muda tudo longevidade e mitocôndria protocol_nad-plus nad+ central coenzyme — the route of administration changes everything longevity and mitochondria">
+    <a class="card card-com-fig" href="p/protocol_nad-plus.html" data-cat="longevidade" data-busca="nad+ coenzima central — a via de administração muda tudo longevidade e mitocôndria protocol_nad-plus nad+ central coenzyme — the route of administration changes everything longevity and mitochondria">
+      <img class="card-fig" src="../assets/figuras/protocol_nad-plus-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>NAD+</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Central coenzyme — the route of administration changes everything</p>
       <div class="card-rodape"><span class="selo selo-cat">Longevity and mitochondria</span><span>14 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_ss-31.html" data-cat="longevidade" data-busca="ss-31 (elamipretida) peptídeo que se liga à cardiolipina mitocondrial longevidade e mitocôndria protocol_ss-31 ss-31 (elamipretide) peptide that binds mitochondrial cardiolipin longevity and mitochondria">
+    <a class="card card-com-fig" href="p/protocol_ss-31.html" data-cat="longevidade" data-busca="ss-31 (elamipretida) peptídeo que se liga à cardiolipina mitocondrial longevidade e mitocôndria protocol_ss-31 ss-31 (elamipretide) peptide that binds mitochondrial cardiolipin longevity and mitochondria">
+      <img class="card-fig" src="../assets/figuras/protocol_ss-31-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>SS-31 (elamipretide)</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Peptide that binds mitochondrial cardiolipin</p>
       <div class="card-rodape"><span class="selo selo-cat">Longevity and mitochondria</span><span>4 table(s)</span></div>
@@ -567,27 +582,32 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="hormonal">
   <div class="secao-cabeca"><h2>Hormonal and sexual</h2><p class="secao-desc">Reproductive axis, libido, pigmentation and vasodilation.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_kisspeptin.html" data-cat="hormonal" data-busca="kisspeptina a chave a montante do eixo reprodutivo hormonal e sexual protocol_kisspeptin kisspeptin the upstream switch of the reproductive axis hormonal and sexual">
+    <a class="card card-com-fig" href="p/protocol_kisspeptin.html" data-cat="hormonal" data-busca="kisspeptina a chave a montante do eixo reprodutivo hormonal e sexual protocol_kisspeptin kisspeptin the upstream switch of the reproductive axis hormonal and sexual">
+      <img class="card-fig" src="../assets/figuras/protocol_kisspeptin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Kisspeptin</h3><span class="selo selo-nao">Not approved</span></div>
       <p>The upstream switch of the reproductive axis</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonal and sexual</span><span>6 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_melanotan-ii.html" data-cat="hormonal" data-busca="melanotan ii (mt-2) bronzeamento por via de melanocortina — e uma lista de efeitos hormonal e sexual protocol_melanotan-ii melanotan ii (mt-2) tanning through the melanocortin pathway — and a list of effects hormonal and sexual">
+    <a class="card card-com-fig" href="p/protocol_melanotan-ii.html" data-cat="hormonal" data-busca="melanotan ii (mt-2) bronzeamento por via de melanocortina — e uma lista de efeitos hormonal e sexual protocol_melanotan-ii melanotan ii (mt-2) tanning through the melanocortin pathway — and a list of effects hormonal and sexual">
+      <img class="card-fig" src="../assets/figuras/protocol_melanotan-ii-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Melanotan II (MT-2)</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Tanning through the melanocortin pathway — and a list of effects</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonal and sexual</span><span>5 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_oxytocin.html" data-cat="hormonal" data-busca="ocitocina hormônio aprovado em obstetrícia, usado off-label em cognição social hormonal e sexual protocol_oxytocin oxytocin hormone approved in obstetrics, used off-label in social cognition hormonal and sexual">
+    <a class="card card-com-fig" href="p/protocol_oxytocin.html" data-cat="hormonal" data-busca="ocitocina hormônio aprovado em obstetrícia, usado off-label em cognição social hormonal e sexual protocol_oxytocin oxytocin hormone approved in obstetrics, used off-label in social cognition hormonal and sexual">
+      <img class="card-fig" src="../assets/figuras/protocol_oxytocin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Oxytocin</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Hormone approved in obstetrics, used off-label in social cognition</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonal and sexual</span><span>4 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_bremelanotide-pt-141.html" data-cat="hormonal" data-busca="pt-141 (bremelanotida) agonista mc3r/mc4r — aprovado nos eua como vyleesi hormonal e sexual protocol_bremelanotide-pt-141 pt-141 (bremelanotide) mc3r/mc4r agonist — approved in the us as vyleesi hormonal and sexual">
+    <a class="card card-com-fig" href="p/protocol_bremelanotide-pt-141.html" data-cat="hormonal" data-busca="pt-141 (bremelanotida) agonista mc3r/mc4r — aprovado nos eua como vyleesi hormonal e sexual protocol_bremelanotide-pt-141 pt-141 (bremelanotide) mc3r/mc4r agonist — approved in the us as vyleesi hormonal and sexual">
+      <img class="card-fig" src="../assets/figuras/protocol_bremelanotide-pt-141-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>PT-141 (Bremelanotide)</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>MC3R/MC4R agonist — approved in the US as Vyleesi</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonal and sexual</span><span>4 table(s)</span></div>
     </a>
-    <a class="card" href="p/protocol_vip.html" data-cat="hormonal" data-busca="vip (peptídeo intestinal vasoativo) neuropeptídeo de 28 aminoácidos, meia-vida muito curta hormonal e sexual protocol_vip vip (vasoactive intestinal peptide) 28-amino-acid neuropeptide, very short half-life hormonal and sexual">
+    <a class="card card-com-fig" href="p/protocol_vip.html" data-cat="hormonal" data-busca="vip (peptídeo intestinal vasoativo) neuropeptídeo de 28 aminoácidos, meia-vida muito curta hormonal e sexual protocol_vip vip (vasoactive intestinal peptide) 28-amino-acid neuropeptide, very short half-life hormonal and sexual">
+      <img class="card-fig" src="../assets/figuras/protocol_vip-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>VIP (vasoactive intestinal peptide)</h3><span class="selo selo-nao">Not approved</span></div>
       <p>28-amino-acid neuropeptide, very short half-life</p>
       <div class="card-rodape"><span class="selo selo-cat">Hormonal and sexual</span><span>4 table(s)</span></div>
@@ -597,7 +617,8 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="imune">
   <div class="secao-cabeca"><h2>Immune</h2><p class="secao-desc">Modulation of the immune response.</p></div>
   <div class="grade">
-    <a class="card" href="p/protocol_thymosin-alpha-1.html" data-cat="imune" data-busca="timosina alfa-1 (ta1) modulador imune com registro fora dos eua imune protocol_thymosin-alpha-1 thymosin alpha-1 (ta1) immune modulator registered outside the us immune">
+    <a class="card card-com-fig" href="p/protocol_thymosin-alpha-1.html" data-cat="imune" data-busca="timosina alfa-1 (ta1) modulador imune com registro fora dos eua imune protocol_thymosin-alpha-1 thymosin alpha-1 (ta1) immune modulator registered outside the us immune">
+      <img class="card-fig" src="../assets/figuras/protocol_thymosin-alpha-1-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Thymosin alpha-1 (TA1)</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Immune modulator registered outside the US</p>
       <div class="card-rodape"><span class="selo selo-cat">Immune</span><span>6 table(s)</span></div>
@@ -607,57 +628,68 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="combinacao">
   <div class="secao-cabeca"><h2>Combinations</h2><p class="secao-desc">Protocols that combine two or more compounds in the same cycle.</p></div>
   <div class="grade">
-    <a class="card" href="p/stacks_advanced-recomp-stack.html" data-cat="combinacao" data-busca="advanced recomp retatrutida + cjc-1295 sem dac + ipamorelina combinações stacks_advanced-recomp-stack advanced recomp retatrutide + cjc-1295 without dac + ipamorelin combinations">
+    <a class="card card-com-fig" href="p/stacks_advanced-recomp-stack.html" data-cat="combinacao" data-busca="advanced recomp retatrutida + cjc-1295 sem dac + ipamorelina combinações stacks_advanced-recomp-stack advanced recomp retatrutide + cjc-1295 without dac + ipamorelin combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_advanced-recomp-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Advanced Recomp</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Retatrutide + CJC-1295 without DAC + ipamorelin</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>8 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_cjc-1295-ipamorelin-gh-pulse-stack.html" data-cat="combinacao" data-busca="cjc-1295 sem dac + ipamorelina a dupla de gh mais planejada da comunidade combinações stacks_cjc-1295-ipamorelin-gh-pulse-stack cjc-1295 without dac + ipamorelin the community&#x27;s most carefully planned gh pair combinations">
+    <a class="card card-com-fig" href="p/stacks_cjc-1295-ipamorelin-gh-pulse-stack.html" data-cat="combinacao" data-busca="cjc-1295 sem dac + ipamorelina a dupla de gh mais planejada da comunidade combinações stacks_cjc-1295-ipamorelin-gh-pulse-stack cjc-1295 without dac + ipamorelin the community&#x27;s most carefully planned gh pair combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_cjc-1295-ipamorelin-gh-pulse-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CJC-1295 without DAC + Ipamorelin</h3><span class="selo selo-nao">Not approved</span></div>
       <p>The community's most carefully planned GH pair</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>6 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_cagrisema.html" data-cat="combinacao" data-busca="cagrisema cagrilintida 2,4 mg + semaglutida 2,4 mg, dose fixa combinações stacks_cagrisema cagrisema cagrilintide 2.4 mg + semaglutide 2.4 mg, fixed dose combinations">
+    <a class="card card-com-fig" href="p/stacks_cagrisema.html" data-cat="combinacao" data-busca="cagrisema cagrilintida 2,4 mg + semaglutida 2,4 mg, dose fixa combinações stacks_cagrisema cagrisema cagrilintide 2.4 mg + semaglutide 2.4 mg, fixed dose combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_cagrisema-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CagriSema</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Cagrilintide 2.4 mg + semaglutide 2.4 mg, fixed dose</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>6 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_cagrilintide-retatrutide.html" data-cat="combinacao" data-busca="cagrilintida + retatrutida agonista triplo somado a análogo de amilina combinações stacks_cagrilintide-retatrutide cagrilintide + retatrutide triple agonist plus an amylin analog combinations">
+    <a class="card card-com-fig" href="p/stacks_cagrilintide-retatrutide.html" data-cat="combinacao" data-busca="cagrilintida + retatrutida agonista triplo somado a análogo de amilina combinações stacks_cagrilintide-retatrutide cagrilintide + retatrutide triple agonist plus an amylin analog combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_cagrilintide-retatrutide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cagrilintide + Retatrutide</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Triple agonist plus an amylin analog</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>8 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_cagrilintide-tirzepatide.html" data-cat="combinacao" data-busca="cagrilintida + tirzepatida dupla semanal de apetite combinações stacks_cagrilintide-tirzepatide cagrilintide + tirzepatide weekly appetite pair combinations">
+    <a class="card card-com-fig" href="p/stacks_cagrilintide-tirzepatide.html" data-cat="combinacao" data-busca="cagrilintida + tirzepatida dupla semanal de apetite combinações stacks_cagrilintide-tirzepatide cagrilintide + tirzepatide weekly appetite pair combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_cagrilintide-tirzepatide-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Cagrilintide + Tirzepatide</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Weekly appetite pair</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>5 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_russian-nootropic-stack.html" data-cat="combinacao" data-busca="dupla nootrópica russa semax + selank combinações stacks_russian-nootropic-stack russian nootropic pair semax + selank combinations">
+    <a class="card card-com-fig" href="p/stacks_russian-nootropic-stack.html" data-cat="combinacao" data-busca="dupla nootrópica russa semax + selank combinações stacks_russian-nootropic-stack russian nootropic pair semax + selank combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_russian-nootropic-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Russian nootropic pair</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Semax + Selank</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>6 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_glow-stack.html" data-cat="combinacao" data-busca="glow bpc-157 + tb-500 + ghk-cu num frasco combinações stacks_glow-stack glow bpc-157 + tb-500 + ghk-cu in one vial combinations">
+    <a class="card card-com-fig" href="p/stacks_glow-stack.html" data-cat="combinacao" data-busca="glow bpc-157 + tb-500 + ghk-cu num frasco combinações stacks_glow-stack glow bpc-157 + tb-500 + ghk-cu in one vial combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_glow-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>GLOW</h3><span class="selo selo-nao">Not approved</span></div>
       <p>BPC-157 + TB-500 + GHK-Cu in one vial</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>8 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_klow-stack.html" data-cat="combinacao" data-busca="klow ghk-cu + kpv + bpc-157 + tb-500, frasco de 80 mg combinações stacks_klow-stack klow ghk-cu + kpv + bpc-157 + tb-500, 80 mg vial combinations">
+    <a class="card card-com-fig" href="p/stacks_klow-stack.html" data-cat="combinacao" data-busca="klow ghk-cu + kpv + bpc-157 + tb-500, frasco de 80 mg combinações stacks_klow-stack klow ghk-cu + kpv + bpc-157 + tb-500, 80 mg vial combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_klow-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>KLOW</h3><span class="selo selo-nao">Not approved</span></div>
       <p>GHK-Cu + KPV + BPC-157 + TB-500, 80 mg vial</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>6 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_retatrutide-mots-c.html" data-cat="combinacao" data-busca="retatrutida + mots-c apetite por uma via, mitocôndria por outra combinações stacks_retatrutide-mots-c reta + mots-c appetite through one pathway, mitochondria through another combinations">
+    <a class="card card-com-fig" href="p/stacks_retatrutide-mots-c.html" data-cat="combinacao" data-busca="retatrutida + mots-c apetite por uma via, mitocôndria por outra combinações stacks_retatrutide-mots-c reta + mots-c appetite through one pathway, mitochondria through another combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_retatrutide-mots-c-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Reta + MOTS-c</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Appetite through one pathway, mitochondria through another</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>5 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_tesamorelin-ipamorelin.html" data-cat="combinacao" data-busca="tesamorelina + ipamorelina duas portas diferentes para o mesmo pulso de gh combinações stacks_tesamorelin-ipamorelin tesamorelin + ipamorelin two different doors to the same gh pulse combinations">
+    <a class="card card-com-fig" href="p/stacks_tesamorelin-ipamorelin.html" data-cat="combinacao" data-busca="tesamorelina + ipamorelina duas portas diferentes para o mesmo pulso de gh combinações stacks_tesamorelin-ipamorelin tesamorelin + ipamorelin two different doors to the same gh pulse combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_tesamorelin-ipamorelin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Tesamorelin + Ipamorelin</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Two different doors to the same GH pulse</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>3 table(s)</span></div>
     </a>
-    <a class="card" href="p/stacks_wolverine-stack.html" data-cat="combinacao" data-busca="wolverine bpc-157 + tb-500, a base de reparo combinações stacks_wolverine-stack wolverine bpc-157 + tb-500, the repair base combinations">
+    <a class="card card-com-fig" href="p/stacks_wolverine-stack.html" data-cat="combinacao" data-busca="wolverine bpc-157 + tb-500, a base de reparo combinações stacks_wolverine-stack wolverine bpc-157 + tb-500, the repair base combinations">
+      <img class="card-fig" src="../assets/figuras/stacks_wolverine-stack-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Wolverine</h3><span class="selo selo-nao">Not approved</span></div>
       <p>BPC-157 + TB-500, the repair base</p>
       <div class="card-rodape"><span class="selo selo-cat">Combinations</span><span>9 table(s)</span></div>
@@ -667,147 +699,230 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="primaria">
   <div class="secao-cabeca"><h2>Verified against primary sources</h2><p class="secao-desc">Pages built directly from PubMed and ClinicalTrials.gov, not from the secondary source. They carry the evidence count and the query used.</p></div>
   <div class="grade">
-    <a class="card card-aferido" href="p/proprio_dose_hepatica.html" data-cat="primaria" data-busca="ajuste de dose por função hepática aqui não é só lacuna: há dano documentado, com número e desfecho — e ele atinge exatamente quem este site atrai verificado em fonte primária proprio_dose_hepatica dose adjustment for hepatic function here it is not just a gap: there is documented harm, with numbers and outcomes — and it hits exactly the people this site attracts verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_dose_hepatica.html" data-cat="primaria" data-busca="ajuste de dose por função hepática aqui não é só lacuna: há dano documentado, com número e desfecho — e ele atinge exatamente quem este site atrai verificado em fonte primária proprio_dose_hepatica dose adjustment for hepatic function here it is not just a gap: there is documented harm, with numbers and outcomes — and it hits exactly the people this site attracts verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_dose_hepatica-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Dose adjustment for hepatic function</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Here it is not just a gap: there is documented harm, with numbers and outcomes — and it hits exactly the people this site attracts</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>5 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_dose_renal.html" data-cat="primaria" data-busca="ajuste de dose por função renal onde o dado existe, a bula manda não ajustar nada — e o risco de verdade está três seções acima, num item que quase ninguém lê verificado em fonte primária proprio_dose_renal dose adjustment for renal function where the data exist, the package insert says not to adjust anything — and the real risk sits three sections up, in an item almost nobody reads verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_dose_renal.html" data-cat="primaria" data-busca="ajuste de dose por função renal onde o dado existe, a bula manda não ajustar nada — e o risco de verdade está três seções acima, num item que quase ninguém lê verificado em fonte primária proprio_dose_renal dose adjustment for renal function where the data exist, the package insert says not to adjust anything — and the real risk sits three sections up, in an item almost nobody reads verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_dose_renal-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Dose adjustment for renal function</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Where the data exist, the package insert says not to adjust anything — and the real risk sits three sections up, in an item almost nobody reads</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>2 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_anticorpos.html" data-cat="primaria" data-busca="anticorpos monoclonais trinta e cinco vezes maior que um peptídeo, feito por célula viva e dado em infusão venosa — dos três que aparecem na conversa de composição corporal, um único tem bula verificado em fonte primária proprio_anticorpos monoclonal antibodies thirty-five times heavier than a peptide, made by a living cell and given by intravenous infusion — of the three that come up in the body-composition conversation, only one has a label verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_anticorpos.html" data-cat="primaria" data-busca="anticorpos monoclonais trinta e cinco vezes maior que um peptídeo, feito por célula viva e dado em infusão venosa — dos três que aparecem na conversa de composição corporal, um único tem bula verificado em fonte primária proprio_anticorpos monoclonal antibodies thirty-five times heavier than a peptide, made by a living cell and given by intravenous infusion — of the three that come up in the body-composition conversation, only one has a label verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_anticorpos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Monoclonal antibodies</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Thirty-five times heavier than a peptide, made by a living cell and given by intravenous infusion — of the three that come up in the body-composition conversation, only one has a label</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>4 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_bioreguladores.html" data-cat="primaria" data-busca="bioreguladores curtos de khavinson onze peptídeos, cinco estudos clínicos, zero ensaios registrados verificado em fonte primária proprio_bioreguladores khavinson short bioregulators eleven peptides, five clinical studies, zero registered trials verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_bioreguladores.html" data-cat="primaria" data-busca="bioreguladores curtos de khavinson onze peptídeos, cinco estudos clínicos, zero ensaios registrados verificado em fonte primária proprio_bioreguladores khavinson short bioregulators eleven peptides, five clinical studies, zero registered trials verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_bioreguladores-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Khavinson short bioregulators</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Eleven peptides, five clinical studies, zero registered trials</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>2 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_crispr.html" data-cat="primaria" data-busca="crispr de 64.641 artigos, 67 são ensaios clínicos e 1 virou medicamento — e o que limita esse medicamento não é a edição do gene, é a quimioterapia em volta dela verificado em fonte primária proprio_crispr crispr out of 64,641 articles, 67 are clinical trials and 1 became a drug — and what limits that drug is not the gene editing, it is the chemotherapy around it verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_blends.html" data-cat="primaria" data-busca="blends prontos — o que a combinação tem de estudo 32 dos 33 blends vendidos prontos têm zero estudo registrado. 11 não têm nem um artigo que cite os componentes juntos verificado em fonte primária proprio_blends ready-made blends — how much study the combination has 32 of the 33 blends sold ready-made have zero registered studies. 11 don&#x27;t have even one article that cites the components together verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_blends-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Ready-made blends — how much study the combination has</h3><span class="selo selo-nao">Not approved</span></div>
+      <p>32 of the 33 blends sold ready-made have zero registered studies. 11 don't have even one article that cites the components together</p>
+      <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>1 table(s)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_crispr.html" data-cat="primaria" data-busca="crispr de 64.641 artigos, 67 são ensaios clínicos e 1 virou medicamento — e o que limita esse medicamento não é a edição do gene, é a quimioterapia em volta dela verificado em fonte primária proprio_crispr crispr out of 64,641 articles, 67 are clinical trials and 1 became a drug — and what limits that drug is not the gene editing, it is the chemotherapy around it verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_crispr-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>CRISPR</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Out of 64,641 articles, 67 are clinical trials and 1 became a drug — and what limits that drug is not the gene editing, it is the chemotherapy around it</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>11 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_calvicie.html" data-cat="primaria" data-busca="calvície — o antigo e o que está chegando dezoito tratamentos medidos na mesma régua: o minoxidil tem 23 registros ativos como antialopecia, e o pp405, que circula como pó de pesquisa, tem 1 artigo no pubmed verificado em fonte primária proprio_calvicie baldness — the old and what&#x27;s coming eighteen treatments measured on the same yardstick: minoxidil has 23 active registrations as an anti-baldness treatment, and pp405, which circulates as a research powder, has 1 article on pubmed verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_calvicie.html" data-cat="primaria" data-busca="calvície — o antigo e o que está chegando dezoito tratamentos medidos na mesma régua: o minoxidil tem 23 registros ativos como antialopecia, e o pp405, que circula como pó de pesquisa, tem 1 artigo no pubmed verificado em fonte primária proprio_calvicie baldness — the old and what&#x27;s coming eighteen treatments measured on the same yardstick: minoxidil has 23 active registrations as an anti-baldness treatment, and pp405, which circulates as a research powder, has 1 article on pubmed verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_calvicie-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Baldness — the old and what's coming</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Eighteen treatments measured on the same yardstick: minoxidil has 23 active registrations as an anti-baldness treatment, and PP405, which circulates as a research powder, has 1 article on PubMed</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_casgevy.html" data-cat="primaria" data-busca="casgevy o gargalo declarado não é o preço — na inglaterra são 1.794 elegíveis e 23 tratamentos no primeiro ano, e o motivo que o avaliador escreve é a internação, não o custo verificado em fonte primária proprio_casgevy casgevy the declared bottleneck is not the price — in england there are 1,794 eligible patients and 23 treatments in the first year, and the reason the assessor writes down is hospitalization, not cost verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_casgevy.html" data-cat="primaria" data-busca="casgevy o gargalo declarado não é o preço — na inglaterra são 1.794 elegíveis e 23 tratamentos no primeiro ano, e o motivo que o avaliador escreve é a internação, não o custo verificado em fonte primária proprio_casgevy casgevy the declared bottleneck is not the price — in england there are 1,794 eligible patients and 23 treatments in the first year, and the reason the assessor writes down is hospitalization, not cost verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_casgevy-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Casgevy</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>The declared bottleneck is not the price — in England there are 1,794 eligible patients and 23 treatments in the first year, and the reason the assessor writes down is hospitalization, not cost</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>9 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_rim.html" data-cat="primaria" data-busca="doença renal de zero a seis medicamentos em quatro anos e meio — e cinco deles foram aprovados sobre um número que não é o que interessa ao paciente verificado em fonte primária proprio_rim kidney disease from zero to six drugs in four and a half years — and five of them were approved on a number that is not the one that matters to the patient verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_rim.html" data-cat="primaria" data-busca="doença renal de zero a seis medicamentos em quatro anos e meio — e cinco deles foram aprovados sobre um número que não é o que interessa ao paciente verificado em fonte primária proprio_rim kidney disease from zero to six drugs in four and a half years — and five of them were approved on a number that is not the one that matters to the patient verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_rim-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Kidney disease</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>From zero to six drugs in four and a half years — and five of them were approved on a number that is not the one that matters to the patient</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>5 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_exossomos.html" data-cat="primaria" data-busca="exossomos 45.674 artigos, 83 ensaios randomizados e nenhum produto aprovado em agência nenhuma verificado em fonte primária proprio_exossomos exosomes 45,674 articles, 83 randomized trials, and no product approved by any agency verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_exossomos.html" data-cat="primaria" data-busca="exossomos 45.674 artigos, 83 ensaios randomizados e nenhum produto aprovado em agência nenhuma verificado em fonte primária proprio_exossomos exosomes 45,674 articles, 83 randomized trials, and no product approved by any agency verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_exossomos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Exosomes</h3><span class="selo selo-nao">Not approved</span></div>
       <p>45,674 articles, 83 randomized trials, and no product approved by any agency</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>2 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_figado_lipidio.html" data-cat="primaria" data-busca="fígado e lipídio treze moléculas com dois dígitos de artigo no pubmed e ensaios de desfecho de até 17.300 participantes — e uma só delas, a inclisirana, tem registro ativo verificado em fonte primária proprio_figado_lipidio liver and lipids thirteen molecules with two-digit pubmed article counts and outcome trials of up to 17,300 participants — and only one of them, inclisiran, has active registration verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_figado_lipidio.html" data-cat="primaria" data-busca="fígado e lipídio treze moléculas com dois dígitos de artigo no pubmed e ensaios de desfecho de até 17.300 participantes — e uma só delas, a inclisirana, tem registro ativo verificado em fonte primária proprio_figado_lipidio liver and lipids thirteen molecules with two-digit pubmed article counts and outcome trials of up to 17,300 participants — and only one of them, inclisiran, has active registration verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_figado_lipidio-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Liver and lipids</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Thirteen molecules with two-digit PubMed article counts and outcome trials of up to 17,300 participants — and only one of them, inclisiran, has active registration</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_geroprotetores.html" data-cat="primaria" data-busca="geroprotetores dezessete candidatos a retardar o envelhecimento: 6 não têm um único ensaio de fase 3 registrado, e 8 dos 13 princípios ativos buscados não têm registro ativo verificado em fonte primária proprio_geroprotetores geroprotectors seventeen candidates to delay aging: 6 don&#x27;t have a single registered phase 3 trial, and 8 of the 13 active ingredients searched have no active registration verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_gh_miostatina.html" data-cat="primaria" data-busca="gh e miostatina — o que ainda faltava o peg-mgf tem 5 artigos e 0 estudos. a folistatina vendida em frasco nunca foi testada em gente — o que existe em registro é terapia gênica. o ace-031 parou por segurança verificado em fonte primária proprio_gh_miostatina gh and myostatin — what was still missing peg-mgf has 5 articles and 0 studies. the follistatin sold in vials has never been tested in people — what exists in the registry is gene therapy. ace-031 was stopped for safety verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_gh_miostatina-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>GH and myostatin — what was still missing</h3><span class="selo selo-nao">Not approved</span></div>
+      <p>PEG-MGF has 5 articles and 0 studies. The follistatin sold in vials has never been tested in people — what exists in the registry is gene therapy. ACE-031 was stopped for safety</p>
+      <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_geroprotetores.html" data-cat="primaria" data-busca="geroprotetores dezessete candidatos a retardar o envelhecimento: 6 não têm um único ensaio de fase 3 registrado, e 8 dos 13 princípios ativos buscados não têm registro ativo verificado em fonte primária proprio_geroprotetores geroprotectors seventeen candidates to delay aging: 6 don&#x27;t have a single registered phase 3 trial, and 8 of the 13 active ingredients searched have no active registration verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_geroprotetores-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Geroprotectors</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Seventeen candidates to delay aging: 6 don't have a single registered phase 3 trial, and 8 of the 13 active ingredients searched have no active registration</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_incretinas.html" data-cat="primaria" data-busca="incretinas e amilinas de nova geração treze moléculas que disputam o lugar da semaglutida — 11 já têm fase 3 registrada e 9 das 11 com dci publicada não têm um único registro ativo verificado em fonte primária proprio_incretinas next-generation incretins and amylins thirteen molecules competing for semaglutide&#x27;s spot — 11 already have a registered phase 3, and 9 of the 11 with a published inn have not a single active registration verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_gnrh.html" data-cat="primaria" data-busca="gnrh e gonadotrofinas — os análogos que têm bula triptorrelina, leuprorrelina e gosserrelina têm 86, 124 e 125 ensaios de fase 3 registrados, em câncer e fertilidade. nos registros das cinco buscas, nenhum é sobre recuperação depois de anabolizante verificado em fonte primária proprio_gnrh gnrh and gonadotropins — the analogues that have a label triptorelin, leuprorelin and goserelin have 86, 124 and 125 registered phase 3 trials, in cancer and fertility. among the records from the five searches, none is about recovery after anabolic steroids verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_gnrh-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>GnRH and gonadotropins — the analogues that have a label</h3><span class="selo selo-parcial">Partially approved</span></div>
+      <p>Triptorelin, leuprorelin and goserelin have 86, 124 and 125 registered phase 3 trials, in cancer and fertility. Among the records from the five searches, none is about recovery after anabolic steroids</p>
+      <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>4 table(s)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_incretinas.html" data-cat="primaria" data-busca="incretinas e amilinas de nova geração treze moléculas que disputam o lugar da semaglutida — 11 já têm fase 3 registrada e 9 das 11 com dci publicada não têm um único registro ativo verificado em fonte primária proprio_incretinas next-generation incretins and amylins thirteen molecules competing for semaglutide&#x27;s spot — 11 already have a registered phase 3, and 9 of the 11 with a published inn have not a single active registration verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_incretinas-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Next-generation incretins and amylins</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Thirteen molecules competing for semaglutide's spot — 11 already have a registered phase 3, and 9 of the 11 with a published INN have not a single active registration</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_tarja.html" data-cat="primaria" data-busca="itens de tarja da lista 13 medicamentos que apareciam misturados com suplemento verificado em fonte primária proprio_tarja prescription-only items from the list 13 drugs that appeared mixed in with supplements verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_intestino.html" data-cat="primaria" data-busca="intestino — os análogos de glp-2 e a larazotida a fase 3 dos análogos de glp-2 é de síndrome do intestino curto, não de intestino permeável. o único ensaio de fase 3 da larazotida foi encerrado pelo patrocinador — e a busca por ela devolve registros de um remédio de doença de fabry verificado em fonte primária proprio_intestino gut — the glp-2 analogues and larazotide the phase 3 trials of the glp-2 analogues are in short bowel syndrome, not leaky gut. larazotide&#x27;s only phase 3 trial was terminated by the sponsor — and the search for it returns records of a fabry disease drug verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_intestino-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Gut — the GLP-2 analogues and larazotide</h3><span class="selo selo-parcial">Partially approved</span></div>
+      <p>The phase 3 trials of the GLP-2 analogues are in short bowel syndrome, not leaky gut. Larazotide's only phase 3 trial was terminated by the sponsor — and the search for it returns records of a Fabry disease drug</p>
+      <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_tarja.html" data-cat="primaria" data-busca="itens de tarja da lista 13 medicamentos que apareciam misturados com suplemento verificado em fonte primária proprio_tarja prescription-only items from the list 13 drugs that appeared mixed in with supplements verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_tarja-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Prescription-only items from the list</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>13 drugs that appeared mixed in with supplements</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>2 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_klow_evidencia.html" data-cat="primaria" data-busca="klow — a evidência a blend segue sem ensaio, mas três componentes entraram em fase clínica em 2026 verificado em fonte primária proprio_klow_evidencia klow — the evidence the blend still has no trial, but three components entered clinical phase in 2026 verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_klow_evidencia.html" data-cat="primaria" data-busca="klow — a evidência a blend segue sem ensaio, mas três componentes entraram em fase clínica em 2026 verificado em fonte primária proprio_klow_evidencia klow — the evidence the blend still has no trial, but three components entered clinical phase in 2026 verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_klow_evidencia-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>KLOW — the evidence</h3><span class="selo selo-nao">Not approved</span></div>
       <p>The blend still has no trial, but three components entered clinical phase in 2026</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>2 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_mazdutida.html" data-cat="primaria" data-busca="mazdutida 12 ensaios de fase 3, publicação em nejm, jama e nature — e nenhuma bula verificado em fonte primária proprio_mazdutida mazdutide 12 phase 3 trials, published in nejm, jama and nature — and no package insert verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_mazdutida.html" data-cat="primaria" data-busca="mazdutida 12 ensaios de fase 3, publicação em nejm, jama e nature — e nenhuma bula verificado em fonte primária proprio_mazdutida mazdutide 12 phase 3 trials, published in nejm, jama and nature — and no package insert verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_mazdutida-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Mazdutide</h3><span class="selo selo-nao">Not approved</span></div>
       <p>12 phase 3 trials, published in NEJM, JAMA and Nature — and no package insert</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>2 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_leste.html" data-cat="primaria" data-busca="medicamentos do leste europeu 18 importados, 29 ensaios registrados — e um histórico de mortes esquecido verificado em fonte primária proprio_leste eastern european drugs 18 imported drugs, 29 registered trials — and a forgotten history of deaths verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_leste.html" data-cat="primaria" data-busca="medicamentos do leste europeu 18 importados, 29 ensaios registrados — e um histórico de mortes esquecido verificado em fonte primária proprio_leste eastern european drugs 18 imported drugs, 29 registered trials — and a forgotten history of deaths verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_leste-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Eastern European drugs</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>18 imported drugs, 29 registered trials — and a forgotten history of deaths</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_meldonium.html" data-cat="primaria" data-busca="meldonium (mildronato) 357 artigos, 7 ensaios registrados — e uma janela de detecção de meses verificado em fonte primária proprio_meldonium meldonium (mildronate) 357 articles, 7 registered trials — and a detection window of months verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_meldonium.html" data-cat="primaria" data-busca="meldonium (mildronato) 357 artigos, 7 ensaios registrados — e uma janela de detecção de meses verificado em fonte primária proprio_meldonium meldonium (mildronate) 357 articles, 7 registered trials — and a detection window of months verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_meldonium-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Meldonium (mildronate)</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>357 articles, 7 registered trials — and a detection window of months</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>4 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_musculo_hpg.html" data-cat="primaria" data-busca="músculo, osso, eixo hpg e imune quinze moléculas que a conversa de peptídeo cita como se fossem equivalentes aos frascos de pesquisa — 6 das 14 buscadas têm registro ativo , com nome comercial e classe terapêutica declarada verificado em fonte primária proprio_musculo_hpg muscle, bone, hpg axis and immune system fifteen molecules that peptide chatter cites as though they were equivalent to research vials — 6 of the 14 searched have active registration, with a declared commercial name and therapeutic class verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_metabolismo.html" data-cat="primaria" data-busca="metabolismo e gordura — exenatida, aicar, cbl-514 e outros a exenatida tem 93 ensaios de fase 3 e zero registro ativo . a oxintomodulina, zero de fase 3. o cbl-514 tem 7 artigos e 16 estudos registrados, todos da mesma empresa verificado em fonte primária proprio_metabolismo metabolism and fat — exenatide, aicar, cbl-514 and others exenatide has 93 phase 3 trials and zero active registrations. oxyntomodulin, zero in phase 3. cbl-514 has 7 articles and 16 registered studies, all from the same company verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_metabolismo-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Metabolism and fat — exenatide, AICAR, CBL-514 and others</h3><span class="selo selo-parcial">Partially approved</span></div>
+      <p>Exenatide has 93 phase 3 trials and zero active registrations. Oxyntomodulin, zero in phase 3. CBL-514 has 7 articles and 16 registered studies, all from the same company</p>
+      <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>4 table(s)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_musculo_hpg.html" data-cat="primaria" data-busca="músculo, osso, eixo hpg e imune quinze moléculas que a conversa de peptídeo cita como se fossem equivalentes aos frascos de pesquisa — 6 das 14 buscadas têm registro ativo , com nome comercial e classe terapêutica declarada verificado em fonte primária proprio_musculo_hpg muscle, bone, hpg axis and immune system fifteen molecules that peptide chatter cites as though they were equivalent to research vials — 6 of the 14 searched have active registration, with a declared commercial name and therapeutic class verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_musculo_hpg-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Muscle, bone, HPG axis and immune system</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Fifteen molecules that peptide chatter cites as though they were equivalent to research vials — 6 of the 14 searched have active registration, with a declared commercial name and therapeutic class</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_neuro_novos.html" data-cat="primaria" data-busca="neuro e cognição — o bloco russo e o que tem bula noopept, fenilpiracetam, bromantano e cortexina somam 0 estudos registrados no clinicaltrials.gov; lecanemabe e donanemabe já têm registro ativo verificado em fonte primária proprio_neuro_novos neuro and cognition — the russian bloc and what has a label noopept, phenylpiracetam, bromantane, and cortexin together have 0 registered studies on clinicaltrials.gov; lecanemab and donanemab already have active registration verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_neuro_novos.html" data-cat="primaria" data-busca="neuro e cognição — o bloco russo e o que tem bula noopept, fenilpiracetam, bromantano e cortexina somam 0 estudos registrados no clinicaltrials.gov; lecanemabe e donanemabe já têm registro ativo verificado em fonte primária proprio_neuro_novos neuro and cognition — the russian bloc and what has a label noopept, phenylpiracetam, bromantane, and cortexin together have 0 registered studies on clinicaltrials.gov; lecanemab and donanemab already have active registration verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_neuro_novos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Neuro and cognition — the Russian bloc and what has a label</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Noopept, phenylpiracetam, bromantane, and cortexin together have 0 registered studies on ClinicalTrials.gov; lecanemab and donanemab already have active registration</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_nootropicos.html" data-cat="primaria" data-busca="nootrópicos 32 com evidência humana, 12 sem ensaio nenhum — e quatro contagens que estavam infladas verificado em fonte primária proprio_nootropicos nootropics 32 with human evidence, 12 with no trial at all — and four counts that were inflated verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_neuro_faltavam.html" data-cat="primaria" data-busca="neuro — as formas acetiladas e os que pararam na fase 3 o semax e o selank &quot;n-acetil amidato&quot; têm 6 e 2 artigos e zero estudo registrado. o rapastinel teve 10 ensaios de fase 3 e foi abandonado; a davunetida não superou o placebo verificado em fonte primária proprio_neuro_faltavam neuro — the acetylated forms and the ones that stopped at phase 3 semax and selank &quot;n-acetyl amidate&quot; have 6 and 2 articles and zero registered studies. rapastinel had 10 phase 3 trials and was abandoned; davunetide did not beat placebo verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_neuro_faltavam-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Neuro — the acetylated forms and the ones that stopped at phase 3</h3><span class="selo selo-nao">Not approved</span></div>
+      <p>Semax and Selank &quot;N-acetyl amidate&quot; have 6 and 2 articles and zero registered studies. Rapastinel had 10 phase 3 trials and was abandoned; davunetide did not beat placebo</p>
+      <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_nootropicos.html" data-cat="primaria" data-busca="nootrópicos 32 com evidência humana, 12 sem ensaio nenhum — e quatro contagens que estavam infladas verificado em fonte primária proprio_nootropicos nootropics 32 with human evidence, 12 with no trial at all — and four counts that were inflated verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_nootropicos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Nootropics</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>32 with human evidence, 12 with no trial at all — and four counts that were inflated</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_eixo_gh.html" data-cat="primaria" data-busca="o eixo do gh fora do frasco de peptídeo o hormônio recombinante tem 54.472 artigos, 183 ensaios de fase 3 e 9 registros ativos ; os secretagogos que a comunidade usa no lugar dele têm zero registros ativos verificado em fonte primária proprio_eixo_gh the gh axis outside the peptide vial the recombinant hormone has 54,472 articles, 183 phase 3 trials, and 9 active registrations; the secretagogues the community uses instead have zero active registrations verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_eixo_gh.html" data-cat="primaria" data-busca="o eixo do gh fora do frasco de peptídeo o hormônio recombinante tem 54.472 artigos, 183 ensaios de fase 3 e 9 registros ativos ; os secretagogos que a comunidade usa no lugar dele têm zero registros ativos verificado em fonte primária proprio_eixo_gh the gh axis outside the peptide vial the recombinant hormone has 54,472 articles, 183 phase 3 trials, and 9 active registrations; the secretagogues the community uses instead have zero active registrations verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_eixo_gh-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>The GH axis outside the peptide vial</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>The recombinant hormone has 54,472 articles, 183 phase 3 trials, and 9 active registrations; the secretagogues the community uses instead have zero active registrations</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_glp1_bula.html" data-cat="primaria" data-busca="os glp-1 contra a bula as doses estavam certas. a tarja preta estava faltando verificado em fonte primária proprio_glp1_bula the glp-1s against the package insert the doses were right. the black box warning was missing verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_glp1_bula.html" data-cat="primaria" data-busca="os glp-1 contra a bula as doses estavam certas. a tarja preta estava faltando verificado em fonte primária proprio_glp1_bula the glp-1s against the package insert the doses were right. the black box warning was missing verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_glp1_bula-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>The GLP-1s against the package insert</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>The doses were right. The black box warning was missing</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>6 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_reparo_novos.html" data-cat="primaria" data-busca="reparo além do bpc e do tb-500 a timosina β-4 tem 4 ensaios de fase 3 — e são de colírio para olho seco, não de reparo muscular; o ahk-cu tem 1 artigo no pubmed verificado em fonte primária proprio_reparo_novos repair beyond bpc and tb-500 thymosin β-4 has 4 phase 3 trials — and they are for dry eye drops, not muscle repair; ahk-cu has 1 article on pubmed verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_cosmeticos.html" data-cat="primaria" data-busca="peptídeos cosméticos — argirelina, matrixyl e companhia a argirelina, a mais estudada, tem 50 artigos e 6 estudos — os que dizem a via no título são de creme e sérum. 6 dos 10 nomes têm 4 artigos ou menos no pubmed verificado em fonte primária proprio_cosmeticos cosmetic peptides — argireline, matrixyl and company argireline, the most studied, has 50 articles and 6 studies — the ones that state the route in the title are for cream and serum. 6 of the 10 names have 4 articles or fewer on pubmed verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_cosmeticos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Cosmetic peptides — argireline, Matrixyl and company</h3><span class="selo selo-nao">Not approved</span></div>
+      <p>Argireline, the most studied, has 50 articles and 6 studies — the ones that state the route in the title are for cream and serum. 6 of the 10 names have 4 articles or fewer on PubMed</p>
+      <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>1 table(s)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_bancada.html" data-cat="primaria" data-busca="peptídeos de bancada — ss-20, shlp-2, shlp-3 e pnc-27 os quatro somam 77 artigos e zero estudo registrado no clinicaltrials.gov. o pnc-27 aparece em loja descrito como antitumoral, sem um único ensaio em gente verificado em fonte primária proprio_bancada bench peptides — ss-20, shlp-2, shlp-3 and pnc-27 the four add up to 77 articles and zero registered studies on clinicaltrials.gov. pnc-27 is described in a shop as an antitumor agent, without a single trial in people verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_bancada-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Bench peptides — SS-20, SHLP-2, SHLP-3 and PNC-27</h3><span class="selo selo-nao">Not approved</span></div>
+      <p>The four add up to 77 articles and zero registered studies on ClinicalTrials.gov. PNC-27 is described in a shop as an antitumor agent, without a single trial in people</p>
+      <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>1 table(s)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_reparo_novos.html" data-cat="primaria" data-busca="reparo além do bpc e do tb-500 a timosina β-4 tem 4 ensaios de fase 3 — e são de colírio para olho seco, não de reparo muscular; o ahk-cu tem 1 artigo no pubmed verificado em fonte primária proprio_reparo_novos repair beyond bpc and tb-500 thymosin β-4 has 4 phase 3 trials — and they are for dry eye drops, not muscle repair; ahk-cu has 1 article on pubmed verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_reparo_novos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Repair beyond BPC and TB-500</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Thymosin β-4 has 4 phase 3 trials — and they are for dry eye drops, not muscle repair; AHK-Cu has 1 article on PubMed</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_sarms.html" data-cat="primaria" data-busca="sarms metade dos produtos vendidos como sarm não contém o sarm do rótulo — e quatro dos mais populares nunca tiveram um ensaio clínico verificado em fonte primária proprio_sarms sarms half of the products sold as sarms do not contain the sarm on the label — and four of the most popular have never had a clinical trial verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_sarms.html" data-cat="primaria" data-busca="sarms metade dos produtos vendidos como sarm não contém o sarm do rótulo — e quatro dos mais populares nunca tiveram um ensaio clínico verificado em fonte primária proprio_sarms sarms half of the products sold as sarms do not contain the sarm on the label — and four of the most popular have never had a clinical trial verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_sarms-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>SARMs</h3><span class="selo selo-nao">Not approved</span></div>
       <p>Half of the products sold as SARMs do not contain the SARM on the label — and four of the most popular have never had a clinical trial</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>8 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_semax_evidencia.html" data-cat="primaria" data-busca="semax — a evidência a dose dos ensaios russos é de 12 a 72 vezes a da comunidade verificado em fonte primária proprio_semax_evidencia semax — the evidence the dose in the russian trials is 12 to 72 times the community&#x27;s verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_semax_evidencia.html" data-cat="primaria" data-busca="semax — a evidência a dose dos ensaios russos é de 12 a 72 vezes a da comunidade verificado em fonte primária proprio_semax_evidencia semax — the evidence the dose in the russian trials is 12 to 72 times the community&#x27;s verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_semax_evidencia-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Semax — the evidence</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>The dose in the Russian trials is 12 to 72 times the community's</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>2 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_efeito.html" data-cat="primaria" data-busca="tamanho de efeito quantos ensaios existem é uma pergunta; o que eles acharam é outra — 34 metanálises abertas verificado em fonte primária proprio_efeito effect size how many trials exist is one question; what they found is another — 34 meta-analyses opened verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_efeito.html" data-cat="primaria" data-busca="tamanho de efeito quantos ensaios existem é uma pergunta; o que eles acharam é outra — 34 metanálises abertas verificado em fonte primária proprio_efeito effect size how many trials exist is one question; what they found is another — 34 meta-analyses opened verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_efeito-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Effect size</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>How many trials exist is one question; what they found is another — 34 meta-analyses opened</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_thymalin.html" data-cat="primaria" data-busca="thymalin extrato tímico russo — 293 artigos, 13 ensaios, zero registros verificado em fonte primária proprio_thymalin thymalin russian thymic extract — 293 articles, 13 trials, zero trial registrations verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_thymalin.html" data-cat="primaria" data-busca="thymalin extrato tímico russo — 293 artigos, 13 ensaios, zero registros verificado em fonte primária proprio_thymalin thymalin russian thymic extract — 293 articles, 13 trials, zero trial registrations verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_thymalin-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Thymalin</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Russian thymic extract — 293 articles, 13 trials, zero trial registrations</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>2 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_procedimentos.html" data-cat="primaria" data-busca="tratamentos que não são substância cinco procedimentos que competem com os frascos deste site e somam 69.593 artigos no pubmed e 5.349 estudos registrados verificado em fonte primária proprio_procedimentos treatments that aren&#x27;t a substance five procedures that compete with this site&#x27;s vials and add up to 69,593 articles on pubmed and 5,349 registered studies verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_timo.html" data-cat="primaria" data-busca="timo e cardiogen — timulina, timopentina e o bioregulador do coração a timulina tem 886 artigos e zero estudo registrado. a timopentina tem registros de hiv com o nome comercial timunox. o cardiogen divide o nome com um gerador de rubídio usado em exame do coração verificado em fonte primária proprio_timo thymus and cardiogen — thymulin, thymopentin and the heart bioregulator thymulin has 886 articles and zero registered studies. thymopentin has hiv registrations under the brand name timunox. cardiogen shares its name with a rubidium generator used in heart imaging verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_timo-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
+      <div class="card-topo"><h3>Thymus and Cardiogen — thymulin, thymopentin and the heart bioregulator</h3><span class="selo selo-nao">Not approved</span></div>
+      <p>Thymulin has 886 articles and zero registered studies. Thymopentin has HIV registrations under the brand name Timunox. Cardiogen shares its name with a rubidium generator used in heart imaging</p>
+      <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>3 table(s)</span></div>
+    </a>
+    <a class="card card-aferido card-com-fig" href="p/proprio_procedimentos.html" data-cat="primaria" data-busca="tratamentos que não são substância cinco procedimentos que competem com os frascos deste site e somam 69.593 artigos no pubmed e 5.349 estudos registrados verificado em fonte primária proprio_procedimentos treatments that aren&#x27;t a substance five procedures that compete with this site&#x27;s vials and add up to 69,593 articles on pubmed and 5,349 registered studies verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_procedimentos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Treatments that aren't a substance</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>Five procedures that compete with this site's vials and add up to 69,593 articles on PubMed and 5,349 registered studies</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>2 table(s)</span></div>
     </a>
-    <a class="card card-aferido" href="p/proprio_alcool_esteatose.html" data-cat="primaria" data-busca="álcool e esteatose a causa de base que nenhum hepatograma enxerga — e que multiplica, não soma, o risco de tudo o mais que se toma verificado em fonte primária proprio_alcool_esteatose alcohol and steatosis the underlying cause no liver panel sees — and one that multiplies, rather than adds to, the risk of everything else you take verified against primary sources">
+    <a class="card card-aferido card-com-fig" href="p/proprio_alcool_esteatose.html" data-cat="primaria" data-busca="álcool e esteatose a causa de base que nenhum hepatograma enxerga — e que multiplica, não soma, o risco de tudo o mais que se toma verificado em fonte primária proprio_alcool_esteatose alcohol and steatosis the underlying cause no liver panel sees — and one that multiplies, rather than adds to, the risk of everything else you take verified against primary sources">
+      <img class="card-fig" src="../assets/figuras/proprio_alcool_esteatose-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Alcohol and steatosis</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>The underlying cause no liver panel sees — and one that multiplies, rather than adds to, the risk of everything else you take</p>
       <div class="card-rodape"><span class="selo selo-cat">Verified against primary sources</span><span>6 table(s)</span></div>
@@ -817,12 +932,14 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 <section class="secao" data-secao="suplemento">
   <div class="secao-cabeca"><h2>Supplements and related compounds</h2><p class="secao-desc">Over-the-counter items, with the dose range used in studies. Kept separate from those that require a prescription.</p></div>
   <div class="grade">
-    <a class="card" href="p/proprio_fitoterapicos.html" data-cat="suplemento" data-busca="fitoterápicos e nootrópicos 18 itens onde o marketing costuma correr à frente do dado suplementos e correlatos proprio_fitoterapicos herbal medicines and nootropics 18 items where marketing usually runs ahead of the data supplements and related compounds">
+    <a class="card card-com-fig" href="p/proprio_fitoterapicos.html" data-cat="suplemento" data-busca="fitoterápicos e nootrópicos 18 itens onde o marketing costuma correr à frente do dado suplementos e correlatos proprio_fitoterapicos herbal medicines and nootropics 18 items where marketing usually runs ahead of the data supplements and related compounds">
+      <img class="card-fig" src="../assets/figuras/proprio_fitoterapicos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Herbal medicines and nootropics</h3><span class="selo selo-nao">Not approved</span></div>
       <p>18 items where marketing usually runs ahead of the data</p>
       <div class="card-rodape"><span class="selo selo-cat">Supplements and related compounds</span><span>3 table(s)</span></div>
     </a>
-    <a class="card" href="p/proprio_suplementos.html" data-cat="suplemento" data-busca="suplementos de venda livre 43 itens com dose, do que tem evidência boa ao que só tem marketing suplementos e correlatos proprio_suplementos over-the-counter supplements 43 items with dose, from what has good evidence to what has only marketing supplements and related compounds">
+    <a class="card card-com-fig" href="p/proprio_suplementos.html" data-cat="suplemento" data-busca="suplementos de venda livre 43 itens com dose, do que tem evidência boa ao que só tem marketing suplementos e correlatos proprio_suplementos over-the-counter supplements 43 items with dose, from what has good evidence to what has only marketing supplements and related compounds">
+      <img class="card-fig" src="../assets/figuras/proprio_suplementos-cartao.webp" width="480" height="320" alt="" loading="lazy" decoding="async">
       <div class="card-topo"><h3>Over-the-counter supplements</h3><span class="selo selo-parcial">Partially approved</span></div>
       <p>43 items with dose, from what has good evidence to what has only marketing</p>
       <div class="card-rodape"><span class="selo selo-cat">Supplements and related compounds</span><span>5 table(s)</span></div>

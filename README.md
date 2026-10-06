@@ -4,9 +4,9 @@ Referência em português sobre peptídeos, nootrópicos, SARMs e compostos corr
 
 O repositório guarda o nome antigo, `protocolos-peptideos`. Desde 14 de setembro de 2026 o site mora em `peptisonar.com`; o endereço antigo `protocolos-peptideos.github.io` redireciona para ele, com o mesmo caminho, então link já publicado continua funcionando. O site cobre mais que peptídeos desde setembro de 2026.
 
-**87 compostos e combinações · 424 tabelas de dose · 90 páginas estáticas.**
+**96 compostos e combinações · 447 tabelas · 99 páginas estáticas.**
 
-Contagens da última execução do gerador, em 12 de setembro de 2026. Ele as imprime a cada rodada — se divergirem daqui, o gerador é que está certo.
+Contagens da última execução do gerador, em 5 de outubro de 2026. Ele as imprime a cada rodada — se divergirem daqui, o gerador é que está certo.
 
 ### ▶ [peptisonar.com](https://peptisonar.com/)
 
@@ -39,7 +39,7 @@ Todo conteúdo comercial da fonte foi removido: links de fornecedor, cupons, se�
 ### O que ficou de fora
 
 - **Fontes primárias, nas páginas importadas.** Nas páginas de protocolo vindas da fonte secundária, nenhum artigo do PubMed, registro de ensaio ou bula foi aberto: a checagem foi contra a fonte, e só. Continua sendo a limitação principal delas.
-- **A exceção são as páginas de evidência verificada**, hoje 25, onde cada número foi levantado no PubMed, no ClinicalTrials.gov, no dado aberto da ANVISA, na bula ou na lista da WADA, com a consulta declarada na própria página.
+- **A exceção são as páginas de evidência verificada**, hoje 39, onde cada número foi levantado no PubMed, no ClinicalTrials.gov, no dado aberto da ANVISA, na bula ou na lista da WADA, com a consulta declarada na própria página.
 - **Calculadoras interativas**, para não dar aparência de precisão a uma conta que depende de conferir o frasco na mão.
 - **Fornecedores e preços**, deliberadamente.
 
@@ -54,6 +54,7 @@ sobre.html            fonte, método e limites
 p/<slug>.html         uma página por composto
 assets/estilo.css     sistema visual (escuro, acento de cobre)
 assets/app.js         busca e filtro, sem dependências
+assets/figuras/       uma ilustração por página, gerada por IA: <slug>.webp (topo) e <slug>-cartao.webp (grade)
 build/gerar.py        gerador estático
 build/compostos.py    metadados PT-BR de cada composto (autoral)
 build/fatos.py        faixa de referência rápida por composto (autoral)
@@ -102,6 +103,24 @@ Os quatro levantamentos foram **refeitos em 04/09/2026**, com a consulta de cada
 Ficou uma lição registrada no código: buscando `LGD-4033 OR ligandrol` no ClinicalTrials.gov o resultado é **zero**, e a página teria afirmado que o ligandrol nunca entrou em ensaio. O ensaio existe — fase 2, 108 participantes, fratura de quadril — registrado sob o sinônimo `VK5211`. Consulta declarada não serve só para o leitor conferir: serve para quem escreve **perceber que a própria busca estava incompleta**.
 
 Estado atual, medido em 12 de setembro de 2026 reexecutando toda consulta declarada em tabela no site: **433 contagens, 416 iguais, 13 oscilando dentro de 2% e 4 divergindo**. As quatro divergentes estão identificadas — uma na página da mazdutida, três na de anticorpos monoclonais — e são do tipo que o reconferidor foi feito para achar: filtro escrito fora do `<code>`, e contagem de base que não é PubMed nem ClinicalTrials.gov publicada em coluna que o script lê como se fosse. As nove páginas abertas em 12 de setembro reproduzem **316 de 318**, com duas oscilações de um artigo.
+
+### A rodada de 5 de outubro de 2026: o que faltava
+
+A biblioteca de uma loja brasileira de peptídeos (166 fichas, consultada em 05/10/2026) serviu de lista de conferência: tudo o que ela tinha e este site não tinha virou levantamento próprio, em nove páginas — `proprio_gnrh`, `proprio_gh_miostatina`, `proprio_intestino`, `proprio_metabolismo`, `proprio_neuro_faltavam`, `proprio_timo`, `proprio_bancada`, `proprio_cosmeticos` e `proprio_blends` —, com 44 substâncias e 33 blends. Nenhum texto, número ou imagem da loja foi copiado, e o site continua sem citar nem linkar fornecedor.
+
+As tabelas e a prosa dessas páginas saem de `build/json/gera_paginas_2026_10_05.py`, que lê a coleta `build/json/coleta_2026_10_05.json` (local, fora do git, como a extração da fonte). Os módulos gerados são `build/proprios_lacunas.py`, `build/compostos_lacunas.py` e `build/evidencia_lacunas.py`: para corrigir, edita-se o gerador e roda-se de novo, nunca o módulo. A data vem de `DATA_LACUNAS`, em `datas.py`.
+
+Duas lições ficaram no texto das páginas, no espírito do `VK5211`. O código `AT1001` foi usado para a larazotida e para o migalastat, e o ClinicalTrials.gov trata os dois como sinônimos: dos registros de fase 3 que a busca por `larazotide` devolve, só um é de doença celíaca. E `cardiogen` sozinho devolve o CardioGen-82, gerador de rubídio para exame cardíaco. Reconferência no mesmo dia: as 187 contagens das nove páginas reproduzem.
+
+### As figuras
+
+Cada uma das 96 páginas tem uma ilustração, gerada no ChatGPT entre 5 e 6 de outubro de 2026, uma por prompt. Os prompts são só texto: nenhuma imagem da loja foi copiada nem enviada ao ChatGPT. O estilo é o do próprio site: fundo quase preto, acento de cobre, ilustração científica do alvo biológico. O prompt proíbe texto, frasco, seringa, comprimido, rosto e brilho de "cura", porque a figura não pode prometer o que a página desmente.
+
+- **Onde ficam:** `assets/figuras/<slug>.webp` (1200×800, topo da página) e `<slug>-cartao.webp` (480×320, grade). São 192 arquivos e 10,7 MB.
+- **Como entram:** `figura(slug)` em `gerar.py` só põe a imagem quando os dois arquivos existem. Página nova sem figura sai como antes, sem quebrar.
+- **Como aparecem:** a imagem é decorativa (`alt` vazio), e a legenda diz, nas sete línguas, que é ilustração gerada por IA, e não dado nem imagem de estudo.
+- **Prompts:** ficam em `build/json/figuras_prompts.py` (local, fora do git, como a coleta). O prefixo de estilo `ESTILO` é o mesmo para todas, mais uma linha de assunto por página.
+- **Ao mudar o `estilo.css`, recortar o `critico-gerado.css`.** O cabeçalho guarda o hash do `estilo.css`, e a trava de crítico falha até o recorte ser refeito.
 
 ## Reconferir os números, de tempos em tempos
 

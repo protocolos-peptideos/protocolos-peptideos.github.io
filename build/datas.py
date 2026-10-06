@@ -30,3 +30,4 @@ DATA_MAZDUTIDA = "5 de setembro de 2026"  # PubMed, ClinicalTrials.gov, openFDA,
 DATA_MABS = "12 de setembro de 2026"      # PubMed, ClinicalTrials.gov, openFDA, INN/OMS
 DATA_EXOSSOMOS = "12 de setembro de 2026"  # PubMed, ClinicalTrials.gov, openFDA, ANVISA, FDA, SBD
 DATA_NOVAS_CLASSES = "12 de setembro de 2026"  # PubMed, ClinicalTrials.gov, dado aberto da ANVISA
+DATA_LACUNAS = "5 de outubro de 2026"  # PubMed, ClinicalTrials.gov, openFDA, DailyMed, dado aberto da ANVISA

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Verified against primary sources — Protocolos</title>
-<meta name="description" content="The 29 pages where every figure came from a primary source — PubMed, ClinicalTrials.gov, package inserts and WADA — with the query declared on each one.">
+<meta name="description" content="The 38 pages where every figure came from a primary source — PubMed, ClinicalTrials.gov, package inserts and WADA — with the query declared on each one.">
 <meta name="robots" content="index, follow">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="Verified against primary sources — Protocolos">
-<meta property="og:description" content="The 29 pages where every figure came from a primary source — PubMed, ClinicalTrials.gov, package inserts and WADA — with the query declared on each one.">
+<meta property="og:description" content="The 38 pages where every figure came from a primary source — PubMed, ClinicalTrials.gov, package inserts and WADA — with the query declared on each one.">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://peptisonar.com/en/evidencia.html">
 <link rel="alternate" hreflang="pt-BR" href="https://peptisonar.com/evidencia.html">
@@ -24,7 +24,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Verified against primary sources — Protocolos",
-  "description": "The 29 pages where every figure came from a primary source — PubMed, ClinicalTrials.gov, package inserts and WADA — with the query declared on each one.",
+  "description": "The 38 pages where every figure came from a primary source — PubMed, ClinicalTrials.gov, package inserts and WADA — with the query declared on each one.",
   "url": "https://peptisonar.com/en/evidencia.html",
   "inLanguage": "en",
   "isPartOf": {
@@ -32,7 +32,7 @@
     "name": "Protocolos",
     "url": "https://peptisonar.com"
   },
-  "dateModified": "2026-09-14"
+  "dateModified": "2026-09-19"
 }
 </script>
 <link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -151,14 +151,6 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
 .trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
 .conteudo { padding: 42px 0px 96px; min-width: 0px; }
-.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
-.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
-.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
-.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
-.aviso p:last-child { margin-bottom: 0px; }
-.aviso-linha { border-top-color: ; border-top-style: ; border-top-width: ; border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: var(--atencao-fundo); border-left: 3px solid var(--atencao); border-radius: 0 var(--raio-sm) var(--raio-sm) 0; padding: 13px 18px; margin: 22px 0px; font-size: 14.5px; color: var(--texto-suave); }
-.aviso-linha strong { color: var(--atencao); }
 .selo { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; white-space: nowrap; border: 1px solid transparent; }
 .selo-nao { background: var(--alerta-fundo); color: rgb(238, 143, 121); border-color: var(--alerta-borda); }
 .selo-cat { background: var(--superficie-3); color: var(--texto-suave); border-color: var(--linha-forte); }
@@ -169,13 +161,15 @@ table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabula
 .artigo-cabeca h1 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.026em; margin: 0px 0px 14px; }
 .artigo-sub { font-size: 17.5px; color: var(--texto-suave); margin: 0px 0px 20px; max-width: 66ch; line-height: 1.6; }
 .artigo-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
+.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
+.artigo-fig { margin: 0px 0px 30px; }
+.artigo-fig img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta); }
+.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo h2 { font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: -0.018em; margin: 52px 0px 16px; padding-top: 26px; border-top: 1px solid var(--linha); }
 .conteudo h2:first-of-type { border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
-.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
-.conteudo strong { color: var(--texto); font-weight: 600; }
-.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
-.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
 .conteudo > p:first-of-type { font-size: 17px; color: var(--texto); }
+.conteudo strong { color: var(--texto); font-weight: 600; }
 .tabela-env { margin: 24px 0px 32px; border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; background: var(--superficie); }
 .tabela-rolagem { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
@@ -192,16 +186,21 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
 linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
 radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
 radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
+.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
+.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
+.aviso p:last-child { margin-bottom: 0px; }
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
-.nota-traducao { margin: 0px; padding: 9px 24px; font-size: 13px; line-height: 1.5; text-align: center; color: var(--texto-suave); background: var(--superficie); border-bottom: 1px solid var(--linha); }
-.nota-traducao a { color: var(--cobre-claro); }
 .procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
 @media (max-width: 940px) {
 .pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
 .trilha { display: none; }
 }
+.artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
@@ -230,28 +229,6 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
 .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.hero { padding: 48px 0px 34px; }
-}
-@media (max-width: 640px) {
-.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
-.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
-.marca span:not(.marca-icone) { display: none; }
-.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
-.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
-.nota-traducao { padding: 8px 16px; font-size: 12px; }
-.env-largo, .pagina { padding: 0px 18px; }
-.conteudo h2 { font-size: 23px; margin-top: 42px; }
 }</style>
 <link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
@@ -293,7 +270,7 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 
 <p>Most of this site is an organized translation of a commercial secondary source. It is declared on every page, and it is the structural weakness of the material: if the source got it wrong, I repeat the error.</p>
 
-<p>The <strong>pages listed below</strong> are different. Every figure in them was gathered by me directly on <strong>PubMed</strong> and on <strong>ClinicalTrials.gov</strong>, with the query used declared inside the page itself, so that anyone can repeat it and contradict me. They cover <strong>179 distinct compounds</strong>, plus <strong>106 substances and treatments</strong> surveyed in the round of September 12, 2026, across the nine pages opened that day.</p>
+<p>The <strong>pages listed below</strong> are different. Every figure in them was gathered by me directly on <strong>PubMed</strong> and on <strong>ClinicalTrials.gov</strong>, with the query used declared inside the page itself, so that anyone can repeat it and contradict me. They cover <strong>179 distinct compounds</strong>, plus <strong>106 substances and treatments</strong> surveyed in the round of September 12, 2026, across the nine pages opened that day, plus <strong>44 substances and 33 blends</strong> in the round of October 5, 2026, across the 9 pages opened to cover what was still missing.</p>
 
 <p>This is not a featured section out of methodological vanity. It is because, of the two things a site like this can do — list a dose or say what the dose is worth —, only the second is hard to find in Portuguese.</p>
 
@@ -366,6 +343,51 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
   <td><a href="p/proprio_procedimentos.html"><strong>Treatments that aren't a substance</strong></a></td>
   <td>5</td>
   <td>The comparison that almost never comes up: bariatric surgery has 36,916 articles and 2,039 registered studies. Hyperbaric oxygen therapy crossed with aging, on the other hand, has <strong>1 phase 3 trial, with 30 participants</strong></td>
+</tr>
+<tr>
+  <td><a href="p/proprio_gnrh.html"><strong>GnRH and gonadotropins — the analogues that have a label</strong></a></td>
+  <td>5</td>
+  <td>Triptorelin, leuprorelin and goserelin have 86, 124 and 125 registered phase 3 trials, in cancer and fertility. Among the records from the five searches, none is about recovery after anabolic steroids</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_gh_miostatina.html"><strong>GH and myostatin — what was still missing</strong></a></td>
+  <td>7</td>
+  <td>PEG-MGF has 5 articles and 0 studies. The follistatin sold in vials has never been tested in people — what exists in the registry is gene therapy. ACE-031 was stopped for safety</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_intestino.html"><strong>Gut — the GLP-2 analogues and larazotide</strong></a></td>
+  <td>4</td>
+  <td>The phase 3 trials of the GLP-2 analogues are in short bowel syndrome, not leaky gut. Larazotide's only phase 3 trial was terminated by the sponsor — and the search for it returns records of a Fabry disease drug</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_metabolismo.html"><strong>Metabolism and fat — exenatide, AICAR, CBL-514 and others</strong></a></td>
+  <td>6</td>
+  <td>Exenatide has 93 phase 3 trials and zero active registrations. Oxyntomodulin, zero in phase 3. CBL-514 has 7 articles and 16 registered studies, all from the same company</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_neuro_faltavam.html"><strong>Neuro — the acetylated forms and the ones that stopped at phase 3</strong></a></td>
+  <td>5</td>
+  <td>Semax and Selank "N-acetyl amidate" have 6 and 2 articles and zero registered studies. Rapastinel had 10 phase 3 trials and was abandoned; davunetide did not beat placebo</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_timo.html"><strong>Thymus and Cardiogen — thymulin, thymopentin and the heart bioregulator</strong></a></td>
+  <td>3</td>
+  <td>Thymulin has 886 articles and zero registered studies. Thymopentin has HIV registrations under the brand name Timunox. Cardiogen shares its name with a rubidium generator used in heart imaging</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_bancada.html"><strong>Bench peptides — SS-20, SHLP-2, SHLP-3 and PNC-27</strong></a></td>
+  <td>4</td>
+  <td>The four add up to 77 articles and zero registered studies on ClinicalTrials.gov. PNC-27 is described in a shop as an antitumor agent, without a single trial in people</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_cosmeticos.html"><strong>Cosmetic peptides — argireline, Matrixyl and company</strong></a></td>
+  <td>10</td>
+  <td>Argireline, the most studied, has 50 articles and 6 studies — the ones that state the route in the title are for cream and serum. 6 of the 10 names have 4 articles or fewer on PubMed</td>
+</tr>
+<tr>
+  <td><a href="p/proprio_blends.html"><strong>Ready-made blends — how much study the combination has</strong></a></td>
+  <td>33</td>
+  <td>32 of the 33 blends sold ready-made have zero registered studies. 11 don't have even one article that cites the components together</td>
 </tr>
 <tr>
   <td><a href="p/proprio_sarms.html"><strong>SARMs</strong></a></td>

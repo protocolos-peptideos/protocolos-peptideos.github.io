@@ -114,7 +114,10 @@ SO_PT = {'p/proprio_anvisa.html'}
 # soma 179" diz quantos compostos a pagina de tamanho de efeito reanalisa, e
 # esse numero tambem cai um quando a pagina da ANVISA sai. E contagem de
 # conteudo, nao de paginas, e por isso nao anda junto com as outras.
-AJUSTES_PERMITIDOS = {('87', '86'), ('30', '29'), ('19', '18')}
+#
+# Em 05/10/2026 a rodada das nove paginas de lacuna levou a contagem a 96
+# compostos e 39 paginas aferidas, e os pares andaram de novo: 96->95 e 39->38.
+AJUSTES_PERMITIDOS = {('87', '86'), ('30', '29'), ('19', '18'), ('96', '95'), ('39', '38')}
 
 
 # ------------------------------------------------------------------ trava
