@@ -363,6 +363,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .selo-parcial { background: var(--atencao-fundo); color: #E3C468; border-color: rgba(217,180,74,.26); }
 .selo-sim     { background: var(--ok-fundo);      color: #6BC5A2; border-color: var(--ok-borda); }
 .selo-cat     { background: var(--superficie-3);  color: var(--texto-suave); border-color: var(--linha-forte); }
+/* O selo de categoria é o único que pode quebrar em duas linhas. O rótulo
+   alemão "Nahrungsergänzungsmittel und Verwandtes" tem 339px em caixa alta
+   e criava rolagem lateral no celular; no desktop o cartão com figura
+   (overflow: hidden) cortava até 74px dele, e o inglês "Supplements and
+   related compounds" até 18px. Quebrar não corta nada. Os selos de status
+   e de ANVISA são curtos e seguem em linha única. */
+.selo-cat { white-space: normal; }
 
 /* registro na ANVISA, medido em 04/09/2026 */
 .selo-anv-sim { background: var(--ok-fundo);      color: #6BC5A2; border-color: var(--ok-borda); }
@@ -530,6 +537,13 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
   .rodape-in { grid-template-columns: 1fr; gap: 30px; }
   .conteudo h2 { font-size: 23px; margin-top: 42px; }
   tbody td, thead th { padding: 11px 15px; }
+  /* Composto longo do alemão não cabe num título de celular:
+     "Nahrungsergänzungsmittel" passava da tela no h1 do artigo (até 430px)
+     e no h2 da seção do índice (até 374px). O título alemão hifeniza; sem
+     dicionário de hifenização, overflow-wrap quebra a palavra em vez de
+     vazar. */
+  h1, h2, h3 { overflow-wrap: break-word; }
+  :lang(de) :is(h1, h2, h3) { -webkit-hyphens: auto; hyphens: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
