@@ -19,7 +19,7 @@
    build se sairem de sincronia. Sem essa trava o erro seria silencioso: a
    pagina pronta fica certa, so a primeira pintura fica errada.
 
-   estilo.css sha256[:16] = d5b333e11c136c97 */
+   estilo.css sha256[:16] = d443e819429b65c7 */
 
 :root { color-scheme: dark; --tinta: #08090B; --fundo: #0B0D11; --superficie: #111419; --superficie-2: #161A21; --superficie-3: #1D222B; --linha: #232833; --linha-forte: #2F3643; --texto: #E8EAED; --texto-suave: #A8B0BC; --texto-fraco: #7D8593; --cobre: #D08A4A; --cobre-claro: #E8A972; --cobre-fundo: rgba(208, 138, 74, 0.10); --cobre-borda: rgba(208, 138, 74, 0.28); --alerta: #E5674B; --alerta-fundo: rgba(229, 103, 75, 0.10); --alerta-borda: rgba(229, 103, 75, 0.30); --ok: #4FB08A; --ok-fundo: rgba(79, 176, 138, 0.10); --ok-borda: rgba(79, 176, 138, 0.28); --atencao: #D9B44A; --atencao-fundo: rgba(217, 180, 74, 0.10); --aferido: #B8C9DC; --aferido-rasa: rgba(184, 201, 220, 0.55); --display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif; --corpo: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; --largura: 1440px; --raio: 14px; --raio-sm: 9px; }
 * { box-sizing: border-box; }
@@ -33,7 +33,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .pular { position: absolute; left: -9999px; top: 0px; background: var(--cobre); color: rgb(20, 16, 12); padding: 10px 18px; border-radius: 0 0 var(--raio-sm) 0; font-weight: 600; z-index: 999; }
 .pular:focus { left: 0px; }
 .cabecalho { position: sticky; top: 0px; z-index: 50; background: rgba(11, 13, 17, 0.86); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--linha); }
-.cabecalho-in { max-width: var(--largura); margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; gap: 28px; }
+.cabecalho-in { max-width: var(--largura); margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; gap: 6px 28px; flex-wrap: wrap; justify-content: flex-end; }
 .marca { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-size: 19px; font-weight: 600; color: var(--texto); letter-spacing: -0.01em; white-space: nowrap; }
 .marca:hover { text-decoration: none; }
 .marca-icone { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(140deg, var(--cobre), #8E5A2E); display: grid; place-items: center; font-family: var(--corpo); font-size: 14px; font-weight: 700; color: rgb(22, 16, 10); box-shadow: 0 0 0 1px var(--cobre-borda), 0 4px 14px rgba(208, 138, 74, 0.18); }

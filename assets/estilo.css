@@ -138,10 +138,16 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   -webkit-backdrop-filter: saturate(160%) blur(14px);
   border-bottom: 1px solid var(--linha);
 }
+/* Marca, navegação e idiomas numa linha só precisam de 742px (chinês) a
+   864px (espanhol). Abaixo disso o seletor vazava e criava rolagem lateral
+   no tablet. Com wrap, ele desce para uma segunda linha só quando não cabe,
+   e o flex-end o alinha à direita, como no celular. Na primeira linha nada
+   muda: a margem automática da .nav absorve a sobra antes do flex-end. */
 .cabecalho-in {
   max-width: var(--largura); margin: 0 auto;
   padding: 14px 24px;
   display: flex; align-items: center; gap: 28px;
+  flex-wrap: wrap; justify-content: flex-end; row-gap: 6px;
 }
 .marca {
   display: flex; align-items: center; gap: 11px;
