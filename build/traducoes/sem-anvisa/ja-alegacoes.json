@@ -1,0 +1,38 @@
+[
+ {
+  "pt": "205 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 148 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "204の化合物と組み合わせ ― ペプチドから<a href=\"p/proprio_nootropicos.html\">ノートロピック</a>、SARM、そしてブラジルで登録されているものまで ― を、用量、溶解、サイクル構成、規制上のステータスとともに扱っています。各ページは、公表された試験が検証したことと、コミュニティ報告の実践にすぎないこととを分けています。この二つの違いこそが主題のすべてだからです。うち147ページでは、数字は二次資料からではなく、<a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>、<a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>、添付文書で確認したものです ― 各ページに検索式を明記しているので、あなたが再現して私に反論できます。",
+  "ajuste": {
+   "205": "204",
+   "148": "147"
+  }
+ },
+ {
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 205 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "このページの化合物リストをテキストとカテゴリで絞り込みます。何も変更しません ― どのカードが表示されるかが変わるだけで、残った件数を返します。フィルターを使わなくても、204の化合物はこのページに一覧・リンクされたままです。",
+  "ajuste": {
+   "205": "204"
+  }
+ },
+ {
+  "pt": "<strong>O filtro é atalho, não porta.</strong> Os 205 compostos estão listados e linkados abaixo, agrupados por seção — dá para chegar em qualquer um rolando a página, sem buscar.",
+  "trad": "<strong>フィルターは近道であって、入口ではありません。</strong> 204の化合物はすべて下にセクション別に一覧とリンクがあり、検索しなくてもページをスクロールするだけでどれにでも辿り着けます。",
+  "ajuste": {
+   "205": "204"
+  }
+ },
+ {
+  "pt": "As 148 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
+  "trad": "各数字が一次資料 ― PubMed、ClinicalTrials.gov、添付文書、WADA ― から得られた147ページ。それぞれに検索式を明記しています。",
+  "ajuste": {
+   "148": "147"
+  }
+ },
+ {
+  "pt": "Compilado em 3 de setembro de 2026, cobrindo 205 compostos e combinações. Protocolo de peptídeo muda rápido, e o status regulatório muda mais rápido ainda — várias datas de Categoria 2 da FDA citadas aqui têm revisão marcada para 2026. Confira antes de tratar qualquer status como atual.",
+  "trad": "編集日は2026年9月3日、204の化合物および組み合わせを対象とする。ペプチドのプロトコルは変化が速く、規制上のステータスはさらに速く変わる — ここで挙げたFDAカテゴリー2の日付の多くは、2026年に見直しが予定されている。ステータスを現在のものとして扱う前に確認すること。",
+  "ajuste": {
+   "205": "204"
+  }
+ }
+]

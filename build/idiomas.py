@@ -117,7 +117,11 @@ SO_PT = {'p/proprio_anvisa.html'}
 #
 # Em 05/10/2026 a rodada das nove paginas de lacuna levou a contagem a 96
 # compostos e 39 paginas aferidas, e os pares andaram de novo: 96->95 e 39->38.
-AJUSTES_PERMITIDOS = {('87', '86'), ('30', '29'), ('19', '18'), ('96', '95'), ('39', '38')}
+#
+# Em 16/10/2026 entraram as 109 paginas que conferem protocolos publicados na
+# internet: 205 compostos e 148 paginas aferidas, pares 205->204 e 148->147.
+AJUSTES_PERMITIDOS = {('87', '86'), ('30', '29'), ('19', '18'), ('96', '95'), ('39', '38'),
+                      ('205', '204'), ('148', '147')}
 
 
 # ------------------------------------------------------------------ trava

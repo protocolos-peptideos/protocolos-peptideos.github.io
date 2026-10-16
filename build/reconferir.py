@@ -58,12 +58,16 @@ def conta_pubmed(termo):
     return None
 
 
-def conta_ctgov(termo, campo="intr"):
+def conta_ctgov(termo, campo="intr", extra=None):
     """No ClinicalTrials.gov, buscar por condicao e por intervencao sao coisas
     diferentes e devolvem numeros diferentes. A pagina diz qual usou, e o
-    script obedece: 'condição X' vira query.cond, o resto vira query.intr."""
-    q = urllib.parse.urlencode({f"query.{campo}": termo, "countTotal": "true",
-                                "pageSize": 1})
+    script obedece: 'condição X' vira query.cond, 'termo livre' vira
+    query.term, o resto vira query.intr. `extra` junta mais campos na mesma
+    busca ("intervenção: `A`; condição: `B`")."""
+    params = {f"query.{campo}": termo}
+    for c, t in (extra or {}).items():
+        params[f"query.{c}"] = t
+    q = urllib.parse.urlencode({**params, "countTotal": "true", "pageSize": 1})
     for _ in range(TENTATIVAS):
         try:
             r = urllib.request.urlopen(f"{CTGOV}?{q}", timeout=30).read().decode()
@@ -71,6 +75,18 @@ def conta_ctgov(termo, campo="intr"):
         except Exception:
             time.sleep(2)
     return None
+
+
+def _campo(rotulo, padrao):
+    """Campo de busca do ClinicalTrials.gov dito no rotulo antes do <code>."""
+    t = rotulo.lower()
+    if "termo" in t or "query.term" in t or "busca livre" in t:
+        return "term"
+    if "intervenç" in t or "intervenc" in t:
+        return "intr"
+    if "condi" in t or "condition" in t:
+        return "cond"
+    return padrao
 
 
 def alvos(PROPRIOS):
@@ -105,6 +121,16 @@ def alvos(PROPRIOS):
                 rotulo_consulta = _txt(re.sub(r"<code>.*?</code>", " ", bruto, flags=re.S)).lower()
                 campo = "cond" if ("condi" in rotulo_consulta
                                    or "condition" in rotulo_consulta) else "intr"
+                # Rotulo explicito antes de cada <code> ("termo livre: `A`",
+                # "intervenção: `A`; condição: `B`") manda mais que a regra
+                # acima, que olha a celula inteira. Sem rotulo explicito, nada muda.
+                pedacos = re.split(r"<code>.*?</code>", bruto, flags=re.S)
+                campo = _campo(_txt(pedacos[0]), campo)
+                extra = {}
+                for k in range(1, len(cod)):
+                    c2 = _campo(_txt(pedacos[k]), None)
+                    if c2 and c2 != campo:
+                        extra[c2] = _txt(cod[k])
                 base_linha = _txt(linha[i_base]).lower() if i_base is not None else ""
                 for k, base in cols:
                     if k >= len(linha):
@@ -118,7 +144,7 @@ def alvos(PROPRIOS):
                     achados.append(dict(
                         slug=slug, tabela=tab.get("cap", "?"),
                         rotulo=_txt(linha[0])[:44], coluna=cab[k], base=b,
-                        consulta=consulta, campo=campo,
+                        consulta=consulta, campo=campo, extra=extra,
                         publicado=int(m.group(1).replace(".", ""))))
     return achados
 
@@ -150,7 +176,7 @@ def main():
         if it["base"] == "pubmed":
             agora = conta_pubmed(it["consulta"])
         else:
-            agora = conta_ctgov(it["consulta"], it.get("campo", "intr"))
+            agora = conta_ctgov(it["consulta"], it.get("campo", "intr"), it.get("extra"))
         time.sleep(PAUSA)
         pub = it["publicado"]
         if agora is None:

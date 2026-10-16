@@ -8,6 +8,9 @@ manda a trava. Por isso CORPO e uma f-string.
 from datas import DATA_NOVAS_CLASSES as _DT
 from datas import DATA_LACUNAS as _DT2
 from evidencia_lacunas import LINHAS as _LIN_LAC, N_SUBSTANCIAS as _N_LAC, N_BLENDS as _NB_LAC, N_PAGINAS as _NP_LAC
+from datas import DATA_ALEGACOES as _DT3
+from datas import DATA_ALEGACOES_CONTAGEM as _DT4
+from evidencia_alegacoes import LINHAS as _LIN_ALE, N_PAGINAS as _NP_ALE
 
 CORPO = f"""
 <h2>O que separa estas páginas do resto do site</h2>
@@ -18,7 +21,7 @@ página, e é a fraqueza estrutural do material: se a fonte errou, eu repito o e
 <p>As <strong>páginas listadas abaixo</strong> são diferentes. Cada número nelas foi levantado por mim
 diretamente no <strong>PubMed</strong> e no <strong>ClinicalTrials.gov</strong>, com a consulta usada declarada
 dentro da própria página, para que qualquer pessoa possa repetir e me contradizer. Cobrem
-<strong>179 compostos distintos</strong>, mais <strong>106 substâncias e tratamentos</strong> levantados na rodada de {_DT}, nas nove páginas abertas naquele dia, e mais <strong>{_N_LAC} substâncias e {_NB_LAC} blends</strong> na rodada de {_DT2}, nas {_NP_LAC} páginas abertas para cobrir o que ainda faltava.</p>
+<strong>179 compostos distintos</strong>, mais <strong>106 substâncias e tratamentos</strong> levantados na rodada de {_DT}, nas nove páginas abertas naquele dia, e mais <strong>{_N_LAC} substâncias e {_NB_LAC} blends</strong> na rodada de {_DT2}, nas {_NP_LAC} páginas abertas para cobrir o que ainda faltava. E há mais <strong>{_NP_ALE} páginas</strong>, cada uma conferindo um protocolo que vi publicado na internet, levantadas em {_DT3}, com as contagens refeitas em {_DT4}.</p>
 
 <p>Não é uma seção de destaque por vaidade de método. É porque, das duas coisas que um site destes pode fazer —
 listar dose ou dizer o que a dose vale —, só a segunda é difícil de achar em português.</p>
@@ -200,6 +203,19 @@ listar dose ou dizer o que a dose vale —, só a segunda é difícil de achar e
 <p class="nota"><strong>A coluna não soma 179.</strong> Duas páginas são segundo corte dos mesmos compostos,
 não compostos novos: a de tamanho de efeito reanalisa 19 que já aparecem nas outras, e a de registro na ANVISA
 varre os 44 compostos de protocolo do site, que não são contados como material de fonte primária.</p>
+
+<h2 id="alegacoes">Protocolos publicados na internet, um por página</h2>
+
+<p>Cada página abaixo parte de um protocolo que vi publicado na internet, com dose, número e "estudo" citados,
+e confere item por item no PubMed, no ClinicalTrials.gov e na norma brasileira. Não digo onde nem de quem vi:
+a página trata da alegação, não de quem a fez.</p>
+
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="alegacoes">
+<thead><tr><th scope="col">Página</th><th scope="col">O achado central</th></tr></thead>
+<tbody>
+{_LIN_ALE}
+</tbody>
+</table></div></div>
 
 <h2>Três coisas que este levantamento ensinou</h2>
 

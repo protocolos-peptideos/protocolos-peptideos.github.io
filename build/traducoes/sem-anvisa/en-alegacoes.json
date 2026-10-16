@@ -1,0 +1,38 @@
+[
+ {
+  "pt": "205 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 148 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "204 compounds and combinations — from peptides to <a href=\"p/proprio_nootropicos.html\">nootropics</a>, SARMs, and what exists registered in Brazil —, with dose, reconstitution, cycle structure, and regulatory status. Each page separates what a published trial tested from what is merely community-reported practice, because the difference between the two is the whole subject. In 147 of them the figures did not come from a secondary source: they were checked against <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, open data on registered medicines in Brazil, and the package insert — with the query declared on each page, for you to repeat and contradict me.",
+  "ajuste": {
+   "205": "204",
+   "148": "147"
+  }
+ },
+ {
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 205 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "Filters the list of compounds on this page by text and by category. It changes nothing: it only changes which cards stay visible, and returns the count of what's left. The 204 compounds stay listed and linked on the page even without using the filter.",
+  "ajuste": {
+   "205": "204"
+  }
+ },
+ {
+  "pt": "<strong>O filtro é atalho, não porta.</strong> Os 205 compostos estão listados e linkados abaixo, agrupados por seção — dá para chegar em qualquer um rolando a página, sem buscar.",
+  "trad": "<strong>The filter is a shortcut, not a gate.</strong> The 204 compounds are listed and linked below, grouped by section — you can reach any of them by scrolling the page, without searching.",
+  "ajuste": {
+   "205": "204"
+  }
+ },
+ {
+  "pt": "As 148 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
+  "trad": "The 147 pages where every figure came from a primary source — PubMed, ClinicalTrials.gov, package inserts and WADA — with the query declared on each one.",
+  "ajuste": {
+   "148": "147"
+  }
+ },
+ {
+  "pt": "Compilado em 3 de setembro de 2026, cobrindo 205 compostos e combinações. Protocolo de peptídeo muda rápido, e o status regulatório muda mais rápido ainda — várias datas de Categoria 2 da FDA citadas aqui têm revisão marcada para 2026. Confira antes de tratar qualquer status como atual.",
+  "trad": "Compiled on September 3, 2026, covering 204 compounds and combinations. Peptide protocols change fast, and regulatory status changes even faster — several FDA Category 2 dates cited here have a review scheduled for 2026. Check before treating any status as current.",
+  "ajuste": {
+   "205": "204"
+  }
+ }
+]

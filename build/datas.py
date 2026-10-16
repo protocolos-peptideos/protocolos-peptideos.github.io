@@ -31,3 +31,9 @@ DATA_MABS = "12 de setembro de 2026"      # PubMed, ClinicalTrials.gov, openFDA,
 DATA_EXOSSOMOS = "12 de setembro de 2026"  # PubMed, ClinicalTrials.gov, openFDA, ANVISA, FDA, SBD
 DATA_NOVAS_CLASSES = "12 de setembro de 2026"  # PubMed, ClinicalTrials.gov, dado aberto da ANVISA
 DATA_LACUNAS = "5 de outubro de 2026"  # PubMed, ClinicalTrials.gov, openFDA, DailyMed, dado aberto da ANVISA
+# Paginas que conferem alegacoes publicadas na internet: os documentos (IN 28,
+# bulas, WADA, dado aberto da ANVISA) foram lidos e as contagens feitas no
+# primeiro dia; as contagens das tabelas com consulta foram refeitas no
+# segundo, antes de as paginas entrarem no site.
+DATA_ALEGACOES = "7 de outubro de 2026"  # PubMed, ClinicalTrials.gov, IN 28/2018, bulas, WADA, ANVISA
+DATA_ALEGACOES_CONTAGEM = "16 de outubro de 2026"  # recontagem: PubMed e ClinicalTrials.gov

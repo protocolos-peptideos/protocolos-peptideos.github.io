@@ -4,9 +4,9 @@ Referência em português sobre peptídeos, nootrópicos, SARMs e compostos corr
 
 O repositório guarda o nome antigo, `protocolos-peptideos`. Desde 14 de setembro de 2026 o site mora em `peptisonar.com`; o endereço antigo `protocolos-peptideos.github.io` redireciona para ele, com o mesmo caminho, então link já publicado continua funcionando. O site cobre mais que peptídeos desde setembro de 2026.
 
-**96 compostos e combinações · 447 tabelas · 99 páginas estáticas.**
+**205 compostos e combinações · 947 tabelas · 208 páginas estáticas.**
 
-Contagens da última execução do gerador, em 5 de outubro de 2026. Ele as imprime a cada rodada — se divergirem daqui, o gerador é que está certo.
+Contagens da última execução do gerador, em 16 de outubro de 2026. Ele as imprime a cada rodada — se divergirem daqui, o gerador é que está certo.
 
 ### ▶ [peptisonar.com](https://peptisonar.com/)
 
@@ -39,7 +39,7 @@ Todo conteúdo comercial da fonte foi removido: links de fornecedor, cupons, se�
 ### O que ficou de fora
 
 - **Fontes primárias, nas páginas importadas.** Nas páginas de protocolo vindas da fonte secundária, nenhum artigo do PubMed, registro de ensaio ou bula foi aberto: a checagem foi contra a fonte, e só. Continua sendo a limitação principal delas.
-- **A exceção são as páginas de evidência verificada**, hoje 39, onde cada número foi levantado no PubMed, no ClinicalTrials.gov, no dado aberto da ANVISA, na bula ou na lista da WADA, com a consulta declarada na própria página.
+- **A exceção são as páginas de evidência verificada**, hoje 148, onde cada número foi levantado no PubMed, no ClinicalTrials.gov, no dado aberto da ANVISA, na bula ou na lista da WADA, com a consulta declarada na própria página.
 - **Calculadoras interativas**, para não dar aparência de precisão a uma conta que depende de conferir o frasco na mão.
 - **Fornecedores e preços**, deliberadamente.
 
@@ -112,12 +112,22 @@ As tabelas e a prosa dessas páginas saem de `build/json/gera_paginas_2026_10_05
 
 Duas lições ficaram no texto das páginas, no espírito do `VK5211`. O código `AT1001` foi usado para a larazotida e para o migalastat, e o ClinicalTrials.gov trata os dois como sinônimos: dos registros de fase 3 que a busca por `larazotide` devolve, só um é de doença celíaca. E `cardiogen` sozinho devolve o CardioGen-82, gerador de rubídio para exame cardíaco. Reconferência no mesmo dia: as 187 contagens das nove páginas reproduzem.
 
+### A rodada de 16 de outubro de 2026: protocolos publicados na internet
+
+Entraram 109 páginas, uma por protocolo que vi publicado na internet em vídeos curtos sobre saúde masculina e treino. Cada uma confere a alegação item por item: o estudo citado existe? diz o número que se atribui a ele? em quantas pessoas? E fecha com o status no Brasil (IN 28/2018 consolidada, dado aberto da ANVISA) e na WADA. O site não diz onde nem de quem viu a alegação.
+
+- **De onde vêm:** textos em Markdown em `build/json/alegacoes/md/` (local, fora do git), convertidos por `build/json/gera_paginas_alegacoes.py` em `build/proprios_alegacoes.py`, `build/compostos_alegacoes.py` e `build/evidencia_alegacoes.py`. Para corrigir, edita-se o Markdown e roda-se o gerador.
+- **Duas datas:** `DATA_ALEGACOES` (7 de outubro, leitura dos documentos e primeira contagem) e `DATA_ALEGACOES_CONTAGEM` (recontagem das tabelas com consulta, antes de publicar).
+- **Selo de aprovação nestas páginas** segue a indicação de que a página trata: "Aprovado" só quando há medicamento aprovado para aquele uso; "Aprovação parcial" quando a aprovação cobre parte do uso tratado ou é alegação autorizada de suplemento; "Não aprovado" quando a aprovação existente é para outra coisa ou não existe.
+- **Seção sem título:** `gerar.py` aceita `continua=True` numa seção, para o texto que vem depois de uma tabela ficar sob o mesmo título.
+- **O `reconferir.py` passou a ler** o campo dito antes de cada `<code>` no ClinicalTrials.gov ("termo livre", "intervenção: `A`; condição: `B`"). As 620 contagens das páginas anteriores são lidas exatamente como antes.
+
 ### As figuras
 
-Cada uma das 96 páginas tem uma ilustração, gerada no ChatGPT entre 5 e 6 de outubro de 2026, uma por prompt. Os prompts são só texto: nenhuma imagem da loja foi copiada nem enviada ao ChatGPT. O estilo é o do próprio site: fundo quase preto, acento de cobre, ilustração científica do alvo biológico. O prompt proíbe texto, frasco, seringa, comprimido, rosto e brilho de "cura", porque a figura não pode prometer o que a página desmente.
+Cada uma das 96 páginas abertas até 5 de outubro de 2026 tem uma ilustração, gerada no ChatGPT entre 5 e 6 de outubro de 2026, uma por prompt. Os prompts são só texto: nenhuma imagem da loja foi copiada nem enviada ao ChatGPT. O estilo é o do próprio site: fundo quase preto, acento de cobre, ilustração científica do alvo biológico. O prompt proíbe texto, frasco, seringa, comprimido, rosto e brilho de "cura", porque a figura não pode prometer o que a página desmente.
 
 - **Onde ficam:** `assets/figuras/<slug>.webp` (1200×800, topo da página) e `<slug>-cartao.webp` (480×320, grade). São 192 arquivos e 10,7 MB.
-- **Como entram:** `figura(slug)` em `gerar.py` só põe a imagem quando os dois arquivos existem. Página nova sem figura sai como antes, sem quebrar.
+- **Como entram:** `figura(slug)` em `gerar.py` só põe a imagem quando os dois arquivos existem. Página nova sem figura sai como antes, sem quebrar — é o caso das 109 páginas de 16 de outubro de 2026, ainda sem figura.
 - **Como aparecem:** a imagem é decorativa (`alt` vazio), e a legenda diz, nas sete línguas, que é ilustração gerada por IA, e não dado nem imagem de estudo.
 - **Prompts:** ficam em `build/json/figuras_prompts.py` (local, fora do git, como a coleta). O prefixo de estilo `ESTILO` é o mesmo para todas, mais uma linha de assunto por página.
 - **Ao mudar o `estilo.css`, recortar o `critico-gerado.css`.** O cabeçalho guarda o hash do `estilo.css`, e a trava de crítico falha até o recorte ser refeito.

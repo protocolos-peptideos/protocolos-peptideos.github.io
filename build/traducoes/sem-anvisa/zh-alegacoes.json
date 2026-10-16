@@ -1,0 +1,38 @@
+[
+ {
+  "pt": "205 compostos e combinações — de peptídeos a <a href=\"p/proprio_nootropicos.html\">nootrópicos</a>, SARMs e o que existe registrado no Brasil —, com dose, reconstituição, estrutura de ciclo e status regulatório. Cada página separa o que um ensaio publicado testou do que é apenas prática relatada por comunidade, porque a diferença entre as duas coisas é o assunto todo. Em 148 delas os números não vieram de fonte secundária: foram conferidos no <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>, no <a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>, no <a href=\"https://dados.anvisa.gov.br/dados/\" rel=\"noopener\">dado aberto da ANVISA</a> e na bula — com a consulta declarada em cada página, para você repetir e me contradizer.",
+  "trad": "204 个化合物和组合 — 从肽到<a href=\"p/proprio_nootropicos.html\">益智药</a>、SARM，以及在巴西有注册的东西 —，附剂量、复溶、周期结构和监管状态。每个页面都把已发表试验测试过的内容与仅仅是社群报告的做法分开，因为这两者之间的差别就是全部的主题。其中 147 个页面的数字不是来自二手资料：它们是在 <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" rel=\"noopener\">PubMed</a>、<a href=\"https://clinicaltrials.gov/\" rel=\"noopener\">ClinicalTrials.gov</a>、巴西药品公开数据和说明书中核对过的 — 每个页面都写明了检索式，好让你重复一遍并反驳我。",
+  "ajuste": {
+   "205": "204",
+   "148": "147"
+  }
+ },
+ {
+  "pt": "Filtra a lista de compostos desta pagina por texto, por categoria e por registro na ANVISA. Nao altera nada: so muda quais cartoes ficam visiveis, e devolve a contagem do que sobrou. Os 205 compostos continuam listados e linkados na pagina mesmo sem usar o filtro.",
+  "trad": "按文字和类别筛选本页的化合物列表。它不改变任何东西：只改变哪些卡片可见，并返回剩下的数量。即使不用筛选，204 个化合物也仍然在页面上列出并带链接。",
+  "ajuste": {
+   "205": "204"
+  }
+ },
+ {
+  "pt": "<strong>O filtro é atalho, não porta.</strong> Os 205 compostos estão listados e linkados abaixo, agrupados por seção — dá para chegar em qualquer um rolando a página, sem buscar.",
+  "trad": "<strong>筛选是捷径，不是入口。</strong>204 个化合物都在下面列出并带链接，按板块分组 — 不用搜索，滚动页面就能找到任何一个。",
+  "ajuste": {
+   "205": "204"
+  }
+ },
+ {
+  "pt": "As 148 páginas em que cada número veio da fonte primária — PubMed, ClinicalTrials.gov, ANVISA, bula e WADA — com a consulta declarada em cada uma.",
+  "trad": "每个数字都来自一手资料的那 147 个页面 — PubMed、ClinicalTrials.gov、说明书和 WADA — 每一页都写明了检索式。",
+  "ajuste": {
+   "148": "147"
+  }
+ },
+ {
+  "pt": "Compilado em 3 de setembro de 2026, cobrindo 205 compostos e combinações. Protocolo de peptídeo muda rápido, e o status regulatório muda mais rápido ainda — várias datas de Categoria 2 da FDA citadas aqui têm revisão marcada para 2026. Confira antes de tratar qualquer status como atual.",
+  "trad": "编制于2026 年 9 月 3 日，覆盖 204 个化合物和组合。肽类方案变化很快，而监管状态变得更快 — 这里引用的多个 FDA 第 2 类日期都已安排在2026年复审。在把任何状态当作现状之前，请自行核对。",
+  "ajuste": {
+   "205": "204"
+  }
+ }
+]

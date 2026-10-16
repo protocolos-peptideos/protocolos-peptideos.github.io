@@ -277,3 +277,6 @@ PROPRIOS.update(_PROC)
 
 from proprios_lacunas import LACUNAS as _LAC
 PROPRIOS.update(_LAC)
+
+from proprios_alegacoes import ALEGACOES as _ALE
+PROPRIOS.update(_ALE)

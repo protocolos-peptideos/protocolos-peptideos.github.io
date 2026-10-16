@@ -698,7 +698,10 @@ def gera_composto(item):
     itens_trilha = [('resumo', 'Resumo')]
     if proprio:
         for k, sec in enumerate(proprio['secoes']):
-            itens_trilha.append((f'sec{k}', sec['h']))
+            # secao com 'continua' e o resto da anterior (texto depois da
+            # tabela, lista depois do paragrafo): nao ganha titulo nem trilha
+            if not sec.get('continua'):
+                itens_trilha.append((f'sec{k}', sec['h']))
         itens_trilha.append(('refs', 'Referências'))
     else:
         if slug in FATOS:
@@ -752,8 +755,11 @@ def gera_composto(item):
 
     # ---- pagina autoral, montada de fonte primaria
     if proprio:
+        ancora = 0
         for k, sec in enumerate(proprio['secoes']):
-            p.append(f'<h2 id="sec{k}">{esc(sec["h"])}</h2>')
+            if not sec.get('continua'):
+                ancora = k
+                p.append(f'<h2 id="sec{k}">{esc(sec["h"])}</h2>')
             if sec.get('tipo') == 'li':
                 p.append('<ul>')
                 for x in sec['corpo']:
@@ -767,11 +773,16 @@ def gera_composto(item):
                 # aria-labelledby aponta para o h2 da secao, que ja tem id: a
                 # tabela ganha nome no leitor de tela sem inventar texto novo.
                 # Sem isso, uma pagina com 8 tabelas e lida como "tabela 1..8".
-                p.append(f'<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec{k}">')
+                p.append(f'<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="sec{ancora}">')
                 p.append('  <thead><tr>' + ''.join(f'<th scope="col">{c}</th>' for c in tab['linhas'][0]) + '</tr></thead>')
                 p.append('  <tbody>')
+                # a primeira coluna nao quebra linha (estilo.css); tabela cuja
+                # primeira coluna e frase longa (a alegacao conferida) pede
+                # 'quebra', sem mexer no estilo.css nem no recorte critico
+                quebra = ' style="white-space:normal;min-width:12em"' if tab.get('quebra') else ''
                 for r in tab['linhas'][1:]:
-                    p.append('    <tr>' + ''.join(f'<td>{c}</td>' for c in r) + '</tr>')
+                    p.append('    <tr>' + ''.join(f'<td{quebra if j == 0 else ""}>{c}</td>'
+                                                  for j, c in enumerate(r)) + '</tr>')
                 p.append('  </tbody></table></div></div>')
 
         p.append('<h2 id="refs">Referências</h2>')

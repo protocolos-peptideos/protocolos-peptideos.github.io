@@ -112,7 +112,9 @@ def confere(PROPRIOS):
             # ---------------------------------------------- regra 1
             for consulta in code_secao:
                 for marca in ABREVIACOES:
-                    if marca in consulta:
+                    # "ibid" so como palavra: "libido" contem "ibid" e e consulta legitima
+                    if (re.search(r"(?<![a-z])ibid(?![a-z])", consulta) if marca == "ibid"
+                            else marca in consulta):
                         saco.append(
                             f"{slug} · tabela '{cap}': consulta abreviada com "
                             f"'{marca.strip()}' — escreva a consulta inteira, "

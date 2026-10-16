@@ -46,7 +46,8 @@ RELOGIO = {
 # conteudo (ensaio, bula, norma) nao entra aqui: e fato reportado.
 sys.path.insert(0, AQUI)
 from datas import (DATA_FONTE, DATA_APURACAO, DATA_MAZDUTIDA,  # noqa: E402
-                   DATA_MABS, DATA_EXOSSOMOS, DATA_LACUNAS)
+                   DATA_MABS, DATA_EXOSSOMOS, DATA_LACUNAS,
+                   DATA_ALEGACOES, DATA_ALEGACOES_CONTAGEM)
 
 DATAS_DA_CASA = {
     "DATA_FONTE": DATA_FONTE,
@@ -55,6 +56,8 @@ DATAS_DA_CASA = {
     "DATA_MABS": DATA_MABS,
     "DATA_EXOSSOMOS": DATA_EXOSSOMOS,
     "DATA_LACUNAS": DATA_LACUNAS,
+    "DATA_ALEGACOES": DATA_ALEGACOES,
+    "DATA_ALEGACOES_CONTAGEM": DATA_ALEGACOES_CONTAGEM,
 }
 
 
@@ -106,7 +109,9 @@ def checar(diretorio=AQUI):
             if isinstance(no, ast.Constant) and isinstance(no.value, str) \
                     and id(no) not in pular:
                 for const, valor in DATAS_DA_CASA.items():
-                    if valor in no.value:
+                    # fronteira de digito: "15 de setembro de 2026" (data de
+                    # conteudo) contem a string "5 de setembro de 2026"
+                    if re.search(r"(?<!\d)" + re.escape(valor), no.value):
                         faltas.append(
                             f"{nome}:{no.lineno}: escreveu a mao {valor!r}, "
                             f"que e a data do proprio site. Use "
