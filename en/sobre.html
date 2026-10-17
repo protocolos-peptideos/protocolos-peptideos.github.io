@@ -186,7 +186,6 @@ tbody tr:hover td { background: rgba(255, 255, 255, 0.016); }
 tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowrap; }
 .tabela-env { position: relative; }
 .proc-aferida .tabela-env { border-left: 3px solid var(--aferido-rasa); }
-.proc-aferida tbody td strong { font-family: var(--display); font-weight: 600; font-size: 1.06em; letter-spacing: -0.005em; color: var(--aferido); }
 .proc-aferida thead th { border-bottom-color: var(--aferido-rasa); }
 .proc-aferida tbody td { padding: 15px 20px; }
 .tabela-rolagem { overflow-x: auto; background: linear-gradient(to right, var(--superficie) 30%, rgba(17, 20, 25, 0)) left center / 34px 100% no-repeat local,
@@ -197,17 +196,25 @@ radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)
 .conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
 .conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
 .conteudo li { margin-bottom: 7px; }
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.filtro { background: var(--superficie); border: 1px solid var(--linha-forte); color: var(--texto-suave); padding: 7px 15px; border-radius: 100px; font-family: var(--corpo); font-size: 13.5px; font-weight: 500; cursor: pointer; transition: 0.13s; }
+.filtro:hover { border-color: var(--linha-forte); color: var(--texto); background: var(--superficie-2); }
+.fatos { display: flex; flex-wrap: wrap; gap: 1px; background: var(--linha); border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; margin: 26px 0px 32px; }
+.fato { background: var(--superficie); padding: 17px 19px; flex: 1 1 200px; min-width: 190px; }
+.fato dt { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--texto-fraco); font-weight: 700; margin-bottom: 7px; }
+.fato dd { margin: 0px; font-size: 15px; color: var(--texto); font-weight: 500; line-height: 1.45; }
 .procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
 @media (max-width: 940px) {
 .pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
 .trilha { display: none; }
 }
+.proc-aferida tbody td strong { font-family: var(--display); font-weight: 600; font-size: 1.06em; letter-spacing: -0.005em; color: var(--aferido); }
 @media (max-width: 640px) {
 .cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
 .marca span:not(.marca-icone) { display: none; }
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0px; min-width: 0px; flex-wrap: wrap; justify-content: flex-end; }
 .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
 .hero { padding: 48px 0px 34px; }
@@ -218,7 +225,7 @@ h1, h2, h3 { overflow-wrap: break-word; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
 .marca span:not(.marca-icone) { display: none; }
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0px; min-width: 0px; flex-wrap: wrap; justify-content: flex-end; }
 .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
 .conteudo h2 { font-size: 23px; margin-top: 42px; }
@@ -229,7 +236,7 @@ h1, h2, h3 { overflow-wrap: break-word; }
 .marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
 .marca span:not(.marca-icone) { display: none; }
 .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-.nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+.nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0px; min-width: 0px; flex-wrap: wrap; justify-content: flex-end; }
 .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
 .env-largo, .pagina { padding: 0px 18px; }
 h1, h2, h3 { overflow-wrap: break-word; }
@@ -249,6 +256,7 @@ h1, h2, h3 { overflow-wrap: break-word; }
     <nav class="nav" aria-label="Main">
       <a href="index.html">Compounds</a>
       <a href="evidencia.html">Evidence</a>
+      <a href="calculadora.html">Calculator</a>
       <a href="seguranca.html">Safety</a>
       <a href="sobre.html" aria-current="page">About</a>
     </nav>
@@ -286,7 +294,7 @@ h1, h2, h3 { overflow-wrap: break-word; }
 <h2>What was left out, and why</h2>
 <ul>
   <li><strong>Primary sources, on the imported pages.</strong> On the protocol pages that come from the secondary source, no PubMed article, trial registration or package insert was opened to check the numbers: the check was against the source, and nothing more. That remains the main limitation of this reference.<br><strong>The <a href="evidencia.html">verified evidence</a> pages are the exception, and exist precisely to correct this</strong> — on them every number was looked up by me on PubMed, on ClinicalTrials.gov, in the package insert or on the WADA list, with the query stated on the page itself. The two things do not carry the same weight, and are marked differently across the whole site.</li>
-  <li><strong>Interactive calculator sections.</strong> The source has dose-calculation widgets; they were not reproduced, so as not to lend an appearance of precision to a calculation that depends on checking the vial in hand.</li>
+  <li><strong>The source's calculators.</strong> The source has dose-calculation widgets; they were not reproduced. The site has its own <a href="calculadora.html">reconstitution calculator</a>, which does only the dilution arithmetic, does not suggest a dose and shows, next to the result, what the math cannot know — starting with whether the vial really contains what the label says.</li>
   <li><strong>Suppliers and prices.</strong> Deliberately left out.</li>
 </ul>
 
@@ -313,6 +321,7 @@ h1, h2, h3 { overflow-wrap: break-word; }
       <p class="rodape-titulo">Browse</p>
       <ul>
         <li><a href="index.html">All compounds</a></li>
+        <li><a href="calculadora.html">Reconstitution calculator</a></li>
         <li><a href="seguranca.html">Safety and limits</a></li>
         <li><a href="sobre.html">About, source and method</a></li>
       </ul>

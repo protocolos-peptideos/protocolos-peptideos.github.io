@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>复溶计算器 — Protocolos</title>
+<meta name="description" content="根据药瓶中的量、加入的水和剂量，计算U-100注射器要抽多少单位。只做算术：不建议剂量。">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="复溶计算器 — Protocolos">
+<meta property="og:description" content="根据药瓶中的量、加入的水和剂量，计算U-100注射器要抽多少单位。只做算术：不建议剂量。">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://peptisonar.com/zh/calculadora.html">
+<link rel="alternate" hreflang="pt-BR" href="https://peptisonar.com/calculadora.html">
+<link rel="alternate" hreflang="en" href="https://peptisonar.com/en/calculadora.html">
+<link rel="alternate" hreflang="es" href="https://peptisonar.com/es/calculadora.html">
+<link rel="alternate" hreflang="de" href="https://peptisonar.com/de/calculadora.html">
+<link rel="alternate" hreflang="fr" href="https://peptisonar.com/fr/calculadora.html">
+<link rel="alternate" hreflang="ja" href="https://peptisonar.com/ja/calculadora.html">
+<link rel="alternate" hreflang="zh" href="https://peptisonar.com/zh/calculadora.html">
+<link rel="alternate" hreflang="x-default" href="https://peptisonar.com/calculadora.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "复溶计算器 — Protocolos",
+  "description": "根据药瓶中的量、加入的水和剂量，计算U-100注射器要抽多少单位。只做算术：不建议剂量。",
+  "url": "https://peptisonar.com/zh/calculadora.html",
+  "inLanguage": "zh",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Protocolos",
+    "url": "https://peptisonar.com"
+  }
+}
+</script>
+<link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fontes/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face {
+font-family: 'Fraunces';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/fraunces-latin-ext.woff2) format('woff2');
+unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'Fraunces';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/fraunces-latin.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/inter-greek.woff2) format('woff2');
+unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/inter-latin-ext.woff2) format('woff2');
+unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/inter-latin.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'JetBrains Mono';
+font-style: normal;
+font-weight: 400 500;
+font-display: swap;
+src: url(../assets/fontes/jetbrains-mono-greek.woff2) format('woff2');
+unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+font-family: 'JetBrains Mono';
+font-style: normal;
+font-weight: 400 500;
+font-display: swap;
+src: url(../assets/fontes/jetbrains-mono-latin-ext.woff2) format('woff2');
+unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'JetBrains Mono';
+font-style: normal;
+font-weight: 400 500;
+font-display: swap;
+src: url(../assets/fontes/jetbrains-mono-latin.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+:root { color-scheme: dark; --tinta: #08090B; --fundo: #0B0D11; --superficie: #111419; --superficie-2: #161A21; --superficie-3: #1D222B; --linha: #232833; --linha-forte: #2F3643; --texto: #E8EAED; --texto-suave: #A8B0BC; --texto-fraco: #7D8593; --cobre: #D08A4A; --cobre-claro: #E8A972; --cobre-fundo: rgba(208, 138, 74, 0.10); --cobre-borda: rgba(208, 138, 74, 0.28); --alerta: #E5674B; --alerta-fundo: rgba(229, 103, 75, 0.10); --alerta-borda: rgba(229, 103, 75, 0.30); --ok: #4FB08A; --ok-fundo: rgba(79, 176, 138, 0.10); --ok-borda: rgba(79, 176, 138, 0.28); --atencao: #D9B44A; --atencao-fundo: rgba(217, 180, 74, 0.10); --aferido: #B8C9DC; --aferido-rasa: rgba(184, 201, 220, 0.55); --display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif; --corpo: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; --largura: 1440px; --raio: 14px; --raio-sm: 9px; }
+* { box-sizing: border-box; }
+h1, h2, h3, .display { font-optical-sizing: auto; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0px; background: var(--fundo); color: var(--texto); font-family: var(--corpo); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; }
+body::before { content: ""; position: fixed; inset: 0px 0px auto; height: 520px; background: radial-gradient(900px 380px at 18% -8%, rgba(208, 138, 74, 0.1), transparent 62%), radial-gradient(700px 320px at 88% -14%, rgba(79, 128, 176, 0.08), transparent 60%); pointer-events: none; z-index: 0; }
+.env { position: relative; z-index: 1; }
+a { color: var(--cobre-claro); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pular { position: absolute; left: -9999px; top: 0px; background: var(--cobre); color: rgb(20, 16, 12); padding: 10px 18px; border-radius: 0 0 var(--raio-sm) 0; font-weight: 600; z-index: 999; }
+.pular:focus { left: 0px; }
+.cabecalho { position: sticky; top: 0px; z-index: 50; background: rgba(11, 13, 17, 0.86); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--linha); }
+.cabecalho-in { max-width: var(--largura); margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; gap: 6px 28px; flex-wrap: wrap; justify-content: flex-end; }
+.marca { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-size: 19px; font-weight: 600; color: var(--texto); letter-spacing: -0.01em; white-space: nowrap; margin-right: auto; }
+.marca:hover { text-decoration: none; }
+.marca-icone { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(140deg, var(--cobre), #8E5A2E); display: grid; place-items: center; font-family: var(--corpo); font-size: 14px; font-weight: 700; color: rgb(22, 16, 10); box-shadow: 0 0 0 1px var(--cobre-borda), 0 4px 14px rgba(208, 138, 74, 0.18); }
+.nav { display: flex; gap: 22px; font-size: 14.5px; }
+.nav a { color: var(--texto-suave); font-weight: 500; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--cobre-claro); text-decoration: none; }
+.idiomas { display: flex; gap: 9px; font-size: 12px; letter-spacing: 0.06em; font-weight: 600; }
+.idiomas a { color: var(--texto-fraco); padding: 3px 5px; border-radius: 6px; border: 1px solid transparent; line-height: 1; }
+.idiomas a:hover { color: var(--texto); text-decoration: none; }
+.idiomas a[aria-current="true"] { color: var(--cobre-claro); border-color: var(--cobre-borda); background: var(--cobre-fundo); }
+:lang(ja) { --display: 'Fraunces', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; --corpo: 'Inter', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; }
+.env-largo { max-width: var(--largura); margin: 0px auto; padding: 0px 24px; }
+.hero { padding: 76px 0px 52px; }
+.hero-sobre { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cobre-claro); border: 1px solid var(--cobre-borda); background: var(--cobre-fundo); padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; }
+.hero h1 { font-family: var(--display); font-weight: 600; font-size: clamp(38px, 6.2vw, 68px); line-height: 1.03; letter-spacing: -0.028em; margin: 0px 0px 22px; max-width: 17ch; }
+.hero h1 em { font-style: italic; color: var(--cobre-claro); }
+.hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
+.hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
+.hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
+.procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
+.proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
+.procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
+.proc-lado b { display: block; font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; margin-bottom: 10px; }
+.procedencia-resumo .proc-aferida b { color: var(--aferido); }
+.procedencia-resumo .proc-transportada b { font-family: var(--mono); font-size: 31px; color: var(--texto-suave); }
+.proc-lado span { display: block; font-size: 14px; line-height: 1.6; color: var(--texto-suave); }
+.proc-lado strong { color: var(--texto); font-weight: 600; }
+table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabular-nums; }
+.pagina { max-width: var(--largura); margin: 0px auto; padding: 0px 24px; display: grid; grid-template-columns: 232px minmax(0px, 1fr); gap: 52px; align-items: start; }
+.trilha { position: sticky; top: 92px; padding: 42px 0px; }
+.trilha-titulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.13em; color: var(--texto-fraco); font-weight: 700; margin: 0px 0px 14px; }
+.trilha ol { list-style: none; margin: 0px; padding: 0px; }
+.trilha li { margin: 0px 0px 2px; }
+.trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
+.trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
+.conteudo { padding: 42px 0px 96px; min-width: 0px; overflow-wrap: break-word; }
+.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
+.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
+.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
+.selo { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; white-space: nowrap; border: 1px solid transparent; }
+.selo-nao { background: var(--alerta-fundo); color: rgb(238, 143, 121); border-color: var(--alerta-borda); }
+.selo-cat { background: var(--superficie-3); color: var(--texto-suave); border-color: var(--linha-forte); }
+.selo-cat { white-space: normal; }
+.artigo-cabeca { margin-bottom: 34px; }
+.migalha { font-size: 13px; color: var(--texto-fraco); margin-bottom: 16px; }
+.migalha a { color: var(--texto-fraco); }
+.migalha a:hover { color: var(--cobre-claro); }
+.artigo-cabeca h1 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.026em; margin: 0px 0px 14px; }
+.artigo-sub { font-size: 17.5px; color: var(--texto-suave); margin: 0px 0px 20px; max-width: 66ch; line-height: 1.6; }
+.artigo-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+.conteudo h2 { font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: -0.018em; margin: 52px 0px 16px; padding-top: 26px; border-top: 1px solid var(--linha); }
+.conteudo h2:first-of-type { border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
+.conteudo strong { color: var(--texto); font-weight: 600; }
+.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
+.artigo-fig { margin: 0px 0px 30px; }
+.artigo-fig img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; max-height: clamp(240px, 40vh, 360px); border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta); }
+.artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
+.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
+.conteudo > p:first-of-type { font-size: 17px; color: var(--texto); }
+.tabela-env { margin: 24px 0px 32px; border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; background: var(--superficie); }
+.tabela-rolagem { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+thead th { text-align: left; padding: 12px 20px; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--texto-fraco); font-weight: 700; border-bottom: 1px solid var(--linha-forte); white-space: normal; hyphens: none; }
+tbody td { padding: 13px 20px; border-bottom: 1px solid var(--linha); color: var(--texto-suave); vertical-align: top; line-height: 1.5; }
+tbody tr:hover td { background: rgba(255, 255, 255, 0.016); }
+tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowrap; }
+.tabela-env { position: relative; }
+.proc-aferida .tabela-env { border-left: 3px solid var(--aferido-rasa); }
+.proc-aferida thead th { border-bottom-color: var(--aferido-rasa); }
+.proc-aferida tbody td { padding: 15px 20px; }
+.tabela-rolagem { overflow-x: auto; background: linear-gradient(to right, var(--superficie) 30%, rgba(17, 20, 25, 0)) left center / 34px 100% no-repeat local,
+linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
+radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
+radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+.aviso p:last-child { margin-bottom: 0px; }
+.conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
+.conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
+.conteudo li { margin-bottom: 7px; }
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.filtro { background: var(--superficie); border: 1px solid var(--linha-forte); color: var(--texto-suave); padding: 7px 15px; border-radius: 100px; font-family: var(--corpo); font-size: 13.5px; font-weight: 500; cursor: pointer; transition: 0.13s; }
+.filtro:hover { border-color: var(--linha-forte); color: var(--texto); background: var(--superficie-2); }
+.fatos { display: flex; flex-wrap: wrap; gap: 1px; background: var(--linha); border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; margin: 26px 0px 32px; }
+.fato { background: var(--superficie); padding: 17px 19px; flex: 1 1 200px; min-width: 190px; }
+.fato dt { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--texto-fraco); font-weight: 700; margin-bottom: 7px; }
+.fato dd { margin: 0px; font-size: 15px; color: var(--texto); font-weight: 500; line-height: 1.45; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
+.proc-aferida tbody td strong { font-family: var(--display); font-weight: 600; font-size: 1.06em; letter-spacing: -0.005em; color: var(--aferido); }
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0px; min-width: 0px; flex-wrap: wrap; justify-content: flex-end; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.hero { padding: 48px 0px 34px; }
+h1, h2, h3 { overflow-wrap: break-word; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0px; min-width: 0px; flex-wrap: wrap; justify-content: flex-end; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.conteudo h2 { font-size: 23px; margin-top: 42px; }
+h1, h2, h3 { overflow-wrap: break-word; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0px; min-width: 0px; flex-wrap: wrap; justify-content: flex-end; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.env-largo, .pagina { padding: 0px 18px; }
+h1, h2, h3 { overflow-wrap: break-word; }
+}</style>
+<link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>"><style>
+.calc-grade{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin:8px 0 40px}
+@media (min-width:900px){.calc-grade{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start}
+.calc-res{position:sticky;top:20px}}
+.calc-campo{border:1px solid var(--linha);border-radius:var(--raio);background:var(--superficie);padding:18px 20px 16px;margin:0 0 14px;min-width:0}
+.calc-campo legend{padding:0 6px;margin-left:-6px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--texto-fraco);font-weight:700}
+.calc-entrada{display:flex;gap:8px;align-items:stretch;margin-top:12px}
+.calc-entrada input,.calc-entrada select,.calc-sel{background:var(--fundo);border:1px solid var(--linha-forte);border-radius:var(--raio-sm);color:var(--texto);font-family:var(--mono);font-size:17px;padding:11px 14px}
+.calc-entrada input{flex:1 1 auto;min-width:0;width:100%}
+.calc-entrada select{flex:0 0 auto}
+.calc-sel{width:100%;font-family:var(--corpo);font-size:15px;margin-top:12px}
+.calc-entrada input:focus,.calc-entrada select:focus,.calc-sel:focus{outline:none;border-color:var(--cobre);box-shadow:0 0 0 3px var(--cobre-fundo)}
+.calc-sufixo{display:flex;align-items:center;padding:0 4px;color:var(--texto-suave);font-family:var(--mono);font-size:15px}
+.calc-ajuda{margin:9px 0 0;font-size:13.5px;color:var(--texto-fraco)}
+.calc-ajuda a{color:var(--cobre-claro)}
+.calc-chips{margin-top:2px}
+.calc-acoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.calc-res{border:1px solid var(--cobre-borda);border-radius:var(--raio);background:linear-gradient(170deg,var(--cobre-fundo),rgba(208,138,74,.02));padding:22px 22px 18px}
+.calc-res h2{margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--texto-fraco);font-weight:700;font-family:var(--corpo)}
+.calc-destaque{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:6px 0 2px}
+.calc-destaque b{font-family:var(--display);font-weight:600;font-size:clamp(46px,7vw,64px);line-height:1;color:var(--cobre-claro);font-variant-numeric:tabular-nums}
+.calc-destaque span{font-size:17px;color:var(--texto)}
+.calc-dose-eq{font-family:var(--mono);font-size:13px;color:var(--texto-fraco);margin:0 0 12px;min-height:1.2em}
+.calc-seringa{display:block;width:100%;height:auto;margin:6px 0 14px}
+.calc-seringa .calc-corpo{fill:var(--fundo);stroke:var(--linha-forte);stroke-width:2}
+.calc-seringa .calc-liq{fill:var(--cobre);opacity:.55}
+.calc-seringa .calc-liq-passou{fill:var(--alerta);opacity:.7}
+.calc-seringa line{stroke:var(--texto-fraco);stroke-width:1.5}
+.calc-seringa text{fill:var(--texto-fraco);font-family:var(--mono);font-size:13px;text-anchor:middle}
+.calc-seringa .calc-agulha{stroke:var(--texto-suave);stroke-width:2}
+.calc-seringa .calc-tampa{fill:var(--superficie-3);stroke:var(--linha-forte)}
+.calc-res .fatos{margin:0 0 6px}
+.calc-res .fato{min-width:150px;flex-basis:150px;background:var(--superficie)}
+.calc-res .fato dd{font-family:var(--mono);font-size:15px}
+.calc-res .fato small{display:block;color:var(--texto-fraco);font-size:12.5px;margin-top:3px}
+.calc-res .nota,.calc-res .aviso-linha{margin:12px 0 0}
+.calc-grave strong{color:#F2A38D}
+.calc-grave{border-left-color:var(--alerta);background:var(--alerta-fundo);border-color:var(--alerta-borda)}
+</style>
+</head>
+<body class="">
+<a class="pular" href="#principal">跳至正文</a>
+<header class="cabecalho">
+  <div class="cabecalho-in">
+    <a class="marca" href="index.html">
+      <span class="marca-icone" aria-hidden="true">P</span>
+      <span>Protocolos</span>
+    </a>
+    <nav class="nav" aria-label="主要">
+      <a href="index.html">化合物</a>
+      <a href="evidencia.html">证据</a>
+      <a href="calculadora.html" aria-current="page">计算器</a>
+      <a href="seguranca.html">安全性</a>
+      <a href="sobre.html">关于本站</a>
+    </nav>
+    <nav class="idiomas" aria-label="语言">
+      <a href="/calculadora.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+      <a href="/en/calculadora.html" hreflang="en" lang="en">EN</a>
+      <a href="/es/calculadora.html" hreflang="es" lang="es">ES</a>
+      <a href="/de/calculadora.html" hreflang="de" lang="de">DE</a>
+      <a href="/fr/calculadora.html" hreflang="fr" lang="fr">FR</a>
+      <a href="/ja/calculadora.html" hreflang="ja" lang="ja">JA</a>
+      <a href="/zh/calculadora.html" hreflang="zh" lang="zh" aria-current="true">ZH</a>
+    </nav>
+  </div>
+</header>
+<div class="env">
+
+<main id="principal" tabindex="-1" class="env-largo" style="max-width:1080px;padding-top:52px;padding-bottom:80px">
+<h1 style="font-family:var(--display);font-size:clamp(32px,4.6vw,44px);font-weight:600;letter-spacing:-.026em;margin:0 0 14px">复溶计算器</h1>
+<p class="artigo-sub" style="margin-bottom:28px">输入药瓶中的量、加入的水和每次给药的剂量，页面会给出浓度、体积，以及用U-100注射器要抽多少单位。它只做计算。剂量由使用者自己带来，算出来并不会让它更安全。</p>
+<div class="aviso" role="note">
+  <div class="aviso-icone" aria-hidden="true">!</div>
+  <div>
+    <h2>计算是精确的。药瓶不一定。</h2>
+    <p><strong>计算器相信标签。</strong>药瓶上写10 mg，它就按10 mg计算。以“仅供研究使用”名义销售的产品，没有经过面向人用的成分鉴定、纯度或剂量控制：如果粉末只有7 mg，每一剂都会比屏幕显示的少30%，而这个页面无从察觉。详见<a href="seguranca.html">安全性与边界</a>。</p>
+    <p>它也不知道输入的剂量对任何人是否安全、合适或经过研究。这里的内容都不是医疗建议、处方或治疗方案。</p>
+  </div>
+</div>
+<noscript><div class="nota"><strong>没有JavaScript，计算器无法运行。</strong>完整的计算就写在下面的“怎么算”里，在纸上也能做。</div></noscript>
+<div id="calc" hidden>
+<div class="calc-grade">
+<div class="calc-form">
+<fieldset class="calc-campo">
+  <legend>药瓶中的量</legend>
+  <div class="filtros calc-chips" role="group" aria-label="常见的药瓶规格" data-alvo="calc-frasco" data-unidade="mg" data-valores="2 5 10 15 20 30 50"></div>
+  <div class="calc-entrada">
+    <label for="calc-frasco" class="pular">药瓶中的量，单位mg</label>
+    <input id="calc-frasco" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+    <span class="calc-sufixo" aria-hidden="true">mg</span>
+  </div>
+  <p class="calc-ajuda">药瓶中肽的总量，以标签为准。药瓶里不止一种化合物时，只填其中一种的量：算出的剂量就是它的剂量。</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>加入的水</legend>
+  <div class="filtros calc-chips" role="group" aria-label="常见的水量" data-alvo="calc-agua" data-unidade="mL" data-valores="0.5 1 1.5 2 2.5 3 5"></div>
+  <div class="calc-entrada">
+    <label for="calc-agua" class="pular">加入的水，单位mL</label>
+    <input id="calc-agua" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+    <span class="calc-sufixo" aria-hidden="true">mL</span>
+  </div>
+  <p class="calc-ajuda">为溶解粉末而注入药瓶的静菌水体积。</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>每次给药的剂量</legend>
+  <div class="calc-entrada">
+    <label for="calc-dose" class="pular">每次给药的剂量</label>
+    <input id="calc-dose" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+    <label for="calc-dose-un" class="pular">剂量单位</label>
+    <select id="calc-dose-un"><option value="mg">mg</option><option value="mcg">mcg</option></select>
+  </div>
+  <p class="calc-ajuda">这里故意不设快捷按钮：一个写着现成剂量的按钮就等于剂量建议。1 mg = 1,000 mcg。</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>U-100注射器</legend>
+  <div class="filtros calc-chips" id="calc-seringas" role="group" aria-label="注射器规格">
+    <button type="button" class="filtro" data-cap="30" aria-pressed="false">0.3 mL · 最多30单位</button>
+    <button type="button" class="filtro" data-cap="50" aria-pressed="false">0.5 mL · 最多50单位</button>
+    <button type="button" class="filtro" data-cap="100" aria-pressed="true">1 mL · 最多100单位</button>
+  </div>
+  <p class="calc-ajuda">三种注射器的刻度相同：100单位等于1 mL。只是量程不同，图示和容量提示会随之变化。</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>反向计算（可选）</legend>
+  <div class="calc-entrada">
+    <label for="calc-alvo" class="pular">每剂要占的单位数</label>
+    <input id="calc-alvo" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="例如：10">
+    <span class="calc-sufixo" aria-hidden="true">单位</span>
+  </div>
+  <p class="calc-ajuda">你希望这一剂在注射器里占多少单位？计算会根据已输入的药瓶中的量和剂量，给出要往药瓶里加多少水。请确认这个体积装得进药瓶。</p>
+  <p class="calc-ajuda" id="calc-inv-saida" aria-live="polite"></p>
+  <div class="calc-acoes"><button type="button" class="filtro" id="calc-inv-usar" hidden>把这个水量用于计算</button></div>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>化合物（可选）</legend>
+  <label for="calc-comp" class="pular">化合物</label>
+  <select id="calc-comp" class="calc-sel">
+    <option value="">不选——只做计算</option>
+    <option value="protocol_5-amino-1mq" data-href="p/protocol_5-amino-1mq.html#tab4">5-Amino-1MQ</option>
+    <option value="stacks_advanced-recomp-stack" data-href="p/stacks_advanced-recomp-stack.html#tab3">Advanced Recomp</option>
+    <option value="protocol_aod-9604" data-href="p/protocol_aod-9604.html#tab3">AOD-9604</option>
+    <option value="protocol_ara-290" data-href="p/protocol_ara-290.html#tab2">ARA-290（cibinetide）</option>
+    <option value="protocol_bpc-157" data-href="p/protocol_bpc-157.html#tab2">BPC-157</option>
+    <option value="protocol_cagrilintide" data-href="p/protocol_cagrilintide.html#tab2">卡格列肽</option>
+    <option value="stacks_cagrilintide-retatrutide" data-href="p/stacks_cagrilintide-retatrutide.html#tab3">卡格列肽 + 瑞他鲁肽</option>
+    <option value="stacks_cagrilintide-tirzepatide" data-href="p/stacks_cagrilintide-tirzepatide.html#tab2">卡格列肽 + 替尔泊肽</option>
+    <option value="stacks_cagrisema" data-href="p/stacks_cagrisema.html#tab2">CagriSema</option>
+    <option value="protocol_cjc-1295-dac" data-href="p/protocol_cjc-1295-dac.html#tab2">带 DAC 的 CJC-1295</option>
+    <option value="stacks_cjc-1295-ipamorelin-gh-pulse-stack" data-href="p/stacks_cjc-1295-ipamorelin-gh-pulse-stack.html#tab1">不带 DAC 的 CJC-1295 + 伊帕瑞林</option>
+    <option value="protocol_dsip" data-href="p/protocol_dsip.html#tab2">DSIP</option>
+    <option value="stacks_russian-nootropic-stack" data-href="p/stacks_russian-nootropic-stack.html#tab3">俄罗斯的益智药组合</option>
+    <option value="protocol_epitalon" data-href="p/protocol_epitalon.html#tab1">Epitalon（epithalon，AEDG）</option>
+    <option value="protocol_foxo4-dri" data-href="p/protocol_foxo4-dri.html#tab1">FOXO4-DRI</option>
+    <option value="protocol_ghk-cu" data-href="p/protocol_ghk-cu.html#tab0">GHK-Cu</option>
+    <option value="protocol_ghrp-6" data-href="p/protocol_ghrp-6.html#tab0">GHRP-6</option>
+    <option value="stacks_glow-stack" data-href="p/stacks_glow-stack.html#tab1">GLOW</option>
+    <option value="protocol_humanin" data-href="p/protocol_humanin.html#tab1">humanin（HNG）</option>
+    <option value="protocol_igf-1-lr3" data-href="p/protocol_igf-1-lr3.html#tab3">IGF-1 LR3</option>
+    <option value="protocol_kisspeptin" data-href="p/protocol_kisspeptin.html#tab3">kisspeptin</option>
+    <option value="stacks_klow-stack" data-href="p/stacks_klow-stack.html#tab2">KLOW</option>
+    <option value="protocol_kpv" data-href="p/protocol_kpv.html#tab4">KPV</option>
+    <option value="protocol_ll-37" data-href="p/protocol_ll-37.html#tab1">LL-37</option>
+    <option value="protocol_melanotan-ii" data-href="p/protocol_melanotan-ii.html#tab2">Melanotan II（MT-2）</option>
+    <option value="protocol_mots-c" data-href="p/protocol_mots-c.html#tab2">MOTS-c</option>
+    <option value="protocol_nad-plus" data-href="p/protocol_nad-plus.html#tab6">NAD+</option>
+    <option value="protocol_pinealon" data-href="p/protocol_pinealon.html#tab3">Pinealon（EDR）</option>
+    <option value="protocol_bremelanotide-pt-141" data-href="p/protocol_bremelanotide-pt-141.html#tab2">PT-141（bremelanotide）</option>
+    <option value="protocol_retatrutide" data-href="p/protocol_retatrutide.html#tab2">瑞他鲁肽</option>
+    <option value="stacks_retatrutide-mots-c" data-href="p/stacks_retatrutide-mots-c.html#tab1">瑞他鲁肽 + MOTS-c</option>
+    <option value="protocol_selank" data-href="p/protocol_selank.html#tab3">Selank（TP-7）</option>
+    <option value="protocol_semaglutide" data-href="p/protocol_semaglutide.html#tab4">司美格鲁肽</option>
+    <option value="protocol_semax" data-href="p/protocol_semax.html#tab1">Semax</option>
+    <option value="protocol_slu-pp-332" data-href="p/protocol_slu-pp-332.html#tab2">SLU-PP-332</option>
+    <option value="protocol_ss-31" data-href="p/protocol_ss-31.html#tab1">SS-31（elamipretide）</option>
+    <option value="protocol_survodutide" data-href="p/protocol_survodutide.html#tab1">survodutide</option>
+    <option value="protocol_tb-500" data-href="p/protocol_tb-500.html#tab3">TB-500</option>
+    <option value="protocol_tesamorelin" data-href="p/protocol_tesamorelin.html#tab4">替莫瑞林</option>
+    <option value="stacks_tesamorelin-ipamorelin" data-href="p/stacks_tesamorelin-ipamorelin.html#tab1">替莫瑞林 + 伊帕瑞林</option>
+    <option value="protocol_thymosin-alpha-1" data-href="p/protocol_thymosin-alpha-1.html#tab3">胸腺素 α-1（TA1）</option>
+    <option value="protocol_tirzepatide" data-href="p/protocol_tirzepatide.html#tab2">替尔泊肽</option>
+    <option value="protocol_vip" data-href="p/protocol_vip.html#tab2">VIP（血管活性肠肽）</option>
+    <option value="stacks_wolverine-stack" data-href="p/stacks_wolverine-stack.html#tab2">Wolverine</option>
+  </select>
+  <p class="calc-ajuda">选择化合物不会填入任何内容。它只指向该化合物页面上的复溶表，那里写明了每个数字的出处。</p>
+  <p id="calc-comp-link" class="calc-ajuda" hidden><a href="p/"><span></span>页面上的复溶表 &rarr;</a></p>
+</fieldset>
+<div class="calc-acoes">
+  <button type="button" class="filtro" id="calc-copiar">复制这次计算的链接</button>
+  <button type="button" class="filtro" id="calc-limpar">清空</button>
+</div>
+<p id="calc-copiado" class="calc-ajuda" role="status" aria-live="polite"></p>
+</div>
+<section class="calc-res" aria-labelledby="calc-res-t">
+  <h2 id="calc-res-t">用U-100注射器抽取</h2>
+  <div class="calc-destaque"><b id="r-unid">—</b><span id="r-un-rot">单位</span></div>
+  <p class="calc-dose-eq" id="r-dose-eq"></p>
+  <svg class="calc-seringa" viewBox="-70 0 720 100" aria-hidden="true" focusable="false">
+    <line class="calc-agulha" x1="-66" y1="40" x2="-6" y2="40"/>
+    <rect class="calc-tampa" x="-8" y="33" width="28" height="14" rx="3"/>
+    <rect class="calc-corpo" x="20" y="18" width="560" height="44" rx="8"/>
+    <rect id="calc-liquido" class="calc-liq" x="20" y="20" width="0" height="40"/>
+    <g id="calc-escala"></g>
+    <g id="calc-embolo"><rect x="16" y="20" width="10" height="40" rx="2" fill="#2F3643"/></g>
+    <rect x="580" y="10" width="10" height="60" rx="3" class="calc-tampa"/>
+  </svg>
+  <dl class="fatos">
+    <div class="fato"><dt>浓度</dt><dd id="r-conc">—</dd><dd><small id="r-conc-mcg">—</small></dd></div>
+    <div class="fato"><dt>抽取量</dt><dd id="r-vol">—</dd></div>
+    <div class="fato"><dt>每瓶剂数</dt><dd id="r-doses">—</dd><dd><small id="r-doses-exato">—</small></dd></div>
+  </dl>
+  <div id="calc-alertas"></div>
+  <p id="calc-status" class="pular" role="status" aria-live="polite"></p>
+</section>
+</div>
+<div id="calc-frases" hidden>
+  <p data-f="incompleto">请在药瓶中的量、水和剂量中填入大于零的数字。</p>
+  <p data-f="falta-dose">药瓶和水已经能算出浓度。还需要每次给药的剂量，才能算出体积和单位。</p>
+  <p data-f="unidade">单位</p>
+  <p data-f="unidades">单位</p>
+  <p data-f="exato">精确值：{x}剂</p>
+  <p data-f="maior-que-frasco"><strong>剂量超过了药瓶的全部内容。</strong>请确认剂量和药瓶用的是同一单位：mg和mcg相差一千倍。</p>
+  <p data-f="passa-seringa"><strong>{u}装不进{ml} mL的注射器</strong>，它最多到{cap}单位。药瓶里的水少一些，同样的粉末会更浓，每剂的体积随之变小。</p>
+  <p data-f="inv-falta">反向计算需要药瓶中的量和剂量。</p>
+  <p data-f="inv-resultado">要让{d}占{u}，请往药瓶里加<strong>{a} mL</strong>水。</p>
+  <p data-f="inv-passa">这超出了所选注射器的量程，它最多到{cap}单位。</p>
+  <p data-f="pouco-volume"><strong>体积很小：{u}。</strong>在这个范围内，注射器上多或少一个单位，剂量就会变化约{pct}%。药瓶里的水多一些，同样的剂量会占更多单位，读数误差的影响就更小。</p>
+  <p data-f="entre-tracos"><strong>算出来是{u}，而注射器按刻度读数。</strong>在{a}时，实际给出的剂量是{da}；在{b}时是{db}。请确认你的注射器刻度每格是多少。</p>
+  <p data-f="status">结果：U-100注射器{u}，{v} mL，浓度{c} mg/mL。</p>
+  <p data-f="copiado">链接已复制。打开它的人会看到同样的计算。</p>
+  <p data-f="nao-copiou">无法从这里复制。浏览器地址栏里的网址已经保存了这次计算：请从那里复制。</p>
+</div>
+</div>
+<div class="conteudo" style="padding:0">
+
+<h2>怎么算</h2>
+<p>只有三次除法，每次都一样，在纸上也能重算：</p>
+<ol>
+  <li><strong>浓度</strong> = 药瓶中的量 ÷ 加入的水。10 mg的药瓶加2 mL水，浓度为5 mg/mL。</li>
+  <li><strong>剂量体积</strong> = 剂量 ÷ 浓度。0.25 mg的剂量在5 mg/mL时占0.05 mL。</li>
+  <li><strong>U-100注射器上的单位</strong> = 体积 × 100，因为这种注射器100单位等于1 mL。0.05 mL就是5单位。</li>
+</ol>
+<p>而<strong>每瓶剂数</strong> = 药瓶中的量 ÷ 剂量：10 mg ÷ 0.25 mg 得40。计算器同时显示整数和精确值，因为瓶底剩下的部分不够一剂。<a href="calculadora.html?f=10&amp;a=2&amp;d=0.25">在计算器中打开这个例子</a>。</p>
+<p><strong>反向计算</strong>就是同一个算式倒过来：水 = 单位数 × 药瓶中的量 ÷ (100 × 剂量)。要让10 mg药瓶里0.25 mg的剂量占10单位，需要10 × 10 ÷ (100 × 0.25) = 4 mL水。</p>
+
+<h2 id="unidade-e-volume">单位是体积，不是剂量</h2>
+<p>注射器的单位量的是液体，不是肽。在U-100刻度上，无论注射器大小，每单位都是百分之一毫升：0.3 mL的到30单位，0.5 mL的到50单位，1 mL的到100单位。</p>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="unidade-e-volume">
+  <thead><tr><th scope="col">单位数（U-100）</th><th scope="col">体积</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td class="num">0.01 mL</td></tr>
+    <tr><td>2</td><td class="num">0.02 mL</td></tr>
+    <tr><td>5</td><td class="num">0.05 mL</td></tr>
+    <tr><td>10</td><td class="num">0.10 mL</td></tr>
+    <tr><td>20</td><td class="num">0.20 mL</td></tr>
+    <tr><td>30</td><td class="num">0.30 mL</td></tr>
+    <tr><td>50</td><td class="num">0.50 mL</td></tr>
+    <tr><td>100</td><td class="num">1.00 mL</td></tr>
+  </tbody></table></div></div>
+<p>每个单位里有多少肽，取决于药瓶的浓度。同样是10单位的刻度，在5 mg/mL的药瓶里是0.5 mg，在2.5 mg/mL的药瓶里是0.25 mg。所以“多少单位”不是剂量：不知道药瓶中的量和水量，这个数字说明不了用了多少。</p>
+
+<h2>计算不知道的事</h2>
+<ul>
+  <li><strong>药瓶里是否真有标签所写的量。</strong>这是分量最重的局限，写在页面顶部的提示里。</li>
+  <li><strong>注射器是不是U-100。</strong>这里的单位只对这种注射器有效。使用数字之前，请核对注射器筒身上印的刻度。</li>
+  <li><strong>留在注射器和药瓶里的部分。</strong>一部分液体抽不出来：会留在针头、针座和瓶壁上。每瓶剂数是理论值。</li>
+  <li><strong>复方药瓶中每种化合物的剂量。</strong>含两种各5 mg肽的10 mg复方，每种各有5 mg。填入你关心的那种成分的量，计算就会给出它的剂量。</li>
+  <li><strong>剂量是否合理。</strong>计算器没有剂量清单，不与任何研究比较，也不会对高剂量发出警告。证据对每种化合物怎么说，在它自己的页面上，可从<a href="index.html">化合物</a>进入。</li>
+</ul>
+
+<h2>本站的复溶表</h2>
+<p>方案页面中有列出药瓶、水、浓度和每剂体积的表格。它们的算术由一道自动校验把关：逐一重算，不成立的表格不予发布。这道校验是在一次人工审核发现其中一张表把体积的分隔符写错之后设立的——按葡萄牙语读，是正确值的一千倍。计算器用的是同样的三次除法。区别在于，表格里的剂量来自二手资料；这里的剂量来自输入的人。</p>
+
+</div>
+</main>
+</div>
+<footer class="rodape">
+  <div class="rodape-in">
+    <div>
+      <p class="rodape-titulo">Protocolos</p>
+      <p>关于肽、益智药、SARM 及相关化合物的中文参考：剂量、周期、监管状态，以及每一项证据的边界。教育性和实验性材料 — 不能代替医疗评估。</p>
+      <p style="margin-top:14px">编制于 2026 年 9 月 3 日。</p>
+    </div>
+    <nav aria-label="导航">
+      <p class="rodape-titulo">导航</p>
+      <ul>
+        <li><a href="index.html">全部化合物</a></li>
+        <li><a href="calculadora.html">复溶计算器</a></li>
+        <li><a href="seguranca.html">安全性与边界</a></li>
+        <li><a href="sobre.html">关于本站、资料来源与方法</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="rodape-titulo">警示</p>
+      <ul>
+        <li>不构成医疗建议</li>
+        <li>未注册</li>
+        <li>实验性使用</li>
+        <li>社群报告的剂量 ≠ 已验证的剂量</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+<script src="../assets/calculadora.js"></script>

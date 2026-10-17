@@ -16,6 +16,7 @@
   const PAGINAS = [
     '/index.html', '/p/protocol_bpc-157.html', '/p/proprio_sarms.html',
     '/p/stacks_glow-stack.html', '/evidencia.html', '/seguranca.html', '/sobre.html',
+    '/calculadora.html',
   ];
   const VIEWPORTS = [[1440, 900], [768, 1024], [390, 844]];
 

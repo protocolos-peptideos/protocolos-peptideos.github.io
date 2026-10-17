@@ -259,7 +259,7 @@ def json_ld(titulo, descricao, caminho):
 
 
 def cabecalho(titulo, descricao, prefixo="", atual="", indexavel=False,
-              caminho=None, procedencia=None):
+              caminho=None, procedencia=None, extra_head=""):
     # O site inteiro nasceu noindex. Em 04/09/2026 as paginas de evidencia
     # verificada passaram a ser indexaveis, a pedido: sao as corretivas -- as
     # que dizem o que falhou, o que foi suspenso e quem pagou o estudo. As
@@ -320,7 +320,7 @@ def cabecalho(titulo, descricao, prefixo="", atual="", indexavel=False,
 <style>{css_inline(prefixo)}</style>
 <link rel="stylesheet" href="{prefixo}assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="{prefixo}assets/estilo.css"></noscript>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>">{extra_head}
 </head>
 <body class="{classe_proc}">
 <a class="pular" href="#principal">Pular para o conteúdo</a>
@@ -333,6 +333,7 @@ def cabecalho(titulo, descricao, prefixo="", atual="", indexavel=False,
     <nav class="nav" aria-label="Principal">
       <a href="{prefixo}index.html"{cls('inicio')}>Compostos</a>
       <a href="{prefixo}evidencia.html"{cls('evidencia')}>Evidência</a>
+      <a href="{prefixo}calculadora.html"{cls('calculadora')}>Calculadora</a>
       <a href="{prefixo}seguranca.html"{cls('seguranca')}>Segurança</a>
       <a href="{prefixo}sobre.html"{cls('sobre')}>Sobre</a>
     </nav>{seletor}
@@ -371,6 +372,7 @@ def rodape(prefixo=""):
       <p class="rodape-titulo">Navegar</p>
       <ul>
         <li><a href="{prefixo}index.html">Todos os compostos</a></li>
+        <li><a href="{prefixo}calculadora.html">Calculadora de reconstituição</a></li>
         <li><a href="{prefixo}seguranca.html">Segurança e limites</a></li>
         <li><a href="{prefixo}sobre.html">Sobre, fonte e método</a></li>
       </ul>
@@ -937,7 +939,7 @@ def gera_sobre(stats):
 <h2>O que ficou de fora, e por quê</h2>
 <ul>
   <li><strong>Fontes primárias, nas páginas importadas.</strong> Nas páginas de protocolo que vêm da fonte secundária, nenhum artigo do PubMed, registro de ensaio ou bula foi aberto para conferir os números: a checagem foi contra a fonte, e só. Isso continua sendo a limitação principal desta referência.<br><strong>As páginas de <a href="evidencia.html">evidência verificada</a> são a exceção, e existem justamente para corrigir isso</strong> — nelas cada número foi levantado por mim no PubMed, no ClinicalTrials.gov, na bula da ANVISA ou na lista da WADA, com a consulta declarada na própria página. As duas coisas não têm o mesmo peso, e estão marcadas de forma diferente em todo o site.</li>
-  <li><strong>Seções de calculadora interativa.</strong> A fonte tem widgets de cálculo de dose; eles não foram reproduzidos, para não dar aparência de precisão a uma conta que depende de conferir o frasco na mão.</li>
+  <li><strong>As calculadoras da fonte.</strong> A fonte tem widgets de cálculo de dose; eles não foram reproduzidos. O site tem a sua própria <a href="calculadora.html">calculadora de reconstituição</a>, que faz só a aritmética de diluição, não sugere dose e mostra, ao lado do resultado, o que a conta não tem como saber — a começar por o frasco conter mesmo o que o rótulo diz.</li>
   <li><strong>Fornecedores e preços.</strong> Deliberadamente fora.</li>
 </ul>
 
@@ -955,11 +957,253 @@ def gera_sobre(stats):
     return '\n'.join(p)
 
 
+# ------------------------------------------------------------ calculadora
+# Estilo proprio da pagina, no <head> dela e nao no estilo.css: mexer no
+# estilo.css obriga a refazer o recorte do CSS critico no navegador (ver
+# trava_critico.py), e estas regras so servem a uma pagina, abaixo da dobra
+# de nenhuma outra. Usa so os tokens do :root, para nao inventar cor.
+CALC_CSS = """<style>
+.calc-grade{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin:8px 0 40px}
+@media (min-width:900px){.calc-grade{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start}
+.calc-res{position:sticky;top:20px}}
+.calc-campo{border:1px solid var(--linha);border-radius:var(--raio);background:var(--superficie);padding:18px 20px 16px;margin:0 0 14px;min-width:0}
+.calc-campo legend{padding:0 6px;margin-left:-6px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--texto-fraco);font-weight:700}
+.calc-entrada{display:flex;gap:8px;align-items:stretch;margin-top:12px}
+.calc-entrada input,.calc-entrada select,.calc-sel{background:var(--fundo);border:1px solid var(--linha-forte);border-radius:var(--raio-sm);color:var(--texto);font-family:var(--mono);font-size:17px;padding:11px 14px}
+.calc-entrada input{flex:1 1 auto;min-width:0;width:100%}
+.calc-entrada select{flex:0 0 auto}
+.calc-sel{width:100%;font-family:var(--corpo);font-size:15px;margin-top:12px}
+.calc-entrada input:focus,.calc-entrada select:focus,.calc-sel:focus{outline:none;border-color:var(--cobre);box-shadow:0 0 0 3px var(--cobre-fundo)}
+.calc-sufixo{display:flex;align-items:center;padding:0 4px;color:var(--texto-suave);font-family:var(--mono);font-size:15px}
+.calc-ajuda{margin:9px 0 0;font-size:13.5px;color:var(--texto-fraco)}
+.calc-ajuda a{color:var(--cobre-claro)}
+.calc-chips{margin-top:2px}
+.calc-acoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.calc-res{border:1px solid var(--cobre-borda);border-radius:var(--raio);background:linear-gradient(170deg,var(--cobre-fundo),rgba(208,138,74,.02));padding:22px 22px 18px}
+.calc-res h2{margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--texto-fraco);font-weight:700;font-family:var(--corpo)}
+.calc-destaque{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:6px 0 2px}
+.calc-destaque b{font-family:var(--display);font-weight:600;font-size:clamp(46px,7vw,64px);line-height:1;color:var(--cobre-claro);font-variant-numeric:tabular-nums}
+.calc-destaque span{font-size:17px;color:var(--texto)}
+.calc-dose-eq{font-family:var(--mono);font-size:13px;color:var(--texto-fraco);margin:0 0 12px;min-height:1.2em}
+.calc-seringa{display:block;width:100%;height:auto;margin:6px 0 14px}
+.calc-seringa .calc-corpo{fill:var(--fundo);stroke:var(--linha-forte);stroke-width:2}
+.calc-seringa .calc-liq{fill:var(--cobre);opacity:.55}
+.calc-seringa .calc-liq-passou{fill:var(--alerta);opacity:.7}
+.calc-seringa line{stroke:var(--texto-fraco);stroke-width:1.5}
+.calc-seringa text{fill:var(--texto-fraco);font-family:var(--mono);font-size:13px;text-anchor:middle}
+.calc-seringa .calc-agulha{stroke:var(--texto-suave);stroke-width:2}
+.calc-seringa .calc-tampa{fill:var(--superficie-3);stroke:var(--linha-forte)}
+.calc-res .fatos{margin:0 0 6px}
+.calc-res .fato{min-width:150px;flex-basis:150px;background:var(--superficie)}
+.calc-res .fato dd{font-family:var(--mono);font-size:15px}
+.calc-res .fato small{display:block;color:var(--texto-fraco);font-size:12.5px;margin-top:3px}
+.calc-res .nota,.calc-res .aviso-linha{margin:12px 0 0}
+.calc-grave strong{color:#F2A38D}
+.calc-grave{border-left-color:var(--alerta);background:var(--alerta-fundo);border-color:var(--alerta-borda)}
+</style>"""
+
+# Atalhos de massa do frasco e de agua. Dose NAO tem atalho, de proposito: um
+# botao com "0,25 mg" e uma sugestao de dose, por mais neutro que pareca.
+CALC_FRASCOS = "2 5 10 15 20 30 50"
+CALC_AGUAS = "0.5 1 1.5 2 2.5 3 5"
+
+
+def gera_calculadora(com_reconstituicao):
+    """Pagina da calculadora. `com_reconstituicao`: [(slug, nome, ancora)] das
+    paginas que publicam tabela de reconstituicao, para o seletor opcional --
+    que aponta para a tabela, e nunca preenche dose."""
+    p = [cabecalho("Calculadora de reconstituição — Protocolos",
+                   "Quantas unidades aspirar na seringa U-100 a partir da massa do frasco, da água e da dose. "
+                   "Só a aritmética: não sugere dose.",
+                   "", "calculadora", caminho="/calculadora.html", extra_head=CALC_CSS)]
+    p.append('<main id="principal" tabindex="-1" class="env-largo" style="max-width:1080px;padding-top:52px;padding-bottom:80px">')
+    p.append('<h1 style="font-family:var(--display);font-size:clamp(32px,4.6vw,44px);font-weight:600;'
+             'letter-spacing:-.026em;margin:0 0 14px">Calculadora de reconstituição</h1>')
+    p.append('<p class="artigo-sub" style="margin-bottom:28px">Massa no frasco, água adicionada e dose por '
+             'aplicação: a página devolve a concentração, o volume e quantas unidades aspirar numa seringa '
+             'U-100. Faz só a conta. A dose quem traz é você, e ela não fica mais segura por estar calculada.</p>')
+    p.append("""<div class="aviso" role="note">
+  <div class="aviso-icone" aria-hidden="true">!</div>
+  <div>
+    <h2>A conta é exata. O frasco, não.</h2>
+    <p><strong>A calculadora acredita no rótulo.</strong> Se o frasco diz 10 mg, ela faz a conta com 10 mg. Produto vendido como "uso exclusivo em pesquisa" não passou por controle de identidade, pureza ou dosagem para uso humano: se o pó tiver 7 mg, toda dose sai 30% menor do que a tela diz, e nada nesta página tem como perceber. Mais em <a href="seguranca.html">Segurança e limites</a>.</p>
+    <p>Ela também não sabe se a dose digitada é segura, adequada ou estudada para alguém. Nada aqui é recomendação médica, prescrição ou plano de tratamento.</p>
+  </div>
+</div>""")
+    p.append('<noscript><div class="nota"><strong>Sem JavaScript a calculadora não roda.</strong> '
+             'A conta inteira está escrita logo abaixo, em "Como a conta é feita", e se faz no papel.</div></noscript>')
+
+    # --- a calculadora: escondida ate o script rodar, para nao mostrar campo morto
+    p.append('<div id="calc" hidden>')
+    p.append('<div class="calc-grade">')
+    p.append('<div class="calc-form">')
+    p.append(f"""<fieldset class="calc-campo">
+  <legend>Massa no frasco</legend>
+  <div class="filtros calc-chips" role="group" aria-label="Massas de frasco comuns" data-alvo="calc-frasco" data-unidade="mg" data-valores="{CALC_FRASCOS}"></div>
+  <div class="calc-entrada">
+    <label for="calc-frasco" class="pular">Massa no frasco, em mg</label>
+    <input id="calc-frasco" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+    <span class="calc-sufixo" aria-hidden="true">mg</span>
+  </div>
+  <p class="calc-ajuda">O total de peptídeo no frasco, como diz o rótulo. Em frasco com mais de um composto, informe a massa de um deles só: a dose que sai é a dele.</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>Água adicionada</legend>
+  <div class="filtros calc-chips" role="group" aria-label="Volumes de água comuns" data-alvo="calc-agua" data-unidade="mL" data-valores="{CALC_AGUAS}"></div>
+  <div class="calc-entrada">
+    <label for="calc-agua" class="pular">Água adicionada, em mL</label>
+    <input id="calc-agua" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+    <span class="calc-sufixo" aria-hidden="true">mL</span>
+  </div>
+  <p class="calc-ajuda">O volume de água bacteriostática posto no frasco para dissolver o pó.</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>Dose por aplicação</legend>
+  <div class="calc-entrada">
+    <label for="calc-dose" class="pular">Dose por aplicação</label>
+    <input id="calc-dose" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+    <label for="calc-dose-un" class="pular">Unidade da dose</label>
+    <select id="calc-dose-un"><option value="mg">mg</option><option value="mcg">mcg</option></select>
+  </div>
+  <p class="calc-ajuda">Sem atalhos aqui, de propósito: um botão com uma dose pronta seria uma sugestão de dose. 1 mg = 1.000 mcg.</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>Seringa U-100</legend>
+  <div class="filtros calc-chips" id="calc-seringas" role="group" aria-label="Tamanho da seringa">
+    <button type="button" class="filtro" data-cap="30" aria-pressed="false">0,3 mL · até 30 unidades</button>
+    <button type="button" class="filtro" data-cap="50" aria-pressed="false">0,5 mL · até 50 unidades</button>
+    <button type="button" class="filtro" data-cap="100" aria-pressed="true">1 mL · até 100 unidades</button>
+  </div>
+  <p class="calc-ajuda">A escala é a mesma nas três: 100 unidades valem 1 mL. Muda só até onde ela vai, e o desenho e o aviso de capacidade acompanham.</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>Conta inversa (opcional)</legend>
+  <div class="calc-entrada">
+    <label for="calc-alvo" class="pular">Unidades que cada dose deve ocupar</label>
+    <input id="calc-alvo" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="ex.: 10">
+    <span class="calc-sufixo" aria-hidden="true">unid.</span>
+  </div>
+  <p class="calc-ajuda">Quantas unidades você quer que a dose ocupe na seringa? A conta devolve quanta água pôr no frasco, a partir da massa e da dose já digitadas. Confira se esse volume cabe no frasco.</p>
+  <p class="calc-ajuda" id="calc-inv-saida" aria-live="polite"></p>
+  <div class="calc-acoes"><button type="button" class="filtro" id="calc-inv-usar" hidden>Usar essa água na conta</button></div>
+</fieldset>""")
+    p.append('<fieldset class="calc-campo">\n  <legend>Composto (opcional)</legend>')
+    p.append('  <label for="calc-comp" class="pular">Composto</label>')
+    p.append('  <select id="calc-comp" class="calc-sel">')
+    p.append('    <option value="">Nenhum — só a conta</option>')
+    for slug, nome, ancora in com_reconstituicao:
+        p.append(f'    <option value="{esc(slug)}" data-href="p/{esc(slug)}.html#{ancora}">{esc(nome)}</option>')
+    p.append('  </select>')
+    p.append('  <p class="calc-ajuda">Escolher o composto não preenche nada. Só aponta para a tabela de '
+             'reconstituição da página dele, onde está dito de onde veio cada número.</p>')
+    p.append('  <p id="calc-comp-link" class="calc-ajuda" hidden><a href="p/">Tabela de reconstituição da página de '
+             '<span></span> &rarr;</a></p>')
+    p.append('</fieldset>')
+    p.append('<div class="calc-acoes">')
+    p.append('  <button type="button" class="filtro" id="calc-copiar">Copiar o link desta conta</button>')
+    p.append('  <button type="button" class="filtro" id="calc-limpar">Limpar</button>')
+    p.append('</div>')
+    p.append('<p id="calc-copiado" class="calc-ajuda" role="status" aria-live="polite"></p>')
+    p.append('</div>')   # .calc-form
+
+    p.append("""<section class="calc-res" aria-labelledby="calc-res-t">
+  <h2 id="calc-res-t">Aspirar na seringa U-100</h2>
+  <div class="calc-destaque"><b id="r-unid">—</b><span id="r-un-rot">unidades</span></div>
+  <p class="calc-dose-eq" id="r-dose-eq"></p>
+  <svg class="calc-seringa" viewBox="-70 0 720 100" aria-hidden="true" focusable="false">
+    <line class="calc-agulha" x1="-66" y1="40" x2="-6" y2="40"/>
+    <rect class="calc-tampa" x="-8" y="33" width="28" height="14" rx="3"/>
+    <rect class="calc-corpo" x="20" y="18" width="560" height="44" rx="8"/>
+    <rect id="calc-liquido" class="calc-liq" x="20" y="20" width="0" height="40"/>
+    <g id="calc-escala"></g>
+    <g id="calc-embolo"><rect x="16" y="20" width="10" height="40" rx="2" fill="#2F3643"/></g>
+    <rect x="580" y="10" width="10" height="60" rx="3" class="calc-tampa"/>
+  </svg>
+  <dl class="fatos">
+    <div class="fato"><dt>Concentração</dt><dd id="r-conc">—</dd><dd><small id="r-conc-mcg">—</small></dd></div>
+    <div class="fato"><dt>Volume a aspirar</dt><dd id="r-vol">—</dd></div>
+    <div class="fato"><dt>Doses por frasco</dt><dd id="r-doses">—</dd><dd><small id="r-doses-exato">—</small></dd></div>
+  </dl>
+  <div id="calc-alertas"></div>
+  <p id="calc-status" class="pular" role="status" aria-live="polite"></p>
+</section>""")
+    p.append('</div>')   # .calc-grade
+
+    # Frases que o script mostra. Moram no HTML para as traducoes as
+    # alcancarem; {u}, {a} etc. sao trocados pelo script.
+    p.append("""<div id="calc-frases" hidden>
+  <p data-f="incompleto">Preencha a massa no frasco, a água e a dose com números maiores que zero.</p>
+  <p data-f="falta-dose">Frasco e água já dão a concentração. Falta a dose por aplicação para o volume e as unidades.</p>
+  <p data-f="unidade">unidade</p>
+  <p data-f="unidades">unidades</p>
+  <p data-f="exato">conta exata: {x} doses</p>
+  <p data-f="maior-que-frasco"><strong>A dose é maior que todo o conteúdo do frasco.</strong> Confira se dose e frasco estão na mesma unidade: mg e mcg diferem por mil.</p>
+  <p data-f="passa-seringa"><strong>{u} não cabem numa seringa de {ml} mL</strong>, que vai até {cap} unidades. Com menos água no frasco o mesmo pó fica mais concentrado, e o volume de cada dose cai.</p>
+  <p data-f="inv-falta">A conta inversa precisa da massa no frasco e da dose.</p>
+  <p data-f="inv-resultado">Para {d} ocupar {u}, ponha <strong>{a} mL</strong> de água no frasco.</p>
+  <p data-f="inv-passa">Isso passa da seringa escolhida, que vai até {cap} unidades.</p>
+  <p data-f="pouco-volume"><strong>Volume muito pequeno: {u}.</strong> Nessa faixa, uma unidade a mais ou a menos na seringa muda a dose em cerca de {pct}%. Com mais água no frasco, a mesma dose ocupa mais unidades e o erro de leitura pesa menos.</p>
+  <p data-f="entre-tracos"><strong>A conta deu {u}, e a seringa se lê por traço.</strong> Em {a} a dose entregue é {da}; em {b}, é {db}. Confira de quanto em quanto vai a escala da sua seringa.</p>
+  <p data-f="status">Resultado: {u} na seringa U-100, {v} mL, concentração de {c} mg/mL.</p>
+  <p data-f="copiado">Link copiado. Quem abrir verá a mesma conta.</p>
+  <p data-f="nao-copiou">Não deu para copiar daqui. O endereço na barra do navegador já guarda a conta: copie de lá.</p>
+</div>""")
+    p.append('</div>')   # #calc
+
+    p.append('<div class="conteudo" style="padding:0">')
+    p.append("""
+<h2>Como a conta é feita</h2>
+<p>São três divisões, sempre as mesmas, e dá para refazê-las no papel:</p>
+<ol>
+  <li><strong>Concentração</strong> = massa no frasco ÷ água adicionada. Um frasco de 10 mg com 2 mL de água fica com 5 mg/mL.</li>
+  <li><strong>Volume da dose</strong> = dose ÷ concentração. Uma dose de 0,25 mg a 5 mg/mL ocupa 0,05 mL.</li>
+  <li><strong>Unidades na seringa U-100</strong> = volume × 100, porque nela 100 unidades são 1 mL. Os 0,05 mL são 5 unidades.</li>
+</ol>
+<p>E <strong>doses por frasco</strong> = massa no frasco ÷ dose: 10 mg ÷ 0,25 mg dá 40. A calculadora mostra o número inteiro e a conta exata, porque o que sobra no fim do frasco não é uma dose. <a href="calculadora.html?f=10&amp;a=2&amp;d=0.25">Abrir este exemplo na calculadora</a>.</p>
+<p>A <strong>conta inversa</strong> é a mesma, de trás para a frente: água = unidades × massa no frasco ÷ (100 × dose). Para a dose de 0,25 mg do frasco de 10 mg ocupar 10 unidades, são 10 × 10 ÷ (100 × 0,25) = 4 mL de água.</p>
+
+<h2 id="unidade-e-volume">Unidade é volume, não dose</h2>
+<p>A unidade da seringa mede líquido, não peptídeo. Na escala U-100, cada unidade é um centésimo de mililitro, em qualquer tamanho de seringa: a de 0,3 mL vai até 30 unidades, a de 0,5 mL até 50 e a de 1 mL até 100.</p>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="unidade-e-volume">
+  <thead><tr><th scope="col">Unidades (U-100)</th><th scope="col">Volume</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td class="num">0,01 mL</td></tr>
+    <tr><td>2</td><td class="num">0,02 mL</td></tr>
+    <tr><td>5</td><td class="num">0,05 mL</td></tr>
+    <tr><td>10</td><td class="num">0,10 mL</td></tr>
+    <tr><td>20</td><td class="num">0,20 mL</td></tr>
+    <tr><td>30</td><td class="num">0,30 mL</td></tr>
+    <tr><td>50</td><td class="num">0,50 mL</td></tr>
+    <tr><td>100</td><td class="num">1,00 mL</td></tr>
+  </tbody></table></div></div>
+<p>Quanto de peptídeo vai em cada unidade depende da concentração do frasco. A mesma marca de 10 unidades leva 0,5 mg num frasco a 5 mg/mL e 0,25 mg num frasco a 2,5 mg/mL. Por isso "tantas unidades" não é uma dose: sem a massa no frasco e a água, o número não diz quanto se aplicou.</p>
+
+<h2>O que a conta não sabe</h2>
+<ul>
+  <li><strong>Se o frasco tem o que o rótulo diz.</strong> É o limite que pesa mais, e está no aviso do alto da página.</li>
+  <li><strong>Se a seringa é U-100.</strong> As unidades daqui só valem para ela. Confira a escala impressa no corpo da seringa antes de usar o número.</li>
+  <li><strong>O que fica preso na seringa e no frasco.</strong> Parte do líquido não sai: fica na agulha, no bico e nas paredes do frasco. O número de doses por frasco é o teórico.</li>
+  <li><strong>Em frasco combinado, a dose de cada composto.</strong> Um blend de 10 mg com dois peptídeos de 5 mg cada tem 5 mg de cada um. Informe a massa do componente que interessa, e a conta devolve a dose dele.</li>
+  <li><strong>Se a dose faz sentido.</strong> A calculadora não tem lista de doses, não compara com estudo nenhum e não avisa de dose alta. O que a evidência diz sobre cada composto está na página dele, a partir dos <a href="index.html">compostos</a>.</li>
+</ul>
+
+<h2>As tabelas de reconstituição do site</h2>
+<p>As páginas de protocolo trazem tabelas com frasco, água, concentração e volume por dose. A aritmética delas é conferida por uma trava automática, que refaz cada conta e bloqueia a publicação de tabela que não feche. A trava nasceu depois que uma auditoria manual achou, numa dessas tabelas, um volume publicado com o separador errado — mil vezes o certo, lido em português. A calculadora usa as mesmas três divisões. A diferença é que, nas tabelas, a dose veio de uma fonte secundária; aqui, vem de quem digita.</p>
+""")
+    p.append('</div>\n</main>')
+    p.append(rodape(""))
+    p.append('<script src="assets/calculadora.js"></script>')
+    return '\n'.join(p)
+
+
 # O JS do indice mora em build/app.js, arquivo de verdade: da para rodar
 # node --check nele, e nao ha escape de string Python no meio do caminho.
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "app.js"),
           encoding="utf-8") as _f:
     APP_JS = _f.read()
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "calculadora.js"),
+          encoding="utf-8") as _f:
+    CALC_JS = _f.read()
 
 
 # ------------------------------------------------------------------- main
@@ -1046,7 +1290,18 @@ def main():
     grava('evidencia.html', gera_evidencia())
     grava('seguranca.html', gera_seguranca())
     grava('sobre.html', gera_sobre(stats))
+    # paginas com tabela de reconstituicao, para o seletor da calculadora.
+    # A ancora e a da primeira tabela desse tipo na pagina (tab<k>).
+    com_rec = []
+    for i in itens:
+        for k, t in enumerate(i['tabelas']):
+            if re.search(r'reconstitui', t['cap'], re.I):
+                com_rec.append((i['slug'], i['meta']['nome'], 'tab%d' % k))
+                break
+    com_rec.sort(key=lambda x: x[1].lower())
+    grava('calculadora.html', gera_calculadora(com_rec))
     grava(os.path.join('assets', 'app.js'), APP_JS)
+    grava(os.path.join('assets', 'calculadora.js'), CALC_JS)
     for i in itens:
         grava(os.path.join('p', i['slug'] + '.html'), gera_composto(i))
 
@@ -1105,13 +1360,14 @@ def main():
     print('tabelas core   :', n_tab_total)
     print('  publicadas   :', n_tab_ok)
     print('  descartadas  :', n_tab_total - n_tab_ok)
-    print('paginas geradas:', stats['n'] + 3)
+    print('paginas geradas:', stats['n'] + 4)
+    print('calculadora    :', len(com_rec), 'compostos com tabela de reconstituicao')
 
     # As versoes em outros idiomas saem do HTML em portugues que acabou de
     # ser gravado. Ver o cabecalho de build/idiomas.py: trecho sem traducao
     # fica em portugues e vai para a fila; trecho que nao passa na trava de
     # numeros nao entra na pagina.
-    I.gerar(['index.html', 'evidencia.html', 'seguranca.html', 'sobre.html']
+    I.gerar(['index.html', 'evidencia.html', 'seguranca.html', 'sobre.html', 'calculadora.html']
             + [os.path.join('p', i['slug'] + '.html') for i in itens])
     semtab = [i['slug'] for i in itens if i['n_tabelas'] == 0]
     if semtab:

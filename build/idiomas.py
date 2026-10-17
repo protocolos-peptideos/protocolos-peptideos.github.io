@@ -92,7 +92,7 @@ PT = dict(nome='Português', decimal=',', milhar='.')
 ORDEM = ['pt-BR'] + list(IDIOMAS)
 
 # Cada idioma ganha uma pasta com a mesma estrutura da raiz.
-PAGINAS_RAIZ = ['index.html', 'evidencia.html', 'seguranca.html', 'sobre.html']
+PAGINAS_RAIZ = ['index.html', 'evidencia.html', 'seguranca.html', 'sobre.html', 'calculadora.html']
 
 # ANVISA so em portugues, por decisao do Fernando em 10/09/2026. A pagina
 # abaixo nao existe nas outras versoes (nem no seletor, nem no sitemap), e todo

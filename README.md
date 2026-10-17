@@ -4,9 +4,9 @@ Referência em português sobre peptídeos, nootrópicos, SARMs e compostos corr
 
 O repositório guarda o nome antigo, `protocolos-peptideos`. Desde 14 de setembro de 2026 o site mora em `peptisonar.com`; o endereço antigo `protocolos-peptideos.github.io` redireciona para ele, com o mesmo caminho, então link já publicado continua funcionando. O site cobre mais que peptídeos desde setembro de 2026.
 
-**205 compostos e combinações · 947 tabelas · 208 páginas estáticas.**
+**205 compostos e combinações · 947 tabelas · 209 páginas estáticas.**
 
-Contagens da última execução do gerador, em 16 de outubro de 2026. Ele as imprime a cada rodada — se divergirem daqui, o gerador é que está certo.
+Contagens da última execução do gerador, em 17 de outubro de 2026. Ele as imprime a cada rodada — se divergirem daqui, o gerador é que está certo.
 
 ### ▶ [peptisonar.com](https://peptisonar.com/)
 
@@ -40,7 +40,7 @@ Todo conteúdo comercial da fonte foi removido: links de fornecedor, cupons, se�
 
 - **Fontes primárias, nas páginas importadas.** Nas páginas de protocolo vindas da fonte secundária, nenhum artigo do PubMed, registro de ensaio ou bula foi aberto: a checagem foi contra a fonte, e só. Continua sendo a limitação principal delas.
 - **A exceção são as páginas de evidência verificada**, hoje 148, onde cada número foi levantado no PubMed, no ClinicalTrials.gov, no dado aberto da ANVISA, na bula ou na lista da WADA, com a consulta declarada na própria página.
-- **Calculadoras interativas**, para não dar aparência de precisão a uma conta que depende de conferir o frasco na mão.
+- **As calculadoras da fonte.** Não foram reproduzidas. Desde 17 de outubro de 2026 o site tem a sua própria, `calculadora.html` (ver abaixo), que faz só a aritmética de diluição e não sugere dose.
 - **Fornecedores e preços**, deliberadamente.
 
 ---
@@ -50,12 +50,14 @@ Todo conteúdo comercial da fonte foi removido: links de fornecedor, cupons, se�
 ```
 index.html            grade dos compostos, com busca e filtro por categoria
 seguranca.html        riscos que não aparecem na tabela de dose
+calculadora.html      calculadora de reconstituição (frasco, água e dose → unidades na seringa U-100)
 sobre.html            fonte, método e limites
 p/<slug>.html         uma página por composto
 assets/estilo.css     sistema visual (escuro, acento de cobre)
 assets/app.js         busca e filtro, sem dependências
 assets/figuras/       uma ilustração por página, gerada por IA: <slug>.webp (topo) e <slug>-cartao.webp (grade)
 build/gerar.py        gerador estático
+build/calculadora.js  script da calculadora, copiado para assets/calculadora.js pelo gerador
 build/compostos.py    metadados PT-BR de cada composto (autoral)
 build/fatos.py        faixa de referência rápida por composto (autoral)
 build/dicionario*.py  dicionário EN→PT-BR das células de tabela
@@ -131,6 +133,18 @@ Cada uma das 96 páginas abertas até 5 de outubro de 2026 tem uma ilustração,
 - **Como aparecem:** a imagem é decorativa (`alt` vazio), e a legenda diz, nas sete línguas, que é ilustração gerada por IA, e não dado nem imagem de estudo.
 - **Prompts:** ficam em `build/json/figuras_prompts.py` (local, fora do git, como a coleta). O prefixo de estilo `ESTILO` é o mesmo para todas, mais uma linha de assunto por página.
 - **Ao mudar o `estilo.css`, recortar o `critico-gerado.css`.** O cabeçalho guarda o hash do `estilo.css`, e a trava de crítico falha até o recorte ser refeito.
+
+## A calculadora de reconstituição
+
+Entrou em 17 de outubro de 2026, a pedido, como adaptação da ideia das calculadoras de lojas de peptídeos — sem o conteúdo comercial delas: nenhum produto, preço, link de loja ou "mais vendidos".
+
+- **Faz só a conta:** concentração = massa ÷ água; volume = dose ÷ concentração; unidades = volume × 100 (U-100); doses por frasco = massa ÷ dose, em número inteiro e exato.
+- **Não sugere dose.** Há atalhos para massa de frasco e volume de água, nenhum para dose: botão com "0,25 mg" seria sugestão. Escolher o composto (lista das 44 páginas com tabela de reconstituição) não preenche nada; só aponta para a tabela daquela página.
+- **Mostra o que a conta não sabe:** o aviso do topo diz que ela acredita no rótulo do frasco. Avisa quando a dose passa do frasco, quando não cabe em seringa de 1 mL, quando o volume é tão pequeno que errar uma unidade muda a dose em proporção grande, e quando o resultado cai entre dois traços da seringa (mostrando a dose real nos dois traços vizinhos).
+- **Seringa e conta inversa** (17/10/2026, depois de olhar a calculadora da PepPal, peppal.app/calculator — que é do mesmo autor do peptidedosingprotocols.com, a fonte secundária deste site): escolha entre seringa de 0,3, 0,5 e 1 mL (a escala U-100 é a mesma; muda o desenho e o aviso de capacidade) e a conta inversa, água = unidades × massa ÷ (100 × dose), que diz quanta água pôr para a dose ocupar N unidades. Os presets dela ("BPC-157 500 mcg" etc.) ficaram de fora: são dose pronta. A seção "Unidade é volume, não dose" traz a tabela de unidades × mL.
+- **Sem estado guardado:** a conta vive só no endereço (`?f=10&a=2&d=0.25`, `u=mcg`, `s=30|50`, `t=<unidades>`, `c=<slug>`), para ser conferida por quem abrir o mesmo link.
+- **Idiomas:** todo texto que o script mostra mora no HTML (`#calc-frases`), não no JS, e é traduzido como qualquer trecho. Os números saem no separador do idioma da página. Fica fora do sitemap e com `noindex`, como as páginas de protocolo.
+- **Estilo:** o CSS próprio da página vai num `<style>` no `<head>` dela (`CALC_CSS` em `gerar.py`), e não no `estilo.css`. O `estilo.css` mudou numa regra só: no celular o menu, que passou a ter cinco itens, quebra em duas linhas ao lado do logo em vez de sair da tela; o `critico-gerado.css` foi recortado de novo, com `/calculadora.html` entre as páginas medidas.
 
 ## Reconferir os números, de tempos em tempos
 

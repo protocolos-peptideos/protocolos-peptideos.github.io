@@ -536,7 +536,13 @@ tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowra
   /* abaixo de 560px a marca fica so no icone: melhor que reticencias */
   .marca span:not(.marca-icone) { display: none; }
   .marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
-  .nav { gap: 13px; font-size: 13px; flex-shrink: 0; }
+  /* Era flex-shrink: 0, numa linha só. Com a Calculadora (17/10) o menu
+     passou a ter cinco itens e, a 375px, pedia 361px onde cabiam 343: o
+     "Compostos" saía da tela pela esquerda, sem rolagem que o trouxesse de
+     volta. Agora o menu ocupa o resto da linha do logo e quebra em duas, à
+     direita, só quando não cabe. */
+  .nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0; min-width: 0;
+         flex-wrap: wrap; justify-content: flex-end; }
   /* no celular o seletor desce para uma segunda linha, alinhado à direita */
   .idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
   .nota-traducao { padding: 8px 16px; font-size: 12px; }

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>再溶解計算ツール — Protocolos</title>
+<meta name="description" content="バイアル内の量、加える水、用量から、U-100シリンジに何単位吸うかを計算します。算数だけで、用量は提案しません。">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="再溶解計算ツール — Protocolos">
+<meta property="og:description" content="バイアル内の量、加える水、用量から、U-100シリンジに何単位吸うかを計算します。算数だけで、用量は提案しません。">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://peptisonar.com/ja/calculadora.html">
+<link rel="alternate" hreflang="pt-BR" href="https://peptisonar.com/calculadora.html">
+<link rel="alternate" hreflang="en" href="https://peptisonar.com/en/calculadora.html">
+<link rel="alternate" hreflang="es" href="https://peptisonar.com/es/calculadora.html">
+<link rel="alternate" hreflang="de" href="https://peptisonar.com/de/calculadora.html">
+<link rel="alternate" hreflang="fr" href="https://peptisonar.com/fr/calculadora.html">
+<link rel="alternate" hreflang="ja" href="https://peptisonar.com/ja/calculadora.html">
+<link rel="alternate" hreflang="zh" href="https://peptisonar.com/zh/calculadora.html">
+<link rel="alternate" hreflang="x-default" href="https://peptisonar.com/calculadora.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "再溶解計算ツール — Protocolos",
+  "description": "バイアル内の量、加える水、用量から、U-100シリンジに何単位吸うかを計算します。算数だけで、用量は提案しません。",
+  "url": "https://peptisonar.com/ja/calculadora.html",
+  "inLanguage": "ja",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Protocolos",
+    "url": "https://peptisonar.com"
+  }
+}
+</script>
+<link rel="preload" href="../assets/fontes/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fontes/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face {
+font-family: 'Fraunces';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/fraunces-latin-ext.woff2) format('woff2');
+unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'Fraunces';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/fraunces-latin.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/inter-greek.woff2) format('woff2');
+unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/inter-latin-ext.woff2) format('woff2');
+unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400 700;
+font-display: swap;
+src: url(../assets/fontes/inter-latin.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'JetBrains Mono';
+font-style: normal;
+font-weight: 400 500;
+font-display: swap;
+src: url(../assets/fontes/jetbrains-mono-greek.woff2) format('woff2');
+unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+font-family: 'JetBrains Mono';
+font-style: normal;
+font-weight: 400 500;
+font-display: swap;
+src: url(../assets/fontes/jetbrains-mono-latin-ext.woff2) format('woff2');
+unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+font-family: 'JetBrains Mono';
+font-style: normal;
+font-weight: 400 500;
+font-display: swap;
+src: url(../assets/fontes/jetbrains-mono-latin.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+:root { color-scheme: dark; --tinta: #08090B; --fundo: #0B0D11; --superficie: #111419; --superficie-2: #161A21; --superficie-3: #1D222B; --linha: #232833; --linha-forte: #2F3643; --texto: #E8EAED; --texto-suave: #A8B0BC; --texto-fraco: #7D8593; --cobre: #D08A4A; --cobre-claro: #E8A972; --cobre-fundo: rgba(208, 138, 74, 0.10); --cobre-borda: rgba(208, 138, 74, 0.28); --alerta: #E5674B; --alerta-fundo: rgba(229, 103, 75, 0.10); --alerta-borda: rgba(229, 103, 75, 0.30); --ok: #4FB08A; --ok-fundo: rgba(79, 176, 138, 0.10); --ok-borda: rgba(79, 176, 138, 0.28); --atencao: #D9B44A; --atencao-fundo: rgba(217, 180, 74, 0.10); --aferido: #B8C9DC; --aferido-rasa: rgba(184, 201, 220, 0.55); --display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif; --corpo: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; --largura: 1440px; --raio: 14px; --raio-sm: 9px; }
+* { box-sizing: border-box; }
+h1, h2, h3, .display { font-optical-sizing: auto; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0px; background: var(--fundo); color: var(--texto); font-family: var(--corpo); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; }
+body::before { content: ""; position: fixed; inset: 0px 0px auto; height: 520px; background: radial-gradient(900px 380px at 18% -8%, rgba(208, 138, 74, 0.1), transparent 62%), radial-gradient(700px 320px at 88% -14%, rgba(79, 128, 176, 0.08), transparent 60%); pointer-events: none; z-index: 0; }
+.env { position: relative; z-index: 1; }
+a { color: var(--cobre-claro); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pular { position: absolute; left: -9999px; top: 0px; background: var(--cobre); color: rgb(20, 16, 12); padding: 10px 18px; border-radius: 0 0 var(--raio-sm) 0; font-weight: 600; z-index: 999; }
+.pular:focus { left: 0px; }
+.cabecalho { position: sticky; top: 0px; z-index: 50; background: rgba(11, 13, 17, 0.86); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--linha); }
+.cabecalho-in { max-width: var(--largura); margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; gap: 6px 28px; flex-wrap: wrap; justify-content: flex-end; }
+.marca { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-size: 19px; font-weight: 600; color: var(--texto); letter-spacing: -0.01em; white-space: nowrap; margin-right: auto; }
+.marca:hover { text-decoration: none; }
+.marca-icone { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(140deg, var(--cobre), #8E5A2E); display: grid; place-items: center; font-family: var(--corpo); font-size: 14px; font-weight: 700; color: rgb(22, 16, 10); box-shadow: 0 0 0 1px var(--cobre-borda), 0 4px 14px rgba(208, 138, 74, 0.18); }
+.nav { display: flex; gap: 22px; font-size: 14.5px; }
+.nav a { color: var(--texto-suave); font-weight: 500; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--cobre-claro); text-decoration: none; }
+.idiomas { display: flex; gap: 9px; font-size: 12px; letter-spacing: 0.06em; font-weight: 600; }
+.idiomas a { color: var(--texto-fraco); padding: 3px 5px; border-radius: 6px; border: 1px solid transparent; line-height: 1; }
+.idiomas a:hover { color: var(--texto); text-decoration: none; }
+.idiomas a[aria-current="true"] { color: var(--cobre-claro); border-color: var(--cobre-borda); background: var(--cobre-fundo); }
+:lang(ja) { --display: 'Fraunces', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; --corpo: 'Inter', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; }
+.env-largo { max-width: var(--largura); margin: 0px auto; padding: 0px 24px; }
+.hero { padding: 76px 0px 52px; }
+.hero-sobre { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cobre-claro); border: 1px solid var(--cobre-borda); background: var(--cobre-fundo); padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; }
+.hero h1 { font-family: var(--display); font-weight: 600; font-size: clamp(38px, 6.2vw, 68px); line-height: 1.03; letter-spacing: -0.028em; margin: 0px 0px 22px; max-width: 17ch; }
+.hero h1 em { font-style: italic; color: var(--cobre-claro); }
+.hero-sub { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 64ch; margin: 0px 0px 34px; line-height: 1.62; }
+.hero-sub a { color: var(--cobre-claro); text-decoration: underline 1px; text-underline-offset: 3px; transition: text-decoration-thickness 0.15s; }
+.hero-sub a:hover, .hero-sub a:focus-visible { text-decoration-thickness: 2px; }
+#principal:focus { outline: none; }
+.procedencia-resumo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; max-width: 880px; }
+.proc-lado { padding: 18px 0px 4px 18px; border-left: 3px solid var(--linha); }
+.procedencia-resumo .proc-aferida { border-left-color: var(--aferido-rasa); }
+.proc-lado b { display: block; font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; margin-bottom: 10px; }
+.procedencia-resumo .proc-aferida b { color: var(--aferido); }
+.procedencia-resumo .proc-transportada b { font-family: var(--mono); font-size: 31px; color: var(--texto-suave); }
+.proc-lado span { display: block; font-size: 14px; line-height: 1.6; color: var(--texto-suave); }
+.proc-lado strong { color: var(--texto); font-weight: 600; }
+table, .numero b, .selo, .fato-valor, code, .mono { font-variant-numeric: tabular-nums; }
+.pagina { max-width: var(--largura); margin: 0px auto; padding: 0px 24px; display: grid; grid-template-columns: 232px minmax(0px, 1fr); gap: 52px; align-items: start; }
+.trilha { position: sticky; top: 92px; padding: 42px 0px; }
+.trilha-titulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.13em; color: var(--texto-fraco); font-weight: 700; margin: 0px 0px 14px; }
+.trilha ol { list-style: none; margin: 0px; padding: 0px; }
+.trilha li { margin: 0px 0px 2px; }
+.trilha a { display: block; padding: 6px 12px; border-left: 2px solid var(--linha); color: var(--texto-suave); font-size: 13.5px; line-height: 1.4; }
+.trilha a:hover { color: var(--texto); border-left-color: var(--cobre); background: var(--superficie); text-decoration: none; }
+.conteudo { padding: 42px 0px 96px; min-width: 0px; overflow-wrap: break-word; }
+.aviso { border: 1px solid var(--alerta-borda); background: linear-gradient(160deg, var(--alerta-fundo), rgba(229, 103, 75, 0.03)); border-radius: var(--raio); padding: 20px 24px; margin: 0px 0px 34px; display: grid; grid-template-columns: auto minmax(0px, 1fr); gap: 16px; }
+.aviso-icone { width: 30px; height: 30px; border-radius: 50%; background: var(--alerta); color: rgb(26, 11, 7); display: grid; place-items: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+.aviso p:first-of-type strong { color: rgb(242, 163, 141); }
+.conteudo .aviso h2, .aviso h2 { margin: 2px 0px 8px; font-family: var(--corpo); color: rgb(242, 163, 141); font-size: 15px; font-weight: 700; letter-spacing: 0.01em; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.aviso p { margin: 0px 0px 9px; font-size: 14.5px; color: var(--texto-suave); line-height: 1.6; }
+.selo { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; white-space: nowrap; border: 1px solid transparent; }
+.selo-nao { background: var(--alerta-fundo); color: rgb(238, 143, 121); border-color: var(--alerta-borda); }
+.selo-cat { background: var(--superficie-3); color: var(--texto-suave); border-color: var(--linha-forte); }
+.selo-cat { white-space: normal; }
+.artigo-cabeca { margin-bottom: 34px; }
+.migalha { font-size: 13px; color: var(--texto-fraco); margin-bottom: 16px; }
+.migalha a { color: var(--texto-fraco); }
+.migalha a:hover { color: var(--cobre-claro); }
+.artigo-cabeca h1 { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.026em; margin: 0px 0px 14px; }
+.artigo-sub { font-size: 17.5px; color: var(--texto-suave); margin: 0px 0px 20px; max-width: 66ch; line-height: 1.6; }
+.artigo-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+.conteudo h2 { font-family: var(--display); font-size: 27px; font-weight: 600; letter-spacing: -0.018em; margin: 52px 0px 16px; padding-top: 26px; border-top: 1px solid var(--linha); }
+.conteudo h2:first-of-type { border-top-width: medium; border-top-style: none; border-top-color: currentcolor; padding-top: 0px; }
+.conteudo p { margin: 0px 0px 15px; color: var(--texto-suave); }
+.conteudo strong { color: var(--texto); font-weight: 600; }
+.tabela-titulo { display: none; padding: 15px 20px; border-bottom: 1px solid var(--linha); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-suave); background: var(--superficie-2); }
+.artigo-fig { margin: 0px 0px 30px; }
+.artigo-fig img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; max-height: clamp(240px, 40vh, 360px); border: 1px solid var(--linha); border-radius: var(--raio); background: var(--tinta); }
+.artigo-fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--texto-fraco); }
+.pagina p:not(.tabela-titulo):not(.nota-filtro), .pagina > div > ul li, .pagina .nota, .pagina .aviso-linha { max-width: 68ch; }
+.conteudo > p:first-of-type { font-size: 17px; color: var(--texto); }
+.tabela-env { margin: 24px 0px 32px; border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; background: var(--superficie); }
+.tabela-rolagem { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+thead th { text-align: left; padding: 12px 20px; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--texto-fraco); font-weight: 700; border-bottom: 1px solid var(--linha-forte); white-space: normal; hyphens: none; }
+tbody td { padding: 13px 20px; border-bottom: 1px solid var(--linha); color: var(--texto-suave); vertical-align: top; line-height: 1.5; }
+tbody tr:hover td { background: rgba(255, 255, 255, 0.016); }
+tbody td:first-child { color: var(--texto); font-weight: 500; white-space: nowrap; }
+.tabela-env { position: relative; }
+.proc-aferida .tabela-env { border-left: 3px solid var(--aferido-rasa); }
+.proc-aferida thead th { border-bottom-color: var(--aferido-rasa); }
+.proc-aferida tbody td { padding: 15px 20px; }
+.tabela-rolagem { overflow-x: auto; background: linear-gradient(to right, var(--superficie) 30%, rgba(17, 20, 25, 0)) left center / 34px 100% no-repeat local,
+linear-gradient(to left,  var(--superficie) 30%, rgba(17, 20, 25, 0)) right center / 34px 100% no-repeat local,
+radial-gradient(farthest-side at 0 50%,   rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) left center / 16px 100% no-repeat scroll,
+radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0)) right center / 16px 100% no-repeat scroll; }
+.aviso p:last-child { margin-bottom: 0px; }
+.conteudo h3 { font-size: 17px; font-weight: 650; margin: 30px 0px 10px; color: var(--texto); letter-spacing: -0.005em; }
+.conteudo ul, .conteudo ol { color: var(--texto-suave); padding-left: 22px; margin: 0px 0px 16px; }
+.conteudo li { margin-bottom: 7px; }
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.filtro { background: var(--superficie); border: 1px solid var(--linha-forte); color: var(--texto-suave); padding: 7px 15px; border-radius: 100px; font-family: var(--corpo); font-size: 13.5px; font-weight: 500; cursor: pointer; transition: 0.13s; }
+.filtro:hover { border-color: var(--linha-forte); color: var(--texto); background: var(--superficie-2); }
+.fatos { display: flex; flex-wrap: wrap; gap: 1px; background: var(--linha); border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; margin: 26px 0px 32px; }
+.fato { background: var(--superficie); padding: 17px 19px; flex: 1 1 200px; min-width: 190px; }
+.fato dt { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--texto-fraco); font-weight: 700; margin-bottom: 7px; }
+.fato dd { margin: 0px; font-size: 15px; color: var(--texto); font-weight: 500; line-height: 1.45; }
+.procedencia-legenda { margin: 22px 0px 0px; max-width: 620px; font-size: 13.5px; line-height: 1.65; color: var(--texto-fraco); }
+@media (max-width: 940px) {
+.pagina { grid-template-columns: minmax(0px, 1fr); gap: 0px; }
+.trilha { display: none; }
+}
+.proc-aferida tbody td strong { font-family: var(--display); font-weight: 600; font-size: 1.06em; letter-spacing: -0.005em; color: var(--aferido); }
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0px; min-width: 0px; flex-wrap: wrap; justify-content: flex-end; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.hero { padding: 48px 0px 34px; }
+h1, h2, h3 { overflow-wrap: break-word; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0px; min-width: 0px; flex-wrap: wrap; justify-content: flex-end; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.env-largo, .pagina { padding: 0px 18px; }
+.conteudo h2 { font-size: 23px; margin-top: 42px; }
+h1, h2, h3 { overflow-wrap: break-word; }
+}
+@media (max-width: 640px) {
+.cabecalho-in { padding: 12px 16px; gap: 6px 10px; flex-wrap: wrap; min-width: 0px; }
+.marca { font-size: 15.5px; gap: 8px; min-width: 0px; }
+.marca span:not(.marca-icone) { display: none; }
+.marca-icone { width: 26px; height: 26px; font-size: 12.5px; flex-shrink: 0; }
+.nav { gap: 4px 13px; font-size: 13px; flex: 1 1 0px; min-width: 0px; flex-wrap: wrap; justify-content: flex-end; }
+.idiomas { flex-basis: 100%; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.env-largo, .pagina { padding: 0px 18px; }
+h1, h2, h3 { overflow-wrap: break-word; }
+}</style>
+<link rel="stylesheet" href="../assets/estilo.css" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="../assets/estilo.css"></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D08A4A'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='serif' font-weight='700' fill='%2316100A'>P</text></svg>"><style>
+.calc-grade{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin:8px 0 40px}
+@media (min-width:900px){.calc-grade{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start}
+.calc-res{position:sticky;top:20px}}
+.calc-campo{border:1px solid var(--linha);border-radius:var(--raio);background:var(--superficie);padding:18px 20px 16px;margin:0 0 14px;min-width:0}
+.calc-campo legend{padding:0 6px;margin-left:-6px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--texto-fraco);font-weight:700}
+.calc-entrada{display:flex;gap:8px;align-items:stretch;margin-top:12px}
+.calc-entrada input,.calc-entrada select,.calc-sel{background:var(--fundo);border:1px solid var(--linha-forte);border-radius:var(--raio-sm);color:var(--texto);font-family:var(--mono);font-size:17px;padding:11px 14px}
+.calc-entrada input{flex:1 1 auto;min-width:0;width:100%}
+.calc-entrada select{flex:0 0 auto}
+.calc-sel{width:100%;font-family:var(--corpo);font-size:15px;margin-top:12px}
+.calc-entrada input:focus,.calc-entrada select:focus,.calc-sel:focus{outline:none;border-color:var(--cobre);box-shadow:0 0 0 3px var(--cobre-fundo)}
+.calc-sufixo{display:flex;align-items:center;padding:0 4px;color:var(--texto-suave);font-family:var(--mono);font-size:15px}
+.calc-ajuda{margin:9px 0 0;font-size:13.5px;color:var(--texto-fraco)}
+.calc-ajuda a{color:var(--cobre-claro)}
+.calc-chips{margin-top:2px}
+.calc-acoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.calc-res{border:1px solid var(--cobre-borda);border-radius:var(--raio);background:linear-gradient(170deg,var(--cobre-fundo),rgba(208,138,74,.02));padding:22px 22px 18px}
+.calc-res h2{margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--texto-fraco);font-weight:700;font-family:var(--corpo)}
+.calc-destaque{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:6px 0 2px}
+.calc-destaque b{font-family:var(--display);font-weight:600;font-size:clamp(46px,7vw,64px);line-height:1;color:var(--cobre-claro);font-variant-numeric:tabular-nums}
+.calc-destaque span{font-size:17px;color:var(--texto)}
+.calc-dose-eq{font-family:var(--mono);font-size:13px;color:var(--texto-fraco);margin:0 0 12px;min-height:1.2em}
+.calc-seringa{display:block;width:100%;height:auto;margin:6px 0 14px}
+.calc-seringa .calc-corpo{fill:var(--fundo);stroke:var(--linha-forte);stroke-width:2}
+.calc-seringa .calc-liq{fill:var(--cobre);opacity:.55}
+.calc-seringa .calc-liq-passou{fill:var(--alerta);opacity:.7}
+.calc-seringa line{stroke:var(--texto-fraco);stroke-width:1.5}
+.calc-seringa text{fill:var(--texto-fraco);font-family:var(--mono);font-size:13px;text-anchor:middle}
+.calc-seringa .calc-agulha{stroke:var(--texto-suave);stroke-width:2}
+.calc-seringa .calc-tampa{fill:var(--superficie-3);stroke:var(--linha-forte)}
+.calc-res .fatos{margin:0 0 6px}
+.calc-res .fato{min-width:150px;flex-basis:150px;background:var(--superficie)}
+.calc-res .fato dd{font-family:var(--mono);font-size:15px}
+.calc-res .fato small{display:block;color:var(--texto-fraco);font-size:12.5px;margin-top:3px}
+.calc-res .nota,.calc-res .aviso-linha{margin:12px 0 0}
+.calc-grave strong{color:#F2A38D}
+.calc-grave{border-left-color:var(--alerta);background:var(--alerta-fundo);border-color:var(--alerta-borda)}
+</style>
+</head>
+<body class="">
+<a class="pular" href="#principal">本文へ移動</a>
+<header class="cabecalho">
+  <div class="cabecalho-in">
+    <a class="marca" href="index.html">
+      <span class="marca-icone" aria-hidden="true">P</span>
+      <span>Protocolos</span>
+    </a>
+    <nav class="nav" aria-label="メイン">
+      <a href="index.html">化合物</a>
+      <a href="evidencia.html">エビデンス</a>
+      <a href="calculadora.html" aria-current="page">計算ツール</a>
+      <a href="seguranca.html">安全性</a>
+      <a href="sobre.html">このサイトについて</a>
+    </nav>
+    <nav class="idiomas" aria-label="言語">
+      <a href="/calculadora.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+      <a href="/en/calculadora.html" hreflang="en" lang="en">EN</a>
+      <a href="/es/calculadora.html" hreflang="es" lang="es">ES</a>
+      <a href="/de/calculadora.html" hreflang="de" lang="de">DE</a>
+      <a href="/fr/calculadora.html" hreflang="fr" lang="fr">FR</a>
+      <a href="/ja/calculadora.html" hreflang="ja" lang="ja" aria-current="true">JA</a>
+      <a href="/zh/calculadora.html" hreflang="zh" lang="zh">ZH</a>
+    </nav>
+  </div>
+</header>
+<div class="env">
+
+<main id="principal" tabindex="-1" class="env-largo" style="max-width:1080px;padding-top:52px;padding-bottom:80px">
+<h1 style="font-family:var(--display);font-size:clamp(32px,4.6vw,44px);font-weight:600;letter-spacing:-.026em;margin:0 0 14px">再溶解計算ツール</h1>
+<p class="artigo-sub" style="margin-bottom:28px">バイアル内の量、加えた水、投与ごとの用量を入れると、濃度、容量、U-100シリンジで吸う単位数を返します。行うのは計算だけです。用量を持ち込むのは使う人自身であり、計算されたからといって安全になるわけではありません。</p>
+<div class="aviso" role="note">
+  <div class="aviso-icone" aria-hidden="true">!</div>
+  <div>
+    <h2>計算は正確です。バイアルはそうとは限りません。</h2>
+    <p><strong>この計算ツールはラベルを信じます。</strong>バイアルに10 mgとあれば、10 mgで計算します。「研究用途専用」として売られる製品は、ヒト用としての同一性・純度・用量の管理を受けていません。粉末が7 mgしかなければ、どの用量も画面の表示より30%少なくなり、このページにはそれを知る手段がありません。詳しくは<a href="seguranca.html">安全性と限界</a>へ。</p>
+    <p>入力された用量が誰かにとって安全か、適切か、研究されたものかも、このツールにはわかりません。ここにあるものは医学的助言、処方、治療計画ではありません。</p>
+  </div>
+</div>
+<noscript><div class="nota"><strong>JavaScriptがないと計算ツールは動きません。</strong>計算の全体はすぐ下の「計算のしかた」に書いてあり、紙の上でもできます。</div></noscript>
+<div id="calc" hidden>
+<div class="calc-grade">
+<div class="calc-form">
+<fieldset class="calc-campo">
+  <legend>バイアル内の量</legend>
+  <div class="filtros calc-chips" role="group" aria-label="よくあるバイアルの量" data-alvo="calc-frasco" data-unidade="mg" data-valores="2 5 10 15 20 30 50"></div>
+  <div class="calc-entrada">
+    <label for="calc-frasco" class="pular">バイアル内の量（mg）</label>
+    <input id="calc-frasco" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+    <span class="calc-sufixo" aria-hidden="true">mg</span>
+  </div>
+  <p class="calc-ajuda">ラベルに書かれた、バイアル内のペプチドの総量。複数の化合物が入ったバイアルでは、そのうちひとつの量だけを入れてください。出てくる用量はその化合物のものです。</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>加えた水</legend>
+  <div class="filtros calc-chips" role="group" aria-label="よくある水の量" data-alvo="calc-agua" data-unidade="mL" data-valores="0.5 1 1.5 2 2.5 3 5"></div>
+  <div class="calc-entrada">
+    <label for="calc-agua" class="pular">加えた水（mL）</label>
+    <input id="calc-agua" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+    <span class="calc-sufixo" aria-hidden="true">mL</span>
+  </div>
+  <p class="calc-ajuda">粉末を溶かすためにバイアルへ入れる静菌水の量。</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>投与ごとの用量</legend>
+  <div class="calc-entrada">
+    <label for="calc-dose" class="pular">投与ごとの用量</label>
+    <input id="calc-dose" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+    <label for="calc-dose-un" class="pular">用量の単位</label>
+    <select id="calc-dose-un"><option value="mg">mg</option><option value="mcg">mcg</option></select>
+  </div>
+  <p class="calc-ajuda">ここにはあえて近道ボタンを置いていません。用量入りのボタンは用量の提案になってしまうからです。1 mg = 1,000 mcg。</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>U-100シリンジ</legend>
+  <div class="filtros calc-chips" id="calc-seringas" role="group" aria-label="シリンジのサイズ">
+    <button type="button" class="filtro" data-cap="30" aria-pressed="false">0.3 mL · 30単位まで</button>
+    <button type="button" class="filtro" data-cap="50" aria-pressed="false">0.5 mL · 50単位まで</button>
+    <button type="button" class="filtro" data-cap="100" aria-pressed="true">1 mL · 100単位まで</button>
+  </div>
+  <p class="calc-ajuda">目盛りはどれも同じで、100単位が1 mLです。変わるのはどこまであるかだけで、図と容量の警告もそれに合わせます。</p>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>逆算（任意）</legend>
+  <div class="calc-entrada">
+    <label for="calc-alvo" class="pular">各用量が占める単位数</label>
+    <input id="calc-alvo" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="例：10">
+    <span class="calc-sufixo" aria-hidden="true">単位</span>
+  </div>
+  <p class="calc-ajuda">シリンジで用量に何単位を占めさせたいですか？すでに入力した量と用量から、バイアルに入れる水の量を返します。その容量がバイアルに入るか確認してください。</p>
+  <p class="calc-ajuda" id="calc-inv-saida" aria-live="polite"></p>
+  <div class="calc-acoes"><button type="button" class="filtro" id="calc-inv-usar" hidden>この水の量で計算する</button></div>
+</fieldset>
+<fieldset class="calc-campo">
+  <legend>化合物（任意）</legend>
+  <label for="calc-comp" class="pular">化合物</label>
+  <select id="calc-comp" class="calc-sel">
+    <option value="">なし — 計算だけ</option>
+    <option value="protocol_5-amino-1mq" data-href="p/protocol_5-amino-1mq.html#tab4">5-Amino-1MQ</option>
+    <option value="stacks_advanced-recomp-stack" data-href="p/stacks_advanced-recomp-stack.html#tab3">Advanced Recomp</option>
+    <option value="protocol_aod-9604" data-href="p/protocol_aod-9604.html#tab3">AOD-9604</option>
+    <option value="protocol_ara-290" data-href="p/protocol_ara-290.html#tab2">ARA-290（シビネチド）</option>
+    <option value="protocol_bpc-157" data-href="p/protocol_bpc-157.html#tab2">BPC-157</option>
+    <option value="protocol_cagrilintide" data-href="p/protocol_cagrilintide.html#tab2">カグリリンチド</option>
+    <option value="stacks_cagrilintide-retatrutide" data-href="p/stacks_cagrilintide-retatrutide.html#tab3">カグリリンチド + レタトルチド</option>
+    <option value="stacks_cagrilintide-tirzepatide" data-href="p/stacks_cagrilintide-tirzepatide.html#tab2">カグリリンチド + チルゼパチド</option>
+    <option value="stacks_cagrisema" data-href="p/stacks_cagrisema.html#tab2">CagriSema</option>
+    <option value="protocol_cjc-1295-dac" data-href="p/protocol_cjc-1295-dac.html#tab2">CJC-1295（DACあり）</option>
+    <option value="stacks_cjc-1295-ipamorelin-gh-pulse-stack" data-href="p/stacks_cjc-1295-ipamorelin-gh-pulse-stack.html#tab1">CJC-1295（DACなし）+ イパモレリン</option>
+    <option value="protocol_dsip" data-href="p/protocol_dsip.html#tab2">DSIP</option>
+    <option value="stacks_russian-nootropic-stack" data-href="p/stacks_russian-nootropic-stack.html#tab3">ロシアのノートロピクスのペア</option>
+    <option value="protocol_epitalon" data-href="p/protocol_epitalon.html#tab1">Epitalon（epithalon、AEDG）</option>
+    <option value="protocol_foxo4-dri" data-href="p/protocol_foxo4-dri.html#tab1">FOXO4-DRI</option>
+    <option value="protocol_ghk-cu" data-href="p/protocol_ghk-cu.html#tab0">GHK-Cu</option>
+    <option value="protocol_ghrp-6" data-href="p/protocol_ghrp-6.html#tab0">GHRP-6</option>
+    <option value="stacks_glow-stack" data-href="p/stacks_glow-stack.html#tab1">GLOW</option>
+    <option value="protocol_humanin" data-href="p/protocol_humanin.html#tab1">ヒューマニン（HNG）</option>
+    <option value="protocol_igf-1-lr3" data-href="p/protocol_igf-1-lr3.html#tab3">IGF-1 LR3</option>
+    <option value="protocol_kisspeptin" data-href="p/protocol_kisspeptin.html#tab3">キスペプチン</option>
+    <option value="stacks_klow-stack" data-href="p/stacks_klow-stack.html#tab2">KLOW</option>
+    <option value="protocol_kpv" data-href="p/protocol_kpv.html#tab4">KPV</option>
+    <option value="protocol_ll-37" data-href="p/protocol_ll-37.html#tab1">LL-37</option>
+    <option value="protocol_melanotan-ii" data-href="p/protocol_melanotan-ii.html#tab2">Melanotan II（MT-2）</option>
+    <option value="protocol_mots-c" data-href="p/protocol_mots-c.html#tab2">MOTS-c</option>
+    <option value="protocol_nad-plus" data-href="p/protocol_nad-plus.html#tab6">NAD+</option>
+    <option value="protocol_pinealon" data-href="p/protocol_pinealon.html#tab3">Pinealon（EDR）</option>
+    <option value="protocol_bremelanotide-pt-141" data-href="p/protocol_bremelanotide-pt-141.html#tab2">PT-141（ブレメラノチド）</option>
+    <option value="protocol_retatrutide" data-href="p/protocol_retatrutide.html#tab2">レタトルチド</option>
+    <option value="stacks_retatrutide-mots-c" data-href="p/stacks_retatrutide-mots-c.html#tab1">レタトルチド + MOTS-c</option>
+    <option value="protocol_selank" data-href="p/protocol_selank.html#tab3">Selank（TP-7）</option>
+    <option value="protocol_semaglutide" data-href="p/protocol_semaglutide.html#tab4">セマグルチド</option>
+    <option value="protocol_semax" data-href="p/protocol_semax.html#tab1">Semax</option>
+    <option value="protocol_slu-pp-332" data-href="p/protocol_slu-pp-332.html#tab2">SLU-PP-332</option>
+    <option value="protocol_ss-31" data-href="p/protocol_ss-31.html#tab1">SS-31（エラミプレチド）</option>
+    <option value="protocol_survodutide" data-href="p/protocol_survodutide.html#tab1">スルボデュタイド</option>
+    <option value="protocol_tb-500" data-href="p/protocol_tb-500.html#tab3">TB-500</option>
+    <option value="protocol_tesamorelin" data-href="p/protocol_tesamorelin.html#tab4">テサモレリン</option>
+    <option value="stacks_tesamorelin-ipamorelin" data-href="p/stacks_tesamorelin-ipamorelin.html#tab1">テサモレリン + イパモレリン</option>
+    <option value="protocol_thymosin-alpha-1" data-href="p/protocol_thymosin-alpha-1.html#tab3">サイモシンアルファ1（TA1）</option>
+    <option value="protocol_tirzepatide" data-href="p/protocol_tirzepatide.html#tab2">チルゼパチド</option>
+    <option value="protocol_vip" data-href="p/protocol_vip.html#tab2">VIP（血管作動性腸管ペプチド）</option>
+    <option value="stacks_wolverine-stack" data-href="p/stacks_wolverine-stack.html#tab2">Wolverine</option>
+  </select>
+  <p class="calc-ajuda">化合物を選んでも何も入力されません。その化合物のページの再溶解表を示すだけで、そこには各数値の出どころが書かれています。</p>
+  <p id="calc-comp-link" class="calc-ajuda" hidden><a href="p/"><span></span>のページの再溶解表 &rarr;</a></p>
+</fieldset>
+<div class="calc-acoes">
+  <button type="button" class="filtro" id="calc-copiar">この計算のリンクをコピー</button>
+  <button type="button" class="filtro" id="calc-limpar">クリア</button>
+</div>
+<p id="calc-copiado" class="calc-ajuda" role="status" aria-live="polite"></p>
+</div>
+<section class="calc-res" aria-labelledby="calc-res-t">
+  <h2 id="calc-res-t">U-100シリンジで吸う量</h2>
+  <div class="calc-destaque"><b id="r-unid">—</b><span id="r-un-rot">単位</span></div>
+  <p class="calc-dose-eq" id="r-dose-eq"></p>
+  <svg class="calc-seringa" viewBox="-70 0 720 100" aria-hidden="true" focusable="false">
+    <line class="calc-agulha" x1="-66" y1="40" x2="-6" y2="40"/>
+    <rect class="calc-tampa" x="-8" y="33" width="28" height="14" rx="3"/>
+    <rect class="calc-corpo" x="20" y="18" width="560" height="44" rx="8"/>
+    <rect id="calc-liquido" class="calc-liq" x="20" y="20" width="0" height="40"/>
+    <g id="calc-escala"></g>
+    <g id="calc-embolo"><rect x="16" y="20" width="10" height="40" rx="2" fill="#2F3643"/></g>
+    <rect x="580" y="10" width="10" height="60" rx="3" class="calc-tampa"/>
+  </svg>
+  <dl class="fatos">
+    <div class="fato"><dt>濃度</dt><dd id="r-conc">—</dd><dd><small id="r-conc-mcg">—</small></dd></div>
+    <div class="fato"><dt>吸引量</dt><dd id="r-vol">—</dd></div>
+    <div class="fato"><dt>バイアルあたりの回数</dt><dd id="r-doses">—</dd><dd><small id="r-doses-exato">—</small></dd></div>
+  </dl>
+  <div id="calc-alertas"></div>
+  <p id="calc-status" class="pular" role="status" aria-live="polite"></p>
+</section>
+</div>
+<div id="calc-frases" hidden>
+  <p data-f="incompleto">バイアル内の量、水、用量に、ゼロより大きい数を入れてください。</p>
+  <p data-f="falta-dose">バイアルと水だけで濃度は出ます。容量と単位数には、投与ごとの用量が必要です。</p>
+  <p data-f="unidade">単位</p>
+  <p data-f="unidades">単位</p>
+  <p data-f="exato">正確な値：{x}回分</p>
+  <p data-f="maior-que-frasco"><strong>用量がバイアルの中身全体より多くなっています。</strong>用量とバイアルが同じ単位か確認してください。mgとmcgは千倍違います。</p>
+  <p data-f="passa-seringa"><strong>{u}は{ml} mLのシリンジに入りません</strong>。このシリンジは{cap}単位までです。バイアルの水を減らせば同じ粉末がより濃くなり、各用量の容量は小さくなります。</p>
+  <p data-f="inv-falta">逆算には、バイアル内の量と用量が必要です。</p>
+  <p data-f="inv-resultado">{d}を{u}にするには、バイアルに<strong>{a} mL</strong>の水を入れます。</p>
+  <p data-f="inv-passa">選んだシリンジは{cap}単位までなので、それを超えています。</p>
+  <p data-f="pouco-volume"><strong>容量がとても小さい：{u}。</strong>この範囲では、シリンジの目盛りひとつ分の差で用量が約{pct}%変わります。バイアルの水を増やせば、同じ用量がより多くの単位を占め、読み取り誤差の影響が小さくなります。</p>
+  <p data-f="entre-tracos"><strong>計算は{u}になりましたが、シリンジは目盛りで読みます。</strong>{a}なら投与される用量は{da}、{b}なら{db}です。お使いのシリンジの目盛りがいくつ刻みか確認してください。</p>
+  <p data-f="status">結果：U-100シリンジで{u}、{v} mL、濃度{c} mg/mL。</p>
+  <p data-f="copiado">リンクをコピーしました。開いた人には同じ計算が表示されます。</p>
+  <p data-f="nao-copiou">ここからはコピーできませんでした。ブラウザのアドレスバーのURLにすでに計算が入っているので、そこからコピーしてください。</p>
+</div>
+</div>
+<div class="conteudo" style="padding:0">
+
+<h2>計算のしかた</h2>
+<p>いつも同じ割り算だけで、紙の上でもやり直せます：</p>
+<ol>
+  <li><strong>濃度</strong> = バイアル内の量 ÷ 加えた水。10 mgのバイアルに2 mLの水を入れると5 mg/mLになります。</li>
+  <li><strong>用量の容量</strong> = 用量 ÷ 濃度。0.25 mgの用量は、5 mg/mLでは0.05 mLです。</li>
+  <li><strong>U-100シリンジの単位数</strong> = 容量 × 100。このシリンジでは100単位が1 mLだからです。0.05 mLは5単位です。</li>
+</ol>
+<p>そして<strong>バイアルあたりの回数</strong> = バイアル内の量 ÷ 用量：10 mg ÷ 0.25 mgで40。バイアルの最後に残る分は用量にならないので、計算ツールは整数と正確な値の両方を示します。<a href="calculadora.html?f=10&amp;a=2&amp;d=0.25">この例を計算ツールで開く</a>。</p>
+<p><strong>逆算</strong>は同じ計算を逆からたどるだけです：水 = 単位数 × バイアル内の量 ÷ (100 × 用量)。10 mgのバイアルで0.25 mgの用量を10単位にするには、10 × 10 ÷ (100 × 0.25) = 4 mLの水です。</p>
+
+<h2 id="unidade-e-volume">単位は容量であって用量ではない</h2>
+<p>シリンジの単位は液体の量を測るもので、ペプチドの量ではありません。U-100の目盛りでは、シリンジのサイズにかかわらず、各単位は百分の一ミリリットルです。0.3 mLは30単位まで、0.5 mLは50単位まで、1 mLは100単位までです。</p>
+<div class="tabela-env"><div class="tabela-rolagem"><table aria-labelledby="unidade-e-volume">
+  <thead><tr><th scope="col">単位数（U-100）</th><th scope="col">容量</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td class="num">0.01 mL</td></tr>
+    <tr><td>2</td><td class="num">0.02 mL</td></tr>
+    <tr><td>5</td><td class="num">0.05 mL</td></tr>
+    <tr><td>10</td><td class="num">0.10 mL</td></tr>
+    <tr><td>20</td><td class="num">0.20 mL</td></tr>
+    <tr><td>30</td><td class="num">0.30 mL</td></tr>
+    <tr><td>50</td><td class="num">0.50 mL</td></tr>
+    <tr><td>100</td><td class="num">1.00 mL</td></tr>
+  </tbody></table></div></div>
+<p>各単位に入るペプチドの量は、バイアルの濃度で決まります。同じ10単位の目盛りでも、5 mg/mLのバイアルなら0.5 mg、2.5 mg/mLのバイアルなら0.25 mgです。だから「何単位」は用量ではありません。バイアル内の量と水がわからなければ、その数字はどれだけ投与したかを示しません。</p>
+
+<h2>計算が知らないこと</h2>
+<ul>
+  <li><strong>バイアルにラベルどおりの量が入っているか。</strong>いちばん重い限界で、ページ上部の注意書きにあります。</li>
+  <li><strong>シリンジがU-100かどうか。</strong>ここでの単位数はそのシリンジにだけ有効です。数値を使う前に、シリンジの胴に印刷された目盛りを確認してください。</li>
+  <li><strong>シリンジとバイアルに残る分。</strong>液の一部は出てきません。針、ハブ、バイアルの壁に残ります。バイアルあたりの回数は理論上の値です。</li>
+  <li><strong>混合バイアルでの各化合物の用量。</strong>5 mgずつのペプチドをふたつ含む10 mgのブレンドには、それぞれ5 mgが入っています。知りたい成分の量を入れれば、計算はその成分の用量を返します。</li>
+  <li><strong>その用量に意味があるか。</strong>この計算ツールには用量のリストがなく、どの研究とも比較せず、高用量を警告もしません。各化合物についてエビデンスが何を言っているかは、<a href="index.html">化合物</a>一覧から各ページへ。</li>
+</ul>
+
+<h2>このサイトの再溶解表</h2>
+<p>プロトコルのページには、バイアル、水、濃度、用量ごとの容量を載せた表があります。その計算は自動チェックが検証し、すべての計算をやり直して、合わない表の公開を止めます。このチェックは、手作業の監査がそうした表のひとつで、桁区切りを誤って公開された容量を見つけたあとに生まれました。ポルトガル語として読むと正しい値の千倍です。計算ツールも同じ割り算を使います。違いは、表では用量が二次資料から来ていたのに対し、ここでは入力する人から来ることです。</p>
+
+</div>
+</main>
+</div>
+<footer class="rodape">
+  <div class="rodape-in">
+    <div>
+      <p class="rodape-titulo">Protocolos</p>
+      <p>ペプチド、ノートロピクス、SARM、関連化合物についての日本語のリファレンス：それぞれの用量、サイクル、規制状況、エビデンスの限界。教育的かつ実験的な資料 — 医師の評価に代わるものではありません。</p>
+      <p style="margin-top:14px">編集日：2026年9月3日。</p>
+    </div>
+    <nav aria-label="ナビゲーション">
+      <p class="rodape-titulo">ナビゲーション</p>
+      <ul>
+        <li><a href="index.html">すべての化合物</a></li>
+        <li><a href="calculadora.html">再溶解計算ツール</a></li>
+        <li><a href="seguranca.html">安全性と限界</a></li>
+        <li><a href="sobre.html">サイト、資料、方法について</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="rodape-titulo">注意</p>
+      <ul>
+        <li>医学的助言ではありません</li>
+        <li>登録なし</li>
+        <li>実験的使用</li>
+        <li>コミュニティ報告の用量 ≠ 検証された用量</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+<script src="../assets/calculadora.js"></script>
