@@ -126,10 +126,10 @@ Entraram 109 páginas, uma por protocolo que vi publicado na internet em vídeos
 
 ### As figuras
 
-Cada uma das 96 páginas abertas até 5 de outubro de 2026 tem uma ilustração, gerada no ChatGPT entre 5 e 6 de outubro de 2026, uma por prompt. Os prompts são só texto: nenhuma imagem da loja foi copiada nem enviada ao ChatGPT. O estilo é o do próprio site: fundo quase preto, acento de cobre, ilustração científica do alvo biológico. O prompt proíbe texto, frasco, seringa, comprimido, rosto e brilho de "cura", porque a figura não pode prometer o que a página desmente.
+Cada uma das 205 páginas tem uma ilustração, gerada no ChatGPT, uma por prompt: as 96 páginas abertas até 5 de outubro de 2026 entre 5 e 6 de outubro, e as 109 páginas de 16 de outubro em 17 de outubro de 2026, com o mesmo `ESTILO`. Os prompts são só texto: nenhuma imagem da loja foi copiada nem enviada ao ChatGPT. O estilo é o do próprio site: fundo quase preto, acento de cobre, ilustração científica do alvo biológico. O prompt proíbe texto, frasco, seringa, comprimido, rosto e brilho de "cura", porque a figura não pode prometer o que a página desmente.
 
-- **Onde ficam:** `assets/figuras/<slug>.webp` (1200×800, topo da página) e `<slug>-cartao.webp` (480×320, grade). São 192 arquivos e 10,7 MB.
-- **Como entram:** `figura(slug)` em `gerar.py` só põe a imagem quando os dois arquivos existem. Página nova sem figura sai como antes, sem quebrar — é o caso das 109 páginas de 16 de outubro de 2026, ainda sem figura.
+- **Onde ficam:** `assets/figuras/<slug>.webp` (1200×800, topo da página) e `<slug>-cartao.webp` (480×320, grade). São 410 arquivos e 24,9 MB. O original do ChatGPT (1536×1024) fica em `build/json/figuras_png/`, fora do git; das 109 de 17/10 há também um mestre ampliado para 3840×2560 (4x-UltraSharp, ampliação de 2,5×, não é 4K nativo) em `E:\Peps\figuras-4k\`, feito por `build/json/figuras_4k.py`.
+- **Como entram:** `figura(slug)` em `gerar.py` só põe a imagem quando os dois arquivos existem. Página nova sem figura sai como antes, sem quebrar.
 - **Como aparecem:** a imagem é decorativa (`alt` vazio), e a legenda diz, nas sete línguas, que é ilustração gerada por IA, e não dado nem imagem de estudo.
 - **Prompts:** ficam em `build/json/figuras_prompts.py` (local, fora do git, como a coleta). O prefixo de estilo `ESTILO` é o mesmo para todas, mais uma linha de assunto por página.
 - **Ao mudar o `estilo.css`, recortar o `critico-gerado.css`.** O cabeçalho guarda o hash do `estilo.css`, e a trava de crítico falha até o recorte ser refeito.
